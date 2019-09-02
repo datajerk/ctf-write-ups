@@ -369,10 +369,9 @@ Get the flag:
 ```
 cat flag
 ```
-```
+```  
 TWCTF{AAAATsumori---Shitureishimashita.}
 ```
-
 
 
 
