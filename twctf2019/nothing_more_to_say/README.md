@@ -263,7 +263,7 @@ Now, run it with `run <payload` and check the value at `0x601000`:
 
 ![](warmup-6.png)
 
-Execution stopped just before `ret` the `printf` successfully overwrote GOT PLT with the `jmp rsp`.
+Execution stopped just before `ret`, and the `printf` successfully overwrote the GOT PLT with `jmp rsp`.
 
 The rest is easy.  It is identical to the first attempt.  Continue to write to the buffer until overflow, use `0x601000` as the return address, that will then `jmp rsp` back to the stack where the machine code lives:
 
