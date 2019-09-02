@@ -2,9 +2,7 @@
 
 _Japan is fucking hot._
 
-```
-nc nothing.chal.ctf.westerns.tokyo 10001
-```
+`nc nothing.chal.ctf.westerns.tokyo 10001`
 
 [`warmup.c`](warmup.c)  
 [`warmup`](warmup)
