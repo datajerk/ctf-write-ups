@@ -244,7 +244,11 @@ The payload up to this point needs to output via `printf` `0xe4ff` (58623) bytes
 
 When `printf` parses `%08$n`, nothing is output to stdout.  Instead it skips to the 8th 64-bit pointer, and reads that address, then writes the output byte counter (58623) to that address.
 
-Why the 8th pointer?  To find it, run this repeatably with different values until you find your address on the stack:
+Why the 8th pointer?
+
+> Speculation:  x86_64 `printf` `%` anything will start with 6 of the registers, assuming that will be `%00$p` - `%05$p`, then the 24 bytes above would be on the stack as `06`, `07`, `08`.
+
+To find it, run this repeatably with different values until you find your address on the stack:
 
 ```
 python -c 'print "NNNNNNx " + "%08$p   " + "AAAAAAAA"' | ./warmup | grep NNNNNN
@@ -252,8 +256,6 @@ python -c 'print "NNNNNNx " + "%08$p   " + "AAAAAAAA"' | ./warmup | grep NNNNNN
 ```
 NNNNNNx 0x4141414141414141   AAAAAAAA
 ```
-
-> Speculation:  x86_64 `printf` `%` anything will start with 6 of the registers, assuming that will be `%00$p` - `%05$p`, then the 24 bytes above would be on the stack as `06`, `07`, `08`.
 
 The `print` statement is 24 bytes long, same as above, but instead of printing a lot of padding and a real address use `NNNNNN` and `AAAAAAAA`.  As soon as there is a match (`0x4141414141414141`), the argument to `%n` is known.
 
