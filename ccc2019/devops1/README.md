@@ -11,6 +11,9 @@ _Your session is stateful. Please share it with your team members - we have limi
 _The flag format is different for this challenge._
 
 
+**Tags:** _pwn_
+
+
 #### Solution
 
 After visiting and reading [https://devops.allesctf.net/](https://devops.allesctf.net/) you are given the option to create a VM and start hacking.  My session ID was `0b0bda088a0a8dc59ab4981d`.
