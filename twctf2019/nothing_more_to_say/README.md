@@ -242,7 +242,7 @@ Above is a `printf` format string that will get passed to `gets`, and `printf` w
 
 The payload up to this point needs to output via `printf` `0xe4ff` (58623) bytes. The `"%58622x "` string will use 8 bytes of memory (reg/stack), and will output exactly 58622 bytes + 1 for the trailing space to stdout.
 
-When `printf` parses `%08$n`, nothing is output to stdout.  Instead it skips to the 8th (or 9th if array base 0) 64-bit pointer, and reads that address, then writes the output byte counter (58623) to that address.
+When `printf` parses `%08$n`, nothing is output to stdout.  Instead it skips to the 8th 64-bit pointer, and reads that address, then writes the output byte counter (58623) to that address.
 
 Why the 8th pointer?  To find it, run this repeatably with different values until you find your address on the stack:
 
