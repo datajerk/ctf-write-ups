@@ -325,6 +325,7 @@ Local test:
 (./exploit.py; cat) | ./warmup
 ```
 ```
+... lots of space
 f7dcfa83
 ```
 
