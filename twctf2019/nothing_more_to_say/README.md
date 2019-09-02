@@ -103,7 +103,7 @@ gdb ./warmup
 
 > gef, peda, pwngdb, etc... are all nice extensions to GDB.
 
-At the top you'll observe a `SIGSEGV, Segmentation fault.` signal crashing `warmup`.  If you look at the stack you can see why; `rsp` has De Bruijn's wonderful garbage in it: `NADO...` (and more down the stack).  What needs to be there is a valid address to return to, IOW, control of the Instruction Pointer (`rip`) has been achieved.  Level up.
+At the top you'll observe a `SIGSEGV, Segmentation fault` signal crashing `warmup`.  If you look at the stack you can see why; `rsp` has De Bruijn's wonderful garbage in it: `NADO...` (and more down the stack).  What needs to be there is a valid address to return to, IOW, control of the Instruction Pointer (`rip`) has been achieved.  Level up.
 
 To test, create a payload with just 8 `A`'s starting from `NADO...`:
 
