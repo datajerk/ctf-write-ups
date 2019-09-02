@@ -253,6 +253,8 @@ python -c 'print "NNNNNNx " + "%08$p   " + "AAAAAAAA"' | ./warmup | grep NNNNNN
 NNNNNNx 0x4141414141414141   AAAAAAAA
 ```
 
+> Speculation:  x86_64 `printf` `%` anything will start with 6 of the registers, assuming that will be `%00$p` - `%05$p`, then the 24 bytes above would be on the stack as `06`, `07`, `08`.
+
 The `print` statement is 24 bytes long, same as above, but instead of printing a lot of padding and a real address use `NNNNNN` and `AAAAAAAA`.  As soon as there is a match (`0x4141414141414141`), the argument to `%n` is known.
 
 To test the payload, start up `gdb warmup` and set a breakpoint at `main`'s `ret`:
