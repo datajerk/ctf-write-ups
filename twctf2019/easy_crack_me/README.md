@@ -8,9 +8,9 @@ _Cracking is easy for you._
 
 ### Preamble
 
-Given that TokyoWesterns is a top 10 team (source: [ctftime.org](ctftim.org)), the problems are most likely targeted for top 10 teams--a _warmup_ is still _hard_ for a n00b.  As of this writing I have done less than 10 CTFs in five years.  Security research is not my occupation--this is what I do for fun.
+Given that TokyoWesterns is a top 10 team (source: [ctftime.org](https://ctftim.org)), the problems are most likely targeted for top 10 teams--a _warmup_ is still _hard_ for a n00b.  As of this writing I have done less than 10 CTFs in five years.  Security research is not my occupation--this is what I do for fun.
 
-So, there may be easier ways to do this ([angr.io](angr.io)?).  This took me about 8 hours to figure out.  I worked on this on/off over the 48 hour contest period.  Most of my time was getting a cleaned up version of the code to compile and run so that it would be easier to understand the internals.
+So, there may be easier ways to do this ([angr.io](https://angr.io)?).  This took me about 8 hours to figure out.  I worked on this on/off over the 48 hour contest period.  Most of my time was getting a cleaned up version of the code to compile and run so that it would be easier to understand the internals.
 
 ![](easy-1.png)
 

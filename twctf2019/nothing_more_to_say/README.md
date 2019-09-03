@@ -12,7 +12,7 @@ _Japan is fucking hot._
 
 ### Preamble
 
-Given that TokyoWesterns is a top 10 team (source: [ctftime.org](ctftim.org)), the problems are most likely targeted for top 10 teams--a _warmup_ is still _hard_ for a n00b.  As of this writing I've done less than 10 CTFs in five years.  Security research is not my occupation--this is what I do for fun.
+Given that TokyoWesterns is a top 10 team (source: [ctftime.org](https://ctftim.org)), the problems are most likely targeted for top 10 teams--a _warmup_ is still _hard_ for a n00b.  As of this writing I've done less than 10 CTFs in five years.  Security research is not my occupation--this is what I do for fun.
 
 So, there may be easier ways to do this.  This took me about 10 hours to figure out.  I worked on this on/off over the 48 hour contest period.  Some research, some experiments, etc...  I'll do my best to link to all references that I used along the way.
 
