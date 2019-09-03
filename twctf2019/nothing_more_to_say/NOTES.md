@@ -1,6 +1,6 @@
-### Notes
+## Notes
 
-#### Remote ASLR Testing
+### Remote ASLR Testing
 
 After a bit of trial and error with `./warmup` I was able to craft a test that would return a value that was 16 bytes greater than `rsp`.  If ASLR is enabled the value will always be different, if disabled, the same.
 
@@ -23,7 +23,7 @@ Yep, ASLR.
 
 I wasted a lot of time trying to capture this value and setting the return pointer back to `gets` so that I could do a 2nd attack.  However `gets` never paused to allow input.  Complex stdin work required I guess.
 
-#### Get register values from segfault:
+### Get register values from segfault:
 
 This was helpful early on to get some understanding about some things.  However useless when testing the first basic exploit.  The exploit worked in GDB, failed without GDB, passed with `catchsegv`!  So no easy button to find the offset or delta from GDB.
 

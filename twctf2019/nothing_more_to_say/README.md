@@ -1,4 +1,4 @@
-### nothing more to say
+## nothing more to say
 
 _Japan is fucking hot._
 
@@ -10,18 +10,18 @@ _Japan is fucking hot._
 **Tags:** _pwn_ _warmup_
 
 
-#### Preamble
+### Preamble
 
 Given that TokyoWesterns is a top 10 team (source: [ctftime.org](ctftim.org)), the problems are most likely targeted for top 10 teams--a _warmup_ is still _hard_ for a n00b.  As of this writing I've done less than 10 CTFs in five years.  Security research is not my occupation--this is what I do for fun.
 
 So, there may be easier ways to do this.  This took me about 10 hours to figure out.  I worked on this on/off over the 48 hour contest period.  Some research, some experiments, etc...  I'll do my best to link to all references that I used along the way.
 
 
-#### Solution
+### Solution
 
 > If you just want the answer, the code, and prefer to learn that way (I highly support that way of learning), then jump to the end.  If you want to follow my thought process and failures, read on.
 
-##### Research
+#### Research
 
 Using `file` to determine it is a Linux 64-bit binary (`ELF 64-bit LSB executable, x86-64`) and giving it a quick run in a Ubuntu 18 Docker container will produce the following output:
 
@@ -72,7 +72,7 @@ Well, there's your problem, `gets`.
 
 All that is needed is to smash the stack, overwrite the return address with an address further down the stack with a NOP sled and some shellcode.  This will take about 10 min. :-)
 
-##### Smashing the Stack
+#### Smashing the Stack
  
 > Liveoverflow's series on [Binary Exploitation / Memory Corruption by LiveOverflow](https://www.youtube.com/playlist?list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN) is a good place to start if this is new to you.
 
@@ -117,7 +117,7 @@ Hit the Up Arrow and try again:
 
 `AAAAAAAA` in `rsp`, as expected.  Also notice the address of `rsp`: `0x00007fffffffe588`.
 
-##### Craft Failed Exploit (it is how you learn)
+#### Craft Failed Exploit (it is how you learn)
 
 This should be fairly trivial, just replace `AAAAAAAA` with an address down the stack, and then populate the stack with Intel machine code:
 
@@ -181,11 +181,11 @@ Seg fault.  Game over.
 > 
 > What also kind of screwed me was working in a Docker container on MacOS.  For some reason ASLR is disabled.  If I switch to a Linux VM the "exploit" failed because of ASLR, however if I disable with `echo 0 >/proc/sys/kernel/randomize_va_space`, then it works just like in the container.  Just run `ldd warmup` a few times and see if the addresses change or not, and you will get my point.
 
-##### More Research
+#### More Research
 
 After a bit of Googling for _Buffer Overflow with ASLR_, I found an article that suggested looking for a (ROP) gadget in the code that executed `jmp rsp`.  That is actually perfect.  After the _over_-writeable return pointer gets popped off the stack (into `rip`) to change the execution flow, `rsp` gets incremented (down the stack) to the NOP sled.  Sadly looking at objdump output and messing around with _ropper_ (ROP chain generator), I didn't see a clear way to to set an address that would then bounce back to executing the stack.
 
-##### Even More Research
+#### Even More Research
 
 After an hour of so of Googling I ran into Liveoverflow's videos again, this time the `printf` exploit videos; if you look at the code there is a "classic" `printf` exploit.
 
@@ -199,7 +199,7 @@ At this point, I know I want `jsr rsp` written to an address, and I know how to 
 
 Back to Googling, and again Liveoverflow videos.  This time on GOT.  The full GOT PLT exploit is not needed, the only thing we need is a stable place to write bytes.  GOT it! :-)
 
-##### Finally, the Exploit
+#### Finally, the Exploit
 
 First, create a C program to get the `jsr rsp` byte values?
 
@@ -340,7 +340,7 @@ id
 uid=0(root) gid=0(root) groups=0(root)
 ```
 
-##### Get the Flag
+#### Get the Flag
 
 ```
 (./exploit.py; cat) | nc nothing.chal.ctf.westerns.tokyo 10001
