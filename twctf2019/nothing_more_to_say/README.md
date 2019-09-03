@@ -10,13 +10,6 @@ _Japan is fucking hot._
 **Tags:** _pwn_ _warmup_
 
 
-### Preamble
-
-Given that TokyoWesterns is a top 10 team (source: [ctftime.org](https://ctftime.org)), the problems are most likely targeted for top 10 teams--a _warmup_ is still _hard_ for a n00b.  As of this writing I've done less than 10 CTFs in five years.  Security research is not my occupation--this is what I do for fun.
-
-So, there may be easier ways to do this.  This took me about 10 hours to figure out.  I worked on this on/off over the 48 hour contest period.  Some research, some experiments, etc...  I'll do my best to link to all references that I used along the way.
-
-
 ### Solution
 
 > If you just want the answer, the code, and prefer to learn that way (I highly support that way of learning), then jump to the end.  If you want to follow my thought process and failures, read on.

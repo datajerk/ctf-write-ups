@@ -8,15 +8,7 @@ _Cracking is easy for you._
 
 ### Preamble
 
-Given that TokyoWesterns is a top 10 team (source: [ctftime.org](https://ctftime.org)), the problems are most likely targeted for top 10 teams--a _warmup_ is still _hard_ for a n00b.  As of this writing I have done less than 10 CTFs in five years.  Security research is not my occupation--this is what I do for fun.
-
-So, there may be easier ways to do this ([angr.io](https://angr.io)?).  This took me about 8 hours to figure out.  I worked on this on/off over the 48 hour contest period.  Most of my time was getting a cleaned up version of the code to compile and run so that it would be easier to understand the internals.
-
-![](easy-1.png)
-
-> Graph of `easy_crack_me`, to date, the most complex RE I have completed.
-
-I quickly decided after looking at the code that I would use [Z3](http://theory.stanford.edu/~nikolaj/programmingz3.html).  I was inspired a while back by Liveoverflow's [Z3 video](https://youtu.be/TpdDq56KH1I), however at the time had nothing burning to test Z3 with.  Now I do, and I borrowed heavily from that video.
+Props: Liveoverflow's [Z3 video](https://youtu.be/TpdDq56KH1I)
 
 This _crackme_ takes a single argument, runs it through 8 constraints, and if all 8 pass, you have the flag.  _There is only one flag._
 
