@@ -406,7 +406,7 @@ If you remove the check, this code will produce all 84 possible solutions that s
 
 Run it:
 
-[`solve.py`](solve.py)
+`time `[`solve.py`](solve.py)
 
 ```
 TWCTF{df2b4877e72ad91c02f8ef6004a684a5}
@@ -416,6 +416,10 @@ TWCTF{df2b5876e70cd91c02f8df6104c484a5}
 TWCTF{df2b4877e70cd91c02f8ef6004c484a5}
 TWCTF{df2b4877e71bd91c02f8ef6004b584a5}
 Correct: TWCTF{df2b4877e71bd91c02f8ef6004b584a5}
+
+real    0m0.224s
+user    0m0.110s
+sys     0m0.050s
 ```
 
 [Z3](http://theory.stanford.edu/~nikolaj/programmingz3.html) is magic.
