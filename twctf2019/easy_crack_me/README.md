@@ -414,4 +414,3 @@ user    0m0.110s
 sys     0m0.050s
 ```
 
-[Z3](http://theory.stanford.edu/~nikolaj/programmingz3.html) is magic.
