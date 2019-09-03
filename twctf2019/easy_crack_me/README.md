@@ -102,7 +102,7 @@ try: TWCTF{00011224445567778889abbbcddeefff}
 incorrect 3 does not have the correct number of each 0..f
 ```
 
-This constraint checks for the right number of 0,1,...f characters.  That is 176243969782620087828480000000 permutations.  I checked, just in case this was brute forcible at this point. :-)
+This constraint checks for the right number of `0`,`1`,...`f` characters by comparing the counters with the `DAT_00400f00` table.  That is 176243969782620087828480000000 permutations.  I checked, just in case this was brute forcible at this point. :-)
 
 The table `DAT_00400f00` has to be pulled from the Ghidra disassembly listing (see [bar.h](bar.h)):
 
@@ -127,7 +127,7 @@ uint32_t DAT_00400f00[]={
 };
 ```
 
-If you rerun with `foo` with the suggested (`try`) argument, you'll pass this constraint but fail on the next.
+If you rerun `foo` with the suggested (`try`) argument, you'll pass this constraint but fail on the next.
 
 
 ##### Python/Z3
@@ -141,7 +141,9 @@ I could not think of a quick way to code up this constraint in Z3.  With the lim
 
 ![](easy-4.png)
 
-There are two computation blocks and two comparison blocks.  `locals` `168`, `148`, `128`, and `108` are 8 element `uint_32t` arrays.
+There are two computation blocks and two comparison blocks.
+
+`locals` `168`, `148`, `128`, and `108` are 8 element `uint_32t` arrays.
 
 ##### `foo.c`
 
