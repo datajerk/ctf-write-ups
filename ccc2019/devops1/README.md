@@ -152,28 +152,4 @@ STAGE1_ahpeeHahy7aingea8ahr6
 You have successfully compromised this host. It's time to spread your wings!
 ```
 
-Other commands can be copied over and setuid'd, e.g. `vi` if you want to edit `/etc/shadow` and set root's password.  However this trick does not work with `bash` (it used to, or at least with `sh` and `ksh` many, many years ago).
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Other commands can be copied over and setuid'd, e.g. `vi` if you want to edit `/etc/shadow` and set root's password, `bash` (invoke with `-p`), etc...
