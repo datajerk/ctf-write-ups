@@ -228,7 +228,7 @@ Runtime:
 ```
 real    12m48.745s
 user    4m50.059s
-sys 0m40.848s
+sys     0m40.848s
 ```
 
 ## Epilogue
