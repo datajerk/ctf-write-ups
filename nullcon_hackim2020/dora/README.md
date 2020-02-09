@@ -39,7 +39,7 @@ After analyzing a random sample of the 140 cache of images, the following was ap
 
 * The background color changed from image to image.
 * Dora's location and form changed from image to image.
-* Dora's furry friends did _not_ change from image to image and all five were present, but in different locations.
+* Dora's furry friends did _not_ change form image to image, and all five were present, but in different locations.
 * Dora was not always in color.
 * Dora's furry friends were never in color.
 
