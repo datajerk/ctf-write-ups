@@ -248,6 +248,6 @@ $ awk '{print $NF}' dora.log | sort | uniq -c
  205 4
 ```
 
-You decide.  Dora seems to be leaning to the _right_.  _Doh!_
+You decide.  Dora seems to be leaning to the _right_. :-)
  
 Lastly you will find [`foo.py`](foo.py) here--this was my debug program.  Basically when I got `No flag for you`, I'd run `foo.py` and it would create all the intermediate images and quads for my visual inspection, then I'd change `foo.py` parameters until it passed `foo.py`, update `dora.py` and rerun.  I used `foo.py` 3 times (2x for bounding rect tuning, and once for margin hack).
