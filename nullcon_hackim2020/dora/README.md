@@ -235,7 +235,7 @@ sys     0m40.848s
 
 Fun challenge, good points for little work.
 
-I archived an entire run of images (800 Dora + 1 Flag) if you are interested in doing this yourself: [`dora-run.tgz`](dora-run.tgz), however, the organizers have release the [source](https://github.com/nullcon/hackim-2020/tree/master/misc/dora), so that may be a better path (thanks nullcon!).
+I archived an entire run of images (800 Dora + 1 Flag) if you are interested in doing this yourself: [`dora_run.tgz`](dora_run.tgz), however, the organizers have release the [source](https://github.com/nullcon/hackim-2020/tree/master/misc/dora), so that may be a better path (thanks nullcon!).
 
 I also included the output [`dora.log`](dora.log) that matches the images.  I was going to analyze Dora's movements for hidden messages or to check if truly random:
 
