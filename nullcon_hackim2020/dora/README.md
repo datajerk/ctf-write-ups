@@ -33,7 +33,7 @@ Clearly Dora is in the _upper left_, so you enter `2`, get the next base64/png, 
 
 ### Research
 
-One of my teammates (_chrod_) quickly created an "app", or game, kind of like _wack a mole_, and quickly amassed the first 140 images.  The rest of us started to wonder if this was going to be a never ending quest, and was there something else to consider, so we looked at the raw base64, tried steg, etc... for about 15 min or so and eventually we just decided to automate this and assume this was the correct path.
+One of my teammates (_chrod_) quickly created an "app", or game, kind of like _wack-a-mole_, and quickly amassed the first 140 images.  The rest of us started to wonder if this was going to be a never ending quest, and was there something else to consider, so we looked at the raw base64, tried steg, etc... for about 15 min or so and eventually we just decided to automate this and assume this was the correct path.
 
 After analyzing a random sample of the 140 cache of images, the following was apparent:
 
