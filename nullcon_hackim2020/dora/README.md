@@ -24,7 +24,7 @@ After base64 decoding and checking the output with _file_, you will end up with 
 
 `/dev/stdin: PNG image data, 720 x 720, 8-bit/color RGBA, non-interlaced`
 
-[_dora1.png_](dora.png):
+[_dora1.png_](dora1.png):
 
 ![](dora1.png)
 
