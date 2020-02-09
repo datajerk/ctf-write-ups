@@ -38,7 +38,7 @@ One of my teammates (_chrod_) quickly created an "app", or game, kind of like _w
 After analyzing a random sample of the 140 cache of images, the following was apparent:
 
 * The background color changed from image to image.
-* Dora location and form changed from image to image.
+* Dora's location and form changed from image to image.
 * Dora's furry friends did _not_ change from image to image and all five were present, but in different locations.
 * Dora was not always in color.
 * Dora's furry friends were never in color.
@@ -61,9 +61,9 @@ After analyzing a random sample of the 140 cache of images, the following was ap
 ### Loop
 
 1. Get image, save a copy for debugging.
-2. Convert background to red to help with template matching (unsure if that really makes a different).
+2. Convert background to red to help with template matching (unsure if that really makes a difference).
 3. For each furry find them with OpenCV template matching and replace the bounding box with red.
-4. Cut up the image into quads, and report the image that is not solid red.
+4. Cut up the image into quads, and report the image that is not solid red as Dora's location.
 5. Goto 1.
 
 ### Code
@@ -195,7 +195,7 @@ Log the results (for this writeup), and send Dora's location to the server for t
 
 Attribution:
 
-The following was a huge time saver (_I apologize for others missed, I cranked through this in ~2 hours, my notes were not that great_):
+The following was a huge time saver (_I apologize for other's missed, I cranked through this in ~2 hours, my notes were not that great_):
 
 * [https://stackoverflow.com/questions/7853628/how-do-i-find-an-image-contained-within-an-image](https://stackoverflow.com/questions/7853628/how-do-i-find-an-image-contained-within-an-image)
 * [https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_template_matching/py_template_matching.html#template-matching](https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_template_matching/py_template_matching.html#template-matching)
@@ -221,14 +221,14 @@ That's pretty much how the run ended.  There was no `No flag for you` error, so 
 
 ![](dora-flag.png)
 
-With more time, the code could have been less _result oriented_, but this _was_, a time-constrained hacking competition.
+With more time, the code could have been less _result oriented_, but this _was_, a _time-constrained hacking competition_.
 
 Runtime:
 
 ```
-real   12m48.745s
-user   4m50.059s
-sys	   0m40.848s
+real    12m48.745s
+user    4m50.059s
+sys 0m40.848s
 ```
 
 ## Epilogue
