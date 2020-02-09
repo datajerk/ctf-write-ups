@@ -21,6 +21,7 @@ Followed by a base64 string and then a prompt for a number.
 After base64 decoding and checking the output with _file_, you will end up with a 720x720 PNG, and with the exception of the last image, they will all be the same size, e.g.:
 
 `base64 -d <`[`dora1.base64`](dora1.base64)` | file -`
+
 `/dev/stdin: PNG image data, 720 x 720, 8-bit/color RGBA, non-interlaced`
 
 [_dora1.png_](dora.png):
