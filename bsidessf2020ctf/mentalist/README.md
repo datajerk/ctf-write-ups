@@ -154,7 +154,7 @@ p, m, i = crack_unknown_modulus(numbers[1:7])
 print((numbers[-1] * m + i) % p)
 ```
 
-This code is pretty much a cut/paste job from the article with a few changes for Python 3.  All that was left to do was collect some numbers from _The Mentalist_ and see if this code could predict the next number.
+This code is pretty much a cut/paste job from the article with a few changes for Python 3.  All that was left to do was collect some numbers from _The Mentalist_ previous run and see if this code could predict the next number.
 
 Output:
 
@@ -162,7 +162,7 @@ Output:
 54496558503522
 ```
 
-Yep!
+Yep! (See for yourself (above)).
 
 ### Solve
 
