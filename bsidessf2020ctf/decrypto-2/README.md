@@ -52,7 +52,7 @@ The derived key initial round starts with the user provided key appended with a 
 
 `derived key = sha256(key+0) + sha256(sha256(key+0)+1) + sha256(sha256(sha256(key+0)+1)+2) + ...`
 
-> NOTE: Above `+` is _append_.
+> NOTE: Above `+` is _append bytes_.
 
 Like other XOR challenges, to decrypt the _ciphertext_ we need to know either the _key_ or the _plaintext_ (to then derive the _key_).
 
