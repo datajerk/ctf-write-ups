@@ -46,7 +46,7 @@ def _extend_buf(self):
     self._buf += self._blk
 ```
 
-The encryption key is constructed by calling `_extend_buf` repeatedly until the key is at least as long as the input file.
+The derived key is constructed by calling `_extend_buf` repeatedly until the key is at least as long as the input file.
 
 The derived key initial round starts with the user provided key appended with a 32-bit little endian `0` that is then SHA256'd.  The next round appends a 32-bit little endian `1` to the previous hash, and SHA256's that, and then appends that to the derived key, and so on:
 
