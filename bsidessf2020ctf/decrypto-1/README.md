@@ -12,7 +12,7 @@ Tags: _crypto_, _101_
 
 ### Research
 
-A quick scan of [`decrypto.py`](decrypto.py) reveals a simple XOR cypher (last line):
+A quick scan of [`decrypto.py`](decrypto.py) reveals a simple XOR cipher (last line):
 
 ```
 def encrypt(self, buf):
@@ -42,11 +42,11 @@ The vulnerability is that the plain text for the first 16 (and possibly more) by
 
 Given:
 
-_plaintext ^ key = cyphertext_
+_plaintext ^ key = ciphertext_
 
-Then:
+then:
 
-_key = plaintext ^ cyphertext_ and _plaintext = cyphertext ^ key_
+_key = plaintext ^ ciphertext_ and _plaintext = ciphertext ^ key_
 
 To get the key, XOR the encrypted flag text with the known text `{\n "filename": "flag.txt",\n "hash": ` and hope the key is shorter than that.
 
