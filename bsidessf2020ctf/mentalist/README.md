@@ -239,7 +239,7 @@ Incredible! I WAS thinking of that number! But can you do it again?
 
 Doh!! Really?
 
-Ok, just update `solve.py`, add `18227010560020` to the end of `numbers` and run again, output:
+Ok, just update `solve.py`, add `16509519550871` to the end of `numbers` and run again, output:
 
 ```
 18227010560020
