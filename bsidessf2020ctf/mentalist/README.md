@@ -255,4 +255,4 @@ CTF{rand_should_be_enough_for_anyone}
 
 Flag: `CTF{rand_should_be_enough_for_anyone}`
 
-> First to solve :-)
+> First to the flag :-)
