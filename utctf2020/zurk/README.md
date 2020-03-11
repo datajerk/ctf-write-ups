@@ -89,7 +89,7 @@ Enter `%6$p`.  This will print the first 8 bytes of the stack starting with the 
 What would you like to do?
 ```
 
-`0x70243625` = `p` `$` `6` `%` (but in reverse for little endian machines like Intel).  Basically that's `fgets` reading the input, putting on the stack, and the code passing it to `printf`.
+`0x70243625` = `p` `$` `6` `%` (but in reverse for little endian machines like Intel).  Basically that's `fgets` reading the input, putting it on the stack, and the code passing it to `printf`.
 
 Now enter `%7$p`:
 
@@ -111,9 +111,9 @@ Dump of assembler code for function _IO_2_1_stdout_:
 
 Yep.
 
-This (`%7$p`) may vary with `printf` exploits and you may not always be looking for something in `libc`, keep incrementing `%N$p` to go further down the stack as necessary.  Just remember the top of the stack on x86_64 machines will be `%6$p`.
-
-The address `0x7ffff7dd2620` will also vary widely and it may point to another part of `libc`, it may even be mid-function.
+> This (`%7$p`) may vary with `printf` exploits and you may not always be looking for something in `libc`, keep incrementing `%N$p` to go further down the stack as necessary.  Just remember the top of the stack on x86_64 machines will be `%6$p`.
+>
+> The address `0x7ffff7dd2620` will also vary widely and it may point to another part of `libc`, it may even be mid-function.
 
 To find the base address of `libc` we need to subtract the offset of `_IO_2_1_stdout_` (see `disas` above).
 
