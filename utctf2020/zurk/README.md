@@ -176,7 +176,7 @@ payload += struct.pack("<Q",0x601020 + 2)
 p.sendline(payload)
 ```
 
-With pwntools we figured out where to write, but still need the what, i.e. the offset to the `system` call in `libc`.  The code above will extract that from `libc-2.23.so` add it to the base and then assign the lower 32-bits to `words[0]` and `words[1]`, e.g. if `address` = `0x7efce1b38390`, then `words[0]` = `0x8390` and `words[1]` = `0xe1b3`.
+With pwntools we figured out _where_ to write, but still need the _what_, i.e. the offset to the `system` call in `libc`.  The code above will extract that from `libc-2.23.so` add it to the base and then assign the lower 32-bits to `words[0]` and `words[1]`, e.g. if `address` = `0x7efce1b38390`, then `words[0]` = `0x8390` and `words[1]` = `0xe1b3`.
 
 > NOTE: `words[1]` must be greater than `words[0]` in this example, more robust code can be written, or you can just run a 2nd time and get lucky, this is a CTF, time matters. :-)
 
