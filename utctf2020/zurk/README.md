@@ -195,7 +195,7 @@ Stack:
 
 `printf` will emit 33680 (`0x8390`) spaces and then write `0x8390` to address `0x601020`--the `%0010$hn` does that magic. The `10` is the location on the stack of `0x601020`--remember our string starts at `%6p`.
 
-For the next write to memory we have to subtract the first address from the 2nd because the internal `printf` char counter cannot be reset, to write out `0xe1be` we have to subtract `0x8390`.  This is why the `assert` statement above.
+For the next write to memory we have to subtract the first word from the 2nd because the internal `printf` char counter cannot be reset; to write out `0xe1be` we have to subtract `0x8390`.  This is why the `assert` statement above.
 
 The addresses must be at the end of the string, as `printf` parses the format string it will end on a null (`\x00`) byte.  `fgets` however will happily write our null bytes to the stack, but not `\n`.
 
