@@ -36,9 +36,9 @@ I'm a little stumped why this was the least solved pwn.
     RWX:      Has RWX segments
 ```
 
-PIE enabled, however the challenge server does not have ASLR enabled.
-
 Basically, choose your own adventure.
+
+PIE enabled, however the challenge server does not have ASLR enabled.
 
 > To test without disabling ASLR systemwide type: `setarch $(uname -m) -R ./exploit.py`)
 > 
