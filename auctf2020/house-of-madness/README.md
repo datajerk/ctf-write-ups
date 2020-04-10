@@ -46,7 +46,7 @@ Since no ASLR and x86 (32-bit) we can assume a base process address of `0x565550
 
 ![](./room4.png)
 
-After reviewing all the functions `room4` has an obvious exploit: `gets`.  By [stack] overflowing `local_1c` code execution control can be obtained.
+After reviewing all the functions, `room4` has an obvious exploit: `gets`.  By [stack] overflowing `local_1c`, code execution control can be obtained.
 
 From the disassembly (`local_c` allocation):
 
@@ -56,7 +56,7 @@ From the disassembly (`local_c` allocation):
 
 To overwrite the return address and gain control execution send 24 (`0x18`) characters + 4 for the saved base pointer, then 4 bytes to overwrite the return address.
 
-To get to `gets`, "Stephen" must be entered first to unlock _Hidden Room 4_ (see code).
+To get to `gets`, "Stephen" must be entered first to unlock _Hidden Room 4_ (see code above).
 
 The next function of interest is `get_flag`:
 
@@ -66,7 +66,7 @@ Calling this directly without `key1`, `key2`, `key3`, and `key4` correctly set w
 
 There are 4 other functions worth exploring (in order of complexity/dependency: `AAsDrwEk`, `get_key2`, `get_key1`, `set_key4`):
 
-Of the four functions `AAsDrwEk` appears to be the simplest:
+Of the four functions, `AAsDrwEk` appears to be the simplest:
 
 ![](./get_key3.png)
 
@@ -205,7 +205,7 @@ The next 4 bytes after that will overwrite the `get_key2` return address (or whe
 
 The next 4 bytes after that (this is getting old) will overwrite the `get_key1` return address (expected location) with the address of `room4`, then execute that.
 
-Lastly `0xfeedc0de` as the parameter to `get_key1`.
+Lastly, `0xfeedc0de` as the parameter to `get_key1`.
 
 If confused, read on, otherwise, skip to last step.
 
@@ -253,7 +253,7 @@ p.stream()
 
 The previous code will go back to `room4`, and since the global flag `unlockHiddenRoom4` is already set, "Enter something: " will prompt for the next attack.
 
-As before, `payload` starts out with 28 'A's, followed by a short ROP chain of 2 function calls, neither requirement arguments.
+As before, `payload` starts out with 28 `A`s, followed by a short ROP chain of 2 function calls, neither requirement arguments.
 
 Output:
 
@@ -275,7 +275,7 @@ Flag: `auctf{gu3ss_th3_h0us3_1sn't_th4t_m4d}`
 
 There's an easier way to solve this without all the reverse engineering.
 
-An alternative attack can be performed by leaking the libc base and version. Once both are known a number of attacks can be used to get a remote shell.
+An alternative attack can be performed by leaking the libc base and version. Once both are known, a number of attacks can be used to get a remote shell.
 
 ```
 payload  = 20 * b'A'
@@ -316,7 +316,7 @@ At the start of a function (`room4`) the base pointer is pushed to the stack, th
 
 Thanks to PIE being enabled, `ebx` has to be preserved between function calls.
 
-Before any [x86 PIE] function is called `ebx` is set to `_GLOBAL_OFFSET_TABLE_`.  When `room4` starts this value is pushed to the stack, just in case `ebx` is changed; at the end of the function `ebx` is restored from this pushed value:
+Before any [x86 PIE] function is called `ebx` is set to `_GLOBAL_OFFSET_TABLE_`.  When `room4` starts, this value is pushed to the stack, just in case `ebx` is changed; at the end of the function `ebx` is restored from this pushed value:
 
 ```
 00011680 8b 5d fc        MOV        EBX,dword ptr [EBP + -0x4]
