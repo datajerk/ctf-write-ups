@@ -378,7 +378,7 @@ There isn't a `win2`.
 We're going to need to perform a 3rd brute-force to get the entire base process address.  This is fairly straightforward using the same techniques above.  Once we have this we have options, such as ROP.
 
 
-#### More Analysis
+#### Analysis
 
 We need to find a way to emit something useful.  Once we have the base processor address we can use ROP, however there's really nothing of much use within the binary itself (or at least I could find)--we're going to need to use `libc`.
 
