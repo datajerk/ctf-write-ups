@@ -14,7 +14,7 @@
 
 Tags: _pwnable_
 
-### Research
+### Analysis
 
 #### Decompile with Ghidra
 
