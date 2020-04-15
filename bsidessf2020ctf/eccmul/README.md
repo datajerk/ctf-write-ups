@@ -10,7 +10,7 @@
 
 Tags: _crypto_, _101_
 
-### Research
+### Analysis
 
 ```
 $ nc eccmul-3e426cd0.challenges.bsidessf.net 25519
@@ -64,7 +64,7 @@ ASCII!  Cool!
 
 Clearly all we have to do is compute _s*P_.  But how?
 
-#### Actual Research
+#### Research
 
 Read: [Elliptic-curve cryptography](https://en.wikipedia.org/wiki/Elliptic-curve_cryptography)
 

@@ -10,7 +10,7 @@
 
 Tags: _crypto_
 
-### Research
+### Analysis
 
 ```
 $ nc mentalist-a05ae893.challenges.bsidessf.net 12345
@@ -97,7 +97,7 @@ Good luck in your future endeavors!
 
 _The Mentalist_ just got annoyed and gave up the secret, and, _it is_, in the form _n<sub>1</sub> = n<sub>0</sub> * a + b mod c_.
 
-#### Actual Research
+#### Research
 
 Google for _cracking prng python_.
 

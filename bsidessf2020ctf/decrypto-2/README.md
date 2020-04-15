@@ -10,7 +10,7 @@
 
 Tags: _crypto_
 
-### Research
+### Analysis
 
 A quick scan of [`decrypto.py`](decrypto.py) reveals a simple XOR cipher (last line):
 
