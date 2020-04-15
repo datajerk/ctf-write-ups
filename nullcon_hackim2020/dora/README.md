@@ -31,7 +31,7 @@ After base64 decoding and checking the output with _file_, you will end up with 
 Clearly Dora is in the _upper left_, so you enter `2`, get the next base64/png, and repeat until the 801th image which happens to be the flag (_NOTE: my team solved this before the "800" hint_ :-).
 
 
-### Research
+### Analysis
 
 One of my teammates (_chrod_) quickly created an "app", or game, kind of like _wack-a-mole_, and quickly amassed the first 140 images.  The rest of us started to wonder if this was going to be a never ending quest, and was there something else to consider, so we looked at the raw base64, tried steg, etc... for about 15 min or so and eventually we just decided to automate this and assume this was the correct path.
 
