@@ -14,7 +14,7 @@ _Japan is fucking hot._
 
 > If you just want the answer, the code, and prefer to learn that way (I highly support that way of learning), then jump to the end.  If you want to follow my thought process and failures, read on.
 
-#### Research
+#### Analysis
 
 Using `file` to determine it is a Linux 64-bit binary (`ELF 64-bit LSB executable, x86-64`) and giving it a quick run in a Ubuntu 18 Docker container will produce the following output:
 
@@ -174,11 +174,11 @@ Seg fault.  Game over.
 > 
 > What also kind of screwed me was working in a Docker container on MacOS.  For some reason ASLR is disabled.  If I switch to a Linux VM the "exploit" failed because of ASLR, however if I disable with `echo 0 >/proc/sys/kernel/randomize_va_space`, then it works just like in the container.  Just run `ldd warmup` a few times and see if the addresses change or not, and you will get my point.
 
-#### More Research
+#### Research
 
 After a bit of Googling for _Buffer Overflow with ASLR_, I found an article that suggested looking for a (ROP) gadget in the code that executed `jmp rsp`.  That is actually perfect.  After the _over_-writeable return pointer gets popped off the stack (into `rip`) to change the execution flow, `rsp` gets incremented (down the stack) to the NOP sled.  Sadly looking at objdump output and messing around with _ropper_ (ROP chain generator), I didn't see a clear way to to set an address that would then bounce back to executing the stack.
 
-#### Even More Research
+#### More Research
 
 After an hour of so of Googling I ran into Liveoverflow's videos again, this time the `printf` exploit videos; if you look at the code there is a "classic" `printf` exploit.
 
