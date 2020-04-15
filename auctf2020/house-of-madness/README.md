@@ -25,7 +25,7 @@ Tags: _pwn_
 This challenge was, as the description above states, a little weird.  However that did not mean it was not solvable.  I actually thought it was part of the challenge (IMHO, I would have left it _a little weird_).  I've included both binaries in this repo.
 
 
-### Research
+### Analysis
 
 #### Checksec
 
@@ -193,7 +193,7 @@ payload += p32(0xfeedc0de)
 p.sendline(payload)
 ```
 
-Established above in the _Research_ section is the order of functions that need to be called.  `key3` (`AAsDrwEk`) has no constraints, `key2` requires `key3` but not `key1` (cannot be set), and `key1` just needs `0xfeedc0de` to be passed.
+Established above in the _Analysis_ section is the order of functions that need to be called.  `key3` (`AAsDrwEk`) has no constraints, `key2` requires `key3` but not `key1` (cannot be set), and `key1` just needs `0xfeedc0de` to be passed.
 
 `payload` is the ROP chain.  The 28 `A`s are the required 24 characters to get the to saved base pointer in the stack + the 4 characters to overwrite the saved base pointer (see stack diagram below).
 

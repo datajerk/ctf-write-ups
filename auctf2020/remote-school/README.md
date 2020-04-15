@@ -23,7 +23,7 @@ Tags: _pwn_
 I'm a little stumped why this was the least solved pwn.
 
 
-### Research
+### Analysis
 
 #### Checksec
 
