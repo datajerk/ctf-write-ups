@@ -157,8 +157,10 @@ srand((uint)tVar1);
 saved_cookie = rand();
 ```
 
-from `conversation` above.  There is a small probability (increased when running over the network) that the clocks could be off by a second and an error `"*** Stack Smashing Detected *** : Cookie Value Corrupt!"` error will be emitted.  Just rerun.
+from `conversation` above.  
 
+> There is a small probability (increased when running over the network) that the clocks could be off by a second and an error `"*** Stack Smashing Detected *** : Cookie Value Corrupt!"` error will be emitted.  Just rerun.
+>
 > Check that your system clock is accurate--NTP should be enabled.
 
 This step is necessary because the buffer overflow will overwrite `saved_cookie` (`saved_cookie` is a poor mans stack smashing detection), so we need to overwrite it with the correct value.
