@@ -114,7 +114,7 @@ After the break look at the stack:
 
 Lines `+0x0040` and `+0x0048` both look interesting.  The first is the saved base pointer for `__libc_csu_init`; _and_ leaks the location of the stack.
 
-The second (`main+14`) is the return address that will return execution to `main` after `close_borders` returns; _and_ leaks the location of the binary process location.
+The second (`main+14`) is the return address that will return execution to `main` after `close_borders` returns; _and_ leaks the location of the binary process.
 
 x86_64 glibc `printf` parameters 1-5 are located in registers `rsi`, `rdx`, `rcx`, `r8`, `r9` (in that order).  Parameters starting with 6 are located on the stack.  Starting from the top and counting down `main+14` is the 15th parameter--this we need to overwrite with `win`.  Parameter 14 leaks the location of the stack just under `main+14`, IOW writing to this address, less 8, will overwrite the return address, redirecting execution to, well, `win`, for example.
 
