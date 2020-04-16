@@ -47,7 +47,7 @@ Main just calls `play_game`:
 
 ![](close_borders.png)
 
-`close_borders` also has a `printf` vulnerability (line 16).  This is one of four similiar functions and like `play_game`, the first char determines what function is called _or_ none (just return).
+`close_borders` also has a `printf` vulnerability (line 16).  This is one of two similiar functions, and like `play_game`, the first char determines what function is called _or_ none (just return).
 
 There is no call to:
 
