@@ -144,7 +144,7 @@ When the binary starts you'll end up at the `fgets` in `tryme` waiting for input
 For each function the payload is setup to:
 
 * send 8 `A`s (`local_10`)
-* then 4 bytes for the value that will be copied back into `ebx` before the function `leave`s and `ret`urns (this is required for ASLR/PIE enabled binaries, however, for this exploit any value will do, but it's good to be in the habit of setting `ebx` to the address of the GOT before end of function (also required is the base process address))
+* then 4 bytes for the value that will be copied back into `ebx` before the function `leave`s and `ret`urns (this is required for ASLR/PIE enabled binaries, however, for this exploit any value will do, but it's good to be in the habit of setting `ebx` to the address of the GOT before end of function (also required is the base process address if PIE enabled))
 * then 4 bytes to overwrite the saved based pointer
 * then the function (`rops`) to call overwriting the return address
 * then the function (`tryme`) to call overwriting the previous function return address.
