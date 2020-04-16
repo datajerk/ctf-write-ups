@@ -43,11 +43,11 @@ Main just calls `play_game`:
 
 ![](play_game.png)
 
-`play_game` has a `printf` vulnerability (line 15).  This code will read up to 50 (`0x32`) characters of input, however only the first char is used to determine if `close_boarders` or `no_panic` _or_ nothing is called.
+`play_game` has a `printf` format string vulnerability (line 15).  This code will read up to 50 (`0x32`) characters of input, however only the first char is used to determine if `close_boarders` or `no_panic` _or_ nothing is called.
 
 ![](close_borders.png)
 
-`close_borders` also has a `printf` vulnerability (line 16).  This is one of two similiar functions, and like `play_game`, the first char determines what function is called _or_ none (just return).
+`close_borders` also has a `printf` format string vulnerability (line 16).  This is one of two similar functions, and like `play_game`, the first char determines what function is called _or_ none (just return).
 
 There is no call to:
 
@@ -55,9 +55,9 @@ There is no call to:
 
 Clearly we want to call `win`.
 
-With ASLR (PIE) enabled we'll have to leak a process address using a `printf` format string exploit (see line 15 in `play_game` above).
+With ASLR (PIE) enabled we'll have to leak a process address using a `printf` format string vulnuerability (see line 15 in `play_game` above).
 
-However, there is no buffer overflow exploit (no `gets`, `fgets` limited to 50 characters), so we'll have to exploit a 2nd `printf` exploit from `close_borders` to _write_ the `win` location into the return address pushed by `main`.
+However, there is no buffer overflow exploit (no `gets`, `fgets` limited to 50 characters), so we'll have to exploit a 2nd `printf` format string vulnerability from `close_borders` to _write_ the `win` location into the return address pushed by `main`.
 
 To determine what to leak, run `coronacation` with GDB (gef in my case), and set a breakpoint at `play_game` `printf(local_48)`:
 
