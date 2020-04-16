@@ -119,7 +119,7 @@ After the break look at the stack:
 0x00007fffffffe5a8│+0x0078: 0x00007fffffffe640  →  0x0000000000000001
 ```
 
-Lines `+0x0028` and `+0x0058` both look interesting.  The first is the return address for `conversation`.  When `conversation` executes `ret` this address will be popped from the stack into RIP and program execution will continue in `main` just after the call to `conversation`.  However we'll use `gets` to overwrite the return address with the address of `flag`.
+Lines `+0x0028` and `+0x0058` both look interesting.  The first is the return address for `conversation`.  When `conversation` executes `ret` this address will be popped from the stack into RIP and program execution will continue in `main` just after the call to `conversation`--we'll use `gets` to overwrite the return address with the address of `flag`.
 
 The second is the start of `main`.  We'll use `printf` to leak this address, so we can compute the location of `flag` for the `gets` exploit.
 
