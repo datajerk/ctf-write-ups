@@ -183,7 +183,7 @@ The payload should look something like:
 b'3       %020829x%9$hn   \xa8\xe5\xff\xff\xff\x7f\x00\x00'
 ```
 
-The first 8 bytes start with a `3`, so that neither option `1` or `2` are taken, followed by 7 spaced (it is important to keep stack aligned).
+The first 8 bytes start with a `3`, so that neither option `1` or `2` are taken, followed by 7 spaces (it is important to keep stack aligned).
 
 The second 8 bytes will emit `(win & 0xFFFF) - 8` zeros, the zeros are of little interest (zero actually); it's the metadata we're after, i.e. the _number_ of zeros sent (`printf` keeps an internal counter of all characters sent).  We only need the lower 16-bits of `win` to overwrite the lower 16-bits of _return to main_ in the stack, since the rest of the bits are the same.  The `- 8` is necessary since we already sent 8 bytes with `3` + 7 spaces; the total bytes sent needs to equal `win & 0xFFFF`.
 
