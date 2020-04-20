@@ -64,7 +64,7 @@ Just need to set `lock` to `0xdeadbabe`.
 
 But wait, from Ghidra:
 
-```
+```c
 void lockdown(void)
 
 {
@@ -107,7 +107,7 @@ There is clearly a buffer overflow: `gets(local_50)`.  `local_50` is 76 bytes ab
 
 ### Exploit
 
-```
+```python
 from pwn import *
 
 p = process('./onlockdown')
