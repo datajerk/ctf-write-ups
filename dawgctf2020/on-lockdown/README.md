@@ -32,7 +32,7 @@ Most mitigations in place, however can smash stack, ROP, buffer overflow, but no
 
 #### Source Included!
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
