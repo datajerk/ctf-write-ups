@@ -130,7 +130,7 @@ x86_64 glibc `printf` parameters 1-5 are located in registers `rsi`, `rdx`, `rcx
 
 #### Leak stack and `main` locations
 
-```
+```python
 from pwn import *
 
 binary = ELF('coronacation')
