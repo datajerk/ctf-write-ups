@@ -46,7 +46,7 @@ However, there is a 2nd, easier solution, and the hint spells that out for you. 
 
 #### Leak libc address
 
-```
+```python
 #!/usr/bin/env python3
 
 from pwn import *
@@ -62,7 +62,7 @@ print(hex(system))
 
 #### Find libc version
 
-```
+```python
 import os
 stream = os.popen("libc-database/find system " + str(hex(system & 0xFFF)) + " | grep /glibc/ | sed 's/)//' | awk '{print $NF}'")
 output = stream.read().strip()
@@ -118,7 +118,7 @@ constraints:
 
 #### Get the flag
 
-```
+```python
 gadget = 0x4f322
 
 payload  = 69 * b'A'
@@ -160,7 +160,7 @@ WPI{FEED_ME_A_STRAY_CAT}
 
 ### Be curious
 
-```
+```python
 #!/usr/bin/env python3
 
 from pwn import *
