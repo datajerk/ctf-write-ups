@@ -74,7 +74,7 @@ print("libc:" + str(hex(baselibc)))
 print('libc-database/db/' + output + '.so')
 ```
 
-This code assumes you have the libc-database cloned locally, however there's an online version as well: [https://libc.blukat.me/](https://libc.blukat.me/).  Personally I prefer the local version, esp. if searching for gadgets or ROP chains.
+This code assumes you have the libc-database cloned locally, however there's an online version as well: [https://libc.blukat.me/](https://libc.blukat.me/) (tip from @ins0--thanks!).  Personally I prefer the local version, esp. if searching for gadgets or ROP chains, but it can also take about 30 minutes to download.  Options are good to have.
 
 Running this will output:
 
