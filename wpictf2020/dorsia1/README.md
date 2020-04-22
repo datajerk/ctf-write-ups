@@ -21,7 +21,7 @@ Tags: _pwn_
 
 ![](dorsia1.png)
 
-Quite possibly one of the best movies scenes ever (your results may vary), augmented with _new pwns_.  And ..., there are two verbal hints in the clip: _stack smash_ and _fgets_.
+Quite possibly one of the best movies scenes ever (your results may vary), augmented with _new pwn_.  And ..., there are two verbal hints in the clip: _stack smash_ and _fgets_.
 
 What I most appreciate about this challenge is that this is a legit fuckup.  You could (and can) actually expect someone to mistype the `69` as `96`.
 
