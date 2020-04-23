@@ -273,7 +273,7 @@ p.interactive()
 
 ```
 
-... a screen full of all them sweet sweet spaces emitted ...
+... a screen full of all them sweet sweet spaces emitted -- you asked for it ...
 
 1            e8fc8d57 \xfc\xb7\xc5\xff\xb8\xc5\xff\xfe\xb7\xc5\xff\x06\xc5\xff
 $ cat flag.txt
