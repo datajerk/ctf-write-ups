@@ -86,7 +86,7 @@ So, what's (_backwards_ from `a`) up there?
         001040c6                 ??         ??
 ```
 
-Above you can see the global `a` at offset `0x00104080`, above that the global `d`, and at the top of the RW address space, the RW part of the GOT.  If you look at the `checksec` output above you'll notice `Partial RELRO` meaning that some of the GOT can be changed.  That is the target, specifically `printf`. _Why?_
+Above you can see the global `a` at offset `0x00104080`, above that the global `d`, and at the top of the RW address space, the RW part of the GOT.  If you look at the `checksec` output above you'll notice `Partial RELRO` meaning that some of the GOT can be changed.  That is the target, specifically `printf`.
 
 ```
 char a[69];
@@ -129,7 +129,7 @@ So, the exploit is pretty clear, using a negative value for `i` write _backwards
 2. Find a list of all the "safe" libc addresses
 3. Create a graph
 4. Compute the shortest path to the gadget
-5. _write-what-where_ our exploit
+5. _write-what-where_ the exploit
 6. Get a shell, get the flag
 
 
@@ -257,7 +257,7 @@ for i in _:
 print()      
 ```
 
-Again, leveraging `networkx`, the shortest path (Dijkstra) is computed from `printf` to our gadget by changing one byte at a time.  There is a 1/8 chance you'll get a `no path for you!` exception.  This is the nature of ASLR.  There's ~4% chance you'll get a SIGSEGV with a valid path.  Also the length of the path varies.  For the lulz I did 1000 tests (locally) with the following results:
+Again, leveraging `networkx`, the shortest path (Dijkstra) is computed from `printf` to our gadget by changing one byte at a time.  There is a 1/8 chance you'll get a `no path for you!` exception.  That is the nature of ASLR.  There's ~4% chance you'll get a SIGSEGV with a valid path.  Also the length of the path varies.  For the lulz I did 1000 tests (locally) with the following results:
 
 ```
 # sed 's/SIGSEGV.*/SIGSEGV/' test1000.out | egrep "(path|SIG|WPI|dorsia4)" | sort | uniq -c | sort -r -n
@@ -275,7 +275,7 @@ Expect an 84% chance of getting the flag.
 There's probably enough data in [test1000.out.gz](test1000.out) to find the address(es) that is causing the SIGSEGVs, but at this point it is not that interesting of a problem.
 
 
-#### _write-what-where_ our exploit
+#### _write-what-where_ the exploit
 
 ```python
 for i in range(1,len(_)):
