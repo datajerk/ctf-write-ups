@@ -17,7 +17,7 @@ Tags: _pwn_
 
 ### Introduction
 
-This is more of a walkthrough that a writeup, if bored click [exploit.py](exploit.py).
+This is more of a walkthrough that a writeup, if bored, then click [exploit.py](exploit.py).
 
 
 ### Analysis
