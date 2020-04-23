@@ -228,7 +228,7 @@ for i in sorted(words):
 
 From the _Analysis_ section we determined there can only be a max of 65 characters used.  From that subtract off 16 for the 4 8-byte addresses at the end.  That leaves 49.  There are 4 `%XX$hn` conversion specifiers taking up a total of 24 bytes, leaving 25 bytes to specify the `%YYYYx` conversions to emit `YYYY` number of spaces.  The `assert` above will check that we didn't blow out our budget, and the following append to the `payload` fills in spaces so that all the addresses following that are aligned on the stack.
 
-At this point it may help to look at the actually computed format string that is exactly 65 bytes long:
+At this point it may help to look at the actual computed format string that is exactly 65 bytes long:
 
 ```python
 b'%16896x%19$hn%3791x%20$hn%40627x%21$hn%20x%22$hn \xccu\x80\xff\xd4u\x80\xff\xceu\x80\xff\xd6u\x80\xff'
