@@ -243,7 +243,7 @@ From left to right:
 * emit a space, this was just added by the algorithm above to pad out as describe above
 * emit the four address referenced by `%XX$hn`
 
-> This example above will change every time run because of ASLR.
+> This example above will change on every run because of ASLR.
 >
 > Notice how the value written increases, per the aforementioned explanation. 
 
