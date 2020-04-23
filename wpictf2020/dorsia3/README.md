@@ -102,7 +102,7 @@ Stack just before second `printf`:
 
 There a few important observations to be made:
 
-* First, in the code above `a` is allocated `69` bytes.  This will not align to the stack.  (_This is why I used just the one `A` so that the rest would align for illustration purposes._)  At line `+0x0018` (`0xffffd62b`--remember this was given to us) is the start of the character array.
+* First, in the code above, `a` allocates `69` bytes.  This will not align with the stack.  (_This is why I used just the one `A` so that the rest would align for illustration purposes._)  At line `+0x0018` (`0xffffd62b`--remember this was given to us) is the start of the character array.
 * Second, `fgets` size parameter is also `69`.  `fgets` will read only 68 characters of input, and then set the 69th byte to `0x00`.  Look at `+005c`, notice how only 3 `R`s were read.
 * Third, why is the base pointer so far down stack (`+0x0078`)?  For only `a[69]`, we should expect it to be closer to `a`.
 
