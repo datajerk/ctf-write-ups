@@ -45,7 +45,7 @@ THAT!!! is what I missed.  I'm writing this walkthrough as way to remind myself 
 
 This time the verbal hints are _write-what-where_ and _libc_.
 
-Yet another legit fuckup.  A fuckup I have to admit I've probably done.  The `if(i>69)` comparison is _signed_ whereas the `i` in `a[i]=d` is _unsigned_.  IOW, you can write _backwards_ with negative array indexes.
+Yet another legit fuckup.  A fuckup I have to admit I've probably done.  The `if(i>69)` comparison is _signed_. IOW, you can write _backwards_ with negative array indexes.
 
 So, what's (_backwards_ from `a`) up there?
 
