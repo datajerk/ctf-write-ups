@@ -256,7 +256,7 @@ import math
 math.ceil(65 / 4) + 6 - 4
 ```
 
-Basically for x86 (4 byte stack), the number of characters that can be used for your exploit, devided by 4 bytes/stack line + parameter 6 for the start of the format string, less the number of pointers you have to write to the end.  In this example the value is `19`.
+Basically for x86 (4 byte stack), the number of characters that can be used for your exploit, divided by 4 bytes/stack line + parameter 6 for the start of the format string, less the number of pointers you have to write to the end.  In this example the value is `19`.
 
 
 #### Get a shell, get the flag

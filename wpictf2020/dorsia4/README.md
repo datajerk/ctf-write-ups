@@ -244,7 +244,7 @@ This takes about 12 seconds.
 
 #### Compute the shortest path to the gadget
 
-```
+```python
 try:
     _ = nx.shortest_path(g,source=(printf & 0xFFFFFF),target=(gadget & 0xFFFFFF),weight='weight')
 except:
@@ -277,7 +277,7 @@ There's probably enough data in [test1000.out.gz](test1000.out) to find the addr
 
 #### _write-what-where_ our exploit
 
-```
+```python
 for i in range(1,len(_)):
     for j in range(3):
         if (_[i-1] ^ _[i]) & (0xFF << j*8) != 0:
