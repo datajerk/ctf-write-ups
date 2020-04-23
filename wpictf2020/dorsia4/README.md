@@ -295,7 +295,7 @@ Finally.  This will loop through the found path, determine the byte and the posi
 
 #### Get a shell, get the flag
 
-```
+```python
 p.interactive()
 ```
 
