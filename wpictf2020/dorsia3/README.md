@@ -240,8 +240,8 @@ From left to right:
 * emit `%3791x` spaces and write (`16896` + `3791` = `0x50cf`) to the address `\xd4u\x80\xff` at parameter 20 (`%20$hn`)
 * emit `%40627x` spaces and write (`16896` + `3791` + `40627` = `0xef82`) to the address `\xceu\x80\xff` at parameter 21 (`%21$hn`)
 * emit `%20x` spaces and write (`16896` + `3791` + `40627 + 20` = `0xef96`) to the address `\xd6u\x80\xff` at parameter 22 (`%22$hn`)
-* emit a space, this was just added by the algorithm above to pad out as describe above.
-* emit the four address referenced by `%XX$hn`.
+* emit a space, this was just added by the algorithm above to pad out as describe above
+* emit the four address referenced by `%XX$hn`
 
 > This example above will change every time run because of ASLR.
 >
