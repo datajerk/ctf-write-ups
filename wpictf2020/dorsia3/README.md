@@ -194,7 +194,7 @@ If you're not familiar with format string exploits, please pause and read: [http
 
 The abridged version is that `printf` has a format string conversion specifier `%n`, that will write to an address passed as a parameter, the number of characters emitted for that `printf` call.  E.g. `printf("123%n",&char_count)` will store the number `3` in the integer `char_count` since  `3` characters were emitted _before_ the `%n` (the `%n` _emits nothing_ :-).
 
-We have to write out some 32-bit addresses (this an x86 challenge).  Printing `2^32` characters will take a very long time, fortunately `%n` supports modifiers; `h` can be used to specific the target address as a 16-bit `short`.  This means we can emit at most `2^16` characters, however we'll need two `%n` conversion specifiers and two address to write to.
+We have to write out some 32-bit addresses (this an x86 challenge).  Printing `2^32` characters will take a very long time, fortunately `%n` supports modifiers; `h` can be used to specify the target address as a 16-bit `short`.  This means we can emit at most `2^16` characters, however we'll need two `%n` conversion specifiers and two address to write to.
 
 ```python
 words = {}
