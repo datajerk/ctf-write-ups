@@ -21,7 +21,7 @@ I did not finish this challenge before the end of the CTF.  My theory was sound,
 
 ![](dprintf.png)
 
-THAT!!! is what I missed.  I'm writing this walkthrough as we way to remind myself to _try harder_.
+THAT!!! is what I missed.  I'm writing this walkthrough as way to remind myself to _try harder_.
 
 > Too long? Bored? Then click [exploit.py](exploit.py).
 
