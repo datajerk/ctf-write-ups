@@ -289,7 +289,7 @@ Generate your payload:
 ailYmWoCX2oBXg8Fl7AqSLn+/+6j7SRnKUj32VFUXrIQDwVqA16wIf/ODwV1+JmwO1JIuS9iaW4vL3NoUVRfDwUr7OUBAA==
 ```
 
-And tweet it to _@JohnSmi31885382_:
+And tweet _@JohnSmi31885382_:
 
 ![](tweet.png)
 
