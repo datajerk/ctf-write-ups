@@ -82,7 +82,7 @@ Well, not really.  On the way to the return address is `local_20`--the loop coun
 
 ### Exploit
 
-```
+```python
 #!/usr/bin/env python3
 
 from pwn import *
@@ -141,7 +141,7 @@ After blasting `1048` (`0x438` - `0x20`) bytes, we need to slow down and send on
 
 At this point in the execution `local_20` is 1048 (`0x418`), the next `getchar()` value will be written to `local_438[1048]` which is the same as the low order byte of `local_20`.  We cannot just blindly keep writing `A`s.  What we need to write is a value that when incremented will have `local_438` + `local_20` pointing to the return address:
 
-```
+```python
 p8(((0x438 - 0x20) & 0xFF) + 0x20 - 1)
 ```
 
@@ -152,7 +152,7 @@ To do this, we need to increase the least significant byte of `local_20` by `0x2
 
 Now that `local_438` + `local_20` is pointing to the return address, overwrite with the address to the `execve` call in `main`:
 
-```
+```python
 payload += p64(0x401253)
 ```
 
