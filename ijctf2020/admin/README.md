@@ -27,7 +27,7 @@ Tags: _pwn_
     PIE:      No PIE (0x400000)
 ```
 
-Few mitigations in place, basically no shellcode in stack, everything else is fair game.
+Few mitigations in place, basically no shellcode, everything else is fair game.
 
 
 #### File
