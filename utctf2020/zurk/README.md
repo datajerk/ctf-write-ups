@@ -12,7 +12,7 @@
 >
 > [`zurk`](zurk) [`libc-2.23.so`](libc-2.23.so)
 
-Tags: _pwnable_
+Tags: _pwn_
 
 ### Analysis
 
