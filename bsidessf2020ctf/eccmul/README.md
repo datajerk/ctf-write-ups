@@ -8,7 +8,7 @@
 >
 > (author: symmetric)
 
-Tags: _crypto_, _101_
+Tags: _crypto_
 
 ### Analysis
 

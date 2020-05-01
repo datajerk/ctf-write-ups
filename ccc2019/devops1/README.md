@@ -11,7 +11,7 @@ _Your session is stateful. Please share it with your team members - we have limi
 _The flag format is different for this challenge._
 
 
-**Tags:** _pwn_
+Tags: _pwn_
 
 
 #### Solution

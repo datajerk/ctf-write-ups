@@ -8,7 +8,7 @@
 >
 > [`flag.txt.enc`](flag.txt.enc)<br />[`decrypto.py`](decrypto.py)
 
-Tags: _crypto_, _101_
+Tags: _crypto_
 
 ### Analysis
 

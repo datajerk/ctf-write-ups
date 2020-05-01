@@ -8,7 +8,7 @@ Guess what? Dora is back and you'll have to find her to get the flag.
 nc misc.ctf.nullcon.net 8000
 ```
 
-Tags: _misc_, _computer vision_, _programming_
+Tags: _misc_ _computer vision_ _programming_
 
 ## Overview
 

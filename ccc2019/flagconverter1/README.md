@@ -6,7 +6,7 @@ _Please provide us with the flag which is not yet encrypted._
 
 [flagconverter.7z](https://static.allesctf.net/flagconverter-725b6d252230016c8126c5d972760e08b824f8a86071e87aa52e6f069a2e18f3.7z)
 
-**Tags:** _forensics_
+Tags: _forensics_
 
 #### Solution
 

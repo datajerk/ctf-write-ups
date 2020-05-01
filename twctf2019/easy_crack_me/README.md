@@ -4,7 +4,7 @@ _Cracking is easy for you._
 
 [`easy_crack_me`](easy_crack_me)
 
-**Tags:** _rev_ _warmup_
+Tags: _rev_ _warmup_
 
 ### Preamble
 

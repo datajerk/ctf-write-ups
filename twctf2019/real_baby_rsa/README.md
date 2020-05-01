@@ -2,7 +2,7 @@
 
 [`real-baby-rsa.7z`](real-baby-rsa.7z)
 
-**Tags:** _crypto_ _warmup_
+Tags: _crypto_ _warmup_
 
 
 ### Solution
