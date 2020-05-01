@@ -12,7 +12,7 @@
 >  
 > [runtweet](runtweet) 
 
-Tags: _pwn_ _reverse shell_ _strncmp_
+Tags: _pwn_ _reverse shell_ _strncmp_ _shellcode_
 
 
 ### Introduction
