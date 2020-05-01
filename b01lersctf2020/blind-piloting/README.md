@@ -17,7 +17,7 @@
 > Author: nsnc
 
 
-Tags: _pwn_ _stack canary_ _bof_ _libc_ _got_ _remote-shell_
+Tags: _pwn_ _stack-canary_ _bof_ _libc_ _got_ _remote-shell_
 
 ### Introduction
 

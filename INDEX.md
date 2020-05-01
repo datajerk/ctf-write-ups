@@ -148,7 +148,7 @@ _shellcode_
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [wpictf2020/dont@me](wpictf2020/dont@me/README.md)
 
-_stack canary_
+_stack-canary_
 
 * [b01lersctf2020/blind-piloting](b01lersctf2020/blind-piloting/README.md)
 
