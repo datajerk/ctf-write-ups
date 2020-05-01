@@ -16,7 +16,7 @@
 > 
 > [online](online)
 
-Tags: _pwn_
+Tags: _pwn_ _write-what-where_ _got_ _libc_
 
 ### Introduction
 

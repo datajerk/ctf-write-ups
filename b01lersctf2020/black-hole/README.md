@@ -15,7 +15,7 @@
 > Author: nsnc
 
 
-Tags: _pwn_
+Tags: _pwn_ _rop_ _bof_
 
 ### Analysis
 

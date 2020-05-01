@@ -14,7 +14,7 @@
 >
 > Author: BlueStar
 
-Tags: _pwn_
+Tags: _pwn_ _shell_
 
 
 ### Solution

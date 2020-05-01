@@ -12,7 +12,7 @@
 > 
 > [onlockdown](onlockdown) [onlockdown.c](onlockdown.c)
 
-Tags: _pwn_
+Tags: _pwn_ _bof_
 
 
 ### Analysis

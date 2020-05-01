@@ -12,7 +12,7 @@
 >  
 > [libc.so.6](libc.so.6) [nanowrite](nanowrite) 
 
-Tags: _pwn_
+Tags: _pwn_ _write-what-where_ _got_ _remote shell_
 
 
 ### Introduction

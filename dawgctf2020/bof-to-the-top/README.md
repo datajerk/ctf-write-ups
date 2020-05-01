@@ -12,7 +12,7 @@
 > 
 > [bof](bof)
 
-Tags: _pwn_
+Tags: _pwn_ _bof_ _gets_
 
 
 ### Analysis

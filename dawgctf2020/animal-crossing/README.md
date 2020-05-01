@@ -12,7 +12,7 @@
 > 
 > [animal_crossing](animal_crossing)
 
-Tags: _pwn_
+Tags: _rev_ _programming_
 
 
 ### Analysis

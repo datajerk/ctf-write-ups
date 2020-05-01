@@ -14,7 +14,7 @@
 >
 > [turkey](turkey)
 
-Tags: _pwn_
+Tags: _pwn_ _bof_
 
 
 ### Analysis

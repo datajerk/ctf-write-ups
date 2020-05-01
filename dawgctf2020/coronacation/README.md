@@ -12,7 +12,7 @@
 > 
 > [coronacation](coronacation)
 
-Tags: _pwn_
+Tags: _pwn_ _printf_
 
 
 ### Introduction

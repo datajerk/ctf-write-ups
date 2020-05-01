@@ -16,7 +16,7 @@
 > 
 > [challenge](challenge)
 
-Tags: _pwn_
+Tags: _pwn_ _bof_ _gets_ _rev_ _libc_ _got_ _remote shell_
 
 ### Introduction
 

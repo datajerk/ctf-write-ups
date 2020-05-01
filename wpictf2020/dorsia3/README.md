@@ -12,7 +12,7 @@
 > 
 > [nanoprint](nanoprint) [libc.so.6](libc.so.6)
 
-Tags: _pwn_
+Tags: _pwn_ _remote shell_ _printf_
 
 
 ### Introduction

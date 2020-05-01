@@ -12,7 +12,7 @@
 >
 > [rop](rop)
 
-Tags: _pwn_
+Tags: _pwn_ _rop_ _shellcode_ _bof_
 
 
 ### Introduction

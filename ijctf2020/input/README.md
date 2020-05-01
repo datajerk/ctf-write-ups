@@ -12,7 +12,7 @@
 >
 > Author: Tux
 
-Tags: _pwn_
+Tags: _pwn_ _bof_ _remote shell_
 
 
 ### Analysis

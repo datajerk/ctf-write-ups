@@ -12,7 +12,7 @@
 > 
 > _Hint: Same libc as dorsia4, but you shouldn't need the file to solve._
 
-Tags: _pwn_
+Tags: _pwn_ _bof_ _remote shell_
 
 
 ### Analysis
