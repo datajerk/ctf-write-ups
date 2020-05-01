@@ -12,7 +12,7 @@
 >
 > [`zurk`](zurk) [`libc-2.23.so`](libc-2.23.so)
 
-Tags: _pwn_ _printf_ _remote shell_
+Tags: _pwn_ _printf_ _remote-shell_
 
 ### Analysis
 

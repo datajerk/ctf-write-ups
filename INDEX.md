@@ -14,7 +14,7 @@ _bof_
 * [ijctf2020/input](ijctf2020/input/README.md)
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
 
-_computer vision_
+_computer-vision_
 
 * [nullcon\_hackim2020/dora](nullcon\_hackim2020/dora/README.md)
 
@@ -107,7 +107,7 @@ _pwn_
 * [wpictf2020/dorsia3](wpictf2020/dorsia3/README.md)
 * [wpictf2020/dorsia4](wpictf2020/dorsia4/README.md)
 
-_remote shell_
+_remote-shell_
 
 * [auctf2020/house-of-madness](auctf2020/house-of-madness/README.md)
 * [b01lersctf2020/blind-piloting](b01lersctf2020/blind-piloting/README.md)
@@ -126,7 +126,7 @@ _rev_
 * [dawgctf2020/animal-crossing](dawgctf2020/animal-crossing/README.md)
 * [twctf2019/easy\_crack\_me](twctf2019/easy\_crack\_me/README.md)
 
-_reverse shell_
+_reverse-shell_
 
 * [wpictf2020/dont@me](wpictf2020/dont@me/README.md)
 

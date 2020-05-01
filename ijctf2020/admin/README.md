@@ -12,7 +12,7 @@
 > 
 > Author: zilikos
 
-Tags: _pwn_ _bof_ _gets_ _remote shell_
+Tags: _pwn_ _bof_ _gets_ _remote-shell_
 
 
 ### Analysis
