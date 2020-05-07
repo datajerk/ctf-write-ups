@@ -75,7 +75,7 @@ Line 18 (`main`) kicks off a chain of 16 checks.  Each check, checks 4 bytes (th
 
 The checks come in various different flavors with various different constants in various different orders with varying operators.  IOW, each binary is similar to some extent, but still unique.
 
-A crud analysis of all 16 functions from ~200 binaries based on size of function only:
+A crud analysis of all 16 functions from ~170 binaries based on size of function only:
 
 ```
   count bytes
@@ -271,7 +271,7 @@ print("target hash: " + target.decode())
 p.recvuntil('>')
 ```
 
-This code just sets the shellcode, finds the next free binary_n_ (for saving all binaries), connects to the challenge server and receives the PoW hash, e.g.:
+This code just sets the shellcode, finds the next free binary<i>n</i> (for saving all binaries), connects to the challenge server and receives the PoW hash, e.g.:
 
 ```
 [+] Opening connection to 106.53.114.216 on port 9999: Done
@@ -511,7 +511,7 @@ You can see my pathetic last attempt at _17.751189s_.  Above me I can only specu
 Things I thought about to avoid the very hard work of solving a unique binary in < _0.3s_:
 
 1. Look for other exploits, clearly there are bugs, but none of them looked very useful.
-2. Pull down a ton of binaries and hope for duplicates at some measurable rate.  I had time, and with the hash cache I could have probably pulled down a million of them.  Solved one and then tried over and over to get that same binary.  I pulled down 200 while testing and learning about this challenge, and, well, I started to get the feeling that there would be no duplicate.
+2. Pull down a ton of binaries and hope for duplicates at some measurable rate.  I had time, and with the hash cache I could have probably pulled down a million of them.  Solved one and then tried over and over to get that same binary.  I pulled down ~170 while testing and learning about this challenge, and, well, I started to get the feeling that there would be no duplicate.
 3. Slow down time.  What if there were a way to exploit the bug that appended my time to the `/Time` table to make it take a very long time to process and output.
 
 Anyway, that's all lazy talk.  Waiting for the legit write ups to learn new ways to solve these problems.
