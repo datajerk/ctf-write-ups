@@ -68,7 +68,7 @@ With `.wav` in hand test with `minimodem`:
 # minimodem -r -8 -f bout1.wav 1200
 ```
 
-![](png/mooodem1.png)
+![](mooodem1.png)
 
 Glorious!
 
@@ -145,13 +145,13 @@ socat tcp:$HOST:$PORT - | \
 
 After entering your name, you are greeted and presented with the following menu:
 
-![](png/menu.png)
+![](menu.png)
 
 Standard fair for an early '80s BBS.
 
 Exploring...
 
-![](png/menuitems.png)
+![](menuitems.png)
 
 Hmmmm.... I guess download `BBS.ZIP` and then try to figure out how to get authorized.
 
@@ -162,7 +162,7 @@ Hmmmm.... I guess download `BBS.ZIP` and then try to figure out how to get autho
 
 Downloading files requires nothing special:
 
-![](png/downloadnotes.png)
+![](downloadnotes.png)
 
 Echo that hex into `sed 's/ //g' | xxd -r -p` and you'll get:
 
@@ -330,17 +330,17 @@ I really needed to disassemble and decompile this and then load up in a debugger
 
 As far a debuggers go, DOS `debug` is pretty basic, and would only run if I exited Windows 98 to DOS, otherwise this:
 
-![](png/illop.png)
+![](illop.png)
 
 > _Bet you thought you'd never see that again._
 
 I also tried Turbo Debugger.  This ran within 98, didn't crash, I was making very slow progress.
 
-![](png/td.png)
+![](td.png)
 
 For the rest of the CTF I ended up using DOSEMU with its native `dosdebug` on an old 1994 PC I had with a 2004 version of Linux (back when 32MB was enough RAM).  And, I could access this machine from my office via SSH (with the correct `Ciphers` and `KexAlgorithms` settings).
 
-![](png/dosemu.png)
+![](dosemu.png)
 
 This setup is not unlike remote GDB except for the GDB part.  It was pretty painful, but at least it worked, and I was starting to gain some insight into the inner workings of `BBS.EXE`.
 
@@ -358,7 +358,7 @@ ghidra.program.model.address.AddressOutOfBoundsException: Segment is too large.
 
 To fix, import with:
 
-![](png/import.png)
+![](import.png)
 
 This binary is surprising large for what little function it provides.  There's a zillion functions and no symbols--frequent fair with statically linked buffer overflow CTF challenges where they want you to use ROP.  _Spoiler Alert: echo "gung'f rknpgyl jung jr arrq gb qb urer." | tr 'a-z' 'n-za-m'_
 
@@ -427,15 +427,15 @@ Ok, here's what I see:
 
 BBS booted:
 
-![](png/qemu.png)
+![](qemu.png)
 
 `fooodem.sh` frozen:
 
-![](png/fooodem.png)
+![](fooodem.png)
 
 `gdb` waiting for my next move:
 
-![](png/gdb.png)
+![](gdb.png)
 
 Above is the output of my `new.txt` `context`.  Added is a vertical stack view, and at the bottom you can see the incorrect GDB i8068 disassembly and the correct disassembly from `objdump`.
 
@@ -492,7 +492,7 @@ real-mode-gdb$ continue
 Continuing.
 ```
 
-![](png/summon.png)
+![](summon.png)
 
 Evil is upon us.  At a min, a budget cult.  The program crashed as well.
 
@@ -501,7 +501,7 @@ Finally a breakthrough.
 
 ##### Backtracking
 
-![](png/trusted.png)
+![](trusted.png)
 
 Above is the decompilation of the disassembled function with address `0xe8f1`.
 
@@ -513,11 +513,11 @@ Lastly `0x1980 = 1;` looks like a flag.
 
 From the disassembly header there an XREF:
 
-![](png/trustedass.png)
+![](trustedass.png)
 
 That that leads to:
 
-![](png/callstrusted.png)
+![](callstrusted.png)
 
 Finally some normal looking code.  Most of the decompilation has to be `libc`--a library optimized for features above all else.
 
@@ -556,7 +556,7 @@ Finally a goddamned breakthrough.
 
 Restarting the simulation and testing for `supersneaky2020`:
 
-![](png/supersleasy82.png)
+![](supersleasy82.png)
 
 So `supersneaky2020` as a "name" does not appear to do anything, however from the command prompt, _yes!_  And, now we can create bulletins.
 
@@ -565,13 +565,13 @@ Backdoor, unlocked.
 
 ##### Create some bulletins, list some bulletins
 
-![](png/bullet.png)
+![](bullet.png)
 
 I first created a 200 character bulletin, then tried 1000 characters.  Nothing, no crash.
 
 Curious I decided to list them:
 
-![](png/bullettothehead.png)
+![](bullettothehead.png)
 
 Crash!
 
@@ -614,7 +614,7 @@ The `ret` from the previous function and the three `push`es gives it away.  The 
 
 Going back to Ghidra I right-clicked on the `0xe04c` address and selected _Disassemble_, then _Create Function_.  I should also mention that Ghidra could not open this file up with out error, I had to manually select the language as _x86 Real Mode 16_, even then, not everything was disassembled.  Fortunately it was possible to remedy this.
 
-![](png/listc.png)
+![](listc.png)
 
 `local_106` is probably the buffer we're looking for.
 
@@ -637,13 +637,13 @@ Yep, its `fopen`-ish.  Assuming lines 19-23 is the error message if the open fai
 
 Looking at the disassembly function header `local_106` is `0x106` bytes above the return address.
 
-![](png/lista.png)
+![](lista.png)
 
 All that is left to do it figure out what to, well do...
 
 Calling line 18 with `FLAG.TXT` seems like the obvious choice, but if you recall from way back when we looked at the floppy image `NOTES.TXT` is somewhat structured and I assume `FLAG.TXT` is just a single line.  Using the _Show Random Quote_ function may be a better option.  To find it and possibly other `fopen` functions from Ghidra I double-clicked on `FUN_0000_0a1d` (presumed `fopen`):
 
-![](png/fopen.png)
+![](fopen.png)
 
 The first XREF `0xe04c` is the _List Recent Bulletins_ we just left.  `0xe4af` also opens `NOTES.TXT`, however the second arg is not `rb`, but is `ab+`:
 
@@ -656,7 +656,7 @@ real-mode-gdb$ x/s $5
 
 Clearly this is the _Create New Bullentin_ function.  That leaves `0xe97c`:
 
-![](png/quotec.png)
+![](quotec.png)
 
 Verifying this is _Show Random Quote_ by checking `0xdb5`:
 
@@ -853,7 +853,7 @@ cat payload.bin | minimodem -t -8 -f in1.wav 1200
 
 Output:
 
-![](png/oneshotlive.png)
+![](oneshotlive.png)
 
 You'll notice that the MOOODEM banner is missing, that is because the payload was being sent while the banner was being sent and nothing was catching the banner while the payload was transmitting.
 
