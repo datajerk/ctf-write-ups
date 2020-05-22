@@ -1,4 +1,4 @@
-### CTF Write Ups
+### CTF Write-ups
 
 My writeups and walkthroughs from various CTFs.
 

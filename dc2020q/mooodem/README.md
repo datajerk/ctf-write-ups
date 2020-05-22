@@ -45,7 +45,7 @@ The challenge description pretty much spells it out for you: _Dust off your old 
 
 > The data will always be the same on a new connection.
 
-The leading `00 00 00 00` is the giveaway, 32-bits.  To test my theory I used the following C-snippet with some open source code I used with [c2t](https://github.com/datajerk/c2t) to create a `.wav` file and then tested with `minimodem`.
+The leading `00 00 00 00` is the giveaway, 32-bits.  To test my theory I used the following C-snippet with some open source code included with [c2t](https://github.com/datajerk/c2t) to create a `.wav` file, and then tested with `minimodem`.
 
 C-snippet (full code here: [bin2wav.c](bin2wav.c)): 
 
@@ -147,7 +147,7 @@ After entering your name, you are greeted and presented with the following menu:
 
 ![](png/menu.png)
 
-Standard fair for an early '80s BBS.
+Standard fare for an early '80s BBS.
 
 Exploring...
 
@@ -358,7 +358,7 @@ To fix, import with:
 
 ![](png/import.png)
 
-This binary is surprising large for what little function it provides.  There's a zillion functions and no symbols--frequent fair with statically linked buffer overflow CTF challenges where they want you to use ROP.  _Spoiler Alert: echo "gung'f rknpgyl jung jr arrq gb qb urer." | tr 'a-z' 'n-za-m'_
+This binary is surprising large for what little function it provides.  There's a zillion functions and no symbols--frequent fare with statically linked buffer overflow CTF challenges where they want you to use ROP.  _Spoiler Alert: echo "gung'f rknpgyl jung jr arrq gb qb urer." | tr 'a-z' 'n-za-m'_
 
 Reading through this was taking too long.  Debugging with DOSEMU/`dosdebug` was taking too long.
 
