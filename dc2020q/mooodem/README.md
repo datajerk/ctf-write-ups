@@ -855,7 +855,7 @@ Output:
 
 ![](png/oneshotlive.png)
 
-You'll notice that the MOOODEM banner is missing, that is because the payload was being sent while the banner was being sent and nothing was catching the banner while the payload was transmitting (remember is have two modems).
+You'll notice that the MOOODEM banner is missing, that is because the payload was being sent while the banner was being sent and nothing was catching the banner while the payload was transmitting (remember there is two modems).
 
 Had I completed this on time, this last method is what I would have used, since that is what I had working before _pencils down_.
 
