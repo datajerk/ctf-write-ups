@@ -10,7 +10,7 @@
 
 Source: [https://github.com/o-o-overflow/dc2020q-mooodem-public](https://github.com/o-o-overflow/dc2020q-mooodem-public)
 
-Tags: _pwn_ _rev_ _bof_ _rop_ _x86_ _8086_ _16-bit_ _MSDOS_ _real-mode_ _modem_ _signal_ _audio_
+Tags: _pwn_ _rev_ _bof_ _rop_ _x86_ _8086_ _16-bit_ _msdos_ _real-mode_ _modem_ _signal_ _audio_
 
 
 ## Summary

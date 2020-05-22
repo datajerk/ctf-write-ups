@@ -8,10 +8,6 @@ _8086_
 
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 
-_MSDOS_
-
-* [dc2020q/mooodem](dc2020q/mooodem/README.md)
-
 _angr_
 
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
@@ -90,6 +86,10 @@ _mips_
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
 
 _modem_
+
+* [dc2020q/mooodem](dc2020q/mooodem/README.md)
+
+_msdos_
 
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 
