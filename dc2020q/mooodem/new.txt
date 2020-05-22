@@ -1,0 +1,97 @@
+define si_until_ret
+  set $SHOW_CONTEXT=0
+  set $_found = 0
+  while (!$_found)
+    set $_p = *(unsigned char*)$rip
+    if ($_p == 0xC3 || $_p == 0xCB || $_p == 0xC2 || $_p == 0xCA)
+      set $_found = 1
+    else
+      si
+    end
+  end
+  set $SHOW_CONTEXT=1
+  context
+end
+
+define si_until_cs
+  if $argc < 1
+    printf "Argument: CS in hex\n"
+  else
+    set $SHOW_CONTEXT=0
+    set $_found = 0
+    while (!$_found)
+      if ($cs == $arg0)
+        set $_found = 1
+      else
+        si
+      end
+    end
+    set $SHOW_CONTEXT=1
+    context
+  end
+end
+
+define ni_until_cs
+  if $argc < 1
+    printf "Argument: CS in hex\n"
+  else
+    set $SHOW_CONTEXT=0
+    set $_found = 0
+    while (!$_found)
+      if ($cs == $arg0)
+        set $_found = 1
+      else
+        ni
+      end
+    end
+    set $SHOW_CONTEXT=1
+    context
+  end
+end
+
+define context
+  printf "---------------------------[ STACK ]---\n"
+  _dump_memw $r_ss_sp 8
+  printf "\n"
+  set $_a = $r_ss_sp + 16
+  _dump_memw $_a 8
+  printf "\n"
+  set $i = 0
+  while($i < 16)
+    printf "%04x:%04x   ", $ss, $sp + $i
+    x/1hx $ss * 16 + $sp + $i
+    set $i = $i + 1
+  end
+
+  printf "---------------------------[ DS:SI ]---\n"
+  print_data $ds $rsi
+  printf "---------------------------[ ES:DI ]---\n"
+  print_data $es $rdi
+
+  printf "----------------------------[ CPU ]----\n"
+  print_regs
+  print_eflags
+  printf "---------------------------[ CODE ]----\n"
+  
+  set $_code_size = $CODE_SIZE
+
+  # disassemble
+  # first call x/i with an address
+  # subsequent calls to x/i will increment address
+  if ($_code_size > 0)
+    x /i $rip
+    set $_code_size--
+  end
+  while ($_code_size > 0)
+    x /i
+    set $_code_size--
+  end
+  eval "shell ./disas.sh %x %x",$cs,$eip
+end
+document context
+Print context window, i.e. regs, stack, ds:esi and disassemble cs:eip.
+end
+
+define stacks
+  x/40s $r_ss_sp
+end
