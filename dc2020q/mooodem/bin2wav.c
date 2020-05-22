@@ -43,6 +43,7 @@ int main(int argc, char **argv)
 	return 0;
 }
 
+//http://paulbourke.net/dataformats/audio/
 void Write_WAVE(FILE * fptr, double *samples, long nsamples, int nfreq, int bits, double amp)
 {
 	unsigned short v;

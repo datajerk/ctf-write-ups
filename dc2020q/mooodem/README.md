@@ -124,7 +124,7 @@ getsome('out1.bin',p,15282112,0)
 os.system('./bin2wav out1.bin out1.wav; minimodem -r -8 -f out1.wav 1200')
 ```
 
-The above code will actually return the flag if you know how to create `in1.bin`.  You'll also notice that I start by sending the payload first and then capturing the reply.
+The above code will actually return the flag if you know how to create `in1.bin`.  You'll also notice that I start by sending the payload first and then capture the reply.
 
 While advertised as Bell 202 (half-duplex), the challenge server is more like two Bell 202 modems (one for each direction), and thanks to buffering you can send your entire attack as a single shot.
 
@@ -419,7 +419,7 @@ I cannot tell you how happy I am.
 
 Before we move on we need to find the code segment (CS) for `BBS.EXE`, and I do not know how to do that except to stop execution while the MOOODEM banner is printing.  I used this same technique with `dosdebug` as well.  The good news is that it is very consistent with identical setups, e.g. with DOSEMU it was always `0xFA0`, with QEMU it has always been `0xF94`.  The other option is to set a breakpoint.  The former method worked just fine for me.
 
-> Did I forget to mention that [i8086 is weird](https://en.wikipedia.org/wiki/X86_memory_segmentation)?  Man, you're in for a treat.  The i8086 has a 20-bit address bus, but only 16-bit addresses.  Instead of using bank switching, Intel decided to use "segments".  The short of it is your hardware address is `16 * $CS` + offset (what you think your address is).  If you're wonder if that can cause problems--well, _yes!_
+> Did I forget to mention that [i8086 is weird](https://en.wikipedia.org/wiki/X86_memory_segmentation)?  Man, you're in for a treat.  The i8086 has a 20-bit address bus, but only 16-bit addresses.  Instead of using bank switching, Intel decided to use "segments".  The short of it is your hardware address is `16 * $CS` + offset (what you think your address is).  If you're wondering if that can cause problems--well, _yes!_
 
 Ok, here's what I see:
 
@@ -698,7 +698,7 @@ real-mode-gdb$ print/x 0x20472 - 16 * 0x1eaf
 $1 = 0x1982
 ```
 
-`1982`, _am I being trolled?  How cool is that?_  Well, no so cool.  That value didn't work and in the interest of time I'm not going to share how much time I lost on that.  Then I remembered the lesson learned when I was trying to match up the formatting string `%s` with its address--there were multiple instances of `%s`.  (BTW, I omitted my `%s` adventure because this is already too long).
+`1982`, _am I being trolled?  How cool is that?_  Well, not so cool.  That value didn't work and in the interest of time I'm not going to share how much time I lost on that.  Then I remembered the lesson learned when I was trying to match up the formatting string `%s` with its address--there were multiple instances of `%s`.  (BTW, I omitted my `%s` adventure because this is already too long).
 
 Try harder:
 
@@ -783,7 +783,7 @@ _ = p.recvuntil(b'}')
 print(_.decode("unicode_escape"))
 ```
 
-Either exploit is selectable by moving `#`.  Both start with overflowing the buffer with `0x106` bytes, the overwriting the return address with the address in the _Show Random Quote_ function.  In the first case the pointer to `FLAG.TXT` is our _name_, whereas in the second case it's on the stack.
+Either exploit is selectable by moving `#`.  Both start with overflowing the buffer with `0x106` bytes, then overwriting the return address with the address in the _Show Random Quote_ function.  In the first case the pointer to `FLAG.TXT` is our _name_, whereas in the second case it's on the stack.
 
 Running this locally outputs:
 
@@ -855,7 +855,7 @@ Output:
 
 ![](png/oneshotlive.png)
 
-You'll notice that the MOOODEM banner is missing, that is because the payload was being sent while the banner was being sent and nothing was catching the banner while the payload was transmitting (remember there is two modems).
+You'll notice that the MOOODEM banner is missing, that is because the payload was being sent while the banner was being sent and nothing was catching the banner while the payload was transmitting (remember there are two modems).
 
 Had I completed this on time, this last method is what I would have used, since that is what I had working before _pencils down_.
 
