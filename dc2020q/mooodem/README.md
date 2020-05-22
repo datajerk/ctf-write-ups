@@ -15,7 +15,7 @@ Tags: _pwn_ _rev_ _bof_ _rop_ _x86_ _8086_ _16-bit_ _msdos_ _real-mode_ _modem_ 
 
 ## Summary
 
-I completed this wonderful, nostalgic-themed challenge 48 hours after the end of the competition (I have a hard time with _pencils down_ when I do not complete a challenge--they haunt me until I finish them).
+I completed this wonderful, nostalgic-fueled challenge 48 hours after the end of the competition (I have a hard time with _pencils down_ when I do not complete a challenge--they haunt me until I finish them).
 
 This multistage challenge starts with a 48kHz FP (Floating Point) 8N1 Bell 202 Standard audio stream (so cool), that then expects a reply in kind--that is the easy part.  Next, you'll have to navigate a simple BBS throwback and download a relatively large compressed floppy image of the BBS itself _at 1200 baud_ (~1200 bps).  Now, with the _16-bit real-mode DOS_ executable in hand, you'll have to find two vulnerabilities; a backdoor, and a buffer overflow; and then turn them into a payload to control code execution and liberate the contents of [`FLAG.TXT`](FLAG.TXT).
 
@@ -95,7 +95,7 @@ C-snippet (full code here: [wav2bin.c](wav2bin.c)):
     }
 ```
 
-Then, send back.  Crudely this works just fine:
+Then, send back.  Crudely, this works just fine:
 
 ```python
 from pwn import *
@@ -124,7 +124,7 @@ getsome('out1.bin',p,15282112,0)
 os.system('./bin2wav out1.bin out1.wav; minimodem -r -8 -f out1.wav 1200')
 ```
 
-The above code will actually return the flag if you know how to create `in1.bin`.  You'll also notice that I start by sending the payload first and then capture the reply.
+The above code will actually return the flag if you know how to create `in1.bin`.  You'll also notice that I send the payload first and then capture the reply.
 
 While advertised as Bell 202 (half-duplex), the challenge server is more like two Bell 202 modems (one for each direction), and thanks to buffering you can send your entire attack as a single shot.
 
@@ -153,9 +153,9 @@ Exploring...
 
 ![](png/menuitems.png)
 
-Hmmmm.... I guess download `BBS.ZIP` and then try to figure out how to get authorized.
+_Hmmmm.... I guess download `BBS.ZIP` and then try to figure out how to get authorized?_
 
-> Tired of that Ray Goforth quote.  It is always the same first quote.
+> Tired of that Ray Goforth quote.  It is always the same first quote.  Don't worry, we'll fix it. :-)
 
 
 ### Third Stage: `BBS.ZIP`
@@ -391,7 +391,7 @@ This boots the `BBS.IMG` floppy image and redirects the DOS serial port to named
 cat pipe.out & cat > pipe.in
 ```
 
-This is a script I call `fooodem.sh` (pronounced fauxdem), and provides a very nice interactive session for the BBS (many of the screen shots were taken this way).  I also use this with pwntools when crafting and testing exploits.  This pairs nicely with `mooodem.sh` which is based on the OOO hacked up `minimodem`.
+This is a script I call `fooodem.sh` (fauxdem), and provides a very nice interactive session for the BBS (many of the screen shots were taken this way).  I also use this with pwntools when crafting and testing exploits.  This pairs nicely with `mooodem.sh` which is based on the OOO hacked up `minimodem`.
 
 > To be true to myself, in the end, I created a one-shot payload since that is how I would have solved this before the end of the CTF.
 
@@ -444,7 +444,7 @@ Notice that CS is `0xF94`, this will be frequently used.  Also note that SS is `
 
 #### Welcome, trusted admin...
 
-This is where I was early Saturday.  I had `BBS.EXE` in hand and more that 30 hours before the end of the CTF.
+This is where I was early Saturday.  I had `BBS.EXE` in hand and more than 30 hours before the end of the CTF.
 
 _But now I have better tools._
 
@@ -507,9 +507,9 @@ When going through this the first time and taking notes, `FUN_0000_1510` kept po
 
 Assuming `FUN_0000_df55` is something like `puts` (notice the `0xd99` argument).
 
-Lastly `0x1980 = 1;` looks like a flag.
+Lastly, `0x1980 = 1;` looks like a flag.
 
-From the disassembly header there an XREF:
+From the disassembly header, there's an XREF:
 
 ![](png/trustedass.png)
 
@@ -633,13 +633,13 @@ Yep, its `fopen`-ish.  Assuming lines 19-23 is the error message if the open fai
 
 > If you read the code, it looks like for each field (name, date, text) `local_106` is used as just `buf`.  This does not matter.
 
-Looking at the disassembly function header `local_106` is `0x106` bytes above the return address.
+Looking at the disassembly function header, `local_106` is `0x106` bytes above the return address.
 
 ![](png/lista.png)
 
 All that is left to do it figure out what to, well do...
 
-Calling line 18 with `FLAG.TXT` seems like the obvious choice, but if you recall from way back when we looked at the floppy image `NOTES.TXT`, it is somewhat structured and the fake `FLAG.TXT` is just a single line.  Using the _Show Random Quote_ function may be a better option.  To find it and possibly other `fopen` functions from Ghidra I double-clicked on `FUN_0000_0a1d` (presumed `fopen`):
+Calling line 18 with `FLAG.TXT` seems like the obvious choice, but if you recall from way back when we looked at the floppy image `NOTES.TXT`, it is somewhat structured and the fake `FLAG.TXT` is just a single line.  Using the _Show Random Quote_ function may be a better option.  To find it, and possibly other `fopen` functions, from Ghidra I double-clicked on `FUN_0000_0a1d` (presumed `fopen`):
 
 ![](png/fopen.png)
 
@@ -716,6 +716,8 @@ $2 = 0x1c20
 
 To use the stack we need to find the value of the stack pointer when EIP is at `ret` for the _List Recent Bulletins_ function, to do that, just set a breakpoint:
 
+> More math.  Recall that CS for `BBS.EXE` is `0xf94`.
+
 ```
 real-mode-gdb$ print/x 0xf94 * 16 + 0xe4ae
 $3 = 0x1ddee
@@ -723,7 +725,7 @@ real-mode-gdb$ b *$3
 Breakpoint 1 at 0x1ddee
 ```
 
-More math.  Recall that CS for `BBS.EXE` is `0xf94`.  Continue and then `L` to trigger:
+Continue and then `L` to trigger:
 
 ```
 real-mode-gdb$ c
@@ -828,7 +830,7 @@ getsome('out1.bin',p,15282112,0)
 os.system('./bin2wav out1.bin out1.wav; minimodem -r -8 -f out1.wav 1200')
 ```
 
-To create `in1.bin` using the stack (second method):
+To create `in1.bin` using the stack (second) method:
 
 ```python
 #!/usr/bin/python3
@@ -855,7 +857,7 @@ Output:
 
 ![](png/oneshotlive.png)
 
-You'll notice that the MOOODEM banner is missing, that is because the payload was being sent while the banner was being sent and nothing was catching the banner while the payload was transmitting (remember there are two modems).
+You'll notice that the MOOODEM banner is missing, that is because the payload was being sent while the banner was being sent, and nothing was catching the banner while the payload was transmitting (remember there are two modems).
 
 Had I completed this on time, this last method is what I would have used, since that is what I had working before _pencils down_.
 
