@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+
+from sympy.ntheory.residue_ntheory import discrete_log
+
+M=491988559103692092263984889813697016406
+P=232042342203461569340683568996607232345
+B=5
+A=discrete_log(M,P,B)
+message = 12259991521844666821961395299843462461536060465691388049371797540470
+bobkey = 76405255723702450233149901853450417505
+
+text = bytes.fromhex(hex(pow(bobkey, A, M) ^ message)[2:]).decode('ASCII')
+print(text)

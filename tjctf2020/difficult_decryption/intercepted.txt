@@ -1,0 +1,33 @@
+We intercepted communication between two VERY important people, named Alice and Bob. Can you figure out what this is supposed to mean?
+
+Alice: "Bob, I need to tell you something."
+Bob: "What?"
+Alice: "It's top-secret, so let's use a secure encryption method."
+Bob: "Is that really necessary? Like, who would listen?"
+Alice: "Doesn't matter. This is really serious."
+Bob: "Uh, okay then."
+Alice: 
+-------
+Modulus: 491988559103692092263984889813697016406
+Base: 5
+
+Base ^ A % Modulus:
+232042342203461569340683568996607232345
+-----
+Bob: 
+Got it.
+
+Here's my Base ^ B % Modulus:
+76405255723702450233149901853450417505
+-----
+Alice: 
+Thanks. 
+
+Here's the encoded message: 
+12259991521844666821961395299843462461536060465691388049371797540470
+
+I encoded it using this Python command: "message ^ (pow(your_key, A, modulus))". Your_key is Base ^ B % Modulus.
+After you decode the message, it will be a decimal number. Convert it to hex. You know what to do after that.
+-----
+Bob: Okay.
+Alice: Also, do NOT tell anyone what I just told you. I'll give you more information later.
