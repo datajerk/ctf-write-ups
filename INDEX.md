@@ -31,6 +31,15 @@ _bof_
 * [ijctf2020/input](ijctf2020/input/README.md)
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
 
+_buf_
+
+* [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
+* [tjctf2020/osrs](tjctf2020/osrs/README.md)
+* [tjctf2020/primo](tjctf2020/primo/README.md)
+* [tjctf2020/seashells](tjctf2020/seashells/README.md)
+* [tjctf2020/stop](tjctf2020/stop/README.md)
+* [tjctf2020/tinder](tjctf2020/tinder/README.md)
+
 _computer-vision_
 
 * [nullcon\_hackim2020/dora](nullcon\_hackim2020/dora/README.md)
@@ -41,11 +50,16 @@ _crypto_
 * [bsidessf2020ctf/decrypto-2](bsidessf2020ctf/decrypto-2/README.md)
 * [bsidessf2020ctf/eccmul](bsidessf2020ctf/eccmul/README.md)
 * [bsidessf2020ctf/mentalist](bsidessf2020ctf/mentalist/README.md)
+* [tjctf2020/difficult\_decryption](tjctf2020/difficult\_decryption/README.md)
 * [twctf2019/real\_baby\_rsa](twctf2019/real\_baby\_rsa/README.md)
 
 _devops_
 
 * [ccc2019/devops1](ccc2019/devops1/README.md)
+
+_discrete-log_
+
+* [tjctf2020/difficult\_decryption](tjctf2020/difficult\_decryption/README.md)
 
 _docker_
 
@@ -65,6 +79,9 @@ _gets_
 * [dawgctf2020/bof-to-the-top](dawgctf2020/bof-to-the-top/README.md)
 * [dawgctf2020/cookie-monster](dawgctf2020/cookie-monster/README.md)
 * [ijctf2020/admin](ijctf2020/admin/README.md)
+* [tjctf2020/osrs](tjctf2020/osrs/README.md)
+* [tjctf2020/primo](tjctf2020/primo/README.md)
+* [tjctf2020/seashells](tjctf2020/seashells/README.md)
 
 _got_
 
@@ -80,6 +97,8 @@ _libc_
 * [auctf2020/remote-school](auctf2020/remote-school/README.md)
 * [b01lersctf2020/blind-piloting](b01lersctf2020/blind-piloting/README.md)
 * [b01lersctf2020/kobayashi-maru](b01lersctf2020/kobayashi-maru/README.md)
+* [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
+* [tjctf2020/stop](tjctf2020/stop/README.md)
 
 _mips_
 
@@ -92,6 +111,10 @@ _modem_
 _msdos_
 
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
+
+_nop-sled_
+
+* [tjctf2020/osrs](tjctf2020/osrs/README.md)
 
 _pow_
 
@@ -135,6 +158,12 @@ _pwn_
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
 * [ijctf2020/admin](ijctf2020/admin/README.md)
 * [ijctf2020/input](ijctf2020/input/README.md)
+* [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
+* [tjctf2020/osrs](tjctf2020/osrs/README.md)
+* [tjctf2020/primo](tjctf2020/primo/README.md)
+* [tjctf2020/seashells](tjctf2020/seashells/README.md)
+* [tjctf2020/stop](tjctf2020/stop/README.md)
+* [tjctf2020/tinder](tjctf2020/tinder/README.md)
 * [twctf2019/nothing\_more\_to\_say](twctf2019/nothing\_more\_to\_say/README.md)
 * [utctf2020/zurk](utctf2020/zurk/README.md)
 * [wpictf2020/dont@me](wpictf2020/dont@me/README.md)
@@ -154,6 +183,11 @@ _remote-shell_
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
 * [ijctf2020/admin](ijctf2020/admin/README.md)
 * [ijctf2020/input](ijctf2020/input/README.md)
+* [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
+* [tjctf2020/osrs](tjctf2020/osrs/README.md)
+* [tjctf2020/primo](tjctf2020/primo/README.md)
+* [tjctf2020/seashells](tjctf2020/seashells/README.md)
+* [tjctf2020/stop](tjctf2020/stop/README.md)
 * [utctf2020/zurk](utctf2020/zurk/README.md)
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
 * [wpictf2020/dorsia3](wpictf2020/dorsia3/README.md)
@@ -166,6 +200,7 @@ _rev_
 * [dawgctf2020/animal-crossing](dawgctf2020/animal-crossing/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
+* [tjctf2020/asmr](tjctf2020/asmr/README.md)
 * [twctf2019/easy\_crack\_me](twctf2019/easy\_crack\_me/README.md)
 
 _reverse-shell_
@@ -177,6 +212,9 @@ _rop_
 * [b01lersctf2020/black-hole](b01lersctf2020/black-hole/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
+* [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
+* [tjctf2020/seashells](tjctf2020/seashells/README.md)
+* [tjctf2020/stop](tjctf2020/stop/README.md)
 
 _rsa_
 
@@ -190,6 +228,8 @@ _shellcode_
 
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
+* [tjctf2020/osrs](tjctf2020/osrs/README.md)
+* [tjctf2020/primo](tjctf2020/primo/README.md)
 * [wpictf2020/dont@me](wpictf2020/dont@me/README.md)
 
 _signal_
@@ -216,6 +256,20 @@ _write-what-where_
 _x86_
 
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
+* [tjctf2020/osrs](tjctf2020/osrs/README.md)
+* [tjctf2020/primo](tjctf2020/primo/README.md)
+* [tjctf2020/tinder](tjctf2020/tinder/README.md)
+
+_x86-64_
+
+* [tjctf2020/asmr](tjctf2020/asmr/README.md)
+* [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
+* [tjctf2020/seashells](tjctf2020/seashells/README.md)
+* [tjctf2020/stop](tjctf2020/stop/README.md)
+
+_xor_
+
+* [tjctf2020/asmr](tjctf2020/asmr/README.md)
 
 _z3_
 
