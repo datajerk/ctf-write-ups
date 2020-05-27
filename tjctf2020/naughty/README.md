@@ -47,6 +47,8 @@ The problem is, there's only the one vulnerable `printf` at line 37.  There's no
 
 My first thought was to repurpose the GOT, but that `printf` is _last call_.  Unless, I can cause a stack check fail with a buffer overflow, but lines 9 and 35 are not vulnerable.
 
+> Note to self, can corrupt canary with format string.
+
 I read the `printf` man page end-to-end.  Its been a while and it's a pretty dry read.
 
 _think, goddamnit_
