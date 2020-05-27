@@ -29,16 +29,13 @@ _bof_
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 * [ijctf2020/admin](ijctf2020/admin/README.md)
 * [ijctf2020/input](ijctf2020/input/README.md)
-* [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
-
-_buf_
-
 * [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
 * [tjctf2020/osrs](tjctf2020/osrs/README.md)
 * [tjctf2020/primo](tjctf2020/primo/README.md)
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
 * [tjctf2020/tinder](tjctf2020/tinder/README.md)
+* [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
 
 _computer-vision_
 

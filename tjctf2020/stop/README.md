@@ -12,7 +12,7 @@
 >
 > Written by KyleForkBomb
 
-Tags: _pwn_ _x86-64_ _buf_ _remote-shell_ _rop_ _libc_
+Tags: _pwn_ _x86-64_ _bof_ _remote-shell_ _rop_ _libc_
 
 
 ## Summary

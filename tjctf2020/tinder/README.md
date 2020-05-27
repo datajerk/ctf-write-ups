@@ -10,7 +10,7 @@
 >
 > Written by agcdragon
 
-Tags: _pwn_ _x86_ _buf_
+Tags: _pwn_ _x86_ _bof_
 
 
 ## Summary

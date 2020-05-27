@@ -12,7 +12,7 @@
 >
 > Written by  KyleForkBomb
 
-Tags: _pwn_ _x86_ _buf_ _remote-shell_ _gets_ _shellcode_ _nop-sled_
+Tags: _pwn_ _x86_ _bof_ _remote-shell_ _gets_ _shellcode_ _nop-sled_
 
 
 ## Summary
