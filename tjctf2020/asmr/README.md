@@ -15,6 +15,8 @@ Tags: _rev_ _x86-64_ _xor_
 
 Assembly the code, start up the service, put in the correct password, get an audio file, listen to the flag.
 
+> I was just informed via Discord that this challenge was changed part way through the CTF.  This is a write up of the original challenge, including the original source.
+
 
 ## Analysis
 
