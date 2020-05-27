@@ -17,7 +17,7 @@ Tags: _pwn_ _x86_ _buf_ _remote-shell_ _gets_ _shellcode_ _nop-sled_
 
 ## Summary
 
-No mitigations, 32-bit stack overflow (`gets`), NOP sled, shellcode.
+No mitigations, 32-bit stack overflow, NOP sled, shellcode.
 
 Retro.
 
