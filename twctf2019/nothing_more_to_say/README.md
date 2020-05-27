@@ -7,7 +7,7 @@ _Japan is fucking hot._
 [`warmup.c`](warmup.c)  
 [`warmup`](warmup)
 
-Tags: _pwn_ _printf_
+Tags: _pwn_ _format-string_
 
 
 ### Solution

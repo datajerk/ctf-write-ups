@@ -62,6 +62,10 @@ _docker_
 
 * [ccc2019/devops1](ccc2019/devops1/README.md)
 
+_dtors_
+
+* [tjctf2020/naughty](tjctf2020/naughty/README.md)
+
 _ecc_
 
 * [bsidessf2020ctf/eccmul](bsidessf2020ctf/eccmul/README.md)
@@ -69,6 +73,16 @@ _ecc_
 _forensics_
 
 * [ccc2019/flagconverter1](ccc2019/flagconverter1/README.md)
+
+_format-string_
+
+* [b01lersctf2020/kobayashi-maru](b01lersctf2020/kobayashi-maru/README.md)
+* [dawgctf2020/cookie-monster](dawgctf2020/cookie-monster/README.md)
+* [dawgctf2020/coronacation](dawgctf2020/coronacation/README.md)
+* [tjctf2020/naughty](tjctf2020/naughty/README.md)
+* [twctf2019/nothing\_more\_to\_say](twctf2019/nothing\_more\_to\_say/README.md)
+* [utctf2020/zurk](utctf2020/zurk/README.md)
+* [wpictf2020/dorsia3](wpictf2020/dorsia3/README.md)
 
 _gets_
 
@@ -95,6 +109,7 @@ _libc_
 * [b01lersctf2020/blind-piloting](b01lersctf2020/blind-piloting/README.md)
 * [b01lersctf2020/kobayashi-maru](b01lersctf2020/kobayashi-maru/README.md)
 * [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
+* [tjctf2020/naughty](tjctf2020/naughty/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
 
 _mips_
@@ -116,15 +131,6 @@ _nop-sled_
 _pow_
 
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
-
-_printf_
-
-* [b01lersctf2020/kobayashi-maru](b01lersctf2020/kobayashi-maru/README.md)
-* [dawgctf2020/cookie-monster](dawgctf2020/cookie-monster/README.md)
-* [dawgctf2020/coronacation](dawgctf2020/coronacation/README.md)
-* [twctf2019/nothing\_more\_to\_say](twctf2019/nothing\_more\_to\_say/README.md)
-* [utctf2020/zurk](utctf2020/zurk/README.md)
-* [wpictf2020/dorsia3](wpictf2020/dorsia3/README.md)
 
 _prng_
 
@@ -156,6 +162,7 @@ _pwn_
 * [ijctf2020/admin](ijctf2020/admin/README.md)
 * [ijctf2020/input](ijctf2020/input/README.md)
 * [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
+* [tjctf2020/naughty](tjctf2020/naughty/README.md)
 * [tjctf2020/osrs](tjctf2020/osrs/README.md)
 * [tjctf2020/primo](tjctf2020/primo/README.md)
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
@@ -181,6 +188,7 @@ _remote-shell_
 * [ijctf2020/admin](ijctf2020/admin/README.md)
 * [ijctf2020/input](ijctf2020/input/README.md)
 * [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
+* [tjctf2020/naughty](tjctf2020/naughty/README.md)
 * [tjctf2020/osrs](tjctf2020/osrs/README.md)
 * [tjctf2020/primo](tjctf2020/primo/README.md)
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
@@ -248,6 +256,7 @@ _time_
 _write-what-where_
 
 * [auctf2020/remote-school](auctf2020/remote-school/README.md)
+* [tjctf2020/naughty](tjctf2020/naughty/README.md)
 * [wpictf2020/dorsia4](wpictf2020/dorsia4/README.md)
 
 _x86_
@@ -261,6 +270,7 @@ _x86-64_
 
 * [tjctf2020/asmr](tjctf2020/asmr/README.md)
 * [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
+* [tjctf2020/naughty](tjctf2020/naughty/README.md)
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
 

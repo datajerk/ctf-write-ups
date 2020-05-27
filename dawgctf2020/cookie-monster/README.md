@@ -10,7 +10,7 @@
 > 
 > [cookie_monster](cookie_monster)
 
-Tags: _pwn_ _time_ _prng_ _bof_ _printf_ _gets_
+Tags: _pwn_ _time_ _prng_ _bof_ _format-string_ _gets_
 
 
 ### Introduction
