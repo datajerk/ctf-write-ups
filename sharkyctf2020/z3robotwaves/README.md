@@ -90,4 +90,4 @@ Well done, valdiate with shkCTF{cl4ss1c_z3___t0_st4rt_:)}
 
 Flag in less than 5 seconds:
 
-<script id="asciicast-BmsSNR1oIh9U4LNIZmidsNfaK" src="https://asciinema.org/a/BmsSNR1oIh9U4LNIZmidsNfaK.js" async></script>
+[![asciicast](https://asciinema.org/a/BmsSNR1oIh9U4LNIZmidsNfaK.svg)](https://asciinema.org/a/BmsSNR1oIh9U4LNIZmidsNfaK)
