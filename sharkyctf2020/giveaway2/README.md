@@ -113,7 +113,7 @@ if payload.find(b'\xa0') != -1:
 p.sendline(payload)
 ```
 
-> The extra `ret` (`payload += p64(procbase + pop_rdi + 1)`) is required to align the stack, see Blind Piloting for a lengthly example and explanation.
+> The extra `ret` (`payload += p64(procbase + pop_rdi + 1)`) is required to align the stack, see [Blind Piloting](https://github.com/datajerk/ctf-write-ups/blob/master/b01lersctf2020/blind-piloting/README.md) for a lengthly example and explanation.
 
 The first pass will collect the leaked `main` and compute base process address, with that + GOT we can leak the address of `printf` by having `printf` emit its own address.
 
