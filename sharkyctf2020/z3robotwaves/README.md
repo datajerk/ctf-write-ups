@@ -17,7 +17,7 @@ Tags: _rev_ _x86-64_ _angr_
 
 ## Summary
 
-A simple [angr.io](angr.io) solve.
+Textbook [angr.io](angr.io) solve.
 
 
 ## Analysis
@@ -28,9 +28,9 @@ A simple [angr.io](angr.io) solve.
 
 ![](check_flag.png)
 
-That looks like a lot to reverse, clearly line 83 is our goal.
+That looks like a lot to reverse--let's not.
 
-Line 83 disassembly:
+Clearly line 83 is our goal.  Line 83 disassembly:
 
 ![](here.png)
 
@@ -90,4 +90,4 @@ Well done, valdiate with shkCTF{cl4ss1c_z3___t0_st4rt_:)}
 
 Flag in less than 5 seconds:
 
-[![asciicast](https://asciinema.org/a/BmsSNR1oIh9U4LNIZmidsNfaK.svg)](https://asciinema.org/a/BmsSNR1oIh9U4LNIZmidsNfaK)
+<script id="asciicast-BmsSNR1oIh9U4LNIZmidsNfaK" src="https://asciinema.org/a/BmsSNR1oIh9U4LNIZmidsNfaK.js" async></script>
