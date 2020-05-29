@@ -32,6 +32,8 @@ Overflow buffer; overwrite return address with address of win function.
     PIE:      No PIE (0x400000)
 ```
 
+No canary; buffer overflow vulnerability.  No PIE; ROPtions.  GOT some too.
+
     
 ### Decompile with Ghidra
 
