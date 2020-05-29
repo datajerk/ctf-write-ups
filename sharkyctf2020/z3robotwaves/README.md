@@ -10,7 +10,7 @@
 > 
 > Creator : Nofix
 >
-> [z3_robot](z3_robot)
+> [`z3_robot`](z3_robot)
 
 Tags: _rev_ _x86-64_ _angr_
 
@@ -38,7 +38,7 @@ Clearly line 83 is our goal.  Line 83 disassembly:
 
 ## Solve
 
-```
+```python
 #!/usr/bin/python3
 
 import angr, time, io
