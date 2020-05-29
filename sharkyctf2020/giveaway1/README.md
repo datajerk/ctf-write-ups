@@ -12,7 +12,7 @@
 >
 > [`give_away_1`](give_away_1) [`libc-2.27.so`](libc-2.27.so)
 
-Tags: _pwn_ _bof_ _x86_
+Tags: _pwn_ _bof_ _x86_ _rop_
 
 
 ## Summary

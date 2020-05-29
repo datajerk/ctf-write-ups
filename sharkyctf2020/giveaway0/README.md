@@ -12,7 +12,7 @@
 >
 > [`0_give_away`](0_give_away)
 
-Tags: _pwn_ _bof_ _x86-64_
+Tags: _pwn_ _bof_ _x86-64_ _rop_
 
 
 ## Summary
