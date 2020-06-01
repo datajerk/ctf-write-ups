@@ -367,7 +367,7 @@ Reading through this was taking too long.  Debugging with DOSEMU/`dosdebug` was 
 
 #### Game over, time's up
 
-About 40 minutes after the end of the CTF UnblvR posted in one of the OTA slack channels that he was using [QEMU/GDB](https://en.wikibooks.org/wiki/QEMU/Debugging_with_QEMU).  _JFC, I forgot that was an option._  The next day I probed for more info and he mentioned something about a real-mode GDB script.  After a bit of Googling, it was clear, how to gear up and take a 2nd run at this.
+About 40 minutes after the end of the CTF UnblvR posted in one of the OTA slack channels that he was using [QEMU/GDB](https://en.wikibooks.org/wiki/QEMU/Debugging_with_QEMU).  _JFC, I forgot that was an option._  The next day I probed for more info and he mentioned something about a real-mode GDB script.  After a bit of Googling, it was clear how to gear up and take a 2nd run at this.
 
 
 #### Finally, the tools I've been looking for...
