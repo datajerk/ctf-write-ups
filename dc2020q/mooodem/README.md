@@ -60,7 +60,7 @@ C-snippet (full code here: [bin2wav.c](bin2wav.c)):
     Write_WAVE(ofp,samples,i-1,48000,16,1.0);
 ```
 
-This code is straight forward, read 4-bytes at a time as a float, store as double array, and let `Write_WAVE` output as a `.wav` file.
+This code is straightforward, read 4-bytes at a time as a float, store as double array, and let `Write_WAVE` output as a `.wav` file.
 
 With `.wav` in hand test with `minimodem`:
 
