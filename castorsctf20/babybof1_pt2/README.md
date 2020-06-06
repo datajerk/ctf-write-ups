@@ -57,7 +57,7 @@ void main(void)
 
 This was a two-part pwn, the first flag can be obtained by directing execution to `get_flag`.  The second requires getting a shell (you can get both flags with a shell).
 
-For a shell, I tried two different solutions.  The first was to leak libc and then call `system`.  That worked locally, but not remotely.  This CTF was plagued with infrastructure problems, and the pwns had "buffering issues" (see below) that slowly got resolved--AFAIK, the game master only tested one-shot solutions.
+For a shell I tried two different solutions.  The first was to leak libc and then call `system`.  That worked locally, but not remotely.  This CTF was plagued with infrastructure problems, and the pwns had "buffering issues" (see below) that slowly got resolved--AFAIK, the game master only tested one-shot solutions.
 
 From the Ghidra disassembly, `local_108` is `0x108` bytes above the return address:
 
@@ -67,7 +67,7 @@ From the Ghidra disassembly, `local_108` is `0x108` bytes above the return addre
              undefined1        Stack[-0x108]:1    local_108
 ```
 
-Since `gets` is unbounded, just write `0x108` bytes then overwrite the return address with a gadget to jmp/call shell code.
+Since `gets` is unbounded, just write `0x108` bytes then overwrite the return address with a gadget to jmp/call shellcode.
 
 
 ## Exploit
@@ -99,7 +99,7 @@ After initial setup this code searches for `jmp rax` (`call rax` is fine too) wi
 
 _Why `jmp rax`?_
 
-From GDB: Set a breakpoint at `ret` (`b *main+62`), run, and input `AAAABBBBCCCCDDDD`, then you'll notice that `$rax` is set to the address of `local_108`:
+From GDB: Set a breakpoint at `ret` (`b *main+62`), run, and input `AAAABBBBCCCCDDDD`, then notice that `$rax` is set to the address of `local_108`:
 
 ```
 $rax   : 0x00007fffffffe450  →  "AAAABBBBCCCCDDDD"
@@ -224,5 +224,5 @@ While I was waiting for the "buffering issues" to be corrected I self-hosted the
 
 #### My $0.02 US
 
-IMHO, the "buffering issue" was a non-issue.  i.e., it was solvable with shellcode without any corrective action.  It was annoying, in that this CTF pwn did not behave like others, but then you just have to find a different solution.  The game masters could have stood their ground, and this isn't the only CTF were I have had this problem (you've seen them to, any where you `nc` to the port and nothing is output, no prompt, nothing.  However, the local binary outputs immediately), while this can make exploit development difficult, it does not make it impossible, just different.
+IMHO, the "buffering issue" was a non-issue.  i.e., it was solvable with shellcode without any corrective action.  It was annoying, in that this CTF pwn did not behave like others, but then you just have to find a different solution.  The game masters could have stood their ground, and this isn't the only CTF were I have had this problem (you've seen them too; anywhere you `nc` to the port and nothing is output, no prompt, nothing.  However, the local binary outputs immediately), while this can make exploit development difficult, it does not make it impossible, just different.
 
