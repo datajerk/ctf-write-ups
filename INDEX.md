@@ -53,6 +53,7 @@ _crypto_
 * [bsidessf2020ctf/decrypto-2](bsidessf2020ctf/decrypto-2/README.md)
 * [bsidessf2020ctf/eccmul](bsidessf2020ctf/eccmul/README.md)
 * [bsidessf2020ctf/mentalist](bsidessf2020ctf/mentalist/README.md)
+* [castorsctf20/magic\_school\_bus](castorsctf20/magic\_school\_bus/README.md)
 * [tjctf2020/difficult\_decryption](tjctf2020/difficult\_decryption/README.md)
 * [twctf2019/real\_baby\_rsa](twctf2019/real\_baby\_rsa/README.md)
 
