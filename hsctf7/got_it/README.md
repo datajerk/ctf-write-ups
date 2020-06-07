@@ -192,7 +192,7 @@ binary = ELF('got_it')
 t=time.time()
 ```
 
-Since each step takes a long time (remote), so I added a wall clock timer.
+Since each step takes a long time (remote), I added a wall clock timer.
 
 
 ### First Pass: Get infinite free passes (`exit` -> `main`)
