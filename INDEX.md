@@ -29,6 +29,7 @@ _bof_
 * [dawgctf2020/on-lockdown](dawgctf2020/on-lockdown/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
+* [hsctf7/boredom](hsctf7/boredom/README.md)
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
 * [ijctf2020/admin](ijctf2020/admin/README.md)
 * [ijctf2020/input](ijctf2020/input/README.md)
@@ -171,6 +172,7 @@ _pwn_
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
+* [hsctf7/boredom](hsctf7/boredom/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
 * [ijctf2020/admin](ijctf2020/admin/README.md)
@@ -241,6 +243,7 @@ _rop_
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
+* [hsctf7/boredom](hsctf7/boredom/README.md)
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
 * [sharkyctf2020/giveaway0](sharkyctf2020/giveaway0/README.md)
 * [sharkyctf2020/giveaway1](sharkyctf2020/giveaway1/README.md)
@@ -301,6 +304,7 @@ _x86_
 _x86-64_
 
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
+* [hsctf7/boredom](hsctf7/boredom/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
 * [sharkyctf2020/captain\_hook](sharkyctf2020/captain\_hook/README.md)
