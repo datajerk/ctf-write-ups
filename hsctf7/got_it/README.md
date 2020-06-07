@@ -171,6 +171,7 @@ for i in range(1,20):
 Output:
 
 ```
+# ./base.py | grep -v ]
 1 b'0x00007ffe77b98cc0'
 2 b''
 3 b''
