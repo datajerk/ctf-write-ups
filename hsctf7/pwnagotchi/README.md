@@ -78,7 +78,7 @@ void zzz(void)
 }
 ```
 
-This is a minor twist on what is a frequent trope with undergrad/highschool CTFs.
+This is a minor twist on a frequent trope from undergrad/highschool CTFs.
 
 
 ## Exploit
