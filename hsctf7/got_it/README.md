@@ -19,7 +19,7 @@ Tags: _pwn_ _x86-64_ _got_ _format-string_ _remote-shell_ _write-what-where_
 
 ## Summary
 
-Messed up GOT allows format-string exploit to overwrite `exit` for infinite format-string free rides (libc leak, `printf` to `system`, shell).
+A messed up GOT allows format-string exploit to overwrite `exit` for infinite format-string free rides (libc leak, `printf` to `system`, shell).
 
 
 ## Analysis
@@ -137,7 +137,7 @@ def rww64fs(where,base):
 
 I usually do not do weekday CTFs.  I made an exception when another CTFer asked if I had a format-string library.  I didn't.  However, I said I'd look at the problem and help out.  After solving the problem and refactoring my code I ended up with the above two functions--perhaps the start of a library.
 
-The first function is a format-string write-what-where.  Give it any 64-bit _what_ and any writable 64-bit _where_ and it'll do all the math and generate a format string for you that will write out the _what_ as a series of 16-bit words.  The `count` parameter is number of 16-bit words; if you know that you only have to write out, say, 48-bits (common for x86_64 addresses), then the recommended `4` (64-bits) could be set to `3` (for 3 16-bit words).
+The first function is a format-string _write-what-where_.  Pass in any 64-bit _what_ and any writable 64-bit _where_, and it'll do all the math and generate a format string for you that will write out the _what_ as a series of 16-bit words.  The `count` parameter is number of 16-bit words; if you know that you only have to write out, say, 48-bits (common for x86_64 addresses), then the recommended `4` (64-bits) could be set to `3` (for 3 16-bit words).
 
 The second function is a format-string read-where and return what _is that thing pointing to_.  (I probably need to come up with better names.)
 
@@ -191,7 +191,7 @@ binary = ELF('got_it')
 t=time.time()
 ```
 
-Since each step takes a long time (remote), I added a wall clock timer.
+Since each step takes a long time (remote), so I added a wall clock timer.
 
 
 ### First Pass: Get infinite free passes (`exit` -> `main`)
@@ -203,7 +203,7 @@ p.sendline(www64x16fs(binary.symbols['main'],binary.got['exit'],8,3))
 print(time.time()-t)
 ```
 
-Having that write-what-where function makes this pretty clear, just overwrite the `exit` GOT entry with the address of `main`.  The `base` of `8` was determined above, and only a `count` of `3` is required since we're replacing 48-bits with 48-bits (x86_64 addresses are 48-bits).
+Having that _write-what-where_ function makes this pretty clear, just overwrite the `exit` GOT entry with the address of `main`.  The `base` of `8` was determined above, and only a `count` of `3` is required since we're replacing 48-bits with 48-bits (x86_64 addresses are 48-bits).
 
 Now we can leak, read, write just about anything we want.
 
@@ -225,7 +225,7 @@ print('2nd pass...',end='')
 print(time.time()-t)
 ```
 
-To leak a libc address we just need to use the read-where->what function and then scan for the results.  Above, an unmolested `fgets` GOT entry will provide a libc address.  With that we can use the [libc-database](https://github.com/niklasb/libc-database) to find the version of libc used, e.g.:
+To leak a libc address we just need to use the _read-where->what_ function and then scan for the results.  Above, an unmolested `fgets` GOT entry will provide a libc address.  With that we can use the [libc-database](https://github.com/niklasb/libc-database) to find the version of libc used, e.g.:
 
 ```
 # libc-database/find fgets b20 | grep -v 386
@@ -248,7 +248,7 @@ print(time.time()-t)
 
 This is not unlike the first pass, using `www64x16fs` to create a format string, just update the <strike>`scanf`</strike> `printf` GOT entry to point to `system`.
 
-Right after that change however, any deterministic `recvuntil` statements based on the binary where <strike>`scanf`</strike> `printf` is called will usually emit `Unterminated quoted string` (error from `system`).
+Right after that change however, any deterministic `recvuntil` statements based on the binary where <strike>`scanf`</strike> `printf` is called will usually emit `Unterminated quoted string` (error from `system`, and it's OK).
 
 
 ### Final Pass: Get a shell, get the flag.
