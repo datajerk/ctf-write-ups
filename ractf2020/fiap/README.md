@@ -73,7 +73,7 @@ _ = p.recv(100).decode().strip()
 print(_)
 ```
 
-This differsers from [fias](https://github.com/datajerk/ctf-write-ups/blob/master/ractf2020/fias/README.md) in that we're leaking two stack parameters: `%11$p,%3$p`, the canary and the address of `say_hi+13`.  With the address of `say_hi` known we can compute the base process address, and then the exploit is the same as before, however we need to add `baseproc` to the address of `flag`.
+This differs from [fias](https://github.com/datajerk/ctf-write-ups/blob/master/ractf2020/fias/README.md) in that we're leaking two stack parameters: `%11$p,%3$p`, the canary and the address of `say_hi+13`.  With the address of `say_hi` known we can compute the base process address, and then the exploit is the same as before, however we need to add `baseproc` to the address of `flag`.
 
 Output:
 
