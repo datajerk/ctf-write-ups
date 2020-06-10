@@ -17,6 +17,10 @@ _audio_
 
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 
+_barcode_
+
+* [ractf2020/br.mov](ractf2020/br.mov/README.md)
+
 _bof_
 
 * [auctf2020/house-of-madness](auctf2020/house-of-madness/README.md)
@@ -80,6 +84,10 @@ _dtors_
 _ecc_
 
 * [bsidessf2020ctf/eccmul](bsidessf2020ctf/eccmul/README.md)
+
+_ffmpeg_
+
+* [ractf2020/br.mov](ractf2020/br.mov/README.md)
 
 _forensics_
 
@@ -299,6 +307,10 @@ _time_
 
 * [dawgctf2020/cookie-monster](dawgctf2020/cookie-monster/README.md)
 
+_video_
+
+* [ractf2020/br.mov](ractf2020/br.mov/README.md)
+
 _write-what-where_
 
 * [auctf2020/remote-school](auctf2020/remote-school/README.md)
@@ -340,4 +352,8 @@ _xor_
 _z3_
 
 * [twctf2019/easy\_crack\_me](twctf2019/easy\_crack\_me/README.md)
+
+_zbarimg_
+
+* [ractf2020/br.mov](ractf2020/br.mov/README.md)
 
