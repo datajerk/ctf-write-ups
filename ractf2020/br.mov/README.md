@@ -7,14 +7,12 @@
 > [https://youtu.be/zi3pLOaUUXs](https://youtu.be/zi3pLOaUUXs)
 >
 > Author: Bottersnike
->
-> [`nra`](nra)
 
-Tags: _pwn_ _x86_ _got_ _format-string_
+Tags: _video_ _barcode_ _ffmpeg_ _zbarimg_
 
 ## Summary
 
-Video of barcodes with white noise background with a dude saying a number for each barcode (not in series).
+Video of barcodes with white noise background and a dude saying a number for each barcode (not in series).
 
 
 ## Solve
