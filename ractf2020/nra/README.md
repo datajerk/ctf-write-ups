@@ -6,8 +6,6 @@
 >
 > Challenge instance ready at `88.198.219.20:17119`
 >
-> Connect at `nc pwn.hsctf.com 5002`.
->
 > Exploit the service to get the flag.
 >
 > Author: Ironstone
