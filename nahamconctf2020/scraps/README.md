@@ -145,7 +145,7 @@ _Groan_
 
 ```bash
 GetOldTweets3 --username "BigBird01558595" --maxtweets 1000
-$ zbarimg <(cat output_got.csv | awk -F, '{print $7}' | awk -F\" '{print $2}' | awk -F\# '{print $2}' | sort -n | awk '{print $NF}' | xargs printf "%02x" | xxd -r -p) 2>&1 | grep QR | awk -F: '{print $NF}'
+zbarimg <(cat output_got.csv | awk -F, '{print $7}' | awk -F\" '{print $2}' | awk -F\# '{print $2}' | sort -n | awk '{print $NF}' | xargs printf "%02x" | xxd -r -p) 2>&1 | grep QR | awk -F: '{print $NF}'
 flag{big_bird_tweets_big_tweets}
 ```
 
