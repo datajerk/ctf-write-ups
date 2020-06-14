@@ -202,7 +202,7 @@ Now that `printf` is `system`, just send `/bin/sh`, however this time use `unl33
 
 Output:
 
-```
+```bash
 # ./exploit.py
 [+] Opening connection to jh2i.com on port 50022: Done
 [*] '/pwd/datajerk/nahamconctf2020/leet_haxor/leet_haxor'
