@@ -77,7 +77,7 @@ Looking at the `encrypt` disassembly:
         004012e6 c3              RET
 ```
 
-Just before `encrypt` returns the stack pointer is copied (moved) to R15, which happens to have the address of `local_58` (check with GDB), so just send some shellcode and then `jmp r15`.  _Right?_
+Just before `encrypt` returns, the stack pointer is copied (moved) to R15, which happens to have the address of `local_58` (check with GDB), so just send some shellcode and then `jmp r15`.  _Right?_
 
 `jmp r15` check:
 
