@@ -16,7 +16,7 @@ Tags: _pwn_ _x86-64_ _format-string_
 
 ## Summary
 
-Format string exploit challenge with some constraints, infinite free rides, and some guessing.
+Format string exploit challenge with some constraints, infinite free rides, and a guess.
 
 
 ## Analysis
@@ -58,7 +58,7 @@ No PIE/Partial RELRO; easy ROP, easy GOT.
 
 ![](l33tify.png)
 
-The `printf` at line 49 is the _first_ venerability.  However the code above will molest any format-string exploit if there's a matching character.
+The `printf` at line 49 is the _first_ venerability.  However the code above will mangle any format-string exploit if there's a matching character.
 
 ![](unl33tify.png)
 
@@ -103,7 +103,7 @@ Setting a breakpoint just before `printf` in `l33tify` and looking at the stack 
 0x00007fffffffe548│+0x00d8: 0x00007ffff7a05b97  →  <__libc_start_main+231> mov edi, eax
 ```
 
-> The 6th parameter starts at $rsp, then count down (parameters 1-5 are in registers).  Or just test until you get a match.  You do have infinite retries.
+> The 6th parameter starts at `$rsp`, then count down (parameters 1-5 are in registers).  Or just test until you get a match.  You do have infinite retries.
 
 We also need to know what parameter our format string is located at, again starting from the top and counting down you'll notice `4444` at parameter 18.  That `4444` was actually entered as `AAAA`, but it got _l33tified_ (lamified).
 
