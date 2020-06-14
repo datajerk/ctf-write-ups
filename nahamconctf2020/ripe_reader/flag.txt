@@ -1,0 +1,1 @@
+flag{should_make_an_ascii_flag_image}
