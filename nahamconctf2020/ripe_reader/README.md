@@ -173,8 +173,6 @@ The last three nibbles of any function do not change.  The `selectImg` function 
 
 The payload in this case will brute-force the 4th nibble by overwriting just the two LSBytes of the return address.  If unsuccessful, the child will mostly likely segfault, however if successful, code execution will _return_ to the top of `selectImg`.  This can be detected by receiving the menu again.
 
-> NOTE: If the receiver terminates the input string with a null (e.g. `fgets`), then forget it, _game over_.
-
 
 ### Third Pass: Brute-force entire process address
 
@@ -202,7 +200,7 @@ print('procbase',hex(procbase))
 binary.address = procbase
 ```
 
-x86_64 address are 48-bits (today).  With the lower 16-bits in hand, brute-forcing the remain four bytes is next.
+x86_64 address are 48-bits (today).  With the lower 16-bits in hand, brute-forcing the remaining four bytes is next.
 
 The loop above is almost identical to the canary step.  When complete the process base address can be computed.
 
