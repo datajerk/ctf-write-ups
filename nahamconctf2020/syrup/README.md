@@ -61,7 +61,7 @@ There are four functions of interest:
 
 `entry` just prints `Can you pwn me?` using the `write` system call, then calls `fn1` before jumping to `nope`.
 
-```
+```assembly
                      nope
 00401013 b8 01 00        MOV        EAX,0x1
          00 00
