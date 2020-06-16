@@ -11,7 +11,7 @@
 >
 > [`syrup`](syrup)
 
-Tags: _pwn_ _x86-64_ _srop_ _bof_
+Tags: _pwn_ _x86-64_ _srop_ _bof_ _syscall_
 
 
 ## Summary
