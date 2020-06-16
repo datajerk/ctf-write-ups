@@ -16,7 +16,7 @@ Tags: _pwn_ _x86-64_ _srop_ _bof_
 
 ## Summary
 
-The title _Syrop_ is a pretty strong hint that this is an SROP challenge (that completely escaped me).
+The title _Syrup_ is a pretty strong hint that this is an SROP challenge (that completely escaped me).
 
 
 ## Analysis
