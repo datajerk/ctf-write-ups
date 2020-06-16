@@ -39,7 +39,7 @@ No mitigations in place.  However, with no libc and a small statically linked as
 
 There are four functions of interest:
 
-```
+```nasm
                      entry
 00401082 55              PUSH       RBP
 00401083 48 89 e5        MOV        RBP,RSP
