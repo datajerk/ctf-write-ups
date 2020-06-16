@@ -39,7 +39,7 @@ No mitigations in place.  However, with no libc and a small statically linked as
 
 There are four functions of interest:
 
-```nasm
+```assembly
                      entry
 00401082 55              PUSH       RBP
 00401083 48 89 e5        MOV        RBP,RSP
@@ -92,7 +92,7 @@ There are four functions of interest:
 
 However, there's the string `/bin/sh\x00`.  Probably something we'll need.
 
-```
+```assembly
                      fn1
 00401042 55              PUSH       RBP
 00401043 48 89 e5        MOV        RBP,RSP
@@ -126,7 +126,7 @@ However, there's the string `/bin/sh\x00`.  Probably something we'll need.
 
 Clearly we have to take control of RIP with this buffer overflow.
 
-```
+```assembly
                      fn2
 00401000 55              PUSH       RBP
 00401001 48 89 e5        MOV        RBP,RSP
