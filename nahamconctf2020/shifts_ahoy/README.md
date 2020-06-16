@@ -11,7 +11,7 @@
 >
 > [`shifts-ahoy`](shifts-ahoy)
 
-Tags: _pwn_ _x86-64_ _shellcode_ _rop_ _bof_
+Tags: _pwn_ _x86-64_ _shellcode_ _rop_ _bof_ _remote-shell_
 
 
 ## Summary

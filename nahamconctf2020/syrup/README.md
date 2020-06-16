@@ -11,7 +11,7 @@
 >
 > [`syrup`](syrup)
 
-Tags: _pwn_ _x86-64_ _srop_ _bof_ _syscall_
+Tags: _pwn_ _x86-64_ _srop_ _bof_ _syscall_ _remote-shell_
 
 
 ## Summary
@@ -169,7 +169,7 @@ payload  = 0x400 * b'A'
 payload += p64(0xdead ^ 0xbeef)
 ```
 
-Setup the stack frame to call `execve(/bin/sh)`.  The `0x400` + the "canary" payload gets to the saved base pointer.
+Setup the stack frame to call `execve("/bin/sh",null,null)`.  The `0x400` + the "canary" payload gets to the saved base pointer.
 
 There are at least two options (_clever_ and _not to clever_) to call `sigreturn`.
 

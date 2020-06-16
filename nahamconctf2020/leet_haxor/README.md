@@ -11,7 +11,7 @@
 >
 > [`leet_haxor`](leet_haxor)
 
-Tags: _pwn_ _x86-64_ _format-string_
+Tags: _pwn_ _x86-64_ _format-string_ _remote-shell_
 
 
 ## Summary
