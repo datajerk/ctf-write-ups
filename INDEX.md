@@ -40,6 +40,7 @@ _bof_
 * [nahamconctf2020/dangerous](nahamconctf2020/dangerous/README.md)
 * [nahamconctf2020/ripe\_reader](nahamconctf2020/ripe\_reader/README.md)
 * [nahamconctf2020/shifts\_ahoy](nahamconctf2020/shifts\_ahoy/README.md)
+* [nahamconctf2020/syrup](nahamconctf2020/syrup/README.md)
 * [ractf2020/fiap](ractf2020/fiap/README.md)
 * [ractf2020/fias](ractf2020/fias/README.md)
 * [sharkyctf2020/captain\_hook](sharkyctf2020/captain\_hook/README.md)
@@ -200,6 +201,7 @@ _pwn_
 * [nahamconctf2020/ripe\_reader](nahamconctf2020/ripe\_reader/README.md)
 * [nahamconctf2020/saas](nahamconctf2020/saas/README.md)
 * [nahamconctf2020/shifts\_ahoy](nahamconctf2020/shifts\_ahoy/README.md)
+* [nahamconctf2020/syrup](nahamconctf2020/syrup/README.md)
 * [ractf2020/fiap](ractf2020/fiap/README.md)
 * [ractf2020/fias](ractf2020/fias/README.md)
 * [ractf2020/nra](ractf2020/nra/README.md)
@@ -305,6 +307,10 @@ _signal_
 
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 
+_srop_
+
+* [nahamconctf2020/syrup](nahamconctf2020/syrup/README.md)
+
 _stack-canary_
 
 * [b01lersctf2020/blind-piloting](b01lersctf2020/blind-piloting/README.md)
@@ -358,6 +364,7 @@ _x86-64_
 * [nahamconctf2020/ripe\_reader](nahamconctf2020/ripe\_reader/README.md)
 * [nahamconctf2020/saas](nahamconctf2020/saas/README.md)
 * [nahamconctf2020/shifts\_ahoy](nahamconctf2020/shifts\_ahoy/README.md)
+* [nahamconctf2020/syrup](nahamconctf2020/syrup/README.md)
 * [sharkyctf2020/captain\_hook](sharkyctf2020/captain\_hook/README.md)
 * [sharkyctf2020/giveaway0](sharkyctf2020/giveaway0/README.md)
 * [sharkyctf2020/giveaway2](sharkyctf2020/giveaway2/README.md)
