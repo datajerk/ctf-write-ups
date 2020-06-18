@@ -293,9 +293,9 @@ Times of other runs: _15m50.392s_, _12m27.560s_, _10m52.456s_
 
 In that case, we'd have to leak a stack address and then put `./flag.txt` on the stack.  See [exploit2.py](exploit2.py) for an implementation.
 
-There were a few challenges with leaking the saved base pointer (rdp):
+There are a few challenges with leaking the saved base pointer (rdp):
 
-1. Brute-forcing _what-will-be-popped_ into `rdp` on `leave` may not fail as quickly as brute-forcing the canary or return address.  In the later cases the connection is dropped quickly, for a quicker check.  Post `pop rdp` with a corrupted `rdp` may not crash the program.  A timeout may need to be used to detect failure.
+1. Brute-forcing _what-will-be-popped_ into `rdp` on `leave` may not fail as quickly as brute-forcing the canary or return address.  In the later cases the connection is dropped quickly, for a quicker check, whereas a corrupted `rdp` may not crash the program--a timeout may need to be used to detect failure.
 2. The length of the timeout.  Locally 0.1 seconds worked consistently.  Remotely with 0.5 seconds only 1 of 3 tests passed.
 3. Many `ripe_reader` runaway processes is a byproduct of this bruce-force, slowing down the challenge server.
 
@@ -303,7 +303,7 @@ There's one last issue that I've not had the time to analyze yet.  The distance 
 
 Output:
 
-```
+```bash
 # time ./exploit2.py two.jh2i.com 50023
 [*] '/pwd/datajerk/nahamconctf2020/ripe_reader/ripe_reader'
     Arch:     amd64-64-little
