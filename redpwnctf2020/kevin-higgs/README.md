@@ -65,7 +65,7 @@ Since `maxflips` and `flipcount` are not globals and stack location random (ASLR
 
 ![](flipbit.png)
 
-`flipbit` is fairly straight forward, flip a bit, any bit (again in writable memory).  And, the global `DAT_0804c090`, if not zero, will leak the changed byte.  This can be used to read any _writable_ byte as long as changing the bit before changing back does not break anything, e.g. you'll be unable to read `puts` in `.got.plt`.
+`flipbit` is fairly straight forward, flip a bit, any bit (in writable memory).  And, the global `DAT_0804c090`, if not zero, will leak the changed byte.  This can be used to read any _writable_ byte as long as changing the bit before changing back does not break anything, e.g. you'll be unable to read `puts` from `.got.plt`.
 
 
 ## Exploit
@@ -101,7 +101,7 @@ From the top, the `exit` GOT and PLT entries are pulled from the binary.  The sa
 [0x804c01c] exit@GLIBC_2.0  →  0x8049086
 ```
 
-The objective is to flip two bits in `0x8049086` so that a call to `exit` jumps back to the main code.
+The objective is to flip two bits in `0x8049086` so that a call to `exit` jumps back to the `main` code.
 
 ```python
 s1 = os.popen('objdump -M intel -d ' + binary.path)
@@ -191,7 +191,7 @@ Give me the address of the byte (hex uint32):
 
 > The 9th bit of `804c01c` is the 1st bit of `804c01d`.
 
-Looks like it worked.  Assuming this is stable for many more bit flips, infinite flips achieved!
+Looks like it worked.  Assuming this is stable for many more bit flips, then infinite flips achieved!
 
 Oh, if you're wonder where `0x8049284` (`0x8049086` with `1,9` flipped) is, it's actually in `main`:
 
@@ -283,7 +283,7 @@ flipbit(debug,0)
 flipbit(debug,1)
 ```
 
-Once connected, using the `1,9` pair obtain a revolving exit door for infinite free rides, then flip any _two different_ `debug` bits to enable _debug_ mode for leaking bytes.
+Once connected, using the `1,9` pair obtain a revolving exit door for infinite free rides, then flip any two _different_ `debug` bits to enable _debug_ mode for leaking bytes.
 
 > Two bits must be flipped or the next stage will fail.  The reads require two flips, if that gets split across an `exit`, then the `setvbuf` `.got.plt` entry will be corrupt, failing when `exit` jumps back to the ~top of `main`.
 
@@ -298,7 +298,7 @@ libc.address = baselibc
 
 To leak libc, just read the PLT address from the GOT.
 
-The libc can be obtained by reading the included `Dockerfile`.  _This did not need to be included, it could have been discovered_, e.g. the last 3 nibbles of the challenge server `setvbuf` is `700` (leaked from above), and can be search with [libc-database](https://github.com/niklasb/libc-database):
+The libc can be obtained by reading the included `Dockerfile`.  BTW, this did not need to be included, it could have been discovered, e.g. the last 3 nibbles of the challenge server `setvbuf` is `700` (leaked from above), and can be search with [libc-database](https://github.com/niklasb/libc-database):
 
 ```bash
 # libc-database/find setvbuf 700 | grep i386
@@ -432,7 +432,7 @@ $1 = 0xd8
 
 Feel free to test with ASLR enable, the offset of `0xd8` will be consistent.
 
-Finally, we can leak the stack and know its distance from `maxflips`:
+Finally, we can leak the stack:
 
 ```python
 # leak stack
@@ -499,7 +499,7 @@ gef➤  x/wx $ebp-0x24
 0xff8b6854:	0x00000000
 ```
 
-Now to just `ni` to `exit`, then at `call   0x8049080 <exit@plt>`, type `si`, the next instruction should be at `exit@plt+0`:
+Next, `ni` to `exit`, then at `call   0x8049080 <exit@plt>`, type `si`, the next instruction should be at `exit@plt+0`:
 
 ```
 0x8049080 <exit@plt+0>     jmp    DWORD PTR ds:0x804c01c
@@ -518,7 +518,7 @@ Now look at the stack:
 0xff8b6770│+0x001c: 0x00000000
 ```
 
-If you look at stack before the exit `$esp` was pointing to `0xff8b6768`, but now is pointing to `0xff8b6754`, a difference of 20 bytes.  We cannot write our payload above the stack, it'll get smashed by normal code execution.  And we cannot simply have `exit@plt` `jmp` to the stack since the NX is enabled.  We will need to find a gadget that will move `$esp` to our exploit code and then on `ret` execute our ROP chain.
+If you look at stack before the exit, `$esp` was pointing to `0xff8b6768`, but now is pointing to `0xff8b6754`, a difference of 20 bytes.  We cannot write our payload above the stack, it'll get smashed by normal code execution.  And we cannot simply have `exit@plt` `jmp` to the stack since the NX is enabled.  We will need to find a gadget that will move `$esp` to our exploit and then on `ret` execute our ROP chain.
 
 There are many `add esp, 0xNN; ret;` gadgets in `libc`, we just need to find one that moves the pointer at least 20 bytes, but not too far:
 
