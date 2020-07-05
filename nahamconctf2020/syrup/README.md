@@ -180,7 +180,7 @@ payload += p64(constants.SYS_rt_sigreturn)
 payload += p64(binary.symbols['fn2'])
 ```
 
-The clever way puts the `rt_sigreturn` syscall number in RBP.  Then overwrites the return address with the address of `fn2`.  `fn1` before `ret` will pop RBP, then `fn2` will push RDB, then pop RAX before the `syscall`.
+The clever way puts the `rt_sigreturn` syscall number in RBP.  Then overwrites the return address with the address of `fn2`.  `fn1` before `ret` will pop RBP, then `fn2` will push RBP, then pop RAX before the `syscall`.
 
 > They really thought of everything. 
 
