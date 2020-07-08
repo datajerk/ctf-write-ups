@@ -129,7 +129,7 @@ Final pass.  Again overflow the buffer with `0x18` bytes, but this time call `sy
 
 Output:
 
-```
+```bash
 # ./exploit.py
 [*] '/pwd/datajerk/redpwnctf2020/the-library/the-library'
     Arch:     amd64-64-little
