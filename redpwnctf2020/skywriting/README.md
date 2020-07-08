@@ -50,9 +50,9 @@ no
 :(, take this shell instead
 ```
 
-No shell, it wasn't going to be that easy, but worth checking anyway.
+No shell, it wasn't going to be _that_ easy, but worth checking anyway.
 
-So, start out with a `1` and you'll be in a loop until you send `notflag{a_cloud_is_just_someone_elses_computer}\n`.  While in this loop `read` will read up to `0x200` bytes into a buffer that will bump up to the canary after `0x98 - 0x10` bytes (see Ghidra stack diagram).
+So, start out with a `1` and you'll be in a loop until you send `notflag{a_cloud_is_just_someone_elses_computer}\n`.  While in this loop `read` will _read_ up to `0x200` bytes into a buffer that will bump up to the canary after `0x98 - 0x10` bytes (see Ghidra stack diagram).
 
 The stack check does not happen until after the loop exits, so you can safely overwrite and read the stack.
 
