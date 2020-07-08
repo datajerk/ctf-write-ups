@@ -23,6 +23,7 @@ _barcode_
 
 _bof_
 
+* [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
 * [auctf2020/house-of-madness](auctf2020/house-of-madness/README.md)
 * [auctf2020/thanksgiving-dinner](auctf2020/thanksgiving-dinner/README.md)
 * [b01lersctf2020/black-hole](b01lersctf2020/black-hole/README.md)
@@ -102,6 +103,7 @@ _forensics_
 
 _format-string_
 
+* [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
 * [b01lersctf2020/kobayashi-maru](b01lersctf2020/kobayashi-maru/README.md)
 * [dawgctf2020/cookie-monster](dawgctf2020/cookie-monster/README.md)
 * [dawgctf2020/coronacation](dawgctf2020/coronacation/README.md)
@@ -116,6 +118,10 @@ _format-string_
 * [twctf2019/nothing\_more\_to\_say](twctf2019/nothing\_more\_to\_say/README.md)
 * [utctf2020/zurk](utctf2020/zurk/README.md)
 * [wpictf2020/dorsia3](wpictf2020/dorsia3/README.md)
+
+_fortify_
+
+* [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
 
 _gets_
 
@@ -179,6 +185,7 @@ _programming_
 
 _pwn_
 
+* [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
 * [auctf2020/house-of-madness](auctf2020/house-of-madness/README.md)
 * [auctf2020/remote-school](auctf2020/remote-school/README.md)
 * [auctf2020/thanksgiving-dinner](auctf2020/thanksgiving-dinner/README.md)
@@ -237,6 +244,7 @@ _real-mode_
 
 _remote-shell_
 
+* [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
 * [auctf2020/house-of-madness](auctf2020/house-of-madness/README.md)
 * [b01lersctf2020/blind-piloting](b01lersctf2020/blind-piloting/README.md)
 * [b01lersctf2020/kobayashi-maru](b01lersctf2020/kobayashi-maru/README.md)
@@ -282,6 +290,7 @@ _reverse-shell_
 
 _rop_
 
+* [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
 * [b01lersctf2020/black-hole](b01lersctf2020/black-hole/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
@@ -332,6 +341,7 @@ _srop_
 
 _stack-canary_
 
+* [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
 * [b01lersctf2020/blind-piloting](b01lersctf2020/blind-piloting/README.md)
 * [nahamconctf2020/ripe\_reader](nahamconctf2020/ripe\_reader/README.md)
 * [ractf2020/fiap](ractf2020/fiap/README.md)
@@ -383,6 +393,7 @@ _x86_
 
 _x86-64_
 
+* [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [hsctf7/boredom](hsctf7/boredom/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
