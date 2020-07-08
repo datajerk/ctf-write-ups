@@ -32,7 +32,7 @@ BOF -> ROP -> leak libc -> ret2main -> shell
     PIE:      No PIE (0x400000)
 ```
 
-No shellcode on the stack, but thats about it for mitigations.  Easy read/write GOT, easy BOF, easy ROP.
+No shellcode on the stack, but that's about it for mitigations.  Easy read/write GOT, easy BOF, easy ROP.
 
     
 ### Decompile with Ghidra
@@ -63,7 +63,7 @@ I still disassemble/decompile even if source included for the following reasons:
 
 _Moving on..._
 
-This is a simple BOF task, the input buffer is `0x18` bytes from the return address in the stack and `read` will take up to `0x100` (256) bytes supporting a rather large ROP chain.
+This is a simple BOF task, the input buffer is `0x18` bytes from the return address in the stack, and `read` will take up to `0x100` (256) bytes supporting a rather large ROP chain.
 
 There's only one pass, and since ASLR will still obfuscate the location of libc, we'll have to leak that first and then jump back up to main.  With libc location known, we can get a shell.
 
