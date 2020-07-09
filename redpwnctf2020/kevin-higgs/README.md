@@ -300,7 +300,7 @@ libc.address = baselibc
 
 To leak libc, just read the PLT address from the GOT.
 
-The libc can be obtained by reading the included `Dockerfile`.  BTW, this did not need to be included, it could have been discovered, e.g. the last 3 nibbles of the challenge server `setvbuf` is `700` (leaked from above), and can be search with [libc-database](https://github.com/niklasb/libc-database):
+libc can be obtained by reading the included `Dockerfile`.  BTW, this did not need to be included, it could have been discovered, e.g. the last 3 nibbles of the challenge server `setvbuf` is `700` (leaked from above), and can be searched with [libc-database](https://github.com/niklasb/libc-database):
 
 ```bash
 # libc-database/find setvbuf 700 | grep i386
