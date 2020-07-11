@@ -36,8 +36,8 @@ I had options (GOT overwrite, ROP), I just didn't see the solution (in time).
 ![](binary.png)
 
 > It's interesting when ASCII artists try to make something round in a terminal.  Results will vary depending on the font and other terminal settings.  Above this looks almost perfect in my terminal, however in Markdown, not so much.
-
-I'll never get tired of ASCII art.
+>
+> I'll never get tired of ASCII art.
 
 There's not a lot here.  `0` will allocate some memory (more on this later), and `1` and `2` will write and read that memory.  Any attempt to go out of bounds by offset or length or input is blocked, including integer overload (e.g. negative numbers).  `3` will write out the sector to disk using a `/dev/urandom` supplied name (that is returned to the user), and `4` will read any file (if in the correct format (hex string)), IFF you know the name of the file.
 
@@ -149,7 +149,7 @@ write(1, "Sector created!", 15)         = 15
 
 Goddamnit, there is is, what eluded me for hours, how could I have missed _this!?_  It's plainly obvious to me now what to do (however, let's continue the exploitation--it has a happy ending (for me, not the hacker)).
 
-I'll cover this in more detail in the decompile section, but the short of it is, the attacker put in `281474976710655` (`0xffffffffffff` or 2<sup>48</sup>-1) as the sector size.  Implied in the `Cannot allocate memory` error, the pointer address would have been `null` (`0`), however, the `Sector created!` implies there was no check in the code for this.
+I'll cover this in more detail in the decompile section, but the short of it is, the attacker put in `281474976710655` (`0xffffffffffff` or 2<sup>48</sup>-1) as the sector size.  Implied by the `Cannot allocate memory` error, the pointer address would have been `null` (`0`), however, the `Sector created!` implies there was no check in the code for this.
 
 With this knowledge in hand, we can attack the server by leaking libc, changing the GOT, etc...
 
@@ -237,7 +237,7 @@ rt_sigaction(SIGINT, {sa_handler=0x560707136380, sa_mask=~[RTMIN RT_1], sa_flags
 +++ killed by SIGTERM +++
 ```
 
-SIGTERM?  The 1337 hax0r didn't even get a chance at a flag.  _Why?_
+SIGTERM?  The "1337 hax0r" didn't even get a chance at a flag.  _Why?_
 
 Well, we had the following loop killing shells:
 
@@ -247,7 +247,7 @@ while :; do for uid in $(cat serviceusers); do pkill -U $uid 'sh|nc|cat'; done; 
 
 > Thanks for the tip [PPP](https://www.reddit.com/r/netsec/comments/1k1oh4/we_are_the_plaid_parliament_of_pwning_ask_us/cbkgsvi/)
 
-Game over.
+Game over, "1337 hax0r".
 
 BTW, our attacker send this from the previous PID, it would have been buffered and landed on the shell if not killed:
 
@@ -373,7 +373,7 @@ while :; do for uid in $(cat serviceusers); do pkill -U $uid 'sh|nc|cat'; done; 
 
 However, flags were still stolen.
 
-In the ~30 min I had the `strace` front-ending this service almost 6000 PID files were created.  We were getting pounded.  However, only 22 of the PIDs managed to get flags and used the following vs. getting a shell:
+In the ~30 min I had the `strace` front-ending this service almost 6000 PID files were created.  We were getting pounded.  However, only 22 of the PIDs managed to get flags and used one of the following (vs. getting a shell, AFAIK, no `/bin/sh` processes got a flag):
 
 ```
 execve("/usr/bin/strings", ["strings", "a54226d09ecb764feddf6df96a073bf9", "e655707a790f68faaaf769d65794a466", "00000000000000000000000000000000", "7c957eba39eb18d2a98b19552b1b66ac", "3818b68cd6d14ec622185e7cbe42acb4", "7ea93ad7510e629aa8e91f312b997387", "6d45d9eadb1bd3dfd1bedf0b2c68e969", "5b409e8d7028435b72912fa9e66f78aa", "2140e6ddd81d878f923e9d5507c877c5", "8fca86911b94382bd65cafd8648b5f7f"], 0x7fff4b292100 /* 12 vars */) = 0
@@ -440,6 +440,8 @@ a
 Segmentation fault
 ```
 
+Segfault, vulnerable.
+
 New binary test:
 
 ```
@@ -469,11 +471,11 @@ Options:
 5. Exit
 ```
 
-No segfault, vulnerability patched.
+No segfault, [one] vulnerability patched (dunno if there are others).
 
 Oh, and yet another _fuck me_ moment:
 
-```
+```assembly
   400df6:       e8 25 fb ff ff          call   400920 <calloc@plt>
   400dfb:       48 89 c5                mov    rbp,rax
   400dfe:       90                      nop
