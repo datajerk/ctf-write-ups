@@ -373,7 +373,7 @@ while :; do for uid in $(cat serviceusers); do pkill -U $uid 'sh|nc|cat'; done; 
 
 However, flags were still stolen.
 
-In the ~30 min I had the `strace` front-ending this service almost 6000 PID files were created.  We were getting pounded.  However, only 22 of the PIDs managed to get flags and used one of the following (vs. getting a shell, AFAIK, no `/bin/sh` processes got a flag):
+In the ~30 min I had the `strace` front-ending this service almost 6000 PID files were created.  We were getting pounded.  However, only 22 of the PIDs managed to get flags and used one of the following:
 
 ```
 execve("/usr/bin/strings", ["strings", "a54226d09ecb764feddf6df96a073bf9", "e655707a790f68faaaf769d65794a466", "00000000000000000000000000000000", "7c957eba39eb18d2a98b19552b1b66ac", "3818b68cd6d14ec622185e7cbe42acb4", "7ea93ad7510e629aa8e91f312b997387", "6d45d9eadb1bd3dfd1bedf0b2c68e969", "5b409e8d7028435b72912fa9e66f78aa", "2140e6ddd81d878f923e9d5507c877c5", "8fca86911b94382bd65cafd8648b5f7f"], 0x7fff4b292100 /* 12 vars */) = 0
@@ -383,9 +383,11 @@ execve("/usr/bin/egrep", ["egrep", "-ra", "FAUST_[A-Za-z0-9/+]{32}"], 0x5641db67
 execve("/usr/bin/grep", ["grep", "-ar", "FAUST", "data"], 0x558505c7fc30 /* 11 vars */) = 0
 ```
 
-I'll do the forensics on those attacks another time.
+Tracing a few of these back does reveal that `execve("/bin/sh", ["sh", "-c", ...` is also called.  IOW, our loop isn't tight enough.  OTOH, surgical is the way to go...
 
-> Note to self, block `execve`
+> Note to self, block `execve`.
+> 
+> Only allow non-service accounts to run `/bin/sh` perhaps.
 
 
 ### Surgical
