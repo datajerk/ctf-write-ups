@@ -4,7 +4,7 @@
 
 This was an [Attack/Defense](https://2020.faustctf.net/information/attackdefense-for-beginners/) CTF.  There's no task description or Jeopardy-style scoring.  Just, attack, defend, and maintain SLAs.
 
-Tags: _pwn_ _x86-64_ _remote-shell_ _write-what-where_ _null-pointer_ _got-overwrite_
+Tags: _pwn_ _x86-64_ _remote-shell_ _write-what-where_ _null-pointer_ _got-overwrite_ _a/d_
 
 
 ## Summary
