@@ -249,7 +249,7 @@ while :; do for uid in $(cat serviceusers); do pkill -U $uid 'sh|nc|cat'; done; 
 
 Game over, "1337 hax0r".
 
-BTW, our attacker send this from the previous PID, it would have been buffered and landed on the shell if not killed:
+BTW, our attacker sent this from the previous PID, it would have been buffered and landed in the shell if not killed:
 
 ```
 read(0, "grep -Pahr FAUST_ data\n", 4096) = 23
