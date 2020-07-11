@@ -143,6 +143,10 @@ _got_
 * [ractf2020/nra](ractf2020/nra/README.md)
 * [wpictf2020/dorsia4](wpictf2020/dorsia4/README.md)
 
+_got-overwrite_
+
+* [faustctf2020/cartography](faustctf2020/cartography/README.md)
+
 _libc_
 
 * [auctf2020/house-of-madness](auctf2020/house-of-madness/README.md)
@@ -168,6 +172,10 @@ _msdos_
 _nop-sled_
 
 * [tjctf2020/osrs](tjctf2020/osrs/README.md)
+
+_null-pointer_
+
+* [faustctf2020/cartography](faustctf2020/cartography/README.md)
 
 _pow_
 
@@ -202,6 +210,7 @@ _pwn_
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
+* [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [hsctf7/boredom](hsctf7/boredom/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
@@ -250,6 +259,7 @@ _remote-shell_
 * [b01lersctf2020/kobayashi-maru](b01lersctf2020/kobayashi-maru/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
+* [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
 * [ijctf2020/admin](ijctf2020/admin/README.md)
@@ -374,6 +384,7 @@ _video_
 _write-what-where_
 
 * [auctf2020/remote-school](auctf2020/remote-school/README.md)
+* [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
 * [redpwnctf2020/kevin-higgs](redpwnctf2020/kevin-higgs/README.md)
 * [tjctf2020/naughty](tjctf2020/naughty/README.md)
@@ -395,6 +406,7 @@ _x86-64_
 
 * [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
+* [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [hsctf7/boredom](hsctf7/boredom/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
