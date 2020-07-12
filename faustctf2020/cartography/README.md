@@ -308,7 +308,7 @@ binary = ELF('./cartography')
 libc = ELF('libc-database/db/libc6_2.28-10_amd64.so')
 
 #p = process(['stdbuf','-i0','-o0','-e0',binary.path])
-p = remote('172.19.2.18', 6666)
+p = remote('vulnbox', 6666)
 
 # null pointer
 p.sendlineafter('>','0')
