@@ -13,7 +13,7 @@ I worked on this for hours and failed to find an exploit; in the final hour of t
 
 > _Every problem is absurdly simple when it is explained to you. -- Sherlock Holmes_
 
-In the end, this was as simple as taking advantage of a null pointer to write anywhere in writable memory and update the GOT.
+In the end, this was as simple as taking advantage of a null pointer to write anywhere in writable memory to overwrite the GOT.
 
 
 ## Analysis
