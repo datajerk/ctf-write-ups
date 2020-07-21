@@ -105,7 +105,7 @@ undefined8 main(void)
 }
 ```
 
-Send 44 bytes, then `0xcafebabe` (`0xcafebabe`) for `gets` buffer overflow into `local_c` for the flag.
+Send 44 bytes, then `-0x35014542` (`0xcafebabe`) for `gets` buffer overflow into `local_c` for the flag.
 
 
 ### Exploit
