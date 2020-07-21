@@ -33,6 +33,7 @@ _bof_
 * [b01lersctf2020/black-hole](b01lersctf2020/black-hole/README.md)
 * [b01lersctf2020/blind-piloting](b01lersctf2020/blind-piloting/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
+* [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [dawgctf2020/bof-to-the-top](dawgctf2020/bof-to-the-top/README.md)
 * [dawgctf2020/cookie-monster](dawgctf2020/cookie-monster/README.md)
 * [dawgctf2020/on-lockdown](dawgctf2020/on-lockdown/README.md)
@@ -109,6 +110,8 @@ _format-string_
 
 * [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
 * [b01lersctf2020/kobayashi-maru](b01lersctf2020/kobayashi-maru/README.md)
+* [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
+* [csictf2020/smash](csictf2020/smash/README.md)
 * [dawgctf2020/cookie-monster](dawgctf2020/cookie-monster/README.md)
 * [dawgctf2020/coronacation](dawgctf2020/coronacation/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
@@ -149,6 +152,8 @@ _got_
 
 _got-overwrite_
 
+* [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
+* [csictf2020/smash](csictf2020/smash/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 
 _libc_
@@ -206,6 +211,8 @@ _pwn_
 * [b01lersctf2020/kobayashi-maru](b01lersctf2020/kobayashi-maru/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [ccc2019/devops1](ccc2019/devops1/README.md)
+* [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
+* [csictf2020/smash](csictf2020/smash/README.md)
 * [dawgctf2020/bof-to-the-top](dawgctf2020/bof-to-the-top/README.md)
 * [dawgctf2020/cookie-monster](dawgctf2020/cookie-monster/README.md)
 * [dawgctf2020/coronacation](dawgctf2020/coronacation/README.md)
@@ -262,6 +269,8 @@ _remote-shell_
 * [b01lersctf2020/blind-piloting](b01lersctf2020/blind-piloting/README.md)
 * [b01lersctf2020/kobayashi-maru](b01lersctf2020/kobayashi-maru/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
+* [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
+* [csictf2020/smash](csictf2020/smash/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
@@ -286,6 +295,10 @@ _remote-shell_
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
 * [wpictf2020/dorsia3](wpictf2020/dorsia3/README.md)
 * [wpictf2020/dorsia4](wpictf2020/dorsia4/README.md)
+
+_ret2win_
+
+* [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 
 _rev_
 
@@ -396,6 +409,8 @@ _write-what-where_
 
 _x86_
 
+* [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
+* [csictf2020/smash](csictf2020/smash/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 * [ractf2020/fiap](ractf2020/fiap/README.md)
 * [ractf2020/fias](ractf2020/fias/README.md)
@@ -410,6 +425,7 @@ _x86-64_
 
 * [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
+* [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [hsctf7/boredom](hsctf7/boredom/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
