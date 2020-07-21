@@ -128,7 +128,7 @@ The second offset is a libc address leak; start up `hello` in GDB and set a brea
 0xffffd670│+0x007c: 0xf7faa000  →  0x001d7d6c
 ```
 
-The string `blah` at `0xffffd5f8│+0x0004` is the input and is at offset 1 (determined from above).  Down stack there are a number of `realloc` location leaks.  Any within `128` bytes (length `local_88`), or the first 32 offsets could be overwritten by `strcpy`; something to be aware of, but is not a problem since the attack is ~60 bytes (measured).
+The string `blah` at `0xffffd5f8│+0x0004` is the input and is at offset 1 (determined from above).  Down stack there are a number of `realloc` location leaks.  Given the unbounded `strcpy`; something to be aware of (attack is ~60 bytes (measured)).
 
 `ralloac+9` at offset `29` (just count down from `blah`), looks like a good target, so I went with that.  
 
