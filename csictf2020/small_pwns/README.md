@@ -30,7 +30,7 @@ All of these are ripe for BOF and GOT overwrite exploits.
 
 ## pwn intended 0x1
 
-Tags: _pwn_ _bof_
+Tags: _pwn_ _bof_ _x86-64_
 
 ### Analysis
 
@@ -83,7 +83,7 @@ csictf{y0u_ov3rfl0w3d_th@t_c0ff33_l1ke_@_buff3r}
 
 ## pwn intended 0x2
 
-Tags: _pwn_ _bof_
+Tags: _pwn_ _bof_ _x86-64_
 
 ### Analysis
 
@@ -136,7 +136,7 @@ csictf{c4n_y0u_re4lly_telep0rt?}
 
 ## pwn intended 0x3
 
-Tags: _pwn_ _bof_ _ret2win_ _remote-shell_ _got-overwrite_
+Tags: _pwn_ _bof_ _ret2win_ _remote-shell_ _got-overwrite_ _x86-64_
 
 ### Analysis
 
@@ -287,7 +287,7 @@ csictf{ch4lleng1ng_th3_v3ry_l4ws_0f_phys1cs}
 
 ## Secret Society
 
-Tags: _pwn_ _bof_
+Tags: _pwn_ _bof_ _x86-64_
 
 ### Analysis
 
@@ -318,7 +318,7 @@ abfaabgaa,csivit{Bu!!er_e3pl01ts_ar5_5asy}
 
 ## Global Warming
 
-Tags: _pwn_ _format-string_
+Tags: _pwn_ _format-string_ _x86_
 
 ### Analysis
 
