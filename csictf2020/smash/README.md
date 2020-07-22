@@ -375,7 +375,6 @@ Output:
     Stack:    No canary found
     NX:       NX enabled
     PIE:      No PIE (0x8048000)
-[*] Loaded 10 cached gadgets for './hello'
 [+] Opening connection to chall.csivit.com on port 30046: Done
 [*] '/pwd/datajerk/csictf2020/smash/libc-database/db/libc6-i386_2.23-0ubuntu11.2_amd64.so'
     Arch:     i386-32-little
@@ -383,8 +382,8 @@ Output:
     Stack:    Canary found
     NX:       NX enabled
     PIE:      PIE enabled
-[*] puts: 0xf7dd1150
-[*] baselibc: 0xf7d72000
+[*] puts: 0xf7dad150
+[*] baselibc: 0xf7d4e000
 [*] Switching to interactive mode
 
 $ cat flag.txt
