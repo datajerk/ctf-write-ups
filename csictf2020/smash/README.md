@@ -466,7 +466,7 @@ uid=0(root) gid=0(root) groups=0(root)
 Remote output (task server):
 
 ```bash
-# ./exploit3a.py
+# ./exploit4.py
 [*] '/pwd/datajerk/csictf2020/smash/hello'
     Arch:     i386-32-little
     RELRO:    Partial RELRO
