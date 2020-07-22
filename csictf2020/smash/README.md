@@ -395,7 +395,7 @@ csictf{5up32_m4210_5m45h_8202}
 
 ### Exploit 4: _nulls?_ null problem
 
-```
+```python
 #!/usr/bin/python3
 
 from pwn import *
@@ -440,7 +440,7 @@ In cases, like the above, where `system` has a null in Ubuntu 18's libc preventi
 
 Local output (Ubuntu 18 Docker container):
 
-```
+```bash
 # ./exploit4.py
 [*] '/pwd/datajerk/csictf2020/smash/hello'
     Arch:     i386-32-little
@@ -465,7 +465,7 @@ uid=0(root) gid=0(root) groups=0(root)
 
 Remote output (task server):
 
-```
+```bash
 # ./exploit3a.py
 [*] '/pwd/datajerk/csictf2020/smash/hello'
     Arch:     i386-32-little
