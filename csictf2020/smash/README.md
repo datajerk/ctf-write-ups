@@ -288,7 +288,7 @@ This is the same as the previous exploit except that the GOT overwrite `free` ->
 
 The 2nd stage format string will end up being: `%03b$004s\x60\x84\x04\x08`.  When `printf` "prints" this, it will emit the value referenced by `0x8048460` as a 4-byte (`04s`) string.  This is the address of `printf`.
 
-The rest similar to the previous exploit.
+The rest is similar to the previous exploit.
 
 Output:
 
