@@ -88,7 +88,7 @@ To do this, we're going to need a couple of offsets.
 
 The first is the start of `local_88` in the stack:
 
-```
+```bash
 # echo '%1$p' | nc chall.csivit.com 30046
 What's your name?
 Hello, 0x70243125!
@@ -292,7 +292,7 @@ The rest is similar to the previous exploit.
 
 Output:
 
-```
+```bash
 # ./exploit2.py
 [*] '/pwd/datajerk/csictf2020/smash/hello'
     Arch:     i386-32-little
@@ -320,7 +320,7 @@ csictf{5up32_m4210_5m45h_8202}
 
 _What if there were no format-string exploit?_
 
-```
+```python
 #!/usr/bin/python3
 
 from pwn import *
@@ -367,7 +367,7 @@ After the _ret2main_, do the same BOF, but this time return to `system` and get 
 
 Output:
 
-```
+```bash
 # ./exploit3.py
 [*] '/pwd/datajerk/csictf2020/smash/hello'
     Arch:     i386-32-little
