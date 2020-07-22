@@ -139,7 +139,7 @@ The string `blah` at `0xffffd5f8│+0x0004` is the input and is at offset 1 (det
 
 `ralloac+9` at offset `29` (just count down from `blah`), looks like a good target, so I went with that.  
 
-> BTW, `realloc+215` worked for me locally, but not remotely--differences in libc versions used.  The larger the offset to the libc call (`215` in this case) the greater the probably of difference between libc versions.  The `realloc` just below `blah` is perfect, but that will be overwritten with the format-string exploit.  Because of this I added a 2nd exploit to show how to leak from the GOT as an alternative.
+> BTW, `realloc+215` worked for me locally (Ubuntu 18), but not remotely--differences in libc versions used (`realloc+294`).  The larger the offset within the libc call (`215` in this case) the greater the probably of difference between libc versions.  Because of this I added a 2nd exploit to show how to leak from the GOT as an alternative.
 
 This is all we need.
 
