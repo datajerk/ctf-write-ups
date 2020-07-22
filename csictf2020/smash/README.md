@@ -17,7 +17,7 @@ Exploit 1: leak libc (stack) -> GOT(`free` -> `main`) -> GOT(`printf` -> `system
 
 Exploit 2: GOT(`free` -> `main`) -> leak libc (GOT) -> GOT(`printf` -> `system`) -> shell
 
-Exploit 3: BOF -> ROP -> leak libc (GOT) -> `main` -> BOF -> ROP -> `system` -> shell
+Exploit 3: BOF -> ROP -> leak libc (GOT) -> _ret2main_ -> BOF -> ROP -> `system` -> shell
 
 
 ## Analysis
@@ -359,9 +359,9 @@ This is not unlike [pwn intended 0x3 remote shell](https://github.com/datajerk/c
 
 From the source (above) `local_88` is `0x88` bytes from the return address on the stack (just how Ghidra names locals, quite handy).  So, just send 0x88 _non-null_ bytes, followed by a call to `puts`, then the return to `main` (from `puts`) and the argument to `puts`--the address of, well, `puts`.
 
-This will leak the address of `puts` to then compute the base of libc.
+This will leak the address of `puts` for computing the base of libc.
 
-Next, do the same, but this time return to `system` and get a shell.
+After the _ret2main_, do the same BOF, but this time return to `system` and get a shell.
 
 > This did not work on my Ubuntu 18 dev container because `system` ends in `\x00` and `strcpy` stops and the first null, fortuneatly the challenge server does not have this version of libc.
 
