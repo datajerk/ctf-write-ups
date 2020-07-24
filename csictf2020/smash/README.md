@@ -286,7 +286,7 @@ p.recvuntil('not found') # now that printf is system, system('Hello, ') will emi
 p.interactive()
 ```
 
-This is the same as the previous exploit except that the GOT overwrite `free` -> `main` is isolated as a discrete step with the libc leak as a new discrete step.  The steps can be combined, but its a bit harder--example [here](https://github.com/datajerk/ctf-write-ups/blob/master/redpwnctf2020/dead-canary/README.md#option-1a--option-1-using-s-to-leak-libc) of how to do that.
+This is the same as the previous exploit except that the GOT overwrite `free` -> `main` is isolated as a discrete step with the libc leak as a new discrete step.  The steps can be combined, but it's a bit harder--example [here](https://github.com/datajerk/ctf-write-ups/blob/master/redpwnctf2020/dead-canary/README.md#option-1a--option-1-using-s-to-leak-libc) of how to do that.
 
 The 2nd stage format string will end up being: `%03b$004s\x60\x84\x04\x08`.  When `printf` "prints" this, it will emit the value referenced by `0x8048460` as a 4-byte (`04s`) string.  This is the address of `printf`.
 
