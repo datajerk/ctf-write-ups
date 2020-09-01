@@ -112,7 +112,7 @@ First we need to find the `offset` of the buffer in the stack before we can use 
 
 > Read [_dead-canary_](https://github.com/datajerk/ctf-write-ups/blob/master/redpwnctf2020/dead-canary/README.md) for all the different ways to find offsets and abuse format-strings.
 
-After finding the `offset` use the `%s` flag to leak the location of `puts`, then compute the base of libc.
+After finding the `offset`, use the `%s` flag to leak the location of `puts`, then compute the base of libc.
 
 After testing locally, test remotely to get the last 3 nibbles of `puts` to then find libc using the [libc-database](https://github.com/niklasb/libc-database) (example [here](https://github.com/datajerk/ctf-write-ups/blob/master/fwordctf2020/welcome_pwner/README.md#decompile-with-ghidra)).
 
