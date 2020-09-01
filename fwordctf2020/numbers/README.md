@@ -119,7 +119,7 @@ The _easy path_ leaks libc directly from the stack.  `local_48` is uninitialized
 0x00007ffc0d27ca58│+0x0060: 0x00005556e8752a47  →  lea rdi, [rip+0xf6]        # 0x5556e8752b44
 ``` 
 
-Above is the stack when being prompted `are yo sure ??`.  `local_48` is `0x48` bytes from the return address at offset `+0x0060`.  `0x60 - 0x48` puts the start of the `local_48` at `+0x0018`, just above a libc leak for `atoi+16`.  Just send 8 bytes and the `printf` after the `read` (see `vuln` above) will leak `atoi+16` and return you back to `main` for a second pass.
+Above is the stack when being prompted `are yo sure ??`.  `local_48` is `0x48` bytes from the return address at offset `+0x0060`.  `0x60 - 0x48` puts the start of the `local_48` at `+0x0018`, just above a libc leak for `atoi+16`.  Just send 8 bytes and the `printf` after the `read` (see `vuln` above) will leak `atoi+16` and return back to `main` for a second pass.
 
 #### The _Hard Path_
 
@@ -127,9 +127,9 @@ The _hard path_ assumes that the buffer is initialized.  Using the same trick as
 
 _What makes that so hard?_
 
-Well, when `vuln` [_LEAVES_](https://www.felixcloutier.com/x86/leave), the stack pointer gets set to the garbage created by the buffer overflow that went through the saved base pointer (`$rbp` above) on the way to the return address (see offset `+0x0058` in the stack diagram above--that's what will be _moved_ to `RSP` on `LEAVE`).  On return `main` will be unstable and unpredictable rendering a second pass governed by chance--or at least that was my experience when developing this exploit.
+Well, when `vuln` [_LEAVES_](https://www.felixcloutier.com/x86/leave), the stack pointer gets set to the garbage created by the buffer overflow that went through the saved base pointer (`$rbp` above) on the way to the return address (see offset `+0x0058` in the stack diagram above--that's what will be _moved_ to `RSP` on `LEAVE`).  On return, `main` will be unstable and unpredictable rendering a second pass governed by chance--or at least that was my experience when developing this exploit.
 
-Leaking the saved base pointer is possible, but pointless because x86_64 address today are only 48 bits.  The two most significant bytes still have to be overflowed with non-zeros for `printf` to leak the return address.
+Leaking the saved base pointer is possible, but pointless because x86_64 addresses today are only 48 bits.  The two most significant bytes still have to be overflowed with non-zeros for `printf` to leak the return address.
 
 The solution is to brute force the 4th to last nibble.  I know where I'd like to return to (top of `main`), but I only know the last 3 nibbles of `main` (disassemble it).
 
@@ -325,7 +325,7 @@ while True:
 
 This loop essentially brute forces the 4th nibble.  Or better put, assumes the 4th nibble is `0` and just keeps trying until it does not fail.  ASLR will eventually (1 in 16) have `0` as the 4th nibble.  This works pretty quickly (less than 30 seconds).
 
-Take note, that we're trying to _return_ to `entry` (`main+1`) vs. `main`.  This is to fix a [stack alignment](https://blog.binpang.me/2019/07/12/stack-alignment/) issue with `printf`.  The +1 skips the initial `push rbp` at the beginning of `main`.  Without this `printf` will segfault in `vuln`.
+Take note, that we're trying to _return_ to `entry` (`main+1`) vs. `main`.  This is to fix a [stack alignment](https://blog.binpang.me/2019/07/12/stack-alignment/) issue with `printf`.  The +1 skips the initial `push rbp` at the beginning of `main`.  Without this, `printf` will segfault in `vuln`.
 
 If the stack were initialized this may be one of the only ways to leak.
 
