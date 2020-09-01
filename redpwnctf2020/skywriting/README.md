@@ -59,7 +59,7 @@ The stack check does not happen until after the loop exits, so you can safely ov
 Ignore `FUN_0010093a()`, it's just there to provide one of five different trolling messages.
 
 
-### Exploit
+## Exploit
 
 ```python
 #!/usr/bin/python3
