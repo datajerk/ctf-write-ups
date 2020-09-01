@@ -83,7 +83,7 @@ From within the `libc-database` type:
 
 This will download libc, ld, et al.
 
-Exploit Setup:
+### Setup
 
 ```python
 #!/usr/bin/env python3
@@ -113,7 +113,7 @@ The first few lines should not require much of an explanation, except perhaps th
 
 The next section (selected by placing `#` at the first or last `'''`) determines if you want to use your local libc or the challenge libc.  For most easy challenges I dev/test with the local libc and then just test with the task libc.  However for some, especially when pulling addresses from the stack, I've found inconsistencies between my local libc is vs. the task libc.  Often time is wasted having to refactor or completely resolve for the task libc.  The second block handles launching a challenge binary with the intended libs.  And `gdb` works just fine with this as well.
 
-Actual Exploit:
+### BOF, ROP, Shell
 
 ```python
 _ = p.recvline()
