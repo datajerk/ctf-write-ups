@@ -17,7 +17,7 @@ Tags: _pwn_ _x86-64_ _remote-shell_ _bof_ _rop_
 
 ## Summary
 
-Exploit a BOF vulnerability to score a second BOF vulnerability.
+Exploit a BOF vulnerability to score a second BOF vulnerability. a.k.a. _Two Piece_.
 
 
 ## Analysis
@@ -64,7 +64,7 @@ undefined8 mugiwara(char *param_1)
 }
 ```
 
-The vulnerability is in the block `if (*local_40 == 'z') {` where `local_c` can get incremented without a check and overflow the buffer `local_38` into `local_10` (`local_10` is used to constrain the `fgets` just before `return`).  `local_10` is initialized to `0x28`, however if the last char is a `z` and `local_c = 0x27`, then the value `-0x77` (`0x89`) will overwrite the lower 8-bits of `local_10`; `fgets` will then permit `0x89` characters of input into a buffer that is `0x38` (`local_38`) bytes from the return address in the stack creating a second BOF vulnerability.
+The vulnerability is in the block `if (*local_40 == 'z') {` where `local_c` can get incremented without a check and overflow the buffer `local_38` into `local_10` (`local_10` is used to constrain `fgets`).  `local_10` is initialized to `0x28`, however if the last char is `z` and `local_c = 0x27`, then the value `-0x77` (`0x89`) will overwrite the lower 8-bits of `local_10`; `fgets` will then permit `0x89` characters of input into a buffer that is `0x38` (`local_38`) bytes from the return address in the stack creating a second BOF vulnerability.
 
 Before any BOFing, `printf("Luffy is amazing, right ? : %lx \n");` leaks a `mugiwara` address that we can use to compute the base process address.  With that we can use the GOT to leak libc, and then get a shell.
 
@@ -171,9 +171,9 @@ p.sendline(payload)
 p.interactive()
 ```
 
-From `choice` we just use the secret work again `gomugomunomi`, but this time our payload invokes `system` for a shell--_remotely_, not _locally_...
+From `choice`, just use the secret word `gomugomunomi`, but this time the payload invokes `system` for a shell--_remotely_, not _locally_...
 
-The second block in the setup while it allows using the challenge binary with the challenge libc on a system with a different native libc, it will not (in most cases), run `/bin/sh` from that system since the `LD_LIBRARY_PATH` is setup specifically for the challenge binary.  Most likely you'll get a segfault and it may be confusing as to why.  The segfault _is_ from the challenge binary, the `system` actually failed to run `/bin/sh` locally because of the aforementioned and continued execution of the program and with an overflowed stack is destined to segfault.
+The second block in the setup while it allows using the challenge binary with the challenge libc on a system with a different native libc, it will not (in most cases), run `/bin/sh` from that system since the `LD_LIBRARY_PATH` is setup specifically for the challenge binary.  Most likely you'll get a segfault and it may be confusing as to why.  The segfault _is_ from the challenge binary, the `system` actually failed to run `/bin/sh` locally because of the aforementioned and continued execution of the program; and with an overflowed stack it is destined to segfault.
 
 To confirm `system` actually did invoke I use gdb.  To do this I just put a `pause()` before the final `sendline` call, then connect with, gdb, e.g.:
 
@@ -202,7 +202,7 @@ That is evidence `system` worked.
 
 > The `payload += p64(pop_rdi + 1)` fixes a [stack alignment](https://blog.binpang.me/2019/07/12/stack-alignment/) issue with `system`, `printf`, etc... sometimes you need it, other times you do not.  In this case it is needed with the remote server.
 
-Now, just change the second block in the setup section and get the flag.
+Now, just change the second block in the setup section to use the remote server and get the flag.
 
 Output:
 
