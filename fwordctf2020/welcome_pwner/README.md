@@ -111,7 +111,7 @@ p = remote('54.210.217.206', 1240)
 
 The first few lines should not require much of an explanation, except perhaps the `binary = context.binary = ELF('./molotov')` statement.  The `context.binary` there in the middle will set the context (arch, os, etc...) so that `rop`, `asm`, `constants`, etc... statements produce the correct results.
 
-The next section (selected by placing `#` at the first or last `'''`) determines if you want to use your local libc or the challenge libc.  For most easy challenges I dev/test with the local libc and then just test with the task libc.  However for some, esp. when pulling addresses from the stack, I've found inconsistencies between my local libc is vs the task libc.  Often time is wasted having to refactor or completely resolve for the task libc.  The second block handles launching a challenge binary with the intended libs.  And `gdb` works just fine with this as well.
+The next section (selected by placing `#` at the first or last `'''`) determines if you want to use your local libc or the challenge libc.  For most easy challenges I dev/test with the local libc and then just test with the task libc.  However for some, especially when pulling addresses from the stack, I've found inconsistencies between my local libc is vs. the task libc.  Often time is wasted having to refactor or completely resolve for the task libc.  The second block handles launching a challenge binary with the intended libs.  And `gdb` works just fine with this as well.
 
 Actual Exploit:
 
