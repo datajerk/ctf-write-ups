@@ -71,7 +71,7 @@ http://ftp.osuosl.org/pub/ubuntu/pool/main/g/glibc/libc6_2.30-0ubuntu2_i386.deb 
 Multiple hits.  I went with `libc6_2.30-0ubuntu2_i386` and it worked out just fine.  If it had failed, then there was only two other options to try.
 
 
-### Exploit
+## Exploit
 
 This code assumes that `libc-database` is located in the same directory (I just sym linked it) as `exploit.py`.
 
