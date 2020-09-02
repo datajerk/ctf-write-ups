@@ -143,7 +143,7 @@ filesize = 100 # guess?
 
 Most of this is boilerplate except for `flagfile` and `filesize`.
 
-The name of the flag is given in the challenge description.  The prepended directory is a guess (_under your "fbi" home directory_).  It is necessary to use the full path name or `openat` will not work (trust me, I tried).  `openat` requires a `dirfd` if not absolute.  The challenge with `dirfd` is finding a way to emit `rax` or move it to `rdi`.  This is not impossible (I did try to get `rax` to `rdi` and `rsi`, I think at that point it's best to just upload shellcode and use `mprotect` (other write ups used that method)).
+The name of the flag is given in the challenge description.  The prepended directory is a guess (_under your "fbi" home directory_).  It is necessary to use the full path name or `openat` will not work (trust me, I tried).  `openat` requires a `dirfd` if not absolute.  The challenge with `dirfd` is finding a way to emit `rax` or move it to `rdi`.  This is not impossible (I did try to get `rax` to `rdi` and `rsi`, I think at this point it's best to just upload shellcode and use `mprotect` (other write ups used that method)).
 
 As for `filesize`, no idea how long the flag is.  `100` was a guess for the upper limit.
 
