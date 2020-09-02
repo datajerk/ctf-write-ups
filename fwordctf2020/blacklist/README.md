@@ -35,7 +35,7 @@ Syscalls alone _can_ solve this problem.
 
 > This challenge is not unlike [_syscall as a service_](https://github.com/datajerk/ctf-write-ups/blob/master/nahamconctf2020/saas/README.md), a syscall training task from the NahamCon CTF 2020 (I highly recommend this as a syscall trainer).  This problem is similar; a blacklist, and you need to use syscalls to read and emit a flag.  I decided to use this approach, however there were are some differences, e.g. no `write`, and I also got hung up on emitting `rax` when I didn't need to.  I put this aside to work on other problems and just did not get back to this.  After reading [BigB00st's](https://github.com/BigB00st) excellent [writeup](https://github.com/BigB00st/ctf-solutions/tree/master/fword/pwn/blacklist), I got the bits I missed, 1. `fd` should be constant, 2. `sendfile` as a replacement for `write`, 3. use the BSS space (don't waste time with the heap).  With this in hand the problem became surprisingly simple.
 > 
-> This writeup while not exactly the same, is, well, the same; full props to [BigB00st](https://github.com/BigB00st).
+> This writeup, while not exactly the same, is, well, the same; full props to [BigB00st](https://github.com/BigB00st).
 
 
 ## Analysis
@@ -100,8 +100,6 @@ No canary?  BOF/ROP is an option.
 
 No `write`.
 
-_Black_ has multiple meanings here; _GOT?_, garbage; _symbols?_, what symbols?; _output?_, we're in the dark.
-
 The last seccomp challenge I worked on I ended up using a combination of GOT and syscalls.  I tried to make sense of the GOT, but I _got_ nowhere.
 
     
@@ -145,7 +143,7 @@ filesize = 100 # guess?
 
 Most of this is boilerplate except for `flagfile` and `filesize`.
 
-The name of the flag is given in the challenge description.  The prepended directory is a guess (_under your "fbi" home directory_).  It is necessary to use the full path name or `openat` will not work (trust me, I tried).  `openat` requires a `dirfd` if not absolute.  The challenge with `dirfd` is we have to find a way to either emit `rax` or move to `rdi`.  This is not impossible (I did try to get `rax` to `rdi` and `rsi`, I think at that point it's best to just upload shellcode and use `mprotect` (other write ups used that method)).
+The name of the flag is given in the challenge description.  The prepended directory is a guess (_under your "fbi" home directory_).  It is necessary to use the full path name or `openat` will not work (trust me, I tried).  `openat` requires a `dirfd` if not absolute.  The challenge with `dirfd` is finding a way to emit `rax` or move it to `rdi`.  This is not impossible (I did try to get `rax` to `rdi` and `rsi`, I think at that point it's best to just upload shellcode and use `mprotect` (other write ups used that method)).
 
 As for `filesize`, no idea how long the flag is.  `100` was a guess for the upper limit.
 
