@@ -103,7 +103,7 @@ print(p.recvuntil('FwordCTF{') + p.recvuntil('}'))
 
 Output:
 
-```
+```bash
 WARNING | 2020-08-30 06:12:55,054 | cle.loader | The main binary is a position-independent executable. It is being loaded with a base address of 0x400000.
 WARNING | 2020-08-30 06:12:56,025 | angr.state_plugins.symbolic_memory | The program is accessing memory or registers with an unspecified value. This could indicate unwanted behavior.
 WARNING | 2020-08-30 06:12:56,026 | angr.state_plugins.symbolic_memory | angr will cope with this by generating an unconstrained symbolic variable and continuing. You can resolve this by:
@@ -124,7 +124,7 @@ b'\nFwordCTF{luhn!_wh4t_a_w31rd_n4m3}'
 
 But what if you wanted just numbers?
 
-```
+```python
 #!/usr/bin/env python3
 
 import angr, time, claripy
@@ -151,7 +151,7 @@ print(time.time() - t, "seconds")
 
 Output:
 
-```
+```bash
 # ./sol_w_constraints.py
 WARNING | 2020-09-02 04:40:58,794 | cle.loader | The main binary is a position-independent executable. It is being loaded with a base address of 0x400000.
 WARNING | 2020-09-02 04:41:00,131 | angr.state_plugins.symbolic_memory | The program is accessing memory or registers with an unspecified value. This could indicate unwanted behavior.
@@ -166,7 +166,7 @@ b'1168111112111118\n'
 
 Flag:
 
-```
+```bash
 # nc welcome.fword.wtf 5000
 Hello give me the secret number so i can get the flag:
 1168111112111118
@@ -175,7 +175,7 @@ FwordCTF{luhn!_wh4t_a_w31rd_n4m3}
 
 How about only 1s and 2s?
 
-```
+```python
 root@14b98ec94fe7:/pwd/datajerk/fwordctf2020/welcome_reverser# cat READM
 #!/usr/bin/env python3
 
@@ -203,7 +203,7 @@ print(time.time() - t, "seconds")
 
 Output:
 
-```
+```bash
 # ./sol_w_constraints.py
 WARNING | 2020-09-02 04:43:38,363 | cle.loader | The main binary is a position-independent executable. It is being loaded with a base address of 0x400000.
 WARNING | 2020-09-02 04:43:39,670 | angr.state_plugins.symbolic_memory | The program is accessing memory or registers with an unspecified value. This could indicate unwanted behavior.
@@ -218,7 +218,7 @@ b'1112121211121212\n'
 
 Flag:
 
-```
+```bash
 # nc welcome.fword.wtf 5000
 Hello give me the secret number so i can get the flag:
 1112121211121212
