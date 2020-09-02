@@ -15,6 +15,7 @@ _a/d_
 _angr_
 
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
+* [fwordctf2020/welcome\_reverser](fwordctf2020/welcome\_reverser/README.md)
 * [sharkyctf2020/z3robotwaves](sharkyctf2020/z3robotwaves/README.md)
 
 _audio_
@@ -40,6 +41,11 @@ _bof_
 * [dawgctf2020/on-lockdown](dawgctf2020/on-lockdown/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
+* [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
+* [fwordctf2020/ezret2win](fwordctf2020/ezret2win/README.md)
+* [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
+* [fwordctf2020/one\_piece](fwordctf2020/one\_piece/README.md)
+* [fwordctf2020/welcome\_pwner](fwordctf2020/welcome\_pwner/README.md)
 * [hsctf7/boredom](hsctf7/boredom/README.md)
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
 * [ijctf2020/admin](ijctf2020/admin/README.md)
@@ -115,6 +121,7 @@ _format-string_
 * [csictf2020/smash](csictf2020/smash/README.md)
 * [dawgctf2020/cookie-monster](dawgctf2020/cookie-monster/README.md)
 * [dawgctf2020/coronacation](dawgctf2020/coronacation/README.md)
+* [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
 * [nahamconctf2020/leet\_haxor](nahamconctf2020/leet\_haxor/README.md)
 * [ractf2020/fiap](ractf2020/fiap/README.md)
@@ -156,6 +163,11 @@ _got-overwrite_
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [csictf2020/smash](csictf2020/smash/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
+* [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
+
+_integer-overflow_
+
+* [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
 
 _libc_
 
@@ -170,6 +182,11 @@ _libc_
 _mips_
 
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
+
+_misc_
+
+* [fwordctf2020/secret\_array](fwordctf2020/secret\_array/README.md)
+* [fwordctf2020/twis\_twis\_litlle\_star](fwordctf2020/twis\_twis\_litlle\_star/README.md)
 
 _modem_
 
@@ -223,6 +240,12 @@ _pwn_
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
+* [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
+* [fwordctf2020/ezret2win](fwordctf2020/ezret2win/README.md)
+* [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
+* [fwordctf2020/one\_piece](fwordctf2020/one\_piece/README.md)
+* [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
+* [fwordctf2020/welcome\_pwner](fwordctf2020/welcome\_pwner/README.md)
 * [hsctf7/boredom](hsctf7/boredom/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
@@ -274,6 +297,10 @@ _remote-shell_
 * [csictf2020/smash](csictf2020/smash/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
+* [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
+* [fwordctf2020/one\_piece](fwordctf2020/one\_piece/README.md)
+* [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
+* [fwordctf2020/welcome\_pwner](fwordctf2020/welcome\_pwner/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
 * [ijctf2020/admin](ijctf2020/admin/README.md)
@@ -300,6 +327,7 @@ _remote-shell_
 _ret2win_
 
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
+* [fwordctf2020/ezret2win](fwordctf2020/ezret2win/README.md)
 
 _rev_
 
@@ -308,6 +336,7 @@ _rev_
 * [dawgctf2020/animal-crossing](dawgctf2020/animal-crossing/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
+* [fwordctf2020/welcome\_reverser](fwordctf2020/welcome\_reverser/README.md)
 * [sharkyctf2020/z3robotwaves](sharkyctf2020/z3robotwaves/README.md)
 * [tjctf2020/asmr](tjctf2020/asmr/README.md)
 * [twctf2019/easy\_crack\_me](twctf2019/easy\_crack\_me/README.md)
@@ -324,6 +353,10 @@ _rop_
 * [csictf2020/smash](csictf2020/smash/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
+* [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
+* [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
+* [fwordctf2020/one\_piece](fwordctf2020/one\_piece/README.md)
+* [fwordctf2020/welcome\_pwner](fwordctf2020/welcome\_pwner/README.md)
 * [hsctf7/boredom](hsctf7/boredom/README.md)
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
 * [nahamconctf2020/dangerous](nahamconctf2020/dangerous/README.md)
@@ -368,6 +401,10 @@ _srop_
 
 * [nahamconctf2020/syrup](nahamconctf2020/syrup/README.md)
 
+_ssh_
+
+* [fwordctf2020/ezret2win](fwordctf2020/ezret2win/README.md)
+
 _stack-canary_
 
 * [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
@@ -389,6 +426,7 @@ _strncmp_
 
 _syscall_
 
+* [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
 * [nahamconctf2020/saas](nahamconctf2020/saas/README.md)
 * [nahamconctf2020/syrup](nahamconctf2020/syrup/README.md)
 
@@ -414,6 +452,8 @@ _x86_
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [csictf2020/smash](csictf2020/smash/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
+* [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
+* [fwordctf2020/welcome\_pwner](fwordctf2020/welcome\_pwner/README.md)
 * [ractf2020/fiap](ractf2020/fiap/README.md)
 * [ractf2020/fias](ractf2020/fias/README.md)
 * [ractf2020/nra](ractf2020/nra/README.md)
@@ -429,6 +469,11 @@ _x86-64_
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
+* [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
+* [fwordctf2020/ezret2win](fwordctf2020/ezret2win/README.md)
+* [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
+* [fwordctf2020/one\_piece](fwordctf2020/one\_piece/README.md)
+* [fwordctf2020/welcome\_reverser](fwordctf2020/welcome\_reverser/README.md)
 * [hsctf7/boredom](hsctf7/boredom/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
