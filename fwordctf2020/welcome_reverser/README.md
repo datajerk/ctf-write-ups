@@ -176,7 +176,6 @@ FwordCTF{luhn!_wh4t_a_w31rd_n4m3}
 How about only 1s and 2s?
 
 ```python
-root@14b98ec94fe7:/pwd/datajerk/fwordctf2020/welcome_reverser# cat READM
 #!/usr/bin/env python3
 
 import angr, time, claripy
