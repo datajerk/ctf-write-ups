@@ -233,7 +233,7 @@ p.recv(100 + 10)
 p.interactive()
 ```
 
-The rest is fairly straight forward.  The payload is not unlike most _get-a-shell-ROP_ pwns.  However using the `display` bug to move the payload into place.  The base of 120 was determined from Ghidra (see above), then repeatedly send the bytes to location `0 120 + i`.
+The rest is fairly straight forward.  The payload is not unlike most _get-a-shell-ROP_ pwns, however, using the `display` bug to move the payload into place vs BOF.  The base of 120 was determined from Ghidra (see above).  The loop sends the bytes to location `0 120 + i`.
 
 > I should probably check for `d` in the payload as a _badchar_.  It does happen (thanks ASLR).  But I'm already 5 days behind on this writeup.
 
