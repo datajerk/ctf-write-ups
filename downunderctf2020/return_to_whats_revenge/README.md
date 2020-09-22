@@ -213,7 +213,7 @@ except:
 
 Above is simple `syscall` function to build _syscall_ payloads followed by a `try` block to _try_ to find all the ROP gadgets we'll need for syscalls.  pwntools fails to find a lot of gadgets, so the fallback is the `libc.search` statement.
 
-None of the syscalls in this exploit require `r9` or `r8`, so I omitted them (there not there anyway, at least not as simple pop/ret pairs).
+None of the syscalls in this exploit require `r9` or `r8`, so I omitted them (they're not there anyway, at least not as simple pop/ret pairs).
 
 ```python
 flagfile = '/chal/flag.txt'
