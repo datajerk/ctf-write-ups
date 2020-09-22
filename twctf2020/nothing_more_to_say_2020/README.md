@@ -108,7 +108,7 @@ Please pwn me!
 0xa70243625
 ```
 
-Above, set a break point to get the stack while in `main`, and also try `%n$p` where `n > 0` until the output (in little endian) hex matches the input.  In this case it's `6` and that will be the offset.
+Above, set a break point to get the stack while in `main`, and also try `%n$p` where `n > 0` until the output (in little endian) hex matches the input.  In this case it's `6`, and that will be the offset.
 
 The stack:
 
