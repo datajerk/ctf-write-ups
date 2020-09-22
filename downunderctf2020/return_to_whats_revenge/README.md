@@ -103,8 +103,6 @@ Options:
 
 However there's a simpler way that does not require having to emit RAX (e.g. heap location from brk).
 
-> I initially read this as a blacklist, and started on readv, openat, writev.  Lost sometime.  Pay attention.
-
 
 ## Exploit development
 
