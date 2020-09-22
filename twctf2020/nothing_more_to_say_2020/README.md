@@ -247,14 +247,14 @@ The `payloads` array is standard CTF fare.  The for loop uses format-string expl
 
 > The following lines capture all the format-string exploit garbage for pretty screen grabs (for write-ups):
 > 
-> ```
+> ```python
 > null = payload.find(b'\x00')
 > p.recvuntil(payload[null-2:null])
 > ``` 
 
 Output:
 
-```
+```bash
 # ./exploit.py REMOTE=1
 [*] '/pwd/datajerk/twctf2020/nothing_more_to_say_2020/nothing'
     Arch:     amd64-64-little
