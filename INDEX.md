@@ -131,6 +131,7 @@ _format-string_
 * [sharkyctf2020/captain\_hook](sharkyctf2020/captain\_hook/README.md)
 * [tjctf2020/naughty](tjctf2020/naughty/README.md)
 * [twctf2019/nothing\_more\_to\_say](twctf2019/nothing\_more\_to\_say/README.md)
+* [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
 * [utctf2020/zurk](utctf2020/zurk/README.md)
 * [wpictf2020/dorsia3](wpictf2020/dorsia3/README.md)
 
@@ -165,6 +166,10 @@ _got-overwrite_
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
 
+_hash-collision_
+
+* [twctf2020/easy\_hash](twctf2020/easy\_hash/README.md)
+
 _integer-overflow_
 
 * [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
@@ -187,6 +192,7 @@ _misc_
 
 * [fwordctf2020/secret\_array](fwordctf2020/secret\_array/README.md)
 * [fwordctf2020/twis\_twis\_litlle\_star](fwordctf2020/twis\_twis\_litlle\_star/README.md)
+* [twctf2020/mask](twctf2020/mask/README.md)
 
 _modem_
 
@@ -217,6 +223,7 @@ _programming_
 
 * [dawgctf2020/animal-crossing](dawgctf2020/animal-crossing/README.md)
 * [nullcon\_hackim2020/dora](nullcon\_hackim2020/dora/README.md)
+* [twctf2020/mask](twctf2020/mask/README.md)
 
 _pwn_
 
@@ -229,6 +236,7 @@ _pwn_
 * [b01lersctf2020/kobayashi-maru](b01lersctf2020/kobayashi-maru/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [ccc2019/devops1](ccc2019/devops1/README.md)
+* [csawquals2020/grid](csawquals2020/grid/README.md)
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [csictf2020/smash](csictf2020/smash/README.md)
 * [dawgctf2020/bof-to-the-top](dawgctf2020/bof-to-the-top/README.md)
@@ -276,6 +284,7 @@ _pwn_
 * [tjctf2020/stop](tjctf2020/stop/README.md)
 * [tjctf2020/tinder](tjctf2020/tinder/README.md)
 * [twctf2019/nothing\_more\_to\_say](twctf2019/nothing\_more\_to\_say/README.md)
+* [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
 * [utctf2020/zurk](utctf2020/zurk/README.md)
 * [wpictf2020/dont@me](wpictf2020/dont@me/README.md)
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
@@ -293,6 +302,7 @@ _remote-shell_
 * [b01lersctf2020/blind-piloting](b01lersctf2020/blind-piloting/README.md)
 * [b01lersctf2020/kobayashi-maru](b01lersctf2020/kobayashi-maru/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
+* [csawquals2020/grid](csawquals2020/grid/README.md)
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [csictf2020/smash](csictf2020/smash/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
@@ -319,6 +329,7 @@ _remote-shell_
 * [tjctf2020/primo](tjctf2020/primo/README.md)
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
+* [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
 * [utctf2020/zurk](utctf2020/zurk/README.md)
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
 * [wpictf2020/dorsia3](wpictf2020/dorsia3/README.md)
@@ -350,6 +361,7 @@ _rop_
 * [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
 * [b01lersctf2020/black-hole](b01lersctf2020/black-hole/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
+* [csawquals2020/grid](csawquals2020/grid/README.md)
 * [csictf2020/smash](csictf2020/smash/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
@@ -374,6 +386,7 @@ _rop_
 * [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
+* [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
 
 _rsa_
 
@@ -441,6 +454,7 @@ _video_
 _write-what-where_
 
 * [auctf2020/remote-school](auctf2020/remote-school/README.md)
+* [csawquals2020/grid](csawquals2020/grid/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
 * [redpwnctf2020/kevin-higgs](redpwnctf2020/kevin-higgs/README.md)
@@ -467,6 +481,7 @@ _x86-64_
 
 * [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
+* [csawquals2020/grid](csawquals2020/grid/README.md)
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
@@ -495,6 +510,7 @@ _x86-64_
 * [tjctf2020/naughty](tjctf2020/naughty/README.md)
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
+* [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
 
 _xor_
 
