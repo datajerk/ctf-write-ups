@@ -103,6 +103,8 @@ Options:
 
 However there's a simpler way that does not require having to emit RAX (e.g. heap location from brk).
 
+> I initially read this as a blacklist, and started on readv, openat, writev.  Lost sometime.  Pay attention.
+
 
 ## Exploit development
 
@@ -231,14 +233,14 @@ p.send(flagfile)
 log.info(p.recv(filesize).split(b'\n')[0])
 ```
 
-After the same `0x38` padding used in the last two ([_Shell this!_](https://github.com/datajerk/ctf-write-ups/tree/master/downunderctf2020/shellthis) and [_return-to-what_](https://github.com/datajerk/ctf-write-ups/tree/master/downunderctf2020/return_to_what)) four syscalls will liberate the flag:
+After the same `0x38` padding used in the last two ([_Shell this!_](https://github.com/datajerk/ctf-write-ups/tree/master/downunderctf2020/shellthis) and [_return-to-what_](https://github.com/datajerk/ctf-write-ups/tree/master/downunderctf2020/return_to_what)), four syscalls will liberate the flag:
 
 1. Read the name of the file from stdin and store 0x30 bytes from the start of the BSS.  This saves us the hassle of using brk, et al and having to deal with RAX.  The first 0x30 bytes of the BSS is used for stdin/stdout/stderr hence the `+0x30`.  The BSS isn't huge, but huge enough for a flag.
 2. Open the file by name.
-3. Read the file contents into `BSS+0x40`.  Notice that `fd` is hardcoded to `3` and it should always be `3`, (well, not _always_).  `RAX` has the value of `fd` after the `open` syscall, but then it'd be more work to get it.  `3` is a safe guess and works (it usually does for these type of challenges).
+3. Read the file contents into `BSS+0x40`.  Notice that `fd` is hardcoded to `3` and it should always be `3` (well, not _always_).  `RAX` has the value of `fd` after the `open` syscall, but then it'd be more work to get it.  `3` is a safe guess and works (it usually does for these type of challenges).
 4. Write the file contents to stdout.  The filesize is a guess, the assumption is that the flag is not 100 characters in length.  `RAX` after the file read contains the length of the file, but again, let's be lazy.
 
-After crafting this rather large payload, just send, the payload will execute and wait for the name of the flag file to be sent.  After that, the flag is written to stdout.
+After crafting this rather large payload, just send; the payload will execute and wait for the name of the flag file to be sent.  After that, the flag is written to stdout.
 
 Output:
 
