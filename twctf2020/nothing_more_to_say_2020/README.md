@@ -46,7 +46,7 @@ Well, if you know how to Google, you can solve this challenge a number of differ
     RWX:      Has RWX segments
 ```
 
-No mitigations in place.  However we're not going to take advantage of any of this--not necessary.
+No mitigations in place.  However, _we're not going to take advantage of any of this--not necessary._
 
 
 ### Source included
