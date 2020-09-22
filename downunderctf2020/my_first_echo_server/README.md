@@ -206,7 +206,7 @@ p.interactive()
 
 This challenge has two constraints we have to deal with.  First, `fgets` only _gets_ 64 (`0x40`) bytes.  That is pretty small for a large format string exploit.  Second, `local_5c` once incremented to `3` exits the loop.  We burned the first pass leaking info.  Furthermore, each pass can really only write out one 8-byte format-string payload.  With two passes we could use _one gadget_ plus write out a NULL for it's constraint.  However I opted for a more portable solution (I'm sure there will be many _one gadget_ write ups).
 
-The first block after setting up `pop_rdi`, will change `local_5c` to a very large negative number (`0x80000000` (-2147483648)).  Since the compare is with an `int` we can leverage an integer overflow vulnerability.  Thanks to Ghidra we know where `local_5c` is as well, just by it's name, i.e. `0x5c` from the return address in the stack.
+The first block, after setting up `pop_rdi`, will change `local_5c` to a very large negative number (`0x80000000` (-2147483648)).  Since the compare is with an `int` we can leverage an integer overflow vulnerability.  Thanks to Ghidra we know where `local_5c` is as well, just by it's name, i.e. `0x5c` from the return address in the stack.
 
 Now with unlimited passes we can write out a ROP chain to get `system` from libc.
 
