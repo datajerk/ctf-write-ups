@@ -100,7 +100,7 @@ puts = u64(_ + b'\0\0')
 log.info('puts: ' + hex(puts))
 ```
 
-Standard `puts` _putting_ itself out there.  With the `puts` location known we can find the version and base address of libc.  The last part of the payload jumps back to `vuln` for a second and final pass.
+Standard `puts` _putting_ itself out there.  With the `puts` location known we can find the version and base address of libc.  The last part of the payload jumps back to `main` for a second and final pass.
 
 
 ### Find libc
