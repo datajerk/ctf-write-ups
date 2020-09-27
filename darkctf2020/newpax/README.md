@@ -144,7 +144,7 @@ Pop a shell, get the flag.
 
 Output:
 
-```
+```bash
 # ./exploit.py REMOTE=1
 [*] '/pwd/datajerk/darkctf2020/newpax/newPaX'
     Arch:     i386-32-little
