@@ -54,7 +54,7 @@ undefined8 main(void)
 }
 ```
 
-`gets` vulnerability.  Easy ROP since no canary or PIE.  To get to the return address send `0x35` bytes (gotta love how Ghidra tells you that, i.e. `local_35`).
+`gets` vulnerability.  Easy ROP since no canary or PIE.  To get to the return address send `0x58` bytes (gotta love how Ghidra tells you that, i.e. `local_58`).
 
 
 ## Exploit
