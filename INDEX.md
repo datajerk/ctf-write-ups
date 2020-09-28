@@ -14,6 +14,7 @@ _a/d_
 
 _angr_
 
+* [darkctf2020/jack](darkctf2020/jack/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
 * [fwordctf2020/welcome\_reverser](fwordctf2020/welcome\_reverser/README.md)
 * [sharkyctf2020/z3robotwaves](sharkyctf2020/z3robotwaves/README.md)
@@ -36,11 +37,16 @@ _bof_
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [csictf2020/smash](csictf2020/smash/README.md)
+* [darkctf2020/newpax](darkctf2020/newpax/README.md)
+* [darkctf2020/roprop](darkctf2020/roprop/README.md)
 * [dawgctf2020/bof-to-the-top](dawgctf2020/bof-to-the-top/README.md)
 * [dawgctf2020/cookie-monster](dawgctf2020/cookie-monster/README.md)
 * [dawgctf2020/on-lockdown](dawgctf2020/on-lockdown/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
+* [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
+* [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
+* [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
 * [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
 * [fwordctf2020/ezret2win](fwordctf2020/ezret2win/README.md)
 * [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
@@ -71,6 +77,10 @@ _bof_
 * [tjctf2020/tinder](tjctf2020/tinder/README.md)
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
 
+_bruteforce_
+
+* [darkctf2020/time\_eater](darkctf2020/time\_eater/README.md)
+
 _computer-vision_
 
 * [nullcon\_hackim2020/dora](nullcon\_hackim2020/dora/README.md)
@@ -96,6 +106,7 @@ _discrete-log_
 _docker_
 
 * [ccc2019/devops1](ccc2019/devops1/README.md)
+* [darkctf2020/time\_eater](darkctf2020/time\_eater/README.md)
 
 _dtors_
 
@@ -121,6 +132,7 @@ _format-string_
 * [csictf2020/smash](csictf2020/smash/README.md)
 * [dawgctf2020/cookie-monster](dawgctf2020/cookie-monster/README.md)
 * [dawgctf2020/coronacation](dawgctf2020/coronacation/README.md)
+* [downunderctf2020/my\_first\_echo\_server](downunderctf2020/my\_first\_echo\_server/README.md)
 * [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
 * [nahamconctf2020/leet\_haxor](nahamconctf2020/leet\_haxor/README.md)
@@ -148,6 +160,10 @@ _gets_
 * [tjctf2020/osrs](tjctf2020/osrs/README.md)
 * [tjctf2020/primo](tjctf2020/primo/README.md)
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
+
+_gobuster_
+
+* [darkctf2020/time\_eater](darkctf2020/time\_eater/README.md)
 
 _got_
 
@@ -183,6 +199,16 @@ _libc_
 * [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
 * [tjctf2020/naughty](tjctf2020/naughty/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
+
+_linux_
+
+* [darkctf2020/find\_me](darkctf2020/find\_me/README.md)
+* [darkctf2020/secret\_vault](darkctf2020/secret\_vault/README.md)
+* [darkctf2020/time\_eater](darkctf2020/time\_eater/README.md)
+
+_lsof_
+
+* [darkctf2020/find\_me](darkctf2020/find\_me/README.md)
 
 _mips_
 
@@ -239,6 +265,8 @@ _pwn_
 * [csawquals2020/grid](csawquals2020/grid/README.md)
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [csictf2020/smash](csictf2020/smash/README.md)
+* [darkctf2020/newpax](darkctf2020/newpax/README.md)
+* [darkctf2020/roprop](darkctf2020/roprop/README.md)
 * [dawgctf2020/bof-to-the-top](dawgctf2020/bof-to-the-top/README.md)
 * [dawgctf2020/cookie-monster](dawgctf2020/cookie-monster/README.md)
 * [dawgctf2020/coronacation](dawgctf2020/coronacation/README.md)
@@ -247,6 +275,10 @@ _pwn_
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
+* [downunderctf2020/my\_first\_echo\_server](downunderctf2020/my\_first\_echo\_server/README.md)
+* [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
+* [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
+* [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
 * [fwordctf2020/ezret2win](fwordctf2020/ezret2win/README.md)
@@ -305,7 +337,13 @@ _remote-shell_
 * [csawquals2020/grid](csawquals2020/grid/README.md)
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [csictf2020/smash](csictf2020/smash/README.md)
+* [darkctf2020/newpax](darkctf2020/newpax/README.md)
+* [darkctf2020/roprop](darkctf2020/roprop/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
+* [downunderctf2020/my\_first\_echo\_server](downunderctf2020/my\_first\_echo\_server/README.md)
+* [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
+* [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
+* [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
 * [fwordctf2020/one\_piece](fwordctf2020/one\_piece/README.md)
@@ -338,12 +376,16 @@ _remote-shell_
 _ret2win_
 
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
+* [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
 * [fwordctf2020/ezret2win](fwordctf2020/ezret2win/README.md)
 
 _rev_
 
 * [auctf2020/house-of-madness](auctf2020/house-of-madness/README.md)
 * [auctf2020/purple-socks](auctf2020/purple-socks/README.md)
+* [darkctf2020/c\_maths](darkctf2020/c\_maths/README.md)
+* [darkctf2020/jack](darkctf2020/jack/README.md)
+* [darkctf2020/secret\_vault](darkctf2020/secret\_vault/README.md)
 * [dawgctf2020/animal-crossing](dawgctf2020/animal-crossing/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
@@ -363,8 +405,14 @@ _rop_
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [csawquals2020/grid](csawquals2020/grid/README.md)
 * [csictf2020/smash](csictf2020/smash/README.md)
+* [darkctf2020/newpax](darkctf2020/newpax/README.md)
+* [darkctf2020/roprop](darkctf2020/roprop/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
+* [downunderctf2020/my\_first\_echo\_server](downunderctf2020/my\_first\_echo\_server/README.md)
+* [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
+* [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
+* [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
 * [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
 * [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
 * [fwordctf2020/one\_piece](fwordctf2020/one\_piece/README.md)
@@ -433,12 +481,17 @@ _stack-pivot_
 
 * [redpwnctf2020/dead-canary](redpwnctf2020/dead-canary/README.md)
 
+_strcmp_
+
+* [darkctf2020/c\_maths](darkctf2020/c\_maths/README.md)
+
 _strncmp_
 
 * [wpictf2020/dont@me](wpictf2020/dont@me/README.md)
 
 _syscall_
 
+* [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
 * [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
 * [nahamconctf2020/saas](nahamconctf2020/saas/README.md)
 * [nahamconctf2020/syrup](nahamconctf2020/syrup/README.md)
@@ -450,6 +503,10 @@ _time_
 _video_
 
 * [ractf2020/br.mov](ractf2020/br.mov/README.md)
+
+_web_
+
+* [darkctf2020/time\_eater](darkctf2020/time\_eater/README.md)
 
 _write-what-where_
 
@@ -465,6 +522,7 @@ _x86_
 
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [csictf2020/smash](csictf2020/smash/README.md)
+* [darkctf2020/newpax](darkctf2020/newpax/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 * [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
 * [fwordctf2020/welcome\_pwner](fwordctf2020/welcome\_pwner/README.md)
@@ -483,6 +541,13 @@ _x86-64_
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [csawquals2020/grid](csawquals2020/grid/README.md)
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
+* [darkctf2020/c\_maths](darkctf2020/c\_maths/README.md)
+* [darkctf2020/jack](darkctf2020/jack/README.md)
+* [darkctf2020/roprop](darkctf2020/roprop/README.md)
+* [downunderctf2020/my\_first\_echo\_server](downunderctf2020/my\_first\_echo\_server/README.md)
+* [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
+* [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
+* [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
 * [fwordctf2020/ezret2win](fwordctf2020/ezret2win/README.md)
