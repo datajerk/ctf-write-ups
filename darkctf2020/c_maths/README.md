@@ -145,7 +145,7 @@ r.sendline(a3)
 log.info(r.recvline())
 ```
 
-Instead of reversing how `c_maths` work, just use GDB to get the values from the stack and registers.
+Instead of reversing how `c_maths` works, just use GDB to get the values from the stack and registers.
 
 From the top down, start the remote and local processes at the same time.
 
