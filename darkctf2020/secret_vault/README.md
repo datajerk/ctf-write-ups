@@ -54,7 +54,7 @@ At this point I should have just looped all 4 digit numbers, but pins can be lon
 
 There was no `base64`, `strings`, `hexdump`, etc... to make this easier, but `od` was left behind (I was already on the system, might as well just grab it):
 
-```
+```bash
 dark@491454fa2b59:/home/dark$ od -v -t x1 /home/.secretdoor/vault
 ```
 
@@ -76,7 +76,7 @@ cat vault.hex | sed 's/^........//' | tr '\n' ' ' | xxd -r -p >vault
 
 Then decompile with Ghidra:
 
-```
+```c
   local_c = 8000;
   local_10 = 600;
   local_14 = 200;
@@ -105,7 +105,7 @@ Then decompile with Ghidra:
 
 There's your pin.  You can run `strings` to get the secret, or just run `vault` locally:
 
-```
+```bash
 # ./vault $((0x225a))
 
 Vault Unlocked :A79Lo6W?O%;D;Qh1NIbJ0lp]#F^no;F)tr9Ci!p(+X)7@
@@ -113,7 +113,7 @@ Vault Unlocked :A79Lo6W?O%;D;Qh1NIbJ0lp]#F^no;F)tr9Ci!p(+X)7@
 
 Flag:
 
-```
+```bash
 # python3 -c 'import base64; print(base64.a85decode("A79Lo6W?O%;D;Qh1NIbJ0lp]#F^no;F)tr9Ci"))'
 b'darkCTF{R0bb3ry_1s_Succ3ssful'
 ```
