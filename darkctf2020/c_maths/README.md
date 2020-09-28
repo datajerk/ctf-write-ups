@@ -6,7 +6,7 @@
 >
 > Author: p3t4j0n
 >
-> Description:Clearly u know some C programming and a bit of maths right...? Note:Enclose the flag within darkCTF{} There are 3 parts to the flag. file
+> Description: Clearly u know some C programming and a bit of maths right...? Note: Enclose the flag within darkCTF{} There are 3 parts to the flag.
 >
 > `nc cmaths.darkarmy.xyz 7001`
 >  
