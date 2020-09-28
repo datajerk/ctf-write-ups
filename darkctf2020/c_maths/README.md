@@ -49,7 +49,7 @@ This problem changes every second.  But since we all use the same clocks (UTC se
   }
 ```
 
-The first compare.  We just need to know what `local_95` is.  If we highlight the `local_95[local_20] = '\0';` line the corresponding disassembly highlights as:
+The first compare.  We just need to know what `local_95` is.  If we highlight the `local_95[local_20] = '\0';` line, the corresponding disassembly highlights as:
 
 ```
 001013bf c6 84 05        MOV        byte ptr [RBP + RAX*0x1 + -0x8d],0x0
@@ -72,8 +72,8 @@ The second compare is an integer.  Get this right and you get that sweet sweet _
 The first line disassembly:
 
 ```
-        00101509 f2 0f 2c c0     CVTTSD2SI  EAX,XMM0
-        0010150d 89 45 c4        MOV        dword ptr [RBP + local_44],EAX
+00101509 f2 0f 2c c0     CVTTSD2SI  EAX,XMM0
+0010150d 89 45 c4        MOV        dword ptr [RBP + local_44],EAX
 ```
 
 `local_44` is set by instruction `0x150d`; we'll set a breakpoint there to get the value directly from `EAX`.
@@ -92,7 +92,7 @@ The first line disassembly:
     }
 ```
 
-Last compare, also integer, for the final chunk.  There's a time check in here as well.  Clearly the game master didn't want you manually using GDB to slog through this.  No prob, we'll automate.
+Last compare, also integer, for the final chunk.  There's a time check in here as well (5 second from start to end).  Clearly the game master didn't want you manually using GDB to slog through this.  No prob, we'll automate.
 
 Disassembly:
 
