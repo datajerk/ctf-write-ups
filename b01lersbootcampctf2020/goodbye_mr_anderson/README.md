@@ -104,7 +104,7 @@ undefined8 yay(void)
 
 Let's start with `yay` by looking at it's disassembly:
 
-```
+```assembly
 001011e9 f3 0f 1e fa     ENDBR64
 001011ed 55              PUSH       RBP
 001011ee 48 89 e5        MOV        RBP,RSP
@@ -121,7 +121,7 @@ Let's start with `yay` by looking at it's disassembly:
 
 _Why +1?_  Well...
 
-```
+```c
   local_14 = 0;
   while (local_14 <= local_18) {
     iVar1 = fgetc(stdin);
@@ -277,7 +277,7 @@ Since `$rdx` is already zero (see analysis section) we just need `pop rdi` and `
 
 Our payload starts by filling the 24-byte buffer with 24 `A`'s followed by the leaked canary (without which we'd get an egregious `*** stack smashing detected ***: terminated` error).
 
-Next, is our argument to `yay` (`59` is the `execve` syscall number).  This may not seem intuitive, but set a breakpoint at `leave` and follow it yourself.  IANS, `leave` pops the saved base pointer into `rbp`, normally we do not call what the value is, but in this case we do because `yay` will push it back to the stack, then pop it into `$rax`--required for `syscall`.
+Next, is our argument to `yay` (`59` is the `execve` syscall number).  This may not seem intuitive, but set a breakpoint at `leave` and follow it yourself.  IANS, `leave` pops the saved base pointer into `rbp`, normally we do not care what the value is, but in this case we do because `yay` will push it back to the stack, then pop it into `$rax`--required for `syscall`.
 
 Next, are the parameters to `execve`: the pointer to `/bin/sh` (`name`) and popping `0`'s into `$rsi` and `$r15` (just along for the ride).  `$rdx` is already zero, so no need to set.
 

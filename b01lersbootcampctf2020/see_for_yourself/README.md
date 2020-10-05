@@ -52,7 +52,7 @@ int main(void)
 
 The binary comes with `system` "built-in".  The question is, _is `/bin/sh` also there?_
 
-```
+```bash
 # strings simplerop | grep /bin/sh
 /bin/sh
 ```

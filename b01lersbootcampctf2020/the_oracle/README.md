@@ -11,7 +11,7 @@
 > [theoracle](theoracle)  
 > [theoracle.c](theoracle.c)
 
-Tags: _pwn_ _x86-64_ _remote-shell_ _bof_ _ret2win_
+Tags: _pwn_ _x86-64_ _remote-shell_ _bof_ _ret2win_ _rop_
 
 
 ## Summary
