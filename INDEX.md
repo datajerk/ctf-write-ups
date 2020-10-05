@@ -12,8 +12,13 @@ _a/d_
 
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 
+_alloca_
+
+* [b01lersbootcampctf2020/metacortex](b01lersbootcampctf2020/metacortex/README.md)
+
 _angr_
 
+* [b01lersbootcampctf2020/there\_is\_no\_spool](b01lersbootcampctf2020/there\_is\_no\_spool/README.md)
 * [darkctf2020/jack](darkctf2020/jack/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
 * [fwordctf2020/welcome\_reverser](fwordctf2020/welcome\_reverser/README.md)
@@ -27,11 +32,20 @@ _barcode_
 
 * [ractf2020/br.mov](ractf2020/br.mov/README.md)
 
+_bash_
+
+* [b01lersbootcampctf2020/white\_rabbit](b01lersbootcampctf2020/white\_rabbit/README.md)
+
 _bof_
 
 * [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
 * [auctf2020/house-of-madness](auctf2020/house-of-madness/README.md)
 * [auctf2020/thanksgiving-dinner](auctf2020/thanksgiving-dinner/README.md)
+* [b01lersbootcampctf2020/goodbye\_mr\_anderson](b01lersbootcampctf2020/goodbye\_mr\_anderson/README.md)
+* [b01lersbootcampctf2020/metacortex](b01lersbootcampctf2020/metacortex/README.md)
+* [b01lersbootcampctf2020/see\_for\_yourself](b01lersbootcampctf2020/see\_for\_yourself/README.md)
+* [b01lersbootcampctf2020/the\_oracle](b01lersbootcampctf2020/the\_oracle/README.md)
+* [b01lersbootcampctf2020/there\_is\_no\_spool](b01lersbootcampctf2020/there\_is\_no\_spool/README.md)
 * [b01lersctf2020/black-hole](b01lersctf2020/black-hole/README.md)
 * [b01lersctf2020/blind-piloting](b01lersctf2020/blind-piloting/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
@@ -202,6 +216,7 @@ _libc_
 
 _linux_
 
+* [b01lersbootcampctf2020/white\_rabbit](b01lersbootcampctf2020/white\_rabbit/README.md)
 * [darkctf2020/find\_me](darkctf2020/find\_me/README.md)
 * [darkctf2020/secret\_vault](darkctf2020/secret\_vault/README.md)
 * [darkctf2020/time\_eater](darkctf2020/time\_eater/README.md)
@@ -257,6 +272,12 @@ _pwn_
 * [auctf2020/house-of-madness](auctf2020/house-of-madness/README.md)
 * [auctf2020/remote-school](auctf2020/remote-school/README.md)
 * [auctf2020/thanksgiving-dinner](auctf2020/thanksgiving-dinner/README.md)
+* [b01lersbootcampctf2020/free\_your\_mind](b01lersbootcampctf2020/free\_your\_mind/README.md)
+* [b01lersbootcampctf2020/goodbye\_mr\_anderson](b01lersbootcampctf2020/goodbye\_mr\_anderson/README.md)
+* [b01lersbootcampctf2020/metacortex](b01lersbootcampctf2020/metacortex/README.md)
+* [b01lersbootcampctf2020/see\_for\_yourself](b01lersbootcampctf2020/see\_for\_yourself/README.md)
+* [b01lersbootcampctf2020/the\_oracle](b01lersbootcampctf2020/the\_oracle/README.md)
+* [b01lersbootcampctf2020/there\_is\_no\_spool](b01lersbootcampctf2020/there\_is\_no\_spool/README.md)
 * [b01lersctf2020/black-hole](b01lersctf2020/black-hole/README.md)
 * [b01lersctf2020/blind-piloting](b01lersctf2020/blind-piloting/README.md)
 * [b01lersctf2020/kobayashi-maru](b01lersctf2020/kobayashi-maru/README.md)
@@ -331,6 +352,12 @@ _remote-shell_
 
 * [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
 * [auctf2020/house-of-madness](auctf2020/house-of-madness/README.md)
+* [b01lersbootcampctf2020/free\_your\_mind](b01lersbootcampctf2020/free\_your\_mind/README.md)
+* [b01lersbootcampctf2020/goodbye\_mr\_anderson](b01lersbootcampctf2020/goodbye\_mr\_anderson/README.md)
+* [b01lersbootcampctf2020/metacortex](b01lersbootcampctf2020/metacortex/README.md)
+* [b01lersbootcampctf2020/see\_for\_yourself](b01lersbootcampctf2020/see\_for\_yourself/README.md)
+* [b01lersbootcampctf2020/the\_oracle](b01lersbootcampctf2020/the\_oracle/README.md)
+* [b01lersbootcampctf2020/there\_is\_no\_spool](b01lersbootcampctf2020/there\_is\_no\_spool/README.md)
 * [b01lersctf2020/blind-piloting](b01lersctf2020/blind-piloting/README.md)
 * [b01lersctf2020/kobayashi-maru](b01lersctf2020/kobayashi-maru/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
@@ -375,6 +402,7 @@ _remote-shell_
 
 _ret2win_
 
+* [b01lersbootcampctf2020/the\_oracle](b01lersbootcampctf2020/the\_oracle/README.md)
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
 * [fwordctf2020/ezret2win](fwordctf2020/ezret2win/README.md)
@@ -401,6 +429,8 @@ _reverse-shell_
 _rop_
 
 * [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
+* [b01lersbootcampctf2020/goodbye\_mr\_anderson](b01lersbootcampctf2020/goodbye\_mr\_anderson/README.md)
+* [b01lersbootcampctf2020/see\_for\_yourself](b01lersbootcampctf2020/see\_for\_yourself/README.md)
 * [b01lersctf2020/black-hole](b01lersctf2020/black-hole/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [csawquals2020/grid](csawquals2020/grid/README.md)
@@ -446,6 +476,7 @@ _shell_
 
 _shellcode_
 
+* [b01lersbootcampctf2020/free\_your\_mind](b01lersbootcampctf2020/free\_your\_mind/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
@@ -469,6 +500,7 @@ _ssh_
 _stack-canary_
 
 * [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
+* [b01lersbootcampctf2020/goodbye\_mr\_anderson](b01lersbootcampctf2020/goodbye\_mr\_anderson/README.md)
 * [b01lersctf2020/blind-piloting](b01lersctf2020/blind-piloting/README.md)
 * [nahamconctf2020/ripe\_reader](nahamconctf2020/ripe\_reader/README.md)
 * [ractf2020/fiap](ractf2020/fiap/README.md)
@@ -491,6 +523,7 @@ _strncmp_
 
 _syscall_
 
+* [b01lersbootcampctf2020/goodbye\_mr\_anderson](b01lersbootcampctf2020/goodbye\_mr\_anderson/README.md)
 * [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
 * [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
 * [nahamconctf2020/saas](nahamconctf2020/saas/README.md)
@@ -499,6 +532,10 @@ _syscall_
 _time_
 
 * [dawgctf2020/cookie-monster](dawgctf2020/cookie-monster/README.md)
+
+_unsanitized-input_
+
+* [b01lersbootcampctf2020/white\_rabbit](b01lersbootcampctf2020/white\_rabbit/README.md)
 
 _video_
 
@@ -538,6 +575,13 @@ _x86_
 _x86-64_
 
 * [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
+* [b01lersbootcampctf2020/free\_your\_mind](b01lersbootcampctf2020/free\_your\_mind/README.md)
+* [b01lersbootcampctf2020/goodbye\_mr\_anderson](b01lersbootcampctf2020/goodbye\_mr\_anderson/README.md)
+* [b01lersbootcampctf2020/metacortex](b01lersbootcampctf2020/metacortex/README.md)
+* [b01lersbootcampctf2020/see\_for\_yourself](b01lersbootcampctf2020/see\_for\_yourself/README.md)
+* [b01lersbootcampctf2020/the\_oracle](b01lersbootcampctf2020/the\_oracle/README.md)
+* [b01lersbootcampctf2020/there\_is\_no\_spool](b01lersbootcampctf2020/there\_is\_no\_spool/README.md)
+* [b01lersbootcampctf2020/white\_rabbit](b01lersbootcampctf2020/white\_rabbit/README.md)
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [csawquals2020/grid](csawquals2020/grid/README.md)
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
