@@ -75,7 +75,7 @@ Since nothing is sanitizing the input we can just close the single quote to scor
 ```
 
 
-### Exploit
+## Exploit
 
 ```bash
 # nc chal.ctf.b01lers.com 1013

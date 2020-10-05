@@ -91,7 +91,7 @@ p.interactive()
 
 Output:
 
-```
+```bash
 # ./exploit.py REMOTE=1
 [*] '/pwd/datajerk/b01lersbootcampctf2020/the_oracle/theoracle'
     Arch:     amd64-64-little

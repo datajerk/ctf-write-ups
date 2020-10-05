@@ -123,7 +123,7 @@ Not a lot here.  Set the find address to the address calling `system`, wait 6 se
 
 Output:
 
-```
+```bash
 # ./exploit.py REMOTE=1
 [*] 5.977146625518799 seconds
 INFO    | 2020-10-04 21:05:10,983 | pwnlib.exploit | 5.977146625518799 seconds
