@@ -19,3 +19,12 @@ Teams:
 2016: [jacked\_on\_scag](https://ctftime.org/team/27642)
 
 2015: [hovitos](https://ctftime.org/team/17013)
+
+Contact:
+
+```
+IRC:      datajerk@{freenode|efnet|hackint}
+Twitter:  @datajerk
+Telegram: @datajerk
+Discord:  datajerk#3489
+```
