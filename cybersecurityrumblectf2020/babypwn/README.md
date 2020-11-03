@@ -95,7 +95,7 @@ void hex_to_binary(char *in, unsigned char* out, size_t length) {
 
 `hex_to_binary` is expecting an even number of chars validated by `char_to_repr` (hex digits):
 
-```
+```c
 unsigned char char_to_repr(char in) {
     if (in >= '0' && in <= '9')
 	return in - '0';
@@ -263,7 +263,7 @@ p.interactive()
 
 The `payload` starts with an even number of `A`s followed by NULLs to fool `hex_to_binary` and `char_to_repr` while keeping the total length to 8 (stack aligned).
 
-Appended to the `payload` is a NOP sled that will put the end of our shellcode 16 bytes from the return address to avoid getting popped off just before return (see analysis).  The `0x78 - 8 - 16` is the math above (`0x78` bytes from return address `- 8` for the `hex_to_binary` bypass, followed by `- 16` for the 16 bytes to be avoided before the return address.
+Appended to the `payload` is a NOP sled that will put the end of our shellcode 16 bytes from the return address to avoid getting popped off just before return (see analysis).  The `0x78 - 8 - 16` is from the analysis above (`0x78` bytes from return address `- 8` for the `hex_to_binary` bypass, followed by `- 16` for the 16 bytes to be avoided before the return address).
 
 Appended next is the actual `shellcode`, then 16 bytes of anything really, then the new return address (`stack`).
 
