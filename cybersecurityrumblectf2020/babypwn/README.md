@@ -159,17 +159,76 @@ Now from the docker session type:
 # gdb babypwn $(pidof babypwn)
 ```
 
-At this point we're in the middle of `gets`, so set a break point just after `gets`:
+At this point we're in the middle of `gets` in the middle of `check_user_hash`:
+
+```
+(gdb) disas check_user_hash
+Dump of assembler code for function check_user_hash:
+   0x0000555555555440 <+0>:      push   r12
+   0x0000555555555442 <+2>:      mov    r12,rdi
+   0x0000555555555445 <+5>:      push   rbp
+   0x0000555555555446 <+6>:      sub    rsp,0x78
+   0x000055555555544a <+10>:     lea    rbp,[rsp+0x10]
+   0x000055555555544f <+15>:     mov    rdi,rbp
+   0x0000555555555452 <+18>:     call   0x5555555550c0 <MD5_Init@plt>
+   0x0000555555555457 <+23>:     mov    rdi,r12
+   0x000055555555545a <+26>:     call   0x555555555080 <strlen@plt>
+   0x000055555555545f <+31>:     mov    rsi,r12
+   0x0000555555555462 <+34>:     mov    rdi,rbp
+   0x0000555555555465 <+37>:     mov    rdx,rax
+   0x0000555555555468 <+40>:     call   0x5555555550a0 <MD5_Update@plt>
+   0x000055555555546d <+45>:     mov    rsi,rbp
+   0x0000555555555470 <+48>:     mov    rdi,rsp
+   0x0000555555555473 <+51>:     call   0x555555555090 <MD5_Final@plt>
+   0x0000555555555478 <+56>:     mov    rdi,rbp
+   0x000055555555547b <+59>:     call   0x5555555550b0 <gets@plt>
+   0x0000555555555480 <+64>:     mov    rdi,rbp
+   0x0000555555555483 <+67>:     call   0x555555555080 <strlen@plt>
+   0x0000555555555488 <+72>:     mov    rsi,rbp
+   0x000055555555548b <+75>:     mov    rdi,rbp
+   0x000055555555548e <+78>:     mov    rdx,rax
+   0x0000555555555491 <+81>:     call   0x555555555360 <hex_to_binary>
+   0x0000555555555496 <+86>:     mov    rdx,QWORD PTR [rsp+0x8]
+   0x000055555555549b <+91>:     mov    rax,QWORD PTR [rsp]
+   0x000055555555549f <+95>:     xor    rdx,QWORD PTR [rsp+0x18]
+   0x00005555555554a4 <+100>:    xor    rax,QWORD PTR [rsp+0x10]
+   0x00005555555554a9 <+105>:    or     rdx,rax
+   0x00005555555554ac <+108>:    sete   al
+   0x00005555555554af <+111>:    add    rsp,0x78
+   0x00005555555554b3 <+115>:    movzx  eax,al
+   0x00005555555554b6 <+118>:    pop    rbp
+   0x00005555555554b7 <+119>:    pop    r12
+   0x00005555555554b9 <+121>:    ret
+End of assembler dump.
+```
+
+Above `gets` is at offset `+59`, so set a break point just after `gets` (offset `+64`):
 
 ```
 (gdb) b *check_user_hash+64
 (gdb) c
 ```
 
-From the other terminal (where `nc` is running) type `AAAA` and press return, then back to the gdb session type:
+From the other terminal (where `nc` is running) type `AAAA` and press return, then back to the gdb session and dump the stack frame:
 
 ```
 (gdb) telescope $rsp 18
+```
+
+> Why 18?  It's the length of the stack frame in 8-byte words.  This can be computed from the start of the function:
+> 
+> ```
+> 00101440 41 54           PUSH       R12
+> 00101442 49 89 fc        MOV        R12,param_1
+> 00101445 55              PUSH       RBP
+> 00101446 48 83 ec 78     SUB        RSP,0x78
+> ``` 
+> 
+> Two pushes and a `SUB` = `8 + 8 + 0x78 = 136`, then add 8 for the return address pushed from call for a total of 144 bytes.  `144 / 8 = 18`.
+
+Output:
+
+```
 0x00007fffffffe720│+0x0000: 0x1be3e93037b0d224	 ← $rsp
 0x00007fffffffe728│+0x0008: 0x65eb4ac4ed908384
 0x00007fffffffe730│+0x0010: 0x1be3e90041414141 ("AAAA"?)	 ← $rax, $rbp
