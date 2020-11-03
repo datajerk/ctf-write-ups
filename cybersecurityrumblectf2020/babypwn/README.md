@@ -204,20 +204,20 @@ End of assembler dump.
 
 Above, `gets` is at offset `+59`, so set a break point just after `gets` (offset `+64`):
 
-```
+```gdb
 (gdb) b *check_user_hash+64
 (gdb) c
 ```
 
 From the other terminal (where `nc` is running) type `AAAA` and press return, then back to the gdb session and dump the stack frame:
 
-```
+```gdb
 (gdb) telescope $rsp 18
 ```
 
 > Why 18?  It's the length of the stack frame in 8-byte words.  This can be computed from the start of the function:
 > 
-> ```
+> ```assembly
 > 00101440 41 54           PUSH       R12
 > 00101442 49 89 fc        MOV        R12,param_1
 > 00101445 55              PUSH       RBP
@@ -274,7 +274,7 @@ Traditionally, we'd setup a NOP sled just in case the stack is a little off, eve
 
 Before doing the math and building the longest possible sled we need to consider the following just before the return is called:
 
-```
+```assembly
 001014af 48 83 c4 78     ADD        RSP,0x78
 001014b3 0f b6 c0        MOVZX      EAX,AL
 001014b6 5d              POP        RBP
