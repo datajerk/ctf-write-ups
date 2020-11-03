@@ -274,13 +274,6 @@ Output:
 
 ```bash
 # ./exploit.py
-[*] '/pwd/datajerk/cybersecurityrumblectf2020/babypwn/babypwn'
-    Arch:     amd64-64-little
-    RELRO:    Partial RELRO
-    Stack:    No canary found
-    NX:       NX disabled
-    PIE:      PIE enabled
-    RWX:      Has RWX segments
 [+] Opening connection to chal.cybersecurityrumble.de on port 1990: Done
 [*] Switching to interactive mode
 $ id
