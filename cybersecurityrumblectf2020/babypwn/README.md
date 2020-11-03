@@ -114,7 +114,7 @@ unsigned char char_to_repr(char in) {
 
 > This is only one of many ways to solve this.  Without ASLR and the included Docker container, the address of the binary and libc should be consistent enabling ROP, one_gadget, etc...  However, the port number _is_ `1990`, so let's do this like it's the [90's](http://www.phrack.org/issues/49/14.html#article).
 
-For test/dev I did this in an Ubuntu 20.04 container, but for the target service, I had to build their Docker container.
+> For test/dev I did this in an Ubuntu 20.04 container, but for the target service, I had to build their Docker container.
 
 After extracting the challenge files, just `cd` into the `baby-pwn-for-download/docker` directory and type:
 
