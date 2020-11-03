@@ -118,7 +118,7 @@ unsigned char char_to_repr(char in) {
 
 After extracting the challenge files, just `cd` into the `baby-pwn-for-download/docker` directory and type:
 
-```
+```bash
 $ docker build -t babypwn .
 Sending build context to Docker daemon  27.14kB
 ...
@@ -128,13 +128,13 @@ Successfully tagged babypwn:latest
 
 Then start with:
 
-```
+```bash
 docker run --rm -d -p 1990:6666 --name babypwn --privileged babypwn
 ```
 
 After that, get in the container and install some tools:
 
-```
+```bash
 $ docker exec -it babypwn /bin/bash
 # apt-get update && apt-get -qy install gdb python3 wget
 # wget -q -O- https://github.com/hugsy/gef/raw/master/scripts/gef.sh | sh
@@ -142,7 +142,7 @@ $ docker exec -it babypwn /bin/bash
 
 From another terminal connect to port 1990, e.g.:
 
-```
+```bash
 nc localhost 1990
 ```
 
@@ -154,14 +154,14 @@ It's easy. Give me MD5($flag), get $flag in return.
 
 Now from the docker session type:
 
-```
+```bash
 # cd /home/ctf
 # gdb babypwn $(pidof babypwn)
 ```
 
 At this point we're in the middle of `gets` in the middle of `check_user_hash`:
 
-```
+```gdb
 (gdb) disas check_user_hash
 Dump of assembler code for function check_user_hash:
    0x0000555555555440 <+0>:      push   r12
