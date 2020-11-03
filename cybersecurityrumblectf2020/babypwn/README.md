@@ -232,7 +232,6 @@ The stack pointer is moved to `+0x0078` (see stack above), then the next two val
 
 from pwn import *
 
-binary = context.binary = ELF('./babypwn')
 context.log_level = 'INFO'
 context.log_file = 'remote.log'
 p = remote('chal.cybersecurityrumble.de', 1990)
