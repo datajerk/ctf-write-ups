@@ -228,7 +228,7 @@ From the other terminal (where `nc` is running) type `AAAA` and press return, th
 
 Output:
 
-```
+```gdb
 0x00007fffffffe720│+0x0000: 0x1be3e93037b0d224	 ← $rsp
 0x00007fffffffe728│+0x0008: 0x65eb4ac4ed908384
 0x00007fffffffe730│+0x0010: 0x1be3e90041414141 ("AAAA"?)	 ← $rax, $rbp
