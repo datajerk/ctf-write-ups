@@ -439,6 +439,7 @@ _rop_
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [csawquals2020/grid](csawquals2020/grid/README.md)
 * [csictf2020/smash](csictf2020/smash/README.md)
+* [cybersecurityrumblectf2020/babypwn](cybersecurityrumblectf2020/babypwn/README.md)
 * [darkctf2020/newpax](darkctf2020/newpax/README.md)
 * [darkctf2020/roprop](darkctf2020/roprop/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
