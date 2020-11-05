@@ -19,9 +19,9 @@ The description pretty much gives it all away, this is going to be oldskool pre-
 
 The gamemasters have provided all the source, including Docker configs so that you can precisely mirror the challenge service.
 
-**Update:** I discovered a minor error in my container build while exploring alternative solutions.  I am leaving the write up as is since this is the path I took, however I'll note the differences in errata at the end.
+> **Update:** I discovered a minor error in my container build while exploring alternative solutions.  I am leaving the write up as is since this is the path I took, however I'll note the differences in errata at the end.
 
-**Update:** Added alternative solves at the end.
+> **Update:** Added alternative solves at the end.
  
 
 ## Analysis
