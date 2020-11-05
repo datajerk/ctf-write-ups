@@ -10,7 +10,7 @@
 > 
 > [files](baby-pwn-c84231024c5f62bf35ec0c201b3605ec.tar.xz)  
 
-Tags: _pwn_ _x86-64_ _remote-shell_ _shellcode_ _bof_
+Tags: _pwn_ _x86-64_ _remote-shell_ _shellcode_ _bof_ _rop_
 
 
 ## Summary
