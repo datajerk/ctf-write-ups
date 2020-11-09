@@ -1,0 +1,9 @@
+# ./exploit_17.py REMOTE=1
+[*] '/pwd/datajerk/sunshinectf2020/speedrun-17/chall_17'
+    Arch:     amd64-64-little
+    RELRO:    Full RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+[+] Opening connection to chal.2020.sunshinectf.org on port 30017: Done
+[*] flag: sun{unholy-confessions-b74c1ed1f1d486fe}

