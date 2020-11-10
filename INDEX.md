@@ -84,6 +84,7 @@ _bof_
 * [sharkyctf2020/giveaway0](sharkyctf2020/giveaway0/README.md)
 * [sharkyctf2020/giveaway1](sharkyctf2020/giveaway1/README.md)
 * [sharkyctf2020/giveaway2](sharkyctf2020/giveaway2/README.md)
+* [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
 * [tjctf2020/osrs](tjctf2020/osrs/README.md)
 * [tjctf2020/primo](tjctf2020/primo/README.md)
@@ -107,6 +108,7 @@ _crypto_
 * [bsidessf2020ctf/eccmul](bsidessf2020ctf/eccmul/README.md)
 * [bsidessf2020ctf/mentalist](bsidessf2020ctf/mentalist/README.md)
 * [castorsctf20/magic\_school\_bus](castorsctf20/magic\_school\_bus/README.md)
+* [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tjctf2020/difficult\_decryption](tjctf2020/difficult\_decryption/README.md)
 * [twctf2019/real\_baby\_rsa](twctf2019/real\_baby\_rsa/README.md)
 
@@ -156,6 +158,7 @@ _format-string_
 * [ractf2020/nra](ractf2020/nra/README.md)
 * [redpwnctf2020/dead-canary](redpwnctf2020/dead-canary/README.md)
 * [sharkyctf2020/captain\_hook](sharkyctf2020/captain\_hook/README.md)
+* [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tjctf2020/naughty](tjctf2020/naughty/README.md)
 * [twctf2019/nothing\_more\_to\_say](twctf2019/nothing\_more\_to\_say/README.md)
 * [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
@@ -196,6 +199,7 @@ _got-overwrite_
 * [csictf2020/smash](csictf2020/smash/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
+* [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 
 _hash-collision_
 
@@ -331,6 +335,7 @@ _pwn_
 * [sharkyctf2020/giveaway0](sharkyctf2020/giveaway0/README.md)
 * [sharkyctf2020/giveaway1](sharkyctf2020/giveaway1/README.md)
 * [sharkyctf2020/giveaway2](sharkyctf2020/giveaway2/README.md)
+* [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
 * [tjctf2020/naughty](tjctf2020/naughty/README.md)
 * [tjctf2020/osrs](tjctf2020/osrs/README.md)
@@ -345,6 +350,10 @@ _pwn_
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
 * [wpictf2020/dorsia3](wpictf2020/dorsia3/README.md)
 * [wpictf2020/dorsia4](wpictf2020/dorsia4/README.md)
+
+_rand_
+
+* [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 
 _real-mode_
 
@@ -391,6 +400,7 @@ _remote-shell_
 * [redpwnctf2020/skywriting](redpwnctf2020/skywriting/README.md)
 * [redpwnctf2020/the-library](redpwnctf2020/the-library/README.md)
 * [sharkyctf2020/captain\_hook](sharkyctf2020/captain\_hook/README.md)
+* [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
 * [tjctf2020/naughty](tjctf2020/naughty/README.md)
 * [tjctf2020/osrs](tjctf2020/osrs/README.md)
@@ -422,6 +432,7 @@ _rev_
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
 * [fwordctf2020/welcome\_reverser](fwordctf2020/welcome\_reverser/README.md)
 * [sharkyctf2020/z3robotwaves](sharkyctf2020/z3robotwaves/README.md)
+* [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tjctf2020/asmr](tjctf2020/asmr/README.md)
 * [twctf2019/easy\_crack\_me](twctf2019/easy\_crack\_me/README.md)
 
@@ -466,6 +477,7 @@ _rop_
 * [sharkyctf2020/giveaway0](sharkyctf2020/giveaway0/README.md)
 * [sharkyctf2020/giveaway1](sharkyctf2020/giveaway1/README.md)
 * [sharkyctf2020/giveaway2](sharkyctf2020/giveaway2/README.md)
+* [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
@@ -487,6 +499,7 @@ _shellcode_
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
 * [nahamconctf2020/shifts\_ahoy](nahamconctf2020/shifts\_ahoy/README.md)
+* [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tjctf2020/osrs](tjctf2020/osrs/README.md)
 * [tjctf2020/primo](tjctf2020/primo/README.md)
 * [wpictf2020/dont@me](wpictf2020/dont@me/README.md)
@@ -558,6 +571,7 @@ _write-what-where_
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
 * [redpwnctf2020/kevin-higgs](redpwnctf2020/kevin-higgs/README.md)
+* [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tjctf2020/naughty](tjctf2020/naughty/README.md)
 * [wpictf2020/dorsia4](wpictf2020/dorsia4/README.md)
 
@@ -574,6 +588,7 @@ _x86_
 * [ractf2020/nra](ractf2020/nra/README.md)
 * [redpwnctf2020/kevin-higgs](redpwnctf2020/kevin-higgs/README.md)
 * [sharkyctf2020/giveaway1](sharkyctf2020/giveaway1/README.md)
+* [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tjctf2020/osrs](tjctf2020/osrs/README.md)
 * [tjctf2020/primo](tjctf2020/primo/README.md)
 * [tjctf2020/tinder](tjctf2020/tinder/README.md)
@@ -621,6 +636,7 @@ _x86-64_
 * [sharkyctf2020/giveaway0](sharkyctf2020/giveaway0/README.md)
 * [sharkyctf2020/giveaway2](sharkyctf2020/giveaway2/README.md)
 * [sharkyctf2020/z3robotwaves](sharkyctf2020/z3robotwaves/README.md)
+* [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tjctf2020/asmr](tjctf2020/asmr/README.md)
 * [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
 * [tjctf2020/naughty](tjctf2020/naughty/README.md)
