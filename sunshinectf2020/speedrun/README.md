@@ -791,7 +791,7 @@ void win(void)
 
 `main` is basically just a _write-what-where_.  IANS, you can write any 64-bit value you like in any RW segment.  And, well, the GOT (Global Offset Table) `puts` entry is an easy target, just replace with `win` and get a shell when `puts("hi")` is called.
 
-Our write is relative to `target` (a global variable), so just subtract the `puts` address from the `target` address and divide by 8 to compute the _where_.  The `what` is just `win`.
+Our write is relative to `target` (a global variable), so just subtract the `target` address from the `puts` address and divide by 8 to compute the _where_.  The _what_ is just `win`.
 
 ### Exploit
 
