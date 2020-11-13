@@ -146,7 +146,7 @@ libc.address = puts - libc.sym.puts
 log.info('libc.address: ' + hex(libc.address))
 ```
 
-This is standard fare CTF GOT provided leakage.  IANS, having `puts` _put_ itself out there and _ret2choice_.
+This is standard fare CTF GOT provided leakage; having `puts` _put_ itself out there and _ret2choice_.
 
 At this point however we still do not know the version of libc, we'll have to run this remotely and harvest the last 3 nibbles of the `puts` address to use the [libc-database](https://github.com/niklasb/libc-database) (example [here](https://github.com/datajerk/ctf-write-ups/blob/master/fwordctf2020/welcome_pwner/README.md#decompile-with-ghidra)).
 

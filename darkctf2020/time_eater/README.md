@@ -183,7 +183,7 @@ Not the flag we're looking for.
 
 ## Stage 4: Get the flag
 
-I'm going to gloss over what didn't work for me, IANS, looking for suids, trying to brute force wolfie's password, looking for other interesting files that may have the goods, checking out cron ("time" was in the challenge title), looking for backups, etc...  the usual stuff.
+I'm going to gloss over what didn't work for me, in short, looking for suids, trying to brute force wolfie's password, looking for other interesting files that may have the goods, checking out cron ("time" was in the challenge title), looking for backups, etc...  the usual stuff.
 
 After all that I just uploaded linpeas, and ran that as elliot and dark.  User dark flagged `docker` as interesting.
 

@@ -399,7 +399,7 @@ This is a script I call `fooodem.sh` (fauxdem), and provides a very nice interac
 gdb -x gdb_init_real_mode.txt -x new.txt -x doit.txt
 ```
 
-You can read all about [`gdb_init_real_mode.txt`](https://ternet.fr/media/gdb_init_real_mode.txt) [here](https://ternet.fr/gdb_real_mode.html).  IANS, this is "like" PEDA, GEF, pwndbg, but for i8086.
+You can read all about [`gdb_init_real_mode.txt`](https://ternet.fr/media/gdb_init_real_mode.txt) [here](https://ternet.fr/gdb_real_mode.html); this is "like" PEDA, GEF, pwndbg, but for i8086.
 
 `new.txt` contains a few "new" things I created to help me out, and a modified version of `context` from [`gdb_init_real_mode.txt`](https://ternet.fr/media/gdb_init_real_mode.txt).  The most notable change is some super hacky i8086 disassembly.  I used `ia16-elf-objdump -x -d BBS.EXE --adjust-vma=0x20 >bbs.objdump` to create a correct disassembly and then `grep -A10` the address from within `context`.  Sanity restored.
 

@@ -103,7 +103,7 @@ The `log_level` of `WARN` will eliminate the connection `INFO` messages emitted 
 
 `server` and `port` get set from the command line.  Since multiple servers were provided, I ran against all of them in parallel.
 
-The length of `buf` is the number of bytes just above the canary.  The values `0x48` and `0x10` are from the Ghidra stack diagram, IANS, `local_48` - `local_10`.
+The length of `buf` is the number of bytes just above the canary.  The values `0x48` and `0x10` are from the Ghidra stack diagram, i.e., `local_48` - `local_10`.
 
 `x` is the list of candidate bytes for brute-forcing.  Basically all bytes but `\n`.  When the other end is using something like `fgets` or `gets`, input is terminated with `\n`.  This challenges uses `recv`, which is more like `read`.  Excluding `\n` is probably not necessary, but I was too lazy to read the code.  I figured if there were a `\n` in the canary or process address and since the canary/process address would not change, I could remove and test, but I never got a failure.  Anyway, it probably does not need to be there.
 

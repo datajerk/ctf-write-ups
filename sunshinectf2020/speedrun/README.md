@@ -249,7 +249,7 @@ void win(void)
 
 From `vuln`, `gets` can be used to overwrite the return address on the stack.  `local_3e` is `0x3e` bytes from the return address, so just write out `0x3e` of garbage followed by the address for `win`.
 
-The `system` call in `win` is actually `system("/bin/sh")`, to understand why `iVar1 = __x86.get_pc_thunk.ax(); system((char *)(iVar1 + 0x12e));` equates to that, read [ractf2020/nra#decompile-with-ghidra](https://github.com/datajerk/ctf-write-ups/tree/master/ractf2020/nra#decompile-with-ghidra).  IANS, `iVar1` is the address of the next instruction, then add `0x12e`, and then look in the disassembly at the location for the string.  In this case it's `/bin/sh`.  Welcome to x86 (32-bits).
+The `system` call in `win` is actually `system("/bin/sh")`, to understand why `iVar1 = __x86.get_pc_thunk.ax(); system((char *)(iVar1 + 0x12e));` equates to that, read [ractf2020/nra#decompile-with-ghidra](https://github.com/datajerk/ctf-write-ups/tree/master/ractf2020/nra#decompile-with-ghidra).  In short, `iVar1` is the address of the next instruction, then add `0x12e`, and then look in the disassembly at the location for the string.  In this case it's `/bin/sh`.  Welcome to x86 (32-bits).
 
 
 ### Exploit
@@ -789,7 +789,7 @@ void win(void)
 }
 ```
 
-`main` is basically just a _write-what-where_.  IANS, you can write any 64-bit value you like in any RW segment.  And, well, the GOT (Global Offset Table) `puts` entry is an easy target, just replace with `win` and get a shell when `puts("hi")` is called.
+`main` is basically just a _write-what-where_, i.e., you can write any 64-bit value you like in any RW segment.  And, well, the GOT (Global Offset Table) `puts` entry is an easy target, just replace with `win` and get a shell when `puts("hi")` is called.
 
 Our write is relative to `target` (a global variable), so just subtract the `target` address from the `puts` address and divide by 8 to compute the _where_.  The _what_ is just `win`.
 

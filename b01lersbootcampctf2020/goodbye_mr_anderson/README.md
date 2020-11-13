@@ -277,7 +277,7 @@ Since `$rdx` is already zero (see analysis section) we just need `pop rdi` and `
 
 Our payload starts by filling the 24-byte buffer with 24 `A`'s followed by the leaked canary (without which we'd get an egregious `*** stack smashing detected ***: terminated` error).
 
-Next, is our argument to `yay` (`59` is the `execve` syscall number).  This may not seem intuitive, but set a breakpoint at `leave` and follow it yourself.  IANS, `leave` pops the saved base pointer into `rbp`, normally we do not care what the value is, but in this case we do because `yay` will push it back to the stack, then pop it into `$rax`--required for `syscall`.
+Next, is our argument to `yay` (`59` is the `execve` syscall number).  This may not seem intuitive, but set a breakpoint at `leave` and follow it yourself; `leave` pops the saved base pointer into `rbp`, normally we do not care what the value is, but in this case we do because `yay` will push it back to the stack, then pop it into `$rax`--required for `syscall`.
 
 Next, are the parameters to `execve`: the pointer to `/bin/sh` (`name`) and popping `0`'s into `$rsi` and `$r15` (just along for the ride).  `$rdx` is already zero, so no need to set.
 

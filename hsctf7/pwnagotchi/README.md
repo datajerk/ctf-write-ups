@@ -133,7 +133,7 @@ print(hex(baselibc))
 
 Please read [https://github.com/datajerk/ctf-write-ups/tree/master/tjctf2020/stop](https://github.com/datajerk/ctf-write-ups/tree/master/tjctf2020/stop) for details on how this exploit works. The only different here is the use of `puts` vs. `printf` to leak libc and the calls to `eat` and `zzz` to reset `speepy` and `hungry`.
 
-IANS, smash the stack, pop rdi to leak the address of `puts`, compute the version and location of libc, eat, sleep, repeat.
+In short, smash the stack, pop rdi to leak the address of `puts`, compute the version and location of libc, eat, sleep, repeat.
 
 
 ### Second Pass: Get a shell, get the flag.
