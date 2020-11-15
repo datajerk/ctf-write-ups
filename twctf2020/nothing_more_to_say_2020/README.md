@@ -46,7 +46,9 @@ Well, if you know how to Google, you can solve this challenge a number of differ
     RWX:      Has RWX segments
 ```
 
-No mitigations in place.  However, _we're not going to take advantage of any of this--not necessary._
+No mitigations in place.  However, _we're not going to take advantage of any of this--not necessary._  
+
+> Well, I'm going to use the _No PIE_ for a single ROP gadget.
 
 
 ### Source included
@@ -194,6 +196,16 @@ log.info('__libc_start_main: ' + hex(__libc_start_main_231 - 231))
 ```
 
 Requesting parameters 36 and 39 provide the necessary bits to compute the location of the return address and libc (if we know the libc version).
+
+The `216` above was hand computed from the stack diagram above, specifcally this section:
+
+```
+0x00007fffffffe370│+0x00f0: 0x00007fffffffe460  →  0x0000000000000001
+0x00007fffffffe378│+0x00f8: 0x0000000000000000
+0x00007fffffffe380│+0x0100: 0x00000000004007d0  →  <__libc_csu_init+0> push r15	 ← $rbp
+```
+
+The return address location is `0x00007fffffffe388` (just under (or above depending on how you look at it) `$rbp`), and the leak from offset 36 (`+0x00f0`) is `0x00007fffffffe460`.  `0x00007fffffffe460 - 0x00007fffffffe388 = 216`.
 
 
 ### Find and download libc
