@@ -48,7 +48,7 @@ Well, if you know how to Google, you can solve this challenge a number of differ
 
 No mitigations in place.  However, _we're not going to take advantage of any of this--not necessary._  
 
-> Well, I'm going to use the _No PIE_ for a single ROP gadget.
+> Well, _I am_ going to use the _No PIE_ for a single ROP gadget.
 
 
 ### Source included
