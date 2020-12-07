@@ -1,3 +1,4 @@
+```shell
 # ./exploit.py REMOTE=1
 [*] '/pwd/datajerk/boot2root2020/canned/canned'
     Arch:     amd64-64-little
@@ -21,3 +22,4 @@
 [*] Switching to interactive mode
 $ cat flag
 b00t2root{d0_U_h4V3_a_C4N_0pen3R?}
+```

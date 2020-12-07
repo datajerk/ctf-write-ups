@@ -1,3 +1,4 @@
+```shell
 # ./exploit.py REMOTE=1
 [*] '/pwd/datajerk/boot2root2020/roppy_ropper/lsass'
     Arch:     i386-32-little
@@ -16,3 +17,4 @@ total 688
 -rwsr-xr-x 1 pwnflag pwnflag 698068 Dec  6 09:29 lsass
 $ cat flag.txt
 b00t2root{R0p_cHa1nS_ar3_tH3_b3st}
+```

@@ -1,3 +1,4 @@
+```shell
 # ./exploit.py REMOTE=1
 [*] '/pwd/datajerk/boot2root2020/bobby_boi/bobby_boi'
     Arch:     amd64-64-little
@@ -19,3 +20,4 @@
 [*] Switching to interactive mode
 $ cat flag
 b00t2root{y3Ah_Ye4h_b0bbY_b0y_H3_B3_f33l1n_H1m5elf_SG9taWNpZGU=}
+```
