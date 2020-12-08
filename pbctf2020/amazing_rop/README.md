@@ -289,10 +289,9 @@ p.sendlineafter('Input some text: ', payload)
 p.stream()
 ```
 
-Now, just follow the _instructions: `mov $1, %%eax; mov $0x31337, %%edi; mov $0x1337, %%esi; int3`_
+The first half of the payload sends `0x40 - 0x10` (48) bytes then `flag` (see analysis section), then pads out to `0x40` bytes (see stack diagram in analysis section, `buff` is `0x40` bytes from return address on stack).
 
-1. Set `esi` and `edi` to `0x1337` and `0x31337` respectively, garbage out `ebp`
-2. Set `eax` to 1, and `int3`
+Next, just follow the _instructions:_ `mov $1, %%eax; mov $0x31337, %%edi; mov $0x1337, %%esi; int3`
 
 Output:
 
