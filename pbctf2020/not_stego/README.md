@@ -57,7 +57,7 @@ Just type in the bytes, and while typing them, notice they are all printable ASC
 Then:
 
 ```bash
-# cat bytes | xargs | xxd -r -p
+# cat bytes | xxd -r -p
 Here's my link: https://pastebin.com/j6Xd9GNM  <-- Hehehehe! See if you can RE me
 
 # curl https://pastebin.com/raw/j6Xd9GNM
