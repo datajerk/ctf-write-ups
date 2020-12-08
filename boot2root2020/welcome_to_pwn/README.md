@@ -102,7 +102,7 @@ p.sendlineafter('what u got ',payload)
 p.interactive()
 ```
 
-`pop_rdi+1` is the same as `ret` and is used to align the stack, otherwise `system` would segfault (see [blind-piloting](https://github.com/datajerk/ctf-write-ups/tree/master/b01lersctf2020/blind-piloting) and search for stack-alignment).  The next instruction will pop the address of `/bin/sh` into `rdi` (required for `system`), lastly `system` is called.
+`pop_rdi+1` is the same as `ret` and is used to align the stack, otherwise `system` would segfault (see [blind-piloting](https://github.com/datajerk/ctf-write-ups/tree/master/b01lersctf2020/blind-piloting) and search for stack-alignment).  The next instruction will pop the address of `/bin/sh` into `rdi` (required for `system`). Lastly, `system` is called.
 
 Output:
 
