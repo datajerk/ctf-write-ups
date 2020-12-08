@@ -323,3 +323,5 @@ pbctf{hmm_s0mething_l00ks_off_w1th_th1s_s3tup}
 Segmentation fault
 [31337.1337] bof.bin[1753]: segfault at f7f50000 ip 00000000f7f50000 sp 00000000fff68858
 ```
+
+Flag: `pbctf{hmm_s0mething_l00ks_off_w1th_th1s_s3tup}`
