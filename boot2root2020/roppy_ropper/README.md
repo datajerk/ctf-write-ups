@@ -65,7 +65,7 @@ lsass: ELF 32-bit LSB executable, Intel 80386, version 1 (GNU/Linux), statically
 BuildID[sha1]=29ace8e7875f5edabe4ce83e83ec1aebd4cfa48c, for GNU/Linux 3.2.0, not stripped
 ```
 
-Like [Welcome to Pwn](https://github.com/datajerk/ctf-write-ups/tree/master/boot2root2020/welcome_to_pwn), `gets` is the vulnerability, but since we have a binary full of gadgets using something like `ropper` (hint in the title) is all we need:
+Like [Welcome to Pwn](https://github.com/datajerk/ctf-write-ups/tree/master/boot2root2020/welcome_to_pwn), `gets` is the vulnerability, but since we have a binary full of gadgets (static linked) using something like `ropper` (hint in title) is all we need:
 
 ```
 ropper --file lsass --chain "execve cmd=/bin/sh" --badbytes 0a
