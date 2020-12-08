@@ -12,7 +12,7 @@
 > 
 > [shellcode](shellcode)
 
-Tags: _pwn_ _x86-64_ _remote-shell_ _bof_ _rop_
+Tags: _pwn_ _x86-64_ _remote-shell_ _bof_ _shellcode_
 
 
 ## Summary
