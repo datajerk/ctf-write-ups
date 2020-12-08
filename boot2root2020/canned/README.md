@@ -1,3 +1,13 @@
+ canned
+491
+
+I think i got my flag stuck in a can, can you open it for me
+
+nc 35.238.225.156 1007
+
+Author: Viper_S
+
+
 ```shell
 # ./exploit.py REMOTE=1
 [*] '/pwd/datajerk/boot2root2020/canned/canned'

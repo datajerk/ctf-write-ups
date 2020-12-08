@@ -1,3 +1,13 @@
+ shellCode
+477
+
+babies love shell legends love shellcode
+
+nc 35.238.225.156 1006
+
+Author: TheBadGuy
+
+
 ```shell
 # ./exploit.py REMOTE=1
 [*] '/pwd/datajerk/boot2root2020/shellcode/shellcode'

@@ -1,3 +1,13 @@
+ bobby boi
+493
+
+My boi bobby claims to be the new MC, do you have the bars to defeat him in a rap battle? Bobby will need the length of your bars beforehand tho.
+
+nc 35.238.225.156 1002
+
+Author: Viper_S
+
+
 ```shell
 # ./exploit.py REMOTE=1
 [*] '/pwd/datajerk/boot2root2020/roppy_ropper/lsass'
