@@ -17,7 +17,7 @@ Tags: _pwn_ _x86_ _remote-shell_ _bof_ _rop_
 
 ## Summary
 
-Static ROP binary, all parts included, no assembly required.
+Static ROP binary, parts included, no assembly required.
 
 
 ## Analysis
