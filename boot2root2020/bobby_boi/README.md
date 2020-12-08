@@ -162,6 +162,8 @@ Output:
 Locally this runs in about 3-4 seconds, remotely this took almost 3 minutes.
 
 > If I had assumed only printable ASCII, then it would have taken 1/2 the time.  Since this worked fine the first time and I had the canary I didn't any reason to change the code.
+> 
+> When developing locally I created an `og_bars.txt` file with `ABCDEFGH` for testing.
 
 Now that we have the canary, the rest is nearly identical to [canned](https://github.com/datajerk/ctf-write-ups/tree/master/boot2root2020/canned), if you haven't already, pause here and read that.
 
