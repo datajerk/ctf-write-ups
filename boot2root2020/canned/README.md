@@ -63,7 +63,7 @@ undefined8 main(void)
 }
 ```
 
-`printf(local_48)` is the first vulnerability, however the `fgets` that proceeds it will only read `0x10` bytes (16, 15 actually since the last byte will be `\0`).  There's not a lot we can do with 15 bytes except leak the value of the canary (`local_10`), which is all we need to leverage the second vulnerability--a BOF from `fgets(local_28,100,stdin)`.  `local_28` is `0x28` (40) bytes from the return address, leaving us 60 bytes to craft a ROP chain (we only need 24 bytes).
+`printf(local_48)` is the first vulnerability, however the `fgets` that proceeds it will only read `0x10` bytes (16, 15 actually since the last byte will be `\0`).  There's not a lot we can do with 15 bytes (without some effort) except leak the value of the canary (`local_10`), which is all we need to leverage the second vulnerability--a BOF from `fgets(local_28,100,stdin)`.  `local_28` is `0x28` (40) bytes from the return address, leaving us 60 bytes to craft a ROP chain (we only need 24 bytes).
 
 Finding the value to pass `printf` to leak the canary is pretty simple with GDB + GEF:
 
