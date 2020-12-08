@@ -63,7 +63,7 @@ undefined8 main(void)
 }
 ```
 
-`printf(local_48)` is the first vulnerability, however the `fgets` that proceeds it will only read `0x10` bytes (16, 15 actually since the last bytes will be `\0`).  There's not a lot we can do with `15` bytes except leak the value of the canary (`local_10`), which is all we need to leverage the second vulnerability--a BOF from `fgets(local_28,100,stdin)`.  `local_28` is `0x28` (40) bytes from the return address, leaving us 60 bytes to craft a ROP chain (we only need 24 bytes).
+`printf(local_48)` is the first vulnerability, however the `fgets` that proceeds it will only read `0x10` bytes (16, 15 actually since the last byte will be `\0`).  There's not a lot we can do with 15 bytes except leak the value of the canary (`local_10`), which is all we need to leverage the second vulnerability--a BOF from `fgets(local_28,100,stdin)`.  `local_28` is `0x28` (40) bytes from the return address, leaving us 60 bytes to craft a ROP chain (we only need 24 bytes).
 
 Finding the value to pass `printf` to leak the canary is pretty simple with GDB + GEF:
 
@@ -112,7 +112,7 @@ gef➤  canary
 [+] The canary of process 23173 is 0x17835412470ecb00
 ```
 
-Next, to find the format-string for `printf` to have it leak the canary, just `run` again, but at the binary prompt `Say something please`, enter `$n%p` where `n` is a number, keep incrementing until `canary` matches, e.g.:
+Next, to find the format-string for `printf` to have it leak the canary, just `run` again, but at the binary prompt `Say something please`, enter `$n%p` where `n` is a number starting at `1`, keep incrementing until `canary` matches, e.g.:
 
 ```
 gef➤  run
@@ -122,7 +122,7 @@ Say something please
 0xb547a799fc7ba200
 ```
 
-Press enter at the `That ain't it, try something else maybe`, then check with:
+Press enter at the prompt `That ain't it, try something else maybe`, then check with:
 
 ```
 gef➤  canary
@@ -274,3 +274,5 @@ Output:
 $ cat flag
 b00t2root{d0_U_h4V3_a_C4N_0pen3R?}
 ```
+
+> Notice above the detection and download of the challenge libc.
