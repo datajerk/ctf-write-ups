@@ -167,6 +167,7 @@ Locally this runs in about 3-4 seconds, remotely this took almost 3 minutes.
 
 Now that we have the canary, the rest is nearly identical to [canned](https://github.com/datajerk/ctf-write-ups/tree/master/boot2root2020/canned), if you haven't already, pause here and read that.
 
+> Read [blind-piloting](https://github.com/datajerk/ctf-write-ups/tree/master/b01lersctf2020/blind-piloting) for a lengthly example of brute-forcing the stack canary, then the base process address 4th least significant nibble, followed by the rest of the base process.  This was my first brute-forcing experience and it took me 3 days past the end of the CTF to figure out.  Another good example is [ripe_reader](https://github.com/datajerk/ctf-write-ups/blob/master/nahamconctf2020/ripe_reader/README.md)
 
 ## Exploit
 
@@ -187,7 +188,7 @@ while True:
 
 [Most of] these CTFs require that you figure out the remote libc version and download it for your exploits.  It gets really old, so I automated it.  The `libc_index = 0` gets incremented if the _guessed_ libc fails to spawn a shell.  The `while True:` is the main loop that _tries_ each _guessed_ version of libc, usually the first one is correct.
 
-The line `binary.symbols['vuln'] = 0x0040124a` adds a symbol to the symbol table so that I can reference this address by name.  This binary was stripped.
+The line `binary.symbols['vuln'] = 0x0040124a` adds a symbol to the symbol table so that I can reference this address by name--this binary was stripped.
 
 `canary` is set to the value we already brute forced.
 
@@ -221,9 +222,9 @@ The line `binary.symbols['vuln'] = 0x0040124a` adds a symbol to the symbol table
     log.info('puts: ' + hex(puts))
 ```
 
-Above is the first pass.  After leaking the canary, we write out some garbage (`0x38 - 0x14` is the distance between `local_38` (from `read`) and the faux canary (`local_14`)), followed by the `canary`, then garbage to the return address (`local_38` is `0x38` bytes from the return address, the total payload should be `0x38` in length at this point).
+Above is the first pass.  After leaking the canary, we write out some garbage (`0x38 - 0x14` is the distance between `local_38` (from `read`) and the faux canary (`local_14`)), followed by the canary, then garbage to the return address (`local_38` is `0x38` bytes from the return address, the total payload should be `0x38` in length at this point).
 
-With the padding and canary bypass in place, we have `puts` leak itself, then loop back to `main` while capturing the `puts` address.
+With the padding and canary bypass in place, we have `puts` leak itself, then loop back to `vuln` while capturing the `puts` address.
 
 ```python
     if not 'libc' in locals():
@@ -245,7 +246,7 @@ With the padding and canary bypass in place, we have `puts` leak itself, then lo
 
 Above is the lazy pass.  This will take the leaked `puts` least significant three nibbles and try to find a match using the libc-database [online](https://libc.rip)--These guys are are the best!  _Thanks for the API!_
 
-If the arch is not a match, then It'll try the next; when there is a match the libc is downloaded and setup as the candidate libc to test for a shell.
+If the arch is not a match, then It'll try the next; when there is a match, the libc is downloaded and setup as the candidate libc to test for a shell.
 
 ```python
     libc.address = puts - libc.sym.puts

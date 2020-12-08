@@ -209,7 +209,7 @@ With the padding and canary bypass in place, we have `puts` leak itself, then lo
 
 Above is the lazy pass.  This will take the leaked `puts` least significant three nibbles and try to find a match using the libc-database [online](https://libc.rip)--These guys are are the best!  _Thanks for the API!_
 
-If the arch is not a match, then It'll try the next; when there is a match the libc is downloaded and setup as the candidate libc to test for a shell.
+If the arch is not a match, then It'll try the next; when there is a match, the libc is downloaded and setup as the candidate libc to test for a shell.
 
 ```python
     libc.address = puts - libc.sym.puts
