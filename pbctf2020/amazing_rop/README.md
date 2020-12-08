@@ -145,7 +145,7 @@ If we `touch passwds`, the segfault goes away, now we can get to work, but what 
  0010: 0x06 0x00 0x00 0x7fff0000  return ALLOW
 ```
 
-That's pretty grim.  Best if we just stick to the advice in the source (which, BTW, will have the primary process print the flag--this is a pretty cool challenge).
+That's pretty grim.  Best if we just stick to the advice in the source (which, BTW, will have the initial process print the flag--this is a pretty cool challenge).
 
 Since we're already in Ghidra, might as well get the `vuln` stack diagram:
 
@@ -195,7 +195,7 @@ Returning to address: 0x565f6599
 
 The challenge author kindly provided a stack dump, we do not even have to use GDB with this.
 
-We can scrape the return address (back to `main`) from the first stack diagram (before `Input some text:`) to compute the base process address--required for our ROP chain.  Just look 10 lines down to:
+We can scrape the return address (back to `main`) from the first stack dump (before `Input some text:`) to compute the base process address--required for our ROP chain.  Just look 10 lines down to:
 
 ```
 0xff8bed6c | 99 65 5f 56 90 ed 8b ff |
