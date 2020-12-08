@@ -195,7 +195,7 @@ Returning to address: 0x565f6599
 
 The challenge author kindly provided a stack dump, we do not even have to use GDB with this.
 
-We can scrap the return address (back to `main`) from the first stack diagram (before `Input some text:`) to compute the base process address--required for our ROP chain.  Just look 10 lines down to:
+We can scrape the return address (back to `main`) from the first stack diagram (before `Input some text:`) to compute the base process address--required for our ROP chain.  Just look 10 lines down to:
 
 ```
 0xff8bed6c | 99 65 5f 56 90 ed 8b ff |
