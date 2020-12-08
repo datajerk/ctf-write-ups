@@ -271,7 +271,7 @@ binary.address = return_addr - ((return_addr & 0xFFF) - (binary.sym.main & 0xFFF
 log.info('binary.address: ' + hex(binary.address))
 ```
 
-Skip to the 10th line and get the return address from the stack and use that to compute the base process address.
+Skip to the 10th line and get the return address from the stack dump and use that to compute the base process address.
 
 ```python
 payload  = b''
