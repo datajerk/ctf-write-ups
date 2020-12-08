@@ -103,7 +103,7 @@ Following the `read` is a `gets` that also reads into `local_38`.  I can only im
 
 > This is not an uncommon pattern with brute forcing canaries, base process addresses, etc..., however pwntools `send` vs. `sendline` can be use with `read(0,buff,larger_number)`--the `gets` to catch a newline is not required.
 
-Since the faux canary is read from a file, that we can assume is static, then brute forcing is a simple pattern of inputing to `What's the size of your bars?` a size one greater than `0x38 - 0x14` (distance from `local_38` (read buffer) to `local_14` faux canary) and testing that one byte overflow until we do NOT get a `*** Stack Smashing Detected ***` detected message, then increase by one, and repeat until all 8 have been discovered:
+Since the faux canary is read from a file, that we can assume is static, then brute forcing is a simple pattern of inputing to `What's the size of your bars?` a size one greater than `0x38 - 0x14` (distance from `local_38` (read buffer) to `local_14` faux canary) and testing that one byte overflow until we do NOT get a `*** Stack Smashing Detected ***` detected message, then increase overflow by one, add discovered byte to payload, and repeat until all 8 bytes have been discovered:
 
 ```python
 #!/usr/bin/env python3
@@ -140,7 +140,7 @@ sys.exit(0)
 
 Output:
 
-```
+```bash
 # time ./exploit.py REMOTE=1
 [*] '/pwd/datajerk/boot2root2020/bobby_boi/bobby_boi'
     Arch:     amd64-64-little
