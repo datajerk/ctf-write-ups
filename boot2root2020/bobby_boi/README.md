@@ -167,7 +167,7 @@ Locally this runs in about 3-4 seconds, remotely this took almost 3 minutes.
 
 Now that we have the canary, the rest is nearly identical to [canned](https://github.com/datajerk/ctf-write-ups/tree/master/boot2root2020/canned), if you haven't already, pause here and read that.
 
-> Read [blind-piloting](https://github.com/datajerk/ctf-write-ups/tree/master/b01lersctf2020/blind-piloting) for a lengthly example of brute-forcing the stack canary, then the base process address 4th least significant nibble, followed by the rest of the base process address.  This was my first brute-forcing experience and it took me 3 days past the end of the CTF to figure out.  Another good example is [ripe_reader](https://github.com/datajerk/ctf-write-ups/blob/master/nahamconctf2020/ripe_reader/README.md)
+> Read [blind-piloting](https://github.com/datajerk/ctf-write-ups/tree/master/b01lersctf2020/blind-piloting) for a lengthly example of brute-forcing the stack canary, then the base process address 4th least significant nibble, followed by the rest of the base process address.  This was my first brute-forcing experience and it took me 3 days past the end of the CTF to figure out.  Another good example is [ripe_reader](https://github.com/datajerk/ctf-write-ups/blob/master/nahamconctf2020/ripe_reader/README.md).
 
 ## Exploit
 
