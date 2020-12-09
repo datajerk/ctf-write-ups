@@ -193,7 +193,7 @@ You did it! Congratuations!
 Returning to address: 0x565f6599
 ```
 
-The challenge author kindly provided a stack dump, we do not even have to use GDB with this.
+The challenge author kindly provided a stack dump; we do not even have to use GDB with this.
 
 We can scrape the return address (back to `main`) from the first stack dump (before `Input some text:`) to compute the base process address--required for our ROP chain.  Just look 10 lines down to:
 
@@ -204,7 +204,7 @@ We can scrape the return address (back to `main`) from the first stack dump (bef
 
 ### Let's go shopping
 
-Lastly we need to find the ROP gadgets that satisfies:
+Lastly, we need to find the ROP gadgets that satisfies:
 
 ```c
 // This is what you need to do to get the first flag
