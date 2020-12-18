@@ -72,7 +72,7 @@ There's a perfect storm of minor bugs that result in a major vulnerability--RCE.
 
 `scanf("%d",&local_6c)` and `scanf("%d",&local_68)` permit negative values, this allows the `(local_6c < 8) && (local_68 < 8)` check to pass.  Had `local_6c` and `local_68` been `uint`, this vulnerability would have been mitigated.
 
-The `ushort` casts in the statement `swap_ids((ushort)local_6c,(ushort)local_68,(long)local_58)` converts those negative number to positive creating an integer overflow. This overflow permits swaps with index values 0-65535 (2<sup>16</sup> - 1) enabling arbitrary read and write down stack.
+The `ushort` casts in the statement `swap_ids((ushort)local_6c,(ushort)local_68,(long)local_58)` converts those negative numbers to positive--integer overflow. This overflow permits swaps with index values 0-65535 (2<sup>16</sup> - 1) enabling arbitrary read and write down stack.
 
 The return address is `0x58` bytes from `local_58`, an index of `11` (`0x58 / 8`) will easily allow us to write out a ROP chain.  
 
