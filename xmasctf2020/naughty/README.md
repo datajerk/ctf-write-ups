@@ -64,7 +64,7 @@ To overflow the return address we'll have to send `0x38 - 0xa` (46) bytes of gar
 
 `fgets` reads one less than size (`0x47`) giving a max ROP overflow of `0x46 - 0x38` (14) bytes.  That's only enough space for one ROP call (well, two ROP calls since (as of this writing) x86_64 addresses are 48-bits (6 bytes)).  And there's no easy `win` function.
 
-Given NX is disabled that natural place to write shellcode would be in `local_38`, as long as that code fits within 46 bytes (easy).
+Given NX is disabled the natural place to write shellcode would be in `local_38`, as long as that code fits within 46 bytes (easy).
 
 _But how do we call it?_
 
