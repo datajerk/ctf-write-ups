@@ -99,6 +99,9 @@ _bof_
 * [tjctf2020/stop](tjctf2020/stop/README.md)
 * [tjctf2020/tinder](tjctf2020/tinder/README.md)
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
+* [xmasctf2020/doiknowyou](xmasctf2020/doiknowyou/README.md)
+* [xmasctf2020/naughty](xmasctf2020/naughty/README.md)
+* [xmasctf2020/ready\_for\_xmas](xmasctf2020/ready\_for\_xmas/README.md)
 
 _bruteforce_
 
@@ -216,6 +219,7 @@ _hash-collision_
 _integer-overflow_
 
 * [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
+* [xmasctf2020/lil\_wishes\_db](xmasctf2020/lil\_wishes\_db/README.md)
 
 _libc_
 
@@ -365,6 +369,10 @@ _pwn_
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
 * [wpictf2020/dorsia3](wpictf2020/dorsia3/README.md)
 * [wpictf2020/dorsia4](wpictf2020/dorsia4/README.md)
+* [xmasctf2020/doiknowyou](xmasctf2020/doiknowyou/README.md)
+* [xmasctf2020/lil\_wishes\_db](xmasctf2020/lil\_wishes\_db/README.md)
+* [xmasctf2020/naughty](xmasctf2020/naughty/README.md)
+* [xmasctf2020/ready\_for\_xmas](xmasctf2020/ready\_for\_xmas/README.md)
 
 _rand_
 
@@ -433,6 +441,9 @@ _remote-shell_
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
 * [wpictf2020/dorsia3](wpictf2020/dorsia3/README.md)
 * [wpictf2020/dorsia4](wpictf2020/dorsia4/README.md)
+* [xmasctf2020/lil\_wishes\_db](xmasctf2020/lil\_wishes\_db/README.md)
+* [xmasctf2020/naughty](xmasctf2020/naughty/README.md)
+* [xmasctf2020/ready\_for\_xmas](xmasctf2020/ready\_for\_xmas/README.md)
 
 _ret2win_
 
@@ -509,6 +520,9 @@ _rop_
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
 * [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
+* [xmasctf2020/lil\_wishes\_db](xmasctf2020/lil\_wishes\_db/README.md)
+* [xmasctf2020/naughty](xmasctf2020/naughty/README.md)
+* [xmasctf2020/ready\_for\_xmas](xmasctf2020/ready\_for\_xmas/README.md)
 
 _rsa_
 
@@ -532,6 +546,7 @@ _shellcode_
 * [tjctf2020/osrs](tjctf2020/osrs/README.md)
 * [tjctf2020/primo](tjctf2020/primo/README.md)
 * [wpictf2020/dont@me](wpictf2020/dont@me/README.md)
+* [xmasctf2020/naughty](xmasctf2020/naughty/README.md)
 
 _signal_
 
@@ -586,6 +601,10 @@ _unsanitized-input_
 
 * [b01lersbootcampctf2020/white\_rabbit](b01lersbootcampctf2020/white\_rabbit/README.md)
 
+_variable-overwrite_
+
+* [xmasctf2020/doiknowyou](xmasctf2020/doiknowyou/README.md)
+
 _video_
 
 * [ractf2020/br.mov](ractf2020/br.mov/README.md)
@@ -604,6 +623,7 @@ _write-what-where_
 * [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tjctf2020/naughty](tjctf2020/naughty/README.md)
 * [wpictf2020/dorsia4](wpictf2020/dorsia4/README.md)
+* [xmasctf2020/lil\_wishes\_db](xmasctf2020/lil\_wishes\_db/README.md)
 
 _x86_
 
@@ -680,6 +700,10 @@ _x86-64_
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
 * [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
+* [xmasctf2020/doiknowyou](xmasctf2020/doiknowyou/README.md)
+* [xmasctf2020/lil\_wishes\_db](xmasctf2020/lil\_wishes\_db/README.md)
+* [xmasctf2020/naughty](xmasctf2020/naughty/README.md)
+* [xmasctf2020/ready\_for\_xmas](xmasctf2020/ready\_for\_xmas/README.md)
 
 _xor_
 
