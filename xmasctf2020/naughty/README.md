@@ -2,7 +2,7 @@
 
 ## Naughty?
 
-> ??
+> 50
 >
 > You haven't been naughty, have you?
 >

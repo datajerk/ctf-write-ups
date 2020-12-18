@@ -2,7 +2,7 @@
 
 ## Do I know you?
 
-> ??
+> 43
 >
 > You walk on the street. This guy seems to recognize you. What do you do?
 >
@@ -62,11 +62,11 @@ undefined8 main(void)
 }
 ```
 
-The vulnerability is `gets(local_38)`, after that a check, that if not passed, will `exit`, otherwise print the flag (next statement).
+The vulnerability is `gets(local_38)`, after that a check, that if not passed will `exit`, otherwise print the flag (next statement).
 
 To get the flag just overflow `local_38` into `local_18` with `0xdeadbeef`, i.e. write out `0x38 - 0x18` bytes of garbage followed by `0xdeadbeef`.
 
-> `0x38 - 0x18` is the difference of offsets within the stack frame.  `local` `_38` and `_18` give away the offsets within the stack.
+> `0x38 - 0x18` is the difference of offsets within the stack frame.  Ghidra `local` `_38` and `_18` give away the offsets within the stack.
 
 
 ## Exploit
