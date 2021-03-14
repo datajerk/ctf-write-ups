@@ -14,7 +14,7 @@ Tags: _srop_ _x86-64_ _pwn_ _bof_
 
 Exploit:
 
-```
+```python
 #!/usr/bin/env python3
 
 from pwn import *
@@ -52,7 +52,7 @@ p.interactive()
 
 Output:
 
-```
+```bash
 # ./exploit.py REMOTE=1
 [*] '/pwd/datajerk/misc/moving-singals/moving-signals'
     Arch:     amd64-64-little

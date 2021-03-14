@@ -16,7 +16,7 @@ Tags: _pwn_ _x86-64_ _srop_ _bof_
 
 Exploit:
 
-```
+```python
 #!/usr/bin/env python3
 
 from pwn import *
@@ -52,7 +52,7 @@ p.interactive()
 
 Output:
 
-```
+```bash
 # ./exploit.py REMOTE=1
 [*] '/pwd/datajerk/0x41414141ctf2021/echo/echo'
     Arch:     amd64-64-little

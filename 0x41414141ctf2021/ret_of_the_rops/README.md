@@ -14,7 +14,7 @@ Tags: _pwn_ _bof_ _rop_ _x86-64_
 
 Exploit:
 
-```
+```python
 #!/usr/bin/env python3
 
 from pwn import *
@@ -77,7 +77,7 @@ p.interactive()
 
 Output:
 
-```
+```bash
 # ./exploit.py REMOTE=1
 [*] '/pwd/datajerk/0x41414141ctf2021/ret_of_the_rops/ret-of-the-rops'
     Arch:     amd64-64-little
