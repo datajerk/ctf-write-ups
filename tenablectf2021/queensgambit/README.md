@@ -8,7 +8,7 @@ Practice your moves on Mr. Shaibel's chess server!
 nc challenges.ctfd.io 30458
 ```
 
-Tags: _pwn_ _x86-64_ _format-string_
+Tags: _pwn_ _x86-64_ _format-string_ _got-overwrite_
 
 Exploit:
 
