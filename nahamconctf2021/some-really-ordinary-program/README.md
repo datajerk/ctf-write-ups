@@ -93,7 +93,7 @@ Start              End                Offset             Perm Path
 0xffffffffff600000 0xffffffffff601000 0x0000000000000000 r-x [vsyscall]
 ```
 
-Before getting into the _srop_ details, let look at the memory map.  Other than the stack, there is a 4K page of memory that is also `RWX` at `0x402000`.  This is something we both have and _know_.
+Before getting into the _srop_ details, lets look at the memory map.  Other than the stack, there is a 4K page of memory that is also `RWX` at `0x402000`.  This is something we both have and _know_.
 
 The attack is pretty simple, use `read` to _read_ in `0xf` bytes, so that `rax` is `0xf` (rt_sigreturn syscall).  Then call `syscall` followed by our sigreturn frame.
 
@@ -149,7 +149,7 @@ payload += bytes(frame)
 p.sendafter('.\n',payload)
 ```
 
-The payload just needs to fill up the `0x1f4` buffer plus 8 bytes for the `push rbp`, then call `midread` followed by `syscall` and our frame.
+The payload just needs to fill up the `0x1f4` byte buffer plus 8 bytes for the `push rbp`, then call `midread` followed by `syscall` and our frame.
 
 ```python
 # with read called, get 0xf in rax
