@@ -105,7 +105,7 @@ else:
     p = process(binary.path)
 ```
 
-Standard pwntools header with some symbols added for `main`.
+Standard pwntools header with a symbol added for `main`.
 
 ```python
 syscall = next(binary.search(asm('syscall')))
