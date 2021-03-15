@@ -79,7 +79,7 @@ Just set the 6 registers using the gadget at `0x4011cb` in the example above.  `
 
 It's just that easy.
 
-> Where do you get a point to a function?
+> Where do you get a pointer to a function?
 
 That is exactly what the GOT is.  Otherwise, you're on your own.
 
