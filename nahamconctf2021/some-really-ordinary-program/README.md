@@ -156,7 +156,7 @@ The payload just needs to fill up the `0x1f4` byte buffer plus 8 bytes for the `
 p.send(constants.SYS_rt_sigreturn * b'A')
 ```
 
-With the payload now running we need to send `0xf` bytes so that `read` will return with `0xf` in `rax`.  After than the rt_sigreturn syscall will kick in and update all the registered with values from our frame, including the new stack (`rsp`) and where we should start executing again (`rip`).
+With the payload now running we need to send `0xf` bytes so that `read` will return with `0xf` in `rax`.  After that the rt_sigreturn syscall will kick in and update all the registers with values from our frame, including the new stack (`rsp`) and where we should start executing again (`rip`).
 
 ```python
 # new stack that we know address of and its NX

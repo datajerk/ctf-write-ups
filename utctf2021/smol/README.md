@@ -144,7 +144,7 @@ p.send(constants.SYS_rt_sigreturn * b'A')
 time.sleep(.1)
 ```
 
-With the payload now running we need to send `0xf` bytes so that `read` will return with `0xf` in `rax`.  After than the rt_sigreturn syscall will kick in and update all the registered with values from our frame, including the new stack (`rsp`) and where we should start executing again (`rip`).
+With the payload now running we need to send `0xf` bytes so that `read` will return with `0xf` in `rax`.  After that the rt_sigreturn syscall will kick in and update all the registers with values from our frame, including the new stack (`rsp`) and where we should start executing again (`rip`).
 
 > The .1 sleep is required to allow `read` to exit before our next `read` attack.
 
