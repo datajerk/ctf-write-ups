@@ -1,6 +1,6 @@
 # NahamCon CTF 2021
 
-## Rock Paper Scissors [medium[
+## Rock Paper Scissors [medium]
 
 > Author: @M_alpha#3534
 >

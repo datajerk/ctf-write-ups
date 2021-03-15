@@ -116,7 +116,7 @@ undefined8 main(void)
 }
 ```
 
-**WARNING:** While overflowing the buffer `local_248`, `local_9` must remain `\x01` or you may suffer from premature ejection before you are able to finish off your exploit.
+**WARNING:** While overflowing the buffer `local_248`, `local_9` must remain `\x01` or you may suffer from premature ejection before you are able to finish off your sploit.
 
 Right, so call `add_user` `0x248 // 0x20` (18) times to put us `0x248 - 0x20 * (0x248 // 0x20)` (8) bytes from the return address, _right?_
 

@@ -47,9 +47,9 @@ undefined8 main(void)
 
 Yep, that is all of it.  Clearly `read` with its `0x200` limit will overrun the `local_c` local that is only `0xc` bytes deep.
 
-There's a lot you cannot do, e.g. there's no GOT functions that will emit anything, so no easy way to leak libc.  The available gadgets have really nothing of immediate use except for _ret2csu_.
+There's a lot you cannot do, e.g. there's no GOT functions that will emit anything, so no easy way to leak libc.  The available gadgets we have are really nothing of immediate use except for _ret2csu_.
 
-_ret2csu_ is something a bit more complicated than rop scanners such as `ROPgadget` and `ropper` are coded to deal with.
+_ret2csu_ is a bit more complicated than rop scanners such as `ROPgadget` and `ropper` are coded to deal with.
 
 The short of it is, you can call any function you have a pointer to and pass in its first three parameters, i.e. for x86-64 that'd be `rdi`, `rsi`, `rdx`.  It's not hard to find `rdi` and `rsi` pop/return gadgets, but `rdx` is a bit more elusive (I didn't even know it had a name at first, I was just trying to set `rdx`; well now you know what to google for (_ret2csu_), that said, it is very rewarding to just slog through the assembly code and find these things for yourself).
 
