@@ -19,6 +19,14 @@ Anyway, the short of it is, we have nearly nothing to work with but a `read` and
 
 These 3rd and 4th iterations of this problem in 2021 have up'd the game a bit requiring stack relocating to a known location for some easy shellcode injection.
 
+### Update
+
+Apparently 2 _srops_ was the intended solution; from Discord (post CTF):
+
+> M_alpha: Sorry to everyone who asked if the bss was rwx on Some Really Ordinary Program I didn't know what kernel version GCP was running it was intended to just use SROP to pivot the stack to the bss and SROP again to get a shell
+
+I guess this write-up is an _unintended_ solution.  I created [exploit2.py](exploit2.py) after the CTF to illustrate the intended solution.
+
 ## Analysis
 
 ### Checksec
