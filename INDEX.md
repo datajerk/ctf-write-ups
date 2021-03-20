@@ -107,6 +107,7 @@ _bof_
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
 * [tjctf2020/tinder](tjctf2020/tinder/README.md)
+* [utctf2021/resolve](utctf2021/resolve/README.md)
 * [utctf2021/smol](utctf2021/smol/README.md)
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
 * [xmasctf2020/doiknowyou](xmasctf2020/doiknowyou/README.md)
@@ -403,6 +404,7 @@ _pwn_
 * [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
 * [unionctf2021/nutty](unionctf2021/nutty/README.md)
 * [utctf2020/zurk](utctf2020/zurk/README.md)
+* [utctf2021/resolve](utctf2021/resolve/README.md)
 * [utctf2021/smol](utctf2021/smol/README.md)
 * [wpictf2020/dont@me](wpictf2020/dont@me/README.md)
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
@@ -489,6 +491,10 @@ _ret2csu_
 
 * [dicectf2021/babyrop](dicectf2021/babyrop/README.md)
 * [nahamconctf2021/smol](nahamconctf2021/smol/README.md)
+
+_ret2dlresolve_
+
+* [utctf2021/resolve](utctf2021/resolve/README.md)
 
 _ret2libc_
 
@@ -781,6 +787,7 @@ _x86-64_
 * [tjctf2020/stop](tjctf2020/stop/README.md)
 * [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
 * [unionctf2021/nutty](unionctf2021/nutty/README.md)
+* [utctf2021/resolve](utctf2021/resolve/README.md)
 * [utctf2021/smol](utctf2021/smol/README.md)
 * [xmasctf2020/doiknowyou](xmasctf2020/doiknowyou/README.md)
 * [xmasctf2020/lil\_wishes\_db](xmasctf2020/lil\_wishes\_db/README.md)
