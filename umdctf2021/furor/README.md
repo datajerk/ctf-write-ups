@@ -266,7 +266,7 @@ ropper -a ARM -r --file kernel-rpi0-qemu-furor_updated.img
 
 That will return a bunch of gadgets, but nothing really jumped out at me as immedately useful, probably because I'm new to ARM.
 
-I didn't see any obvious `win` function either for as easy ROP FTW!
+I didn't see any obvious `win` function either for easy ROP FTW!
 
 Checking `vmmap`:
 
