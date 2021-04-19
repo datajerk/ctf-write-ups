@@ -1,6 +1,6 @@
 # UMDCTF 2021
 
-## Jump Is Easy/Jump Not Easy/Jump Is Found
+## Jump Is Easy/Jump Not Easy/Jump Not Working
 
 > Jumping is easy. Where do we want to jump to is the hard part.
 >
