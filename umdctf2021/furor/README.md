@@ -155,7 +155,7 @@ At this dialog click the `...` for Language and find and select ARM LE 32 v6.  R
 
 ![](binary.png)
 
-If you see sections of code that did not get disassemble, then right click and select disassemble.  Do that from top to bottom and you'll be all set.
+If you see sections of code that did not get disassembled, then right click and select disassemble.  Do that from top to bottom and you'll be all set.
 
 After some testing with the debugger and tracing the code I was able to find `main` and it's functions:
 
@@ -189,7 +189,7 @@ void main(void)
 
 > Ghidra did not do this for free :-)  I had to annotate all of this by hand.
 
-I guessed on some of the functions like `setup` and `setup2`.  The `memset` and `read` are just what they looked like or functioned as (this isn't Linux).  And the parameters have been renamed to reflect the text they point at.
+I guessed on some of the functions like `setup` and `setup2`.  The `memset` and `read` are just what they looked like or functioned as (this isn't Linux).  And the parameters have been renamed to reflect the text they point to.
 
 With this out of the way, it is pretty clear what is going on here, from the top down the program starts, emits `Press enter to start or e to exit...`, then prompts for input, where if then equal to `0x65` (a.k.a. `e`), then a `CR` is emitted, then it drops down to `Now exiting` and that's it.  Otherwise more text is emitted, a buffer (`auStack`) is zeroed out, and then we are prompted for a `Password:`.
 
