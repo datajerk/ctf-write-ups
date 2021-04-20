@@ -323,7 +323,7 @@ If you look at the source again, this is the line that populates `local_118` and
 
 Once out of the loop (runs a few times, most of the time, once (below I captured 4 attempts)) the 272 bytes of padding plus the format-string attack is sent.
 
-The format-string starts at `printf` offset `16` (see Analysis section above).  The string `%NNNNNNc` where `NNNNNNN` is the zero padded least `16` bits of `systems` location.  The next string at offset `17` is the location we want to write data to as a `short` (`hn`).  Both these strings need to be aligned with the stack.  Lastly the location of `strtol` in the GOT at `printf` offset `18`.
+The format-string starts at `printf` offset `16` (see Analysis section above).  The string `%NNNNNNc` where `NNNNNNN` is the zero padded least `16` bits of `system`'s location.  The next string at offset `17` is the location we want to write data to as a `short` (`hn`).  Both these strings need to be aligned with the stack.  Lastly the location of `strtol` in the GOT at `printf` offset `18`.
 
 Now, `strtol` is `system`, on the next `CONSOLE>` prompt just enter `/bin/sh` and get your shell.
 
