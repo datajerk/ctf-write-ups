@@ -132,7 +132,7 @@ From the top down, first we send `0x28` bytes of garbage to get to the return ad
 
 The first ret2csu calls `read` (by reference, i.e. `binary.got.read`) and passes parameters `0` (stdin), `binary.bss()` as the buffer, and `constants.SYS_execve` (`0x3b`) as the length.
 
-_Once the payload starts_ `read` gladly accept our input `b'/bin/sh\0' + p64(binary.sym._syscall)` plus padding to `constants.SYS_execve` (`0x3b`).  This will leave `0x3b` in `RAX`, which is what we need for the `execve` syscall, and the BSS will have `/bin/sh\0` followed by the address of `_syscall`.
+_Once the payload starts_ `read` gladly accepts our input `b'/bin/sh\0' + p64(binary.sym._syscall)` plus padding to `constants.SYS_execve` (`0x3b`).  This will leave `0x3b` in `RAX`, which is what we need for the `execve` syscall, and the BSS will have `/bin/sh\0` followed by the address of `_syscall`.
 
 The second ret2csu calls `_syscall` also by reference (`binary.bss() + 8` (pointer to `_syscall`)) and passes parameters `binary.bss()` (`/bin/sh\0`), `0`, and `0` for `execve`.
 
