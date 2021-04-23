@@ -60,7 +60,7 @@ Two possible attack vectors, the input to get started and the `Password:` prompt
 
 Assets:
 
-You're given two files, one is an image you can flash to an RPi and boot up (I did not try this), the other is just the code (`kernel-rpi0-qemu-furor_updated.img`) that runs if you did boot up an RPi.  The author provided the necessary QEMU command line to get started--I used a variation of this.
+You're given two files, one is an image you can flash to an RPi and boot up (I did not try this), the other is just the code (`kernel-rpi0-qemu-furor_updated.img`) that runs if you did boot up an RPi.  The author provided the necessary QEMU command line to get started--I used a variation of that.
 
 _So what is `kernel-rpi0-qemu-furor_updated.img` exactly?_
 
