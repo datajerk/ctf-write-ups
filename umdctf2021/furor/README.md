@@ -202,7 +202,7 @@ The `return` at the end of `main`:
                      -- Flow Override: RETURN (TERMINATOR)
 ```
 
-By setting a checkpoint at `0x10414` (The base address is at 0x10000, this can be discovered from GDB and it was also disclosed on Discord), then sending our trash (output of `cyclic 100`), we are just one `si` away from a crash:
+By setting a breakpoint at `0x10414` (The base address is at 0x10000, this can be discovered from GDB and it was also disclosed on Discord), then sending our trash (output of `cyclic 100`), we are just one `si` away from a crash:
 
 ```
 ─────────────────────────────────────────────────────────────────────── stack ────
