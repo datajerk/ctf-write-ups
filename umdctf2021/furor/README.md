@@ -36,7 +36,7 @@ Basic BOF with shellcode in stack.  RPi 1995.
 
 That said, this problem was not without challenges:
 
-1. Not Linux.  So no Linux ABI to learn from or use.  No pwn tools help either (well `ropper` worked, but didn't need it) Pure on the metal code.  More like bootsector debugging.
+1. Not Linux.  So no Linux ABI to learn from or use.  No pwn tools help either (well `ropper` worked, but didn't need it). Pure on the metal code.  More like bootsector debugging.
 2. ARM.  Something new.  This was my first ARM CTF challenge.
 3. For some/most, new tools to use/learn (I used the same tools and methods I used for Linux kernel and DOS CTF challenges).
 
