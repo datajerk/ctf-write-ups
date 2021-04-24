@@ -64,6 +64,9 @@ _bof_
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [csictf2020/smash](csictf2020/smash/README.md)
+* [cyberapocalypsectf2021/controller](cyberapocalypsectf2021/controller/README.md)
+* [cyberapocalypsectf2021/harvester](cyberapocalypsectf2021/harvester/README.md)
+* [cyberapocalypsectf2021/system\_drop](cyberapocalypsectf2021/system\_drop/README.md)
 * [cybersecurityrumblectf2020/babypwn](cybersecurityrumblectf2020/babypwn/README.md)
 * [darkctf2020/newpax](darkctf2020/newpax/README.md)
 * [darkctf2020/roprop](darkctf2020/roprop/README.md)
@@ -186,6 +189,7 @@ _format-string_
 * [boot2root2020/canned](boot2root2020/canned/README.md)
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [csictf2020/smash](csictf2020/smash/README.md)
+* [cyberapocalypsectf2021/harvester](cyberapocalypsectf2021/harvester/README.md)
 * [dawgctf2020/cookie-monster](dawgctf2020/cookie-monster/README.md)
 * [dawgctf2020/coronacation](dawgctf2020/coronacation/README.md)
 * [downunderctf2020/my\_first\_echo\_server](downunderctf2020/my\_first\_echo\_server/README.md)
@@ -257,6 +261,8 @@ _heap_
 
 _integer-overflow_
 
+* [cyberapocalypsectf2021/controller](cyberapocalypsectf2021/controller/README.md)
+* [cyberapocalypsectf2021/harvester](cyberapocalypsectf2021/harvester/README.md)
 * [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
 * [xmasctf2020/lil\_wishes\_db](xmasctf2020/lil\_wishes\_db/README.md)
 
@@ -315,6 +321,10 @@ _null-pointer_
 
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 
+_one-gadget_
+
+* [cyberapocalypsectf2021/harvester](cyberapocalypsectf2021/harvester/README.md)
+
 _pow_
 
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
@@ -360,6 +370,11 @@ _pwn_
 * [csawquals2020/grid](csawquals2020/grid/README.md)
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [csictf2020/smash](csictf2020/smash/README.md)
+* [cyberapocalypsectf2021/controller](cyberapocalypsectf2021/controller/README.md)
+* [cyberapocalypsectf2021/harvester](cyberapocalypsectf2021/harvester/README.md)
+* [cyberapocalypsectf2021/mindfield](cyberapocalypsectf2021/mindfield/README.md)
+* [cyberapocalypsectf2021/save\_the\_environment](cyberapocalypsectf2021/save\_the\_environment/README.md)
+* [cyberapocalypsectf2021/system\_drop](cyberapocalypsectf2021/system\_drop/README.md)
 * [cybersecurityrumblectf2020/babypwn](cybersecurityrumblectf2020/babypwn/README.md)
 * [darkconctf2021/easyrop](darkconctf2021/easyrop/README.md)
 * [darkctf2020/newpax](darkctf2020/newpax/README.md)
@@ -515,6 +530,7 @@ _remote-shell_
 
 _ret2csu_
 
+* [cyberapocalypsectf2021/system\_drop](cyberapocalypsectf2021/system\_drop/README.md)
 * [dicectf2021/babyrop](dicectf2021/babyrop/README.md)
 * [nahamconctf2021/smol](nahamconctf2021/smol/README.md)
 
@@ -572,6 +588,9 @@ _rop_
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [csawquals2020/grid](csawquals2020/grid/README.md)
 * [csictf2020/smash](csictf2020/smash/README.md)
+* [cyberapocalypsectf2021/controller](cyberapocalypsectf2021/controller/README.md)
+* [cyberapocalypsectf2021/harvester](cyberapocalypsectf2021/harvester/README.md)
+* [cyberapocalypsectf2021/save\_the\_environment](cyberapocalypsectf2021/save\_the\_environment/README.md)
 * [cybersecurityrumblectf2020/babypwn](cybersecurityrumblectf2020/babypwn/README.md)
 * [darkconctf2021/easyrop](darkconctf2021/easyrop/README.md)
 * [darkctf2020/newpax](darkctf2020/newpax/README.md)
@@ -625,6 +644,7 @@ _rsa_
 
 _scanf_
 
+* [cyberapocalypsectf2021/controller](cyberapocalypsectf2021/controller/README.md)
 * [nahamconctf2021/rps](nahamconctf2021/rps/README.md)
 
 _shell_
@@ -679,6 +699,7 @@ _stack-canary_
 
 _stack-pivot_
 
+* [cyberapocalypsectf2021/harvester](cyberapocalypsectf2021/harvester/README.md)
 * [redpwnctf2020/dead-canary](redpwnctf2020/dead-canary/README.md)
 
 _strcmp_
@@ -721,6 +742,8 @@ _write-what-where_
 
 * [auctf2020/remote-school](auctf2020/remote-school/README.md)
 * [csawquals2020/grid](csawquals2020/grid/README.md)
+* [cyberapocalypsectf2021/mindfield](cyberapocalypsectf2021/mindfield/README.md)
+* [cyberapocalypsectf2021/save\_the\_environment](cyberapocalypsectf2021/save\_the\_environment/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
 * [nahamconctf2021/sort\_it](nahamconctf2021/sort\_it/README.md)
@@ -772,6 +795,11 @@ _x86-64_
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [csawquals2020/grid](csawquals2020/grid/README.md)
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
+* [cyberapocalypsectf2021/controller](cyberapocalypsectf2021/controller/README.md)
+* [cyberapocalypsectf2021/harvester](cyberapocalypsectf2021/harvester/README.md)
+* [cyberapocalypsectf2021/mindfield](cyberapocalypsectf2021/mindfield/README.md)
+* [cyberapocalypsectf2021/save\_the\_environment](cyberapocalypsectf2021/save\_the\_environment/README.md)
+* [cyberapocalypsectf2021/system\_drop](cyberapocalypsectf2021/system\_drop/README.md)
 * [cybersecurityrumblectf2020/babypwn](cybersecurityrumblectf2020/babypwn/README.md)
 * [darkconctf2021/easyrop](darkconctf2021/easyrop/README.md)
 * [darkctf2020/c\_maths](darkctf2020/c\_maths/README.md)
