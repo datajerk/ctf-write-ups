@@ -257,7 +257,7 @@ Aarch64 `call` is `bl` (branch and link).  `bl` will set `x30` with the address 
   4006d4:	97ffffe0 	bl	400654 <vulnerable>
 ```
 
-The `vulnerable` function starts with allocating the stack for `144` bytes, preserving `x29` (think x86-64 `rbp`) and `x30` (return address) _at the top of the stack (all the local variables are below that and writing down stack clearly does not overwrite them)_, then `sp` is moved to `x29` (the base of all local variable addressing):
+The `vulnerable` function starts with allocating the stack for `144` bytes, preserving `x29` (think x86-64 `rbp`) and `x30` (return address) _at the top of the stack (all the local variables are below that and writing down stack clearly does not overwrite them)_, then `sp` is moved to `x29` (the base of local variable addressing):
 
 ```assembly
 0000000000400654 <vulnerable>:
@@ -286,8 +286,8 @@ This is a bit more involved than x86-64 ROP chains and gadgets will usually look
 > Found with:
 >
 >```bash
-# ropper --nocolor --file libc-2.23.so | grep ': ldr x0, \[x29, #0x.[0-9a-f]*\]; ldp x29, x30, \[sp\], #0x[0-9a-f]*; ret; $'
-```
+># ropper --nocolor --file libc-2.23.so | grep ': ldr x0, \[x29, #0x.[0-9a-f]*\]; ldp x29, x30, \[sp\], #0x[0-9a-f]*; ret; $'
+>```
 
 The above gadgets will load `x0` from `x29` offset by `#0x10`, `#0x18`, etc..., then load your `x29`, `x30` from the stack before jumping to `x30`.  The stack pointer will also move just before the `ret`, so expect your ROP chain to not look so linear.
 
