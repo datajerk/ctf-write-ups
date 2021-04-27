@@ -298,19 +298,19 @@ You don't, you're attacking the calling function's `x29`, `x30`.  IOW, `main` ca
 
 #### Finding Gadgets
 
-From the leak and the provided libc I have the addresses of `system` and the string `/bin/sh\0`.  All I need to do is put the address of `/bin/sh\0` in `x0` and call `system`.
+From the leak and the provided libc we have the addresses of `system` and the string `/bin/sh\0`.  All we need to do is put the address of `/bin/sh\0` in `x0` and call `system`.
 
 Well easier said than done.  There's no usable `ldr x0, [sp]` gadget and setting `x29` without a stack address leak was also a challenge, so I settled on these two (there's actually a gadget in `arm` that will move `sp` to `x29`, but I had all of libc, surely that is better, right? :-):
 
 The first will load `x19`, `x20` from the stack offset by `0x10`:
 
-```
+```assembly
 ldp x19, x20, [sp, #0x10]; ldp x29, x30, [sp], #0x20; ret;
 ```
 
 The second will move `x19` to `x0`:
 
-```
+```assembly
 mov x0, x19; ldr x19, [sp, #0x10]; ldp x29, x30, [sp], #0x20; ret;
 ```
 
@@ -377,11 +377,11 @@ Start by setting a breakpoint at `*vulnerable+84`:
 
 We know from the start of `vulnerable` that the stack was allocated for `144` bytes (see _`ret` doesn't pop_ above), i.e. stack lines 0x0000 - 0x0088 (inclusive) above.  At the top of the stack is `x29`, `x30`, i.e. the preserved base pointer and return address for `main`, and we cannot change them from here.  However at `0x0090` and `0x0098` are the preserved base pointer (`x29`) and return address (`x30`) for when `main` _leaves_; these we can overwrite with `BBBBBBB` and our first gadget.
 
-Our first gadget will load into `x19	` and `x20` the pointer to `/bin/sh\0` and some garbage (`CCCCCCCC`) from `sp + 16`, however `sp + 16` is NOT pointing at `/bin/sh\0`.
+Our first gadget will load into `x19	` and `x20` the pointer to `/bin/sh\0` and some garbage (`CCCCCCCC`) from `sp + 16`, however `sp + 16` is _not_ pointing at `/bin/sh\0`.
 
 We know that the `sp` will be moved down `144` at the end of `vulnerable`, so think of `sp` pointing to `0x0090`, this would be the top of the `main` stack frame.  If we look at the end of main:
 
-```
+```assembly
    0x00000000004006dc <+44>:	ldp	x29, x30, [sp], #32
 ```
 
