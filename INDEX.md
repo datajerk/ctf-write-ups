@@ -12,6 +12,10 @@ _a/d_
 
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 
+_aarch64_
+
+* [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
+
 _alloca_
 
 * [b01lersbootcampctf2020/metacortex](b01lersbootcampctf2020/metacortex/README.md)
@@ -27,6 +31,11 @@ _angr_
 _arm_
 
 * [umdctf2021/furor](umdctf2021/furor/README.md)
+* [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
+
+_arm64_
+
+* [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 
 _audio_
 
@@ -121,6 +130,8 @@ _bof_
 * [utctf2021/resolve](utctf2021/resolve/README.md)
 * [utctf2021/smol](utctf2021/smol/README.md)
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
+* [wpictf2021/smash](wpictf2021/smash/README.md)
+* [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 * [xmasctf2020/doiknowyou](xmasctf2020/doiknowyou/README.md)
 * [xmasctf2020/naughty](xmasctf2020/naughty/README.md)
 * [xmasctf2020/ready\_for\_xmas](xmasctf2020/ready\_for\_xmas/README.md)
@@ -250,6 +261,7 @@ _got-overwrite_
 * [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tenablectf2021/queensgambit](tenablectf2021/queensgambit/README.md)
 * [umdctf2021/jif](umdctf2021/jif/README.md)
+* [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 
 _hash-collision_
 
@@ -451,6 +463,8 @@ _pwn_
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
 * [wpictf2020/dorsia3](wpictf2020/dorsia3/README.md)
 * [wpictf2020/dorsia4](wpictf2020/dorsia4/README.md)
+* [wpictf2021/smash](wpictf2021/smash/README.md)
+* [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 * [xmasctf2020/doiknowyou](xmasctf2020/doiknowyou/README.md)
 * [xmasctf2020/lil\_wishes\_db](xmasctf2020/lil\_wishes\_db/README.md)
 * [xmasctf2020/naughty](xmasctf2020/naughty/README.md)
@@ -542,6 +556,7 @@ _ret2dlresolve_
 _ret2libc_
 
 * [dicectf2021/babyrop](dicectf2021/babyrop/README.md)
+* [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 
 _ret2win_
 
@@ -630,6 +645,7 @@ _rop_
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
 * [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
+* [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 * [xmasctf2020/lil\_wishes\_db](xmasctf2020/lil\_wishes\_db/README.md)
 * [xmasctf2020/naughty](xmasctf2020/naughty/README.md)
 * [xmasctf2020/ready\_for\_xmas](xmasctf2020/ready\_for\_xmas/README.md)
@@ -701,6 +717,7 @@ _stack-pivot_
 
 * [cyberapocalypsectf2021/harvester](cyberapocalypsectf2021/harvester/README.md)
 * [redpwnctf2020/dead-canary](redpwnctf2020/dead-canary/README.md)
+* [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 
 _strcmp_
 
@@ -725,6 +742,10 @@ _time_
 _unsanitized-input_
 
 * [b01lersbootcampctf2020/white\_rabbit](b01lersbootcampctf2020/white\_rabbit/README.md)
+
+_variable-overwite_
+
+* [wpictf2021/smash](wpictf2021/smash/README.md)
 
 _variable-overwrite_
 
