@@ -293,7 +293,7 @@ The above gadgets will load `x0` from `x29` offset by `#0x10`, `#0x18`, etc..., 
 
 _But if the preserved `x29`, `x30` are NOT down stack, how do I over write them?_
 
-You don't, you're attacking the calling functions `x29`, `x30`.  IOW, `main` calls `vulnerable` and `vulnerable` returns to `main` exactly as intended, it is `main`'s preserved `x29`, `x30` we can overwrite.
+You don't, you're attacking the calling function's `x29`, `x30`.  IOW, `main` calls `vulnerable` and `vulnerable` returns to `main` exactly as intended, it is the function calling `main` preserved `x29`, `x30` we can overwrite.
 
 
 #### Finding Gadgets
