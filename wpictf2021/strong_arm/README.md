@@ -251,7 +251,7 @@ Other useful docs:
 
 #### `ret` doesn't pop
 
-Aarch64 `call` is `bl` (branch and link).  `bl` will set `x30` with the address of the next instruction (`pc+4`) before jumping vs. x86-64 where the next instruction address in pushed to the stack:
+Aarch64 `call` is `bl` (branch and link).  `bl` will set `x30` with the address of the next instruction (`pc+4`) before branching vs. x86-64 where the next instruction address in pushed to the stack:
 
 ```assembly
   4006d4:	97ffffe0 	bl	400654 <vulnerable>
@@ -272,7 +272,7 @@ At the end of the function the x86-64 equivalent to `leave; ret;`:
   4006ac:	d65f03c0 	ret
 ```  
 
-This restores the preserved `x29`, `x30` from the stack, moves the stack pointer back to where it was before the function call.  The `ret` just jumps to the address in `x30`.
+This restores the preserved `x29`, `x30` from the stack, moves the stack pointer back to where it was before the function call.  The `ret` just branches to the address in `x30`.
 
 This is a bit more involved than x86-64 ROP chains and gadgets will usually look something like this:
 
@@ -289,7 +289,7 @@ This is a bit more involved than x86-64 ROP chains and gadgets will usually look
 ># ropper --nocolor --file libc-2.23.so | grep ': ldr x0, \[x29, #0x.[0-9a-f]*\]; ldp x29, x30, \[sp\], #0x[0-9a-f]*; ret; $'
 >```
 
-The above gadgets will load `x0` from `x29` offset by `#0x10`, `#0x18`, etc..., then load your `x29`, `x30` from the stack before jumping to `x30`.  The stack pointer will also move just before the `ret`, so expect your ROP chain to not look so linear.
+The above gadgets will load `x0` from `x29` offset by `#0x10`, `#0x18`, etc..., then load your `x29`, `x30` from the stack before branching to `x30`.  The stack pointer will also move just before the `ret`, so expect your ROP chain to not look so linear.
 
 _But if the preserved `x29`, `x30` are NOT down stack, how do I over write them?_
 
