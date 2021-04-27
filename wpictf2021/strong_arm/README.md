@@ -375,7 +375,7 @@ Start by setting a breakpoint at `*vulnerable+84`:
 0x0000ffffe27d9ba8│+0x00d8: 0x0000ffff9eae4818  →  0x17fffe99b4000040 ("@"?)
 ```
 
-We know from the start of `vulnerable` that the stack was allocated for `144` bytes (see _`ret` doesn't pop_ above), i.e. stack lines 0x0000 - 0x0088 (inclusive) above.  At the top of the stack is `x29`, `x30`, i.e. the preserved base pointer and return address for `main`, and we cannot change them from here.  However at `0x0090` and `0x0098` are the preserved base pointer (`x29`) and return address (`x30`) for when `main` _leaves_; these we can overwrite with `BBBBBBB` and our first gadget.
+We know from the start of `vulnerable` that the stack was allocated for `144` bytes (see _`ret` doesn't pop_ above), i.e. stack lines 0x0000 - 0x0088 (inclusive) above.  At the top of the stack is `x29`, `x30`, i.e. the preserved frame pointer and return address for `main`, and we cannot change them from here.  However at `0x0090` and `0x0098` are the preserved frame pointer (`x29`) and return address (`x30`) for when `main` _leaves_; these we can overwrite with `BBBBBBB` and our first gadget.
 
 Our first gadget will load into `x19	` and `x20` the pointer to `/bin/sh\0` and some garbage (`CCCCCCCC`) from `sp + 16`, however `sp + 16` is _not_ pointing at `/bin/sh\0`.
 
