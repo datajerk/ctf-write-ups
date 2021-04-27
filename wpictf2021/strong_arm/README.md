@@ -51,7 +51,7 @@ This is the path I took since it'd be identical to what I'm accustomed to from w
 ### Option 2: Aarch64 on x86_64/Aarch64 with Docker
 
 ```bash
-cat >Dockerfile.ubuntu20.arm64v8 <<'EOF
+cat >Dockerfile.ubuntu20.arm64v8 <<'EOF'
 FROM arm64v8/ubuntu:20.04
 
 ENV LC_CTYPE C.UTF-8
@@ -251,13 +251,13 @@ Other useful docs:
 
 #### `ret` doesn't pop
 
-Aarch64 `call` is `bl` (branch and link).  `bl` will set `x30` with the address of the next instruction (`pc+4`) before jumping vs. x86-64 where the next instruction address in pushed to the stack.
+Aarch64 `call` is `bl` (branch and link).  `bl` will set `x30` with the address of the next instruction (`pc+4`) before jumping vs. x86-64 where the next instruction address in pushed to the stack:
 
 ```assembly
   4006d4:	97ffffe0 	bl	400654 <vulnerable>
 ```
 
-The `vulnerable` function start with "allocating" the stack for `144` bytes; storing `x29` (think x86-64 `rbp`) and `x30` (return address) _at the top of the stack, all the local variables are below that and writing down stack clearly does not overwrite them_; then `sp` is moved to `x29` (the base of all local variable addressing):
+The `vulnerable` function starts with allocating the stack for `144` bytes, preserving `x29` (think x86-64 `rbp`) and `x30` (return address) _at the top of the stack (all the local variables are below that and writing down stack clearly does not overwrite them)_, then `sp` is moved to `x29` (the base of all local variable addressing):
 
 ```assembly
 0000000000400654 <vulnerable>:
@@ -267,7 +267,7 @@ The `vulnerable` function start with "allocating" the stack for `144` bytes; sto
 
 At the end of the function the x86-64 equivalent to `leave; ret;`:
 
-```
+```assembly
   4006a8:	a8c97bfd 	ldp	x29, x30, [sp], #144
   4006ac:	d65f03c0 	ret
 ```  
@@ -276,7 +276,7 @@ This restores the preserved `x29`, `x30` from the stack, moves the stack pointer
 
 This is a bit more involved than x86-64 ROP chains and gadgets will usually look something like this:
 
-```
+```assembly
 0x00000000000b95e8: ldr x0, [x29, #0x10]; ldp x29, x30, [sp], #0x20; ret;
 0x0000000000034f14: ldr x0, [x29, #0x18]; ldp x29, x30, [sp], #0x20; ret;
 0x00000000000fb2d4: ldr x0, [x29, #0x28]; ldp x29, x30, [sp], #0x30; ret;
@@ -285,7 +285,7 @@ This is a bit more involved than x86-64 ROP chains and gadgets will usually look
 
 > Found with:
 >
->```
+>```bash
 # ropper --nocolor --file libc-2.23.so | grep ': ldr x0, \[x29, #0x.[0-9a-f]*\]; ldp x29, x30, \[sp\], #0x[0-9a-f]*; ret; $'
 ```
 
