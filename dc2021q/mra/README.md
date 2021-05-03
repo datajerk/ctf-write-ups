@@ -279,7 +279,7 @@ The last 8 bytes of our 112-byte payload will be the start of our ROP chain.
 
 As stated in the summary above, statically-linked Linux binaries are fully stocked with ROP gadgets including `syscall`, or in this case `svc #0`.
 
-To see what my options where I just used `/usr/bin/aarch64-linux-gnu-objdump -d mra | grep -A10 -B10 svc`:
+To see what my options were I used `/usr/bin/aarch64-linux-gnu-objdump -d mra | grep -A10 -B10 svc`:
 
 ```
   4007b4:       f85f83e8        ldur    x8, [sp, #-8]
@@ -291,14 +291,14 @@ To see what my options where I just used `/usr/bin/aarch64-linux-gnu-objdump -d 
   4007cc:       d65f03c0        ret
 ```
 
-This isn't the complete output, there are many more, but this first hit, is all we need.
+> This isn't the complete output, there are many more, but this first hit, is all we need.
 
 This gadget will read _up_ stack the syscall number, and its first three parameters, then execute the syscall, after that the stack pointer will be moved _up_ to our next set of parameters, then `ret`, but `ret` to what?  Well, `syscall` again! (See [strong-arm](https://github.com/datajerk/ctf-write-ups/tree/master/wpictf2021/strong_arm) for a detailed write up on Aarch64 ROP).
 
 
 ### Attack
 
-The plan is rather simple, use the _read_ syscall to read `/bin/sh` into the BSS, then chain to `execve` to get a shell.
+The plan is rather simple, use the `read` syscall to read `/bin/sh` into the BSS, then chain to `execve` to get a shell.
 
 
 ## Exploit
@@ -357,9 +357,9 @@ payload += urllib.parse.quote(urlload).encode()
 
 The initial part of the payload should be clear from the Analysis section above.
 
-The payload should be URL quoted (`%nn%nn%nn`...) so that `strcpy` does not prematurely terminate.
+> The payload should be URL quoted (`%nn%nn%nn`...) so that `strcpy` does not prematurely terminate.
 
-Starting form the bottom, the `8 * b'A'` and `syscall` will land in `x29` and `x30` curtesy of the end from `main` with `sp` pointing to `8 * b'A'` on the stack with our _read_ payload just above it.  The `syscall` gadget (see assembly above), will load the next four stack lines going _up_, into `x8`, `x0`, `x1`, `x2`, and then execute the syscall to read from `stdin` (`0`) our 8-byte payload (`/bin/sh\0`), into the BSS (`binary.bss()`), after the syscall `sp` will be pointing at just below our next set of four parameters, when `ret` is executed, `syscall` is executed again since `x30` was never updated (this isn't x86_64), and the cycle continues, but this time with `execve` executing `/bin/sh\0` stored in the BSS.
+Starting form the bottom, the `8 * b'A'` and `syscall` will land in `x29` and `x30` curtesy of the end from `entry` with `sp` pointing to `8 * b'A'` on the stack with our `read` payload just above it.  The `syscall` gadget (see assembly above), will load the next four stack lines going _up_, into `x8`, `x0`, `x1`, `x2`, and then execute the syscall to read from `stdin` (`0`) our 8-byte payload (`/bin/sh\0`), into the BSS (`binary.bss()`); after the syscall `sp` will be pointing at just below our next set of four parameters, when `ret` is executed, `syscall` is executed again since `x30` was never updated (this isn't x86_64), and the cycle continues, but this time with `execve` executing `/bin/sh\0` stored in the BSS.
 
 ```python
 payload += (0x3ff - len(payload)) * b'A'
