@@ -250,7 +250,7 @@ daabeaab
 112
 ```
 
-The last 8 bytes of our 112-byte payload will be the start of our ROP chain.
+Our ROP chain after 112 bytes.
 
 
 ### Okay. Let's go shopping.
