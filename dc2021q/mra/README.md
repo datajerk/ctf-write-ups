@@ -145,17 +145,14 @@ So far our input is looking like: `GET /api/isodd/pcVar4?token=pcVar11 HTTP/`
       iVar3 = strcmp(pcVar11,"premium");
       if (iVar3 == 0) {
         if (9 < uVar6) {
-          response(0x191,"{\n\t\"error\": \"sign up for enterprise to get large number support\"\n}"
-                  );
+          response(0x191,"{\n\t\"error\": \"sign up for enterprise to get large number support\"\n}";
           return 0;
         }
       }
       else {
         pcVar11 = "public";
         if (6 < uVar6) {
-          response(0x191,
-                   "{\n\t\"error\": \"sign up for premium or enterprise to get large numbersupport\"\n}"
-                  );
+          response(0x191,"{\n\t\"error\": \"sign up for premium or enterprise to get large numbersupport\"\n}";
           return 0;
         }
       }
