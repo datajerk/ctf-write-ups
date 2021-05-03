@@ -14,6 +14,7 @@ _a/d_
 
 _aarch64_
 
+* [dc2021q/mra](dc2021q/mra/README.md)
 * [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 
 _alloca_
@@ -30,11 +31,13 @@ _angr_
 
 _arm_
 
+* [dc2021q/mra](dc2021q/mra/README.md)
 * [umdctf2021/furor](umdctf2021/furor/README.md)
 * [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 
 _arm64_
 
+* [dc2021q/mra](dc2021q/mra/README.md)
 * [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 
 _audio_
@@ -84,6 +87,7 @@ _bof_
 * [dawgctf2020/on-lockdown](dawgctf2020/on-lockdown/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
+* [dc2021q/mra](dc2021q/mra/README.md)
 * [dicectf2021/babyrop](dicectf2021/babyrop/README.md)
 * [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
 * [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
@@ -398,6 +402,7 @@ _pwn_
 * [dawgctf2020/on-lockdown](dawgctf2020/on-lockdown/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
+* [dc2021q/mra](dc2021q/mra/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
 * [dicectf2021/babyrop](dicectf2021/babyrop/README.md)
 * [downunderctf2020/my\_first\_echo\_server](downunderctf2020/my\_first\_echo\_server/README.md)
@@ -612,6 +617,7 @@ _rop_
 * [darkctf2020/roprop](darkctf2020/roprop/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
+* [dc2021q/mra](dc2021q/mra/README.md)
 * [dicectf2021/babyrop](dicectf2021/babyrop/README.md)
 * [downunderctf2020/my\_first\_echo\_server](downunderctf2020/my\_first\_echo\_server/README.md)
 * [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
