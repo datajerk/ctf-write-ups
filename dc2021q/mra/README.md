@@ -4,11 +4,11 @@
 
 > 114
 > 
-> This is odd (I think?  I cannot remember challenge text )
+> Is it odd?
 >
 > `nc mra.challenges.ooo 8000`
 >
-> [`mra`](`mra`)
+> [`mra`](`mra`) [`play live here`](https://archive.ooo/c/mra/406/)
 
 Tags: _pwn_ _bof_ _rop_ _arm_ _arm64_ _aarch64_
 
