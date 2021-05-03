@@ -86,6 +86,7 @@ _bof_
 * [dawgctf2020/cookie-monster](dawgctf2020/cookie-monster/README.md)
 * [dawgctf2020/on-lockdown](dawgctf2020/on-lockdown/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
+* [dc2019q/speedrun-004](dc2019q/speedrun-004/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 * [dc2021q/mra](dc2021q/mra/README.md)
 * [dicectf2021/babyrop](dicectf2021/babyrop/README.md)
@@ -401,6 +402,7 @@ _pwn_
 * [dawgctf2020/nash-nash2](dawgctf2020/nash-nash2/README.md)
 * [dawgctf2020/on-lockdown](dawgctf2020/on-lockdown/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
+* [dc2019q/speedrun-004](dc2019q/speedrun-004/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 * [dc2021q/mra](dc2021q/mra/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
@@ -572,6 +574,10 @@ _ret2win_
 * [nahamconctf2021/ret2basic](nahamconctf2021/ret2basic/README.md)
 * [nahamconctf2021/the\_list](nahamconctf2021/the\_list/README.md)
 
+_retsled_
+
+* [dc2019q/speedrun-004](dc2019q/speedrun-004/README.md)
+
 _rev_
 
 * [auctf2020/house-of-madness](auctf2020/house-of-madness/README.md)
@@ -616,6 +622,7 @@ _rop_
 * [darkctf2020/newpax](darkctf2020/newpax/README.md)
 * [darkctf2020/roprop](darkctf2020/roprop/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
+* [dc2019q/speedrun-004](dc2019q/speedrun-004/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 * [dc2021q/mra](dc2021q/mra/README.md)
 * [dicectf2021/babyrop](dicectf2021/babyrop/README.md)
@@ -832,6 +839,7 @@ _x86-64_
 * [darkctf2020/c\_maths](darkctf2020/c\_maths/README.md)
 * [darkctf2020/jack](darkctf2020/jack/README.md)
 * [darkctf2020/roprop](darkctf2020/roprop/README.md)
+* [dc2019q/speedrun-004](dc2019q/speedrun-004/README.md)
 * [dicectf2021/babyrop](dicectf2021/babyrop/README.md)
 * [downunderctf2020/my\_first\_echo\_server](downunderctf2020/my\_first\_echo\_server/README.md)
 * [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
