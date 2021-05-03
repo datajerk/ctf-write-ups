@@ -8,7 +8,7 @@
 >
 > `nc mra.challenges.ooo 8000`
 >
-> [`mra`](`mra`) [`play live here`](https://archive.ooo/c/mra/406/)
+> [`mra`](`mra`) [`live here`](https://archive.ooo/c/mra/406/)
 
 Tags: _pwn_ _bof_ _rop_ _arm_ _arm64_ _aarch64_
 
@@ -19,9 +19,9 @@ Aarch64/Linux-based, statically-linked, stripped, _syscall read /bin/sh into BSS
 
 > Here's a similar problem from last week: [System dROP](https://github.com/datajerk/ctf-write-ups/tree/master/cyberapocalypsectf2021/system_drop) using ret2csu; the pattern is the same, call `read` to _read_ `/bin/sh\0` from `stdin` into the BSS, then chain to `execve` to get a shell.
 
-Statically-linked Linux binaries are chock-full of gadgets including `syscall`, and this challenge binary is no different, except that `syscall` is `svc #0` and the constants are different, and the registers have different names, but that's about it.
+Statically-linked Linux binaries are chock-full of gadgets including `syscall`, and this challenge binary is no different, except that `syscall` is `svc #0`, and the constants are different, and the registers have different names, but that's about it.
 
-This binary was also stripped (no ret2libc), so reversing took a bit longer (ok, a lot longer :-).
+This binary is also stripped (no ret2libc), so reversing took a bit longer (ok, a lot longer :-).
 
 
 ## Tooling
@@ -125,7 +125,7 @@ The first block searches for a `\n` or `\r\n` and replaces with a `\0`.
 
 The second block searches for ` HTTP/` and replaces the ` ` with a `\0`.
 
-The third block looks for `?` (`0x3f`), replaces with `\0` terminating the string after `isodd/`, and then if `token=` is after that `?` assigns `pcVar11` to that string, that will be terminated by the `memset` at `main` start or the ` HTTP/` match above.
+The third block looks for `?` (`0x3f`), replaces with `\0` terminating the string after `isodd/`; if `token=` follows that `?`, then assign `pcVar11` to the string after `=`, that will be terminated by the `memset` at `main` start or the ` HTTP/` match above.
 
 Lastly starting after `isodd/` (`&stack0x00000037 - &stack0x00000028 = 0xf`, the length of `GET /api/isodd/`), replace the first `/` with a `\0` to fuck with your ability to put `/bin/sh` there, then assign `pcVar4` the string after `isodd/` ending before `?` (remember it is `\0` now).
 
