@@ -162,7 +162,7 @@ So far our input is looking like: `GET /api/isodd/pcVar4?token=pcVar11 HTTP/`
     }
 ```
 
-The next three checks the `token` (`pcVar11`) and restrict the length of `pcVar4` based on the `token`, i.e. `enterprise`:`12`, `premium`:`9`, and `public`/_default_:`6`.
+The next three checks the `token` (`pcVar11`) and restricts the length of `pcVar4` based on the `token`, i.e. `enterprise`:`12`, `premium`:`9`, and `public`/_default_:`6`.
 
 If you clear all three checks, then `puVar4` will be string copied to another stack variable.  And given all the checks `puVar4` cannot be more than 12 bytes in length, right?
 
@@ -194,8 +194,8 @@ int strcpy(long param_1,long param_2)
   lStack28 = param_1;
   while (bStack37 = *(byte *)(lStack20 + iStack3c), bStack37 != 0) {
     if (bStack37 == 0x25) {
-      uVar1 = hextoi(*(undefined *)(lStack20 + (long)iStack3c + 1));
-      bStack37 = hextoi(*(undefined *)(lStack20 + (long)iStack3c + 2));
+      uVar1 = htoi(*(undefined *)(lStack20 + (long)iStack3c + 1));
+      bStack37 = htoi(*(undefined *)(lStack20 + (long)iStack3c + 2));
       bStack37 = (byte)((uVar1 & 0xff) << 4) | bStack37;
       iStack3c = iStack3c + 3;
     }
@@ -214,10 +214,6 @@ int strcpy(long param_1,long param_2)
 This just loops through and copies the bytes from `param_2` to `param_1`, however if the byte is `0x25` (`%`), then take the next two bytes and convert from hex to int, then store that in the `param_1` array and increment the offset by 3 vs. 1 to get to the next byte.
 
 There's no checking for `\0` in the `%` block.  By using a payload of `%\0buffer-overflow`, we can pass the `puVar4` length check above and overflow the buffer.
-
-Attack string:
-
-`GET /api/isodd/%\0payload`
 
 To crash the system and find the distance to `x29` and `x30`:
 
