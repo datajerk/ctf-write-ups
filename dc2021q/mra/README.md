@@ -6,7 +6,7 @@
 > 
 > This is odd (I think?  I cannot remember challenge text )
 >
-> `nc mra.challenges.ooo 8000``
+> `nc mra.challenges.ooo 8000`
 >
 > [`mra`](`mra`)
 
@@ -19,9 +19,9 @@ Aarch64/Linux-based, statically-linked, stripped, _syscall read /bin/sh into BSS
 
 Here's a similar problem from last week: [System dROP](https://github.com/datajerk/ctf-write-ups/tree/master/cyberapocalypsectf2021/system_drop) using ret2csu; the pattern is the same, call `read` to _read_ `/bin/sh\0` from `stdin` into the BSS, then chain to `execve` to get a shell.
 
-Statically-linked Linux binaries are chock-full of gadgets including `syscall`, and this challenge binary is no different, except that `syscall` is `svc #0x0` and the constants are different, and the registers have different names, but that's about it.
+Statically-linked Linux binaries are chock-full of gadgets including `syscall`, and this challenge binary is no different, except that `syscall` is `svc #0` and the constants are different, and the registers have different names, but that's about it.
 
-This binary was also stripped, so reversing took a bit longer (ok, a lot longer :-).
+This binary was also stripped (no ret2libc), so reversing took a bit longer (ok, a lot longer :-).
 
 
 ## Tooling
@@ -43,7 +43,7 @@ I used [Option 3: Aarch64 on x86_64 with QEMU-user](https://github.com/datajerk/
     PIE:      No PIE (0x400000)
 ```
 
-No Pie or canary, easy BOF, easier ROP.
+No PIE or stack canary, easy BOF, easier ROP.
 
 
 ### Give it a go
@@ -86,9 +86,7 @@ undefined8 main(undefined4 param_1,undefined8 param_2)
   if ((8 < uVar2) && (iVar3 = strncmp(&stack0x00000028,pcVar10,0xf), iVar3 == 0)) {
 ```
 
-`setvbuf`, `memset`, `read`, and `strncmp` are all guesses based on what they do and look like and their position within the text.  E.g. the `0,2,0` is a dead giveaway for `setvbuf` and is present in almost every _good_ binary pwn.
-
-`memset` followed by a `read`, yeah, common pattern too.
+`setvbuf`, `memset`, `read`, and `strncmp` are all guesses based on what they do and look like and their position within the text.  E.g. the `0,2,0` is a dead giveaway for `setvbuf` and is present in almost every _good_ binary pwn; `memset` followed by a `read`, yeah, common pattern too.
 
 The `if` block spans all of `main`; to pass that check your input must match the first `0xf` (15) bytes of `pcVar10` (`GET /api/isodd/`).
 
