@@ -250,7 +250,7 @@ daabeaab
 112
 ```
 
-Our ROP chain after 112 bytes.
+> Our ROP chain start after 112 bytes.
 
 
 ### Okay. Let's go shopping.
