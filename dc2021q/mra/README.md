@@ -127,7 +127,7 @@ The second block searches for ` HTTP/` and replaces the ` ` with a `\0`.
 
 The third block looks for `?` (`0x3f`), replaces with `\0` terminating the string after `isodd/`; if `token=` follows that `?`, then assign `pcVar11` to the string after `=`, that will be terminated by the `memset` at `main` start or the ` HTTP/` match above.
 
-Lastly starting after `isodd/` (`&stack0x00000037 - &stack0x00000028 = 0xf`, the length of `GET /api/isodd/`), replace the first `/` with a `\0` to fuck with your ability to put `/bin/sh` there, then assign `pcVar4` the string after `isodd/` ending before `?` (remember it is `\0` now).
+Lastly, starting after `isodd/` (`&stack0x00000037 - &stack0x00000028 = 0xf`, the length of `GET /api/isodd/`), replace the first `/` with a `\0` to fuck with your ability to put `/bin/sh` there, then assign `pcVar4` the string after `isodd/` ending before `?` (remember it is `\0` now).
 
 So far our input is looking like: `GET /api/isodd/pcVar4?token=pcVar11 HTTP/`
 
@@ -173,7 +173,7 @@ Moving on...
     iVar3 = strcpy(&stack0x00000428,puVar4);
 ```
 
-And finally `strcpy`, our vulnerable function:
+And finally `strcpy`, the vulnerable function:
 
 ```c
 int strcpy(long param_1,long param_2)
@@ -250,7 +250,7 @@ daabeaab
 112
 ```
 
-> Our ROP chain start after 112 bytes.
+> Our ROP chain starts after 112 bytes.
 
 
 ### Okay. Let's go shopping.
@@ -347,7 +347,7 @@ The initial part of the payload should be clear from the Analysis section above.
 
 > The payload should be URL quoted (`%nn%nn%nn`...) so that `strcpy` does not prematurely terminate.
 
-Starting form the bottom, the `8 * b'A'` and `syscall` will land in `x29` and `x30` curtesy of the end from `entry` with `sp` pointing to `8 * b'A'` on the stack with our `read` payload just above it.  The `syscall` gadget (see assembly above), will load the next four stack lines going _up_, into `x8`, `x0`, `x1`, `x2`, and then execute the syscall to read from `stdin` (`0`) our 8-byte payload (`/bin/sh\0`), into the BSS (`binary.bss()`); after the syscall `sp` will be pointing at just below our next set of four parameters, when `ret` is executed, `syscall` is executed again since `x30` was never updated (this isn't x86_64), and the cycle continues, but this time with `execve` executing `/bin/sh\0` stored in the BSS.
+Starting form the bottom, the `8 * b'A'` and `syscall` will land in `x29` and `x30` curtesy of the end from `entry` with `sp` pointing to `8 * b'A'` on the stack with our `read` payload just above it.  The `syscall` gadget (see assembly above) will load the next four stack lines going _up_ into `x8`, `x0`, `x1`, `x2`, and then execute the syscall to read from `stdin` (`0`) our 8-byte payload (`/bin/sh\0`) into the BSS (`binary.bss()`); after the syscall `sp` will be pointing just below our next set of four parameters, when `ret` is executed, `syscall` is executed again since `x30` was never updated (this isn't x86_64), and the cycle continues, but this time with `execve` executing `/bin/sh\0` stored in the BSS.
 
 ```python
 payload += (0x3ff - len(payload)) * b'A'
