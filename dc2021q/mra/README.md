@@ -17,7 +17,7 @@ Tags: _pwn_ _bof_ _rop_ _arm_ _arm64_ _aarch64_
 
 Aarch64/Linux-based, statically-linked, stripped, _syscall read /bin/sh into BSS, then syscall execve a shell_.
 
-Here's a similar problem from last week: [System dROP](https://github.com/datajerk/ctf-write-ups/tree/master/cyberapocalypsectf2021/system_drop) using ret2csu; the pattern is the same, call `read` to _read_ `/bin/sh\0` from `stdin` into the BSS, then chain to `execve` to get a shell.
+> Here's a similar problem from last week: [System dROP](https://github.com/datajerk/ctf-write-ups/tree/master/cyberapocalypsectf2021/system_drop) using ret2csu; the pattern is the same, call `read` to _read_ `/bin/sh\0` from `stdin` into the BSS, then chain to `execve` to get a shell.
 
 Statically-linked Linux binaries are chock-full of gadgets including `syscall`, and this challenge binary is no different, except that `syscall` is `svc #0` and the constants are different, and the registers have different names, but that's about it.
 
