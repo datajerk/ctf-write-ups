@@ -347,7 +347,7 @@ The initial part of the payload should be clear from the Analysis section above.
 
 > The payload should be URL quoted (`%nn%nn%nn`...) so that `strcpy` does not prematurely terminate.
 
-Starting form the bottom, the `8 * b'A'` and `syscall` will land in `x29` and `x30` curtesy of the end from `entry` with `sp` pointing to `8 * b'A'` on the stack with our `read` payload just above it.  The `syscall` gadget (see assembly above) will load the next four stack lines going _up_ into `x8`, `x0`, `x1`, `x2`, and then execute the syscall to read from `stdin` (`0`) our 8-byte payload (`/bin/sh\0`) into the BSS (`binary.bss()`); after the syscall `sp` will be pointing just below our next set of four parameters, when `ret` is executed, `syscall` is executed again since `x30` was never updated (this isn't x86_64), and the cycle continues, but this time with `execve` executing `/bin/sh\0` stored in the BSS.
+Starting form the bottom, the `8 * b'A'` and `syscall` will land in `x29` and `x30` curtesy of the end from `strcpy` with `sp` pointing to `8 * b'A'` on the stack with our `read` payload just above it.  The `syscall` gadget (see assembly above) will load the next four stack lines going _up_ into `x8`, `x0`, `x1`, `x2`, and then execute the syscall to read from `stdin` (`0`) our 8-byte payload (`/bin/sh\0`) into the BSS (`binary.bss()`); after the syscall `sp` will be pointing just below our next set of four parameters, when `ret` is executed, `syscall` is executed again since `x30` was never updated (this isn't x86_64), and the cycle continues, but this time with `execve` executing `/bin/sh\0` stored in the BSS.
 
 ```python
 payload += (0x3ff - len(payload)) * b'A'
