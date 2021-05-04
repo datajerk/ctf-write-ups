@@ -6,7 +6,7 @@ p = remote('ooobash.challenges.ooo', 5000)
 p.recvuntil('$ ')
 p.sendline('OOOENV=alsulkxjcn92 /bin/bash -L -i 2>/dev/null') # 3,4
 p.sendline('if :\nthen\n\n\n\nfalse\nfi') # 12
-p.sendline('function fnx { echo  ; } ; fn 1') #  11
+p.sendline('function fnx { echo  ; } ; fn 1') # 11
 p.sendline('declare -r ARO=ARO; declare -r ARO=ARO') # 10
 p.sendline('echo 1 > /dev/tcp/127.0.0.1/53') # 7
 p.sendline('f() { return 57; }; f') # 6
