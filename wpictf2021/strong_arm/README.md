@@ -43,7 +43,7 @@ python3 -m pip install ropper pwntools
 wget -q -O- https://github.com/hugsy/gef/raw/master/scripts/gef.sh | bash
 ```
 
-This is the path I took since it'd be identical to what I'm accustomed to from within my CTF Docker container; and it does have a [cosmetic] advantage over using remote GDB/GEF (see _Tooling Summary_ below).
+This is the path I took since it'd be identical to what I'm accustomed to from within my CTF Docker container.
 
 > My Aarch64 machines are just 8 GB RPi4s running Ubuntu 20.04.  This provides a 64-bit OS as well as KVM acceleration (yes, you can run full speed Aarch64 VMs on an RPi4).
 
@@ -148,25 +148,7 @@ pwntools:
 ld = ELF('./ld.so')
 libc = ELF('./libc-2.23.so')
 p = process([ld.path, binary.path], env={"LD_PRELOAD": libc.path})
-```    
-
-
-### Tooling Summary
-
-The only noticeable difference between options 1/2 vs. 3 is the output of GEF.  GEF struggles a bit with QEMU remote/cross debugging.
-
-These are not the only options, just the ones that I researched.
-
-Remote:
-
-![](gef-remote.png)
-
-Local:
-
-![](gef-local.png)
-
-Cosmetic differences, both are equally as useful.
-
+```
 
 
 ## Analysis
