@@ -28,7 +28,7 @@ This binary is also stripped (no ret2libc), so reversing took a bit longer (ok, 
 
 I used [Option 3: Aarch64 on x86_64 with QEMU-user](https://github.com/datajerk/ctf-write-ups/tree/master/wpictf2021/strong_arm#option-3-aarch64-on-x86_64-with-qemu-user).
 
-> Option 1 from the same link did not work, _Bus error_; I didn't have time to troubleshoot it.
+> Option 1 from the same link did not work, _Bus error_; I didn't have time to troubleshoot it.  Probably OOO making the stack go _up_--sadists.
 
 
 ## Analysis
@@ -48,7 +48,7 @@ No PIE or stack canary, easy BOF, easier ROP.
 
 ### Give it a go
 
-> This section intentionally left blank because that is all the output you get, send some garbage; nothing.
+> This section intentionally left blank because that is all the output you get; send some garbage, nothing.
 
 
 ### Decompile in Ghidra
