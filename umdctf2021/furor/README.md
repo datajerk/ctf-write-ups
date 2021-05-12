@@ -60,11 +60,11 @@ Two possible attack vectors, the input to get started and the `Password:` prompt
 
 Assets:
 
-You're given two files, one is an image you can flash to an RPi and boot up (I did not try this), the other is just the code (`kernel-rpi0-qemu-furor_updated.img`) that runs if you did boot up an RPi.  The author provided the necessary QEMU command line to get started--I used a variation of that.
+You're given two files, one is an image you can flash to an RPi and boot up (I did not try this), the other is just the code (`kernel-rpi0-qemu-furor_updated.img`) that runs as if you did boot up an RPi.  The author provided the necessary QEMU command line to get started--I used a variation of that.
 
 _So what is `kernel-rpi0-qemu-furor_updated.img` exactly?_
 
-It's 100% pure ARM binary code.  No ELF headers, or compression, or archivers, just code.  It's very small, so I assumed as much, but to be thorough I read up on how to bare-metal program an RPi, created an small program (ELF), used `arm-linux-gnueabihf-objcopy` to create `kernel.img`, and then compared with the `.text` segment in the ELF--they were an exact match.
+It's 100% pure ARM binary code.  No ELF headers, no compression, no archivers, just code.  It's very small, so I assumed as much, but to be thorough I read up on how to bare-metal program an RPi, created an small program (ELF), used `arm-linux-gnueabihf-objcopy` to create `kernel.img`, and then compared with the `.text` segment in the ELF--they were an exact match.
 
 
 ## Tooling
@@ -76,12 +76,12 @@ This is what I used to get through this challenge.
 I have a CTF Docker container based on Ubuntu 20.04 that I use, however the version of QEMU was too old, so I built 5.2 with:
 
 ```
+apt-get install -y ninja-build meson libpixman-1-dev
 wget https://download.qemu-project.org/qemu-5.2.0.tar.xz
 tar xvf qemu-5.2.0.tar.xz
 cd qemu-5.2.0
 mkdir build
 cd build
-apt-get install -y ninja-build meson libpixman-1-dev
 ../configure --target-list=arm-softmmu
 make -j
 make install
@@ -142,7 +142,7 @@ And if all went well, you should see:
 
 ![](gef.png)
 
-_Now_ we're in the shit.
+_Now,_ we're in the shit.
 
 
 ## Analysis
@@ -191,7 +191,7 @@ void main(void)
 
 I guessed on some of the functions like `setup` and `setup2`.  The `memset` and `read` are just what they looked like or functioned as (this isn't Linux).  And the parameters have been renamed to reflect the text they point to.
 
-With this out of the way, it is pretty clear what is going on here, from the top down the program starts, emits `Press enter to start or e to exit...`, then prompts for input, where if then equal to `0x65` (a.k.a. `e`), then a `CR` is emitted, then it drops down to `Now exiting` and that's it.  Otherwise more text is emitted, a buffer (`auStack`) is zeroed out, and then we are prompted for a `Password:`.
+With this out of the way, it is pretty clear what is going on here, from the top down the program starts, emits `Press enter to start or e to exit...`, then prompts for input, where if equal to `0x65` (a.k.a. `e`), then a `CR` is emitted, then it drops down to `Now exiting` and that's it.  Otherwise more text is emitted, a buffer (`auStack`) is zeroed out, and then we are prompted for a `Password:`.
 
 Being new to ARM, I'm not 100% sure how their stack frames are setup.  If this were x86_64 I'd just assume since `read` was passed `local_30` (odd, Ghidra could be wrong), then I'd be `0x30` (48) bytes from the return address, so write out 48 bytes of garbage, then exploit, however why don't we just send 100 bytes of garbage and see what we see?
 
