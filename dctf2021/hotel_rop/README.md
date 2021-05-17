@@ -74,7 +74,7 @@ void loss(int param_1,int param_2)
 }
 ```
 
-There's a `win` function here called `loss` that will execute `system` with the global `win_land`.  However, `win_land` is all null, the two functions `california` and `silicon_valley` fill that void:
+There's a `win` function here called `loss` that will execute `system` with the global `win_land`.  However, `win_land` is all null; the two functions `california` and `silicon_valley` fill that void:
 
 ```
 void california(void)
