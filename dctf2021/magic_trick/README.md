@@ -17,7 +17,7 @@ Tags: _pwn_ _x86-64_ _write-what-where_
 
 More like _old trick_.  This is identical to [mindfield](https://github.com/datajerk/ctf-write-ups/tree/master/cyberapocalypsectf2021/mindfield) from 3 weeks back, so read that [writeup](https://github.com/datajerk/ctf-write-ups/tree/master/cyberapocalypsectf2021/mindfield).
 
-> This is why I minimize hardcoded values in my writeups; took me 30 seconds to solve with minor modifications to an existing solution.
+> This is why I minimize hardcoded values in my writeups; took me 30 seconds to solve with minor modifications to an existing solve.
 
 
 ## Exploit
