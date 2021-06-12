@@ -410,7 +410,7 @@ Options:
 Our base defense did keep this attacker out:
 
 ```bash
-while :; do for uid in $(cat serviceusers); do pkill -U $uid 'sh|nc|cat'; done; done | tee servicekil.log
+while :; do for uid in $(cat serviceusers); do pkill -e -U $uid 'sh|nc|cat'; done; done | tee servicekil.log
 ```
 
 However, flags were still stolen.
