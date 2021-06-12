@@ -242,7 +242,7 @@ SIGTERM?  The "1337 hax0r" didn't even get a chance at a flag.  _Why?_
 Well, we had the following loop killing shells:
 
 ```bash
-while :; do for uid in $(cat serviceusers); do pkill -U $uid 'sh|nc|cat'; done; done | tee servicekil.log
+while :; do for uid in $(cat serviceusers); do pkill -e -U $uid 'sh|nc|cat'; done; done | tee servicekil.log
 ```
 
 > Thanks for the tip [PPP](https://www.reddit.com/r/netsec/comments/1k1oh4/we_are_the_plaid_parliament_of_pwning_ask_us/cbkgsvi/)
