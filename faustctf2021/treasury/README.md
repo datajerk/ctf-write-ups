@@ -13,7 +13,9 @@ This service was taking me sometime to find an exploit, and before I could find 
 
 **Plan B: Stop the hemorrhage and reflect the attack.**
 
-For a proper writeup checkout [https://ubcctf.github.io/2021/06/faustctf-treasury/](https://ubcctf.github.io/2021/06/faustctf-treasury/); writeup closing statement: _Unfortunately, this is also pretty much trivially reflectable by anyone paying attention to their incoming traffic, and there’s not much we can do to obfuscate this exploit, so we just decided to throw it quickly and hope to get a round or two before people started copying the exploit._
+For a proper writeup checkout [https://ubcctf.github.io/2021/06/faustctf-treasury/](https://ubcctf.github.io/2021/06/faustctf-treasury/); writeup closing statement:
+
+> _Unfortunately, this is also pretty much trivially reflectable by anyone paying attention to their incoming traffic, and there’s not much we can do to obfuscate this exploit, so we just decided to throw it quickly and hope to get a round or two before people started copying the exploit._
 
 _Paying attention_ to our incoming traffic is precisely what we did, however the statement, _and there’s not much we can do to obfuscate this exploit_, is not entirely correct; we were able to mitigate this.
 
