@@ -127,7 +127,7 @@ print(_)
 p.close()
 ```
 
-I cannot tell you how this works, just that is does work.  However, [Perfect Blue](https://ctftime.org/team/53802) can tell you exactly how this works: [https://github.com/perfectblue/ctf-writeups/tree/master/2021/faustctf-2021/veighty-machinery](https://github.com/perfectblue/ctf-writeups/tree/master/2021/faustctf-2021/veighty-machinery).
+I cannot tell you how this works, just that it does work.  However, [Perfect Blue](https://ctftime.org/team/53802) can tell you exactly how this works: [https://github.com/perfectblue/ctf-writeups/tree/master/2021/faustctf-2021/veighty-machinery](https://github.com/perfectblue/ctf-writeups/tree/master/2021/faustctf-2021/veighty-machinery).
 
 All I did was follow the `strace`, clearly they were leaking addresses and doing some math (`strace` output included in this directory).
 
