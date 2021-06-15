@@ -1,0 +1,530 @@
+1623512674.462888 execve("/usr/bin/stdbuf", ["/usr/bin/stdbuf", "-o0", "/srv/treasury/treasury"], 0x7ffdb145d2c8 /* 8 vars */) = 0
+1623512674.464093 brk(NULL)             = 0x561fe8e5a000
+1623512674.464374 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+1623512674.464687 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+1623512674.464861 fstat(3, {st_mode=S_IFREG|0644, st_size=23895, ...}) = 0
+1623512674.465070 mmap(NULL, 23895, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0d80d2d000
+1623512674.465210 close(3)              = 0
+1623512674.465336 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+1623512674.465481 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0@n\2\0\0\0\0\0"..., 832) = 832
+1623512674.465617 fstat(3, {st_mode=S_IFREG|0755, st_size=1839792, ...}) = 0
+1623512674.465750 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f0d80d2b000
+1623512674.465890 mmap(NULL, 1852680, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f0d80b66000
+1623512674.466018 mprotect(0x7f0d80b8b000, 1662976, PROT_NONE) = 0
+1623512674.466153 mmap(0x7f0d80b8b000, 1355776, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x25000) = 0x7f0d80b8b000
+1623512674.466295 mmap(0x7f0d80cd6000, 303104, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x170000) = 0x7f0d80cd6000
+1623512674.466455 mmap(0x7f0d80d21000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ba000) = 0x7f0d80d21000
+1623512674.466608 mmap(0x7f0d80d27000, 13576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f0d80d27000
+1623512674.466769 close(3)              = 0
+1623512674.466950 arch_prctl(ARCH_SET_FS, 0x7f0d80d2c580) = 0
+1623512674.467208 mprotect(0x7f0d80d21000, 12288, PROT_READ) = 0
+1623512674.467357 mprotect(0x561fe7c2f000, 4096, PROT_READ) = 0
+1623512674.467481 mprotect(0x7f0d80d5d000, 4096, PROT_READ) = 0
+1623512674.467596 munmap(0x7f0d80d2d000, 23895) = 0
+1623512674.468013 brk(NULL)             = 0x561fe8e5a000
+1623512674.468137 brk(0x561fe8e7b000)   = 0x561fe8e7b000
+1623512674.468279 openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1623512674.468431 openat(AT_FDCWD, "/usr/share/locale/locale.alias", O_RDONLY|O_CLOEXEC) = 3
+1623512674.468562 fstat(3, {st_mode=S_IFREG|0644, st_size=2996, ...}) = 0
+1623512674.468681 read(3, "# Locale name alias data base.\n#"..., 4096) = 2996
+1623512674.468866 read(3, "", 4096)     = 0
+1623512674.469017 close(3)              = 0
+1623512674.469159 openat(AT_FDCWD, "/usr/lib/locale/en_US.UTF-8/LC_IDENTIFICATION", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1623512674.469284 openat(AT_FDCWD, "/usr/lib/locale/en_US.utf8/LC_IDENTIFICATION", O_RDONLY|O_CLOEXEC) = 3
+1623512674.469400 fstat(3, {st_mode=S_IFREG|0644, st_size=369, ...}) = 0
+1623512674.469509 mmap(NULL, 369, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0d80d5c000
+1623512674.469615 close(3)              = 0
+1623512674.469723 openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache", O_RDONLY) = 3
+1623512674.469836 fstat(3, {st_mode=S_IFREG|0644, st_size=27002, ...}) = 0
+1623512674.469945 mmap(NULL, 27002, PROT_READ, MAP_SHARED, 3, 0) = 0x7f0d80b5f000
+1623512674.470049 close(3)              = 0
+1623512674.470173 openat(AT_FDCWD, "/usr/lib/locale/en_US.UTF-8/LC_MEASUREMENT", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1623512674.470292 openat(AT_FDCWD, "/usr/lib/locale/en_US.utf8/LC_MEASUREMENT", O_RDONLY|O_CLOEXEC) = 3
+1623512674.470435 fstat(3, {st_mode=S_IFREG|0644, st_size=23, ...}) = 0
+1623512674.470548 mmap(NULL, 23, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0d80d32000
+1623512674.470666 close(3)              = 0
+1623512674.470790 openat(AT_FDCWD, "/usr/lib/locale/en_US.UTF-8/LC_TELEPHONE", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1623512674.560580 openat(AT_FDCWD, "/usr/lib/locale/en_US.utf8/LC_TELEPHONE", O_RDONLY|O_CLOEXEC) = 3
+1623512674.560751 fstat(3, {st_mode=S_IFREG|0644, st_size=59, ...}) = 0
+1623512674.560906 mmap(NULL, 59, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0d80d31000
+1623512674.561118 close(3)              = 0
+1623512674.561290 openat(AT_FDCWD, "/usr/lib/locale/en_US.UTF-8/LC_ADDRESS", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1623512674.561415 openat(AT_FDCWD, "/usr/lib/locale/en_US.utf8/LC_ADDRESS", O_RDONLY|O_CLOEXEC) = 3
+1623512674.561505 fstat(3, {st_mode=S_IFREG|0644, st_size=167, ...}) = 0
+1623512674.561587 mmap(NULL, 167, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0d80d30000
+1623512674.561667 close(3)              = 0
+1623512674.561763 openat(AT_FDCWD, "/usr/lib/locale/en_US.UTF-8/LC_NAME", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1623512674.561849 openat(AT_FDCWD, "/usr/lib/locale/en_US.utf8/LC_NAME", O_RDONLY|O_CLOEXEC) = 3
+1623512674.561938 fstat(3, {st_mode=S_IFREG|0644, st_size=77, ...}) = 0
+1623512674.562018 mmap(NULL, 77, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0d80d2f000
+1623512674.562096 close(3)              = 0
+1623512674.562192 openat(AT_FDCWD, "/usr/lib/locale/en_US.UTF-8/LC_PAPER", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1623512674.562277 openat(AT_FDCWD, "/usr/lib/locale/en_US.utf8/LC_PAPER", O_RDONLY|O_CLOEXEC) = 3
+1623512674.562363 fstat(3, {st_mode=S_IFREG|0644, st_size=34, ...}) = 0
+1623512674.562472 mmap(NULL, 34, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0d80d2e000
+1623512674.562554 close(3)              = 0
+1623512674.562660 openat(AT_FDCWD, "/usr/lib/locale/en_US.UTF-8/LC_MESSAGES", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1623512674.562749 openat(AT_FDCWD, "/usr/lib/locale/en_US.utf8/LC_MESSAGES", O_RDONLY|O_CLOEXEC) = 3
+1623512674.562839 fstat(3, {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+1623512674.562928 close(3)              = 0
+1623512674.563005 openat(AT_FDCWD, "/usr/lib/locale/en_US.utf8/LC_MESSAGES/SYS_LC_MESSAGES", O_RDONLY|O_CLOEXEC) = 3
+1623512674.563094 fstat(3, {st_mode=S_IFREG|0644, st_size=57, ...}) = 0
+1623512674.563175 mmap(NULL, 57, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0d80d2d000
+1623512674.563257 close(3)              = 0
+1623512674.563350 openat(AT_FDCWD, "/usr/lib/locale/en_US.UTF-8/LC_MONETARY", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1623512674.563437 openat(AT_FDCWD, "/usr/lib/locale/en_US.utf8/LC_MONETARY", O_RDONLY|O_CLOEXEC) = 3
+1623512674.563525 fstat(3, {st_mode=S_IFREG|0644, st_size=286, ...}) = 0
+1623512674.563606 mmap(NULL, 286, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0d80b5e000
+1623512674.563686 close(3)              = 0
+1623512674.563781 openat(AT_FDCWD, "/usr/lib/locale/en_US.UTF-8/LC_COLLATE", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1623512674.563868 openat(AT_FDCWD, "/usr/lib/locale/en_US.utf8/LC_COLLATE", O_RDONLY|O_CLOEXEC) = 3
+1623512674.563955 fstat(3, {st_mode=S_IFREG|0644, st_size=2586930, ...}) = 0
+1623512674.564035 mmap(NULL, 2586930, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0d808e6000
+1623512674.564115 close(3)              = 0
+1623512674.564255 openat(AT_FDCWD, "/usr/lib/locale/en_US.UTF-8/LC_TIME", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1623512674.564349 openat(AT_FDCWD, "/usr/lib/locale/en_US.utf8/LC_TIME", O_RDONLY|O_CLOEXEC) = 3
+1623512674.564437 fstat(3, {st_mode=S_IFREG|0644, st_size=3284, ...}) = 0
+1623512674.564517 mmap(NULL, 3284, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0d808e5000
+1623512674.564598 close(3)              = 0
+1623512674.564693 openat(AT_FDCWD, "/usr/lib/locale/en_US.UTF-8/LC_NUMERIC", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1623512674.564780 openat(AT_FDCWD, "/usr/lib/locale/en_US.utf8/LC_NUMERIC", O_RDONLY|O_CLOEXEC) = 3
+1623512674.564868 fstat(3, {st_mode=S_IFREG|0644, st_size=54, ...}) = 0
+1623512674.564974 mmap(NULL, 54, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0d808e4000
+1623512674.565055 close(3)              = 0
+1623512674.565157 openat(AT_FDCWD, "/usr/lib/locale/en_US.UTF-8/LC_CTYPE", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+1623512674.565251 openat(AT_FDCWD, "/usr/lib/locale/en_US.utf8/LC_CTYPE", O_RDONLY|O_CLOEXEC) = 3
+1623512674.565350 fstat(3, {st_mode=S_IFREG|0644, st_size=346132, ...}) = 0
+1623512674.565478 mmap(NULL, 346132, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f0d8088f000
+1623512674.565590 close(3)              = 0
+1623512674.565791 stat("/usr/bin/libstdbuf.so", 0x7fff862c98c0) = -1 ENOENT (No such file or directory)
+1623512674.565893 stat("/usr/libexec/coreutils/libstdbuf.so", {st_mode=S_IFREG|0644, st_size=14504, ...}) = 0
+1623512674.565994 execve("/srv/treasury/treasury", ["/srv/treasury/treasury"], 0x561fe8e5f5c0 /* 10 vars */) = 0
+1623512674.566768 brk(NULL)             = 0x55d010e0e000
+1623512674.567001 openat(AT_FDCWD, "/usr/libexec/coreutils/libstdbuf.so", O_RDONLY|O_CLOEXEC) = 3
+1623512674.567201 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320\20\0\0\0\0\0\0"..., 832) = 832
+1623512674.567321 fstat(3, {st_mode=S_IFREG|0644, st_size=14504, ...}) = 0
+1623512674.567435 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7febf4c15000
+1623512674.567564 mmap(NULL, 16496, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7febf4c10000
+1623512674.567672 mmap(0x7febf4c11000, 4096, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1000) = 0x7febf4c11000
+1623512674.567793 mmap(0x7febf4c12000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7febf4c12000
+1623512674.567904 mmap(0x7febf4c13000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7febf4c13000
+1623512674.568050 close(3)              = 0
+1623512674.568162 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+1623512674.568301 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+1623512674.568432 fstat(3, {st_mode=S_IFREG|0644, st_size=23895, ...}) = 0
+1623512674.568540 mmap(NULL, 23895, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7febf4c0a000
+1623512674.568648 close(3)              = 0
+1623512674.568763 openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+1623512674.568889 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0@n\2\0\0\0\0\0"..., 832) = 832
+1623512674.569072 fstat(3, {st_mode=S_IFREG|0755, st_size=1839792, ...}) = 0
+1623512674.569221 mmap(NULL, 1852680, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7febf4a45000
+1623512674.569349 mprotect(0x7febf4a6a000, 1662976, PROT_NONE) = 0
+1623512674.569476 mmap(0x7febf4a6a000, 1355776, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x25000) = 0x7febf4a6a000
+1623512674.569578 mmap(0x7febf4bb5000, 303104, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x170000) = 0x7febf4bb5000
+1623512674.569661 mmap(0x7febf4c00000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1ba000) = 0x7febf4c00000
+1623512674.569827 mmap(0x7febf4c06000, 13576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7febf4c06000
+1623512674.569937 close(3)              = 0
+1623512674.570049 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7febf4a42000
+1623512674.570145 arch_prctl(ARCH_SET_FS, 0x7febf4a42740) = 0
+1623512674.570352 mprotect(0x7febf4c00000, 12288, PROT_READ) = 0
+1623512674.570491 mprotect(0x7febf4c13000, 4096, PROT_READ) = 0
+1623512674.570586 mprotect(0x55d010120000, 4096, PROT_READ) = 0
+1623512674.570681 mprotect(0x7febf4c41000, 4096, PROT_READ) = 0
+1623512674.570745 munmap(0x7febf4c0a000, 23895) = 0
+1623512674.570896 write(1, "  _                             "..., 43) = 43
+1623512674.660815 write(1, " | |                            "..., 43) = 43
+1623512674.661155 write(1, " | |_ _ __ ___  __ _ ___ _   _ _"..., 43) = 43
+1623512674.661400 write(1, " | __| '__/ _ \\/ _` / __| | | | "..., 43) = 43
+1623512674.661586 write(1, " | |_| | |  __/ (_| \\__ \\ |_| | "..., 43) = 43
+1623512674.661758 write(1, "  \\__|_|  \\___|\\__,_|___/\\__,_|_"..., 43) = 43
+1623512674.661924 write(1, "                                "..., 43) = 43
+1623512674.662093 write(1, "                                "..., 43) = 43
+1623512674.662265 write(1, "\n", 1)     = 1
+1623512674.662457 write(1, "Welcome to treasury!\n", 21) = 21
+1623512674.662636 write(1, "You got so much treasure that yo"..., 40) = 40
+1623512674.662777 write(1, "store it all in one vault, but a"..., 42) = 42
+1623512674.662975 write(1, "to worry about keeping track of "..., 40) = 40
+1623512674.663116 write(1, "different ones? Let us worry abo"..., 35) = 35
+1623512674.663258 write(1, "handling those while you focus o"..., 42) = 42
+1623512674.663394 write(1, "more!\n", 6) = 6
+1623512674.663533 write(1, "\nChoose an action:\n", 19) = 19
+1623512674.663669 write(1, "-> add treasure location\n", 25) = 25
+1623512674.663865 write(1, "-> view treasure locations\n", 27) = 27
+1623512674.664008 write(1, "-> update treasure location\n", 28) = 28
+1623512674.664148 write(1, "-> print logs\n", 14) = 14
+1623512674.664288 write(1, "-> quit\n", 8) = 8
+1623512674.664427 write(1, "  > ", 4)   = 4
+1623512674.664579 fstat(0, {st_mode=S_IFSOCK|0777, st_size=0, ...}) = 0
+1623512674.664862 brk(NULL)             = 0x55d010e0e000
+1623512674.664999 brk(0x55d010e2f000)   = 0x55d010e2f000
+1623512674.665173 read(0, "mpteympteymptey\n", 4096) = 16
+1623512674.791907 openat(AT_FDCWD, "./data/.log", O_RDONLY) = 3
+1623512674.792161 fstat(3, {st_mode=S_IFREG|0600, st_size=4235, ...}) = 0
+1623512674.792336 read(3, "JrFyDUMXdnKHOHEKoGJgJqmmIzSEgLUI"..., 4096) = 4096
+1623512674.792464 openat(AT_FDCWD, "./data/JrFyDUMXdnKHOHEKoGJgJqmmIzSEgLUIOFjuFCjPOjNwkEdulosGimRqmsin", O_RDONLY) = 4
+1623512674.792596 fstat(4, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.792723 read(4, "FAUST_YMTBZAAmBU8mGa0AAAAAgMYWcr"..., 4096) = 38
+1623512674.792838 read(4, "", 4096)     = 0
+1623512674.792974 write(1, "1: JrFyDUMXdnKHOHEKoGJgJqmmIzSEg"..., 105) = 105
+1623512674.793288 openat(AT_FDCWD, "./data/OIsYWvFMAxJAWDznFqXakbJdJAEhSrkKgWsPbtBLvyQWRHUtneAyoDFHmUq", O_RDONLY) = 5
+1623512674.793431 fstat(5, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.793558 read(5, "FVBhQxhEoMjglhFWUDheZzlLtrDoNeyd"..., 4096) = 80
+1623512674.793674 read(5, "", 4096)     = 0
+1623512674.793782 write(1, "2: OIsYWvFMAxJAWDznFqXakbJdJAEhS"..., 146) = 146
+1623512674.794030 openat(AT_FDCWD, "./data/XyErfJtdEZKhZmuXVzkGbRCZBBEYqWCAVvpiXUvsRgReFoFVEUxwmtmUiJSi", O_RDONLY) = 6
+1623512674.794168 fstat(6, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.794303 read(6, "FAUST_YMTCGAAmBSlvfFkAAAAAec9gxU"..., 4096) = 38
+1623512674.794461 read(6, "", 4096)     = 0
+1623512674.794580 write(1, "3: XyErfJtdEZKhZmuXVzkGbRCZBBEYq"..., 105) = 105
+1623512674.794831 openat(AT_FDCWD, "./data/HzxXgXbLIOcDzfWhTJxAkBAcbPxwPkQdXcbOLYdmZqDMsODYpjOgVRuGgON", O_RDONLY) = 7
+1623512674.794971 fstat(7, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.795104 read(7, "VOindaIPxtUewWfmXSPMkAEVDKAWpGOo"..., 4096) = 80
+1623512674.795235 read(7, "", 4096)     = 0
+1623512674.795351 write(1, "4: HzxXgXbLIOcDzfWhTJxAkBAcbPxwP"..., 146) = 146
+1623512674.795596 openat(AT_FDCWD, "./data/yNPMLNPQjiYrfAIXhkDcxbPuxoKjnAdkIPhgclKnysrMMmwMEUtOWPxLftzv", O_RDONLY) = 8
+1623512674.795739 fstat(8, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.795874 read(8, "FAUST_YMTCzAAmBYBZUpcAAAAAGWUOtY"..., 4096) = 38
+1623512674.795997 read(8, "", 4096)     = 0
+1623512674.796113 write(1, "5: yNPMLNPQjiYrfAIXhkDcxbPuxoKjn"..., 105) = 105
+1623512674.796373 openat(AT_FDCWD, "./data/AmeNiUWidSznHFNNiDznyDIjhGveiDTADaOHVcAODxzuvXOBOSVVsOOxELN", O_RDONLY) = 9
+1623512674.796515 fstat(9, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.796646 read(9, "ZVklFdknTwwfMRPvuqCVhlgUsjtJzOFo"..., 4096) = 80
+1623512674.796768 read(9, "", 4096)     = 0
+1623512674.796883 write(1, "6: AmeNiUWidSznHFNNiDznyDIjhGvei"..., 146) = 146
+1623512674.797057 openat(AT_FDCWD, "./data/eNvArkPqItddeNPSJEcbOmkMRecqaopOpQcDTTrWtnSDdFJjcYSPbPGxtQWw", O_RDONLY) = 10
+1623512674.797192 fstat(10, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.797326 read(10, "FAUST_YMTDgAAmBWz7nKIAAAAAbjknfW"..., 4096) = 38
+1623512674.797448 read(10, "", 4096)    = 0
+1623512674.797563 write(1, "7: eNvArkPqItddeNPSJEcbOmkMRecqa"..., 105) = 105
+1623512674.797720 openat(AT_FDCWD, "./data/pmzQzSCRwohFSxkrvkdHRDwNIvyggZDZSoCdbsghJkfnYojKrQciIhGGgbz", O_RDONLY) = 11
+1623512674.797851 fstat(11, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.798010 read(11, "qeusNxuZQUjchROkknFzonMjNmUompMV"..., 4096) = 80
+1623512674.798136 read(11, "", 4096)    = 0
+1623512674.798251 write(1, "8: pmzQzSCRwohFSxkrvkdHRDwNIvygg"..., 146) = 146
+1623512674.798442 openat(AT_FDCWD, "./data/hgjsUyCbJHfZGVrQfeQmejQULRHqNcVWsKdYrliECjrhfXGMEhrHENRLvUgs", O_RDONLY) = 12
+1623512674.798586 fstat(12, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.798726 read(12, "FAUST_YMTENAAmBUzLmX8AAAAAoY7BrC"..., 4096) = 38
+1623512674.798848 read(12, "", 4096)    = 0
+1623512674.798932 write(1, "9: hgjsUyCbJHfZGVrQfeQmejQULRHqN"..., 105) = 105
+1623512674.799042 openat(AT_FDCWD, "./data/zISUPYpVzvzVIaMZNTkXlVXUeDwTHtzzqJjccnxLIpTBnrIImZEUvhfJCuk", O_RDONLY) = 13
+1623512674.799140 fstat(13, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.799235 read(13, "uydVHyXuRlKUETKlEEIEPTreNMcFWjGg"..., 4096) = 80
+1623512674.799323 read(13, "", 4096)    = 0
+1623512674.799405 write(1, "10: zISUPYpVzvzVIaMZNTkXlVXUeDwT"..., 147) = 147
+1623512674.799513 openat(AT_FDCWD, "./data/LIwbMAXtMHLjWoTftYbHfccnKQsyICreDwoWKkzlicPQNWSqCKFPwcOMsyxU", O_RDONLY) = 14
+1623512674.799610 fstat(14, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.799705 read(14, "FAUST_YMTE6AAmBSBJn14AAAAATyvPsc"..., 4096) = 38
+1623512674.799797 read(14, "", 4096)    = 0
+1623512674.799880 write(1, "11: LIwbMAXtMHLjWoTftYbHfccnKQsy"..., 106) = 106
+1623512674.799987 openat(AT_FDCWD, "./data/RkliJbwXJmwWNuwpqaFFcRAwRJvLKyFHAobYqfKBXjFiHbXOparEpsyTUwf", O_RDONLY) = 15
+1623512674.800084 fstat(15, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.800179 read(15, "wTWQbMORXgeuPBVIiJjxebljYkCJVqIy"..., 4096) = 80
+1623512674.800273 read(15, "", 4096)    = 0
+1623512674.800356 write(1, "12: RkliJbwXJmwWNuwpqaFFcRAwRJvL"..., 147) = 147
+1623512674.800466 openat(AT_FDCWD, "./data/qSVdCcJkhIBXntPuUpLJVmWARMJeiKGFBtGYbzKmrpXxtvLvDIdAiVnXZoKz", O_RDONLY) = 16
+1623512674.800564 fstat(16, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.800663 read(16, "FAUST_YMTFnAAmBfl0gSUAAAAAzlWU2d"..., 4096) = 38
+1623512674.800756 read(16, "", 4096)    = 0
+1623512674.800839 write(1, "13: qSVdCcJkhIBXntPuUpLJVmWARMJe"..., 106) = 106
+1623512674.800965 openat(AT_FDCWD, "./data/oJfeYXTLlIJBJeKuZxrhOKpIqdJceiOuzhVUmzDPTzNjoaPavtDcDYqUMIl", O_RDONLY) = 17
+1623512674.801064 fstat(17, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.801159 read(17, "zbsvfRHujMwFmhyoINFZutDIjikceeBj"..., 4096) = 80
+1623512674.801251 read(17, "", 4096)    = 0
+1623512674.801334 write(1, "14: oJfeYXTLlIJBJeKuZxrhOKpIqdJc"..., 147) = 147
+1623512674.801441 openat(AT_FDCWD, "./data/AjyeczrVWfCQuhtsDZglDAxqAbdFkMRryyBbYlGnTqWYndFXlQiRYwkEQSRr", O_RDONLY) = 18
+1623512674.801538 fstat(18, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.801634 read(18, "FAUST_YMTGUAAmBYJPqksAAAAAAX4Cc1"..., 4096) = 38
+1623512674.801727 read(18, "", 4096)    = 0
+1623512674.801810 write(1, "15: AjyeczrVWfCQuhtsDZglDAxqAbdF"..., 106) = 106
+1623512674.801918 openat(AT_FDCWD, "./data/DnZZJhbXAeEesgWGFhzXusmkHPVPpmyjmotCemnxsQCGffIsYieLwEeDDvg", O_RDONLY) = 19
+1623512674.802015 fstat(19, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.802111 read(19, "KeSDAnyhbcXbLTSvskZgSoAGQZNekvzu"..., 4096) = 80
+1623512674.802203 read(19, "", 4096)    = 0
+1623512674.802286 write(1, "16: DnZZJhbXAeEesgWGFhzXusmkHPVP"..., 147) = 147
+1623512674.802429 openat(AT_FDCWD, "./data/iuQgsgDTlJigHiWQJhfgyLtvcjKHCqVTfNEmeCLEsjuLjzgqLeujBtTbBFCm", O_RDONLY) = 20
+1623512674.802532 fstat(20, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.802629 read(20, "FAUST_YMTHBAAmBftAGw4AAAAAhqp2Ut"..., 4096) = 38
+1623512674.802721 read(20, "", 4096)    = 0
+1623512674.802804 write(1, "17: iuQgsgDTlJigHiWQJhfgyLtvcjKH"..., 106) = 106
+1623512674.802925 openat(AT_FDCWD, "./data/XBQDCFmeUBVERbcGUmFwducSacurJLfmERMdkVDGFiohuKZMkjRKInuKhVj", O_RDONLY) = 21
+1623512674.802997 fstat(21, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.803069 read(21, "FLNFuydpbWFbCFUDomZRgOVhaQZabzam"..., 4096) = 80
+1623512674.803137 read(21, "", 4096)    = 0
+1623512674.860644 write(1, "18: XBQDCFmeUBVERbcGUmFwducSacur"..., 147) = 147
+1623512674.861017 openat(AT_FDCWD, "./data/uKXVXlmesCPbqektzGmbqMRRloiOVMLPzbnjeKLXwKQlmOTJnXLWpuloNhcG", O_RDONLY) = 22
+1623512674.861191 fstat(22, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.861343 read(22, "FAUST_YMTHuAAmBazk6iwAAAAAGdUULZ"..., 4096) = 38
+1623512674.861473 read(22, "", 4096)    = 0
+1623512674.861589 write(1, "19: uKXVXlmesCPbqektzGmbqMRRloiO"..., 106) = 106
+1623512674.861775 openat(AT_FDCWD, "./data/sMVdpzzWOebvhEgfrXswSHdSDVUPZlHFWzEgOBAIbGbTwyLOHyjjJonsuMo", O_RDONLY) = 23
+1623512674.861914 fstat(23, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.862046 read(23, "KVPlxZGgZySzlYjkgMRlJxNJlRswjPkC"..., 4096) = 80
+1623512674.862166 read(23, "", 4096)    = 0
+1623512674.862278 write(1, "20: sMVdpzzWOebvhEgfrXswSHdSDVUP"..., 147) = 147
+1623512674.862482 openat(AT_FDCWD, "./data/BvstWZPQkBnxHIjnXrfwAqlhkgeYiGgeXUByOZJohdDFCxJtWSdHxcgYUnNX", O_RDONLY) = 24
+1623512674.862614 fstat(24, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.862741 read(24, "FAUST_YMTIbAAmBYeCUzMAAAAAXHxHV/"..., 4096) = 38
+1623512674.862857 read(24, "", 4096)    = 0
+1623512674.862966 write(1, "21: BvstWZPQkBnxHIjnXrfwAqlhkgeY"..., 106) = 106
+1623512674.863129 openat(AT_FDCWD, "./data/TuYsyzLAfxWGJykuoxZSnsZMgLvitdJMilyYYXvQskQXQOJnPmTGtmeRNVD", O_RDONLY) = 25
+1623512674.863255 fstat(25, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.863382 read(25, "oJOAJZPexXlrMzGtdjvsfPeJAaGJKCfa"..., 4096) = 80
+1623512674.863502 read(25, "", 4096)    = 0
+1623512674.863615 write(1, "22: TuYsyzLAfxWGJykuoxZSnsZMgLvi"..., 147) = 147
+1623512674.863763 openat(AT_FDCWD, "./data/xsYfrrddsvBWxSvvsRPeHVxcbCYUatkoklgbnQbIbciVAweuNsczkjhbqfTz", O_RDONLY) = 26
+1623512674.863890 fstat(26, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.864019 read(26, "FAUST_YMTJIAAmBWsgnQYAAAAAXmABYq"..., 4096) = 38
+1623512674.864138 read(26, "", 4096)    = 0
+1623512674.864251 write(1, "23: xsYfrrddsvBWxSvvsRPeHVxcbCYU"..., 106) = 106
+1623512674.864399 openat(AT_FDCWD, "./data/JBygwCSxqYgDZGfmpekYiVRxTJtFvdvtMrbNpHMHogQUoMmueIkBRoXcoZg", O_RDONLY) = 27
+1623512674.864525 fstat(27, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.864655 read(27, "rSNdkGhqpuWzjrGZkiGBIYHsNnOliBvB"..., 4096) = 80
+1623512674.864774 read(27, "", 4096)    = 0
+1623512674.864886 write(1, "24: JBygwCSxqYgDZGfmpekYiVRxTJtF"..., 147) = 147
+1623512674.865081 openat(AT_FDCWD, "./data/GcfGCktpAFnSCqKLVTMUNwIYNOIZsCjkGeHNOIeLFEWTISjnpWzxZKPlnLZl", O_RDONLY) = 28
+1623512674.865214 fstat(28, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.865344 read(28, "FAUST_YMTJ1AAmBWIkHPYAAAAA8UtgbL"..., 4096) = 38
+1623512674.865464 read(28, "", 4096)    = 0
+1623512674.865576 write(1, "25: GcfGCktpAFnSCqKLVTMUNwIYNOIZ"..., 106) = 106
+1623512674.865727 openat(AT_FDCWD, "./data/dFeCoChoCWyvwGlaHivMECCezcknUSSZmrUlbVCuBOuXROdWeujsnBuxhlV", O_RDONLY) = 29
+1623512674.865863 fstat(29, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.865998 read(29, "rxpEHJCgdpkQDeTkBIxcmskMtbYcOIDc"..., 4096) = 80
+1623512674.866118 read(29, "", 4096)    = 0
+1623512674.866231 write(1, "26: dFeCoChoCWyvwGlaHivMECCezckn"..., 147) = 147
+1623512674.866379 openat(AT_FDCWD, "./data/WGzwCDavmIytTRYSgEKYNCgOeuIsLvlgorRzyEIAYaoMPgyzBlsJKiCBPfTj", O_RDONLY) = 30
+1623512674.866541 fstat(30, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.866673 read(30, "FAUST_YMTKiAAmBaRf1jwAAAAA5AAB91"..., 4096) = 38
+1623512674.866793 read(30, "", 4096)    = 0
+1623512674.866906 write(1, "27: WGzwCDavmIytTRYSgEKYNCgOeuIs"..., 106) = 106
+1623512674.867057 openat(AT_FDCWD, "./data/sIEqcYoszRCCjmdjaLOeqfRZjGWqrBdqqSgyHFAbkfjgesaSbpvuIIUiVZB", O_RDONLY) = 31
+1623512674.867183 fstat(31, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.867305 brk(0x55d010e50000)   = 0x55d010e50000
+1623512674.867433 read(31, "xHToQovNWszQMzGvZaSkYxslakzEOFXX"..., 4096) = 80
+1623512674.867553 read(31, "", 4096)    = 0
+1623512674.867665 write(1, "28: sIEqcYoszRCCjmdjaLOeqfRZjGWq"..., 147) = 147
+1623512674.867816 openat(AT_FDCWD, "./data/naewQwKyCfOmraXpMZxhapJwUANATsRJkYuzUGCvdeAvreLVVmfUnYgVWTzs", O_RDONLY) = 32
+1623512674.867959 fstat(32, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.868090 read(32, "FAUST_YMTLPAAmBQsvJkEAAAAAM8Tc7x"..., 4096) = 38
+1623512674.868209 read(32, "", 4096)    = 0
+1623512674.868322 write(1, "29: naewQwKyCfOmraXpMZxhapJwUANA"..., 106) = 106
+1623512674.868478 openat(AT_FDCWD, "./data/lovZQPZiMSZRYecURpKXYqXlkdSUuArYOaEStlQMEBEVXEINeUkDgkAqOej", O_RDONLY) = 33
+1623512674.868606 fstat(33, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.868733 read(33, "sgQFEHUMtoDtKettkSSNnoSKVzwzzbQM"..., 4096) = 80
+1623512674.868854 read(33, "", 4096)    = 0
+1623512674.868982 write(1, "30: lovZQPZiMSZRYecURpKXYqXlkdSU"..., 147) = 147
+1623512674.869129 openat(AT_FDCWD, "./data/LmjmprltFIqDrYpQRBUqVKhXLfvqpyzgATOBdoWQokHnTUCPUfnBNfOTueSF", O_RDONLY) = 34
+1623512674.869255 fstat(34, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.869384 read(34, "FAUST_YMTL8AAmBTe0d/8AAAAAcsKW/J"..., 4096) = 38
+1623512674.869503 read(34, "", 4096)    = 0
+1623512674.869615 write(1, "31: LmjmprltFIqDrYpQRBUqVKhXLfvq"..., 106) = 106
+1623512674.869763 openat(AT_FDCWD, "./data/pWeauVHvToNPQjwQdVfTTijoQCkPmeLllCNHiYjSFgutWFThPkMUJNJZJsw", O_RDONLY) = 35
+1623512674.869908 fstat(35, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.870038 read(35, "JgNEMDQGSCUNPmcFzIOAPrhwTOtHuyRx"..., 4096) = 80
+1623512674.870157 read(35, "", 4096)    = 0
+1623512674.870270 write(1, "32: pWeauVHvToNPQjwQdVfTTijoQCkP"..., 147) = 147
+1623512674.870452 openat(AT_FDCWD, "./data/ECKVCRoXBOzQDjTuNDlUEJvKOLLxaiOlwsKvqIyeGLOKLYlXnJGKewbbzsfP", O_RDONLY) = 36
+1623512674.870555 fstat(36, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.870654 read(36, "FAUST_YMTMpAAmBcH7MxoAAAAAWuYSHD"..., 4096) = 38
+1623512674.870757 read(36, "", 4096)    = 0
+1623512674.870847 write(1, "33: ECKVCRoXBOzQDjTuNDlUEJvKOLLx"..., 106) = 106
+1623512674.870968 openat(AT_FDCWD, "./data/OqQNrgvlQNxaBvcrKUGUYHxaNPEstoIMUBrmJnbfMvUjeoWjeHpnCUBBsex", O_RDONLY) = 37
+1623512674.871071 fstat(37, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.871169 read(37, "gGPWGJjcjgYbLXMtdpbAekfGbJJfFTDP"..., 4096) = 80
+1623512674.871261 read(37, "", 4096)    = 0
+1623512674.871347 write(1, "34: OqQNrgvlQNxaBvcrKUGUYHxaNPEs"..., 147) = 147
+1623512674.960650 openat(AT_FDCWD, "./data/AtlegXRuBSXRSptfOMPlVzViWzYAExHgMkTHGHqguNeLXjqpgIWlcUjxWGzz", O_RDONLY) = 38
+1623512674.960901 fstat(38, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.961167 read(38, "FAUST_YMTNWAAmBTArs7UAAAAAJYGQWL"..., 4096) = 38
+1623512674.961291 read(38, "", 4096)    = 0
+1623512674.961408 write(1, "35: AtlegXRuBSXRSptfOMPlVzViWzYA"..., 106) = 106
+1623512674.961625 openat(AT_FDCWD, "./data/IZcLOWVGcvcIefBtOhXtKhYcVFzFGinzpKjePSSTlFVYnMVyjURduBcjrVt", O_RDONLY) = 39
+1623512674.961764 fstat(39, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.961898 read(39, "bZJOhykxZtpgSNSYubtfGqMgPLAkgCvv"..., 4096) = 80
+1623512674.962021 read(39, "", 4096)    = 0
+1623512674.962159 write(1, "36: IZcLOWVGcvcIefBtOhXtKhYcVFzF"..., 147) = 147
+1623512674.962306 openat(AT_FDCWD, "./data/kvlwEHEWaxZnyjrPcNgSTNHdFaGceCNfVmIJsSChdsAmQCkIRICuxavcJPqa", O_RDONLY) = 40
+1623512674.962481 fstat(40, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.962628 read(40, "FAUST_YMTODAAmBTPkUZAAAAAAc6dvLD"..., 4096) = 38
+1623512674.962757 read(40, "", 4096)    = 0
+1623512674.962876 write(1, "37: kvlwEHEWaxZnyjrPcNgSTNHdFaGc"..., 106) = 106
+1623512674.963045 openat(AT_FDCWD, "./data/ErBYLStinYeAnCeffkZOXYaVOhSTVqWsvdrXANGFjHGLCShpTuuFLNNMwbJ", O_RDONLY) = 41
+1623512674.963184 fstat(41, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.963327 read(41, "AsEInOAMMUqoydHlZrQBQWZXxFyvFRbD"..., 4096) = 80
+1623512674.963455 read(41, "", 4096)    = 0
+1623512674.963575 write(1, "38: ErBYLStinYeAnCeffkZOXYaVOhST"..., 147) = 147
+1623512674.963735 openat(AT_FDCWD, "./data/XzkeetjIlWubPdFhdJeFPGSwULAwxTXFtumVHYgpySpeUBqFhwEctwCBblIz", O_RDONLY) = 42
+1623512674.963870 fstat(42, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.964016 read(42, "FAUST_YMTOwAAmBQ9/AC4AAAAAqchwVL"..., 4096) = 38
+1623512674.964177 read(42, "", 4096)    = 0
+1623512674.964299 write(1, "39: XzkeetjIlWubPdFhdJeFPGSwULAw"..., 106) = 106
+1623512674.964453 openat(AT_FDCWD, "./data/rVqfDfSZbJaLohnFLEzjTghwJoCGyHfpFcYQUInpYbzxwmwiQcnCXuCOXzB", O_RDONLY) = 43
+1623512674.964581 fstat(43, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.964722 read(43, "vcgMueNLMaEieUnDgkFfwRKydEINqNvy"..., 4096) = 80
+1623512674.964849 read(43, "", 4096)    = 0
+1623512674.965013 write(1, "40: rVqfDfSZbJaLohnFLEzjTghwJoCG"..., 147) = 147
+1623512674.965172 openat(AT_FDCWD, "./data/PtAYlNoJcBATVpbsMixfyYvPtmiLLNPXXvEcnsJuGPvLTdqNcNlcMoTPUJuU", O_RDONLY) = 44
+1623512674.965314 fstat(44, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.965454 read(44, "FAUST_YMTPdAAmBaAP8FMAAAAA6Et3w5"..., 4096) = 38
+1623512674.965582 read(44, "", 4096)    = 0
+1623512674.965700 write(1, "41: PtAYlNoJcBATVpbsMixfyYvPtmiL"..., 106) = 106
+1623512674.965847 openat(AT_FDCWD, "./data/vDwkfowILBSTuywMNaMdFdcESECFYbRXdHvPNWmoMMbnHgxAdoryAWwQopM", O_RDONLY) = 45
+1623512674.965972 fstat(45, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.966111 read(45, "oWAOIQTFtMcpiILYKVfmBuGWoMdBDHPH"..., 4096) = 80
+1623512674.966240 read(45, "", 4096)    = 0
+1623512674.966360 write(1, "42: vDwkfowILBSTuywMNaMdFdcESECF"..., 147) = 147
+1623512674.966542 openat(AT_FDCWD, "./data/RnjSSxZEsHuvJONtjpYBflAuCiNzYNHxmTUBtlDcILGQkNXFcKuYZyMqnaMF", O_RDONLY) = 46
+1623512674.966677 fstat(46, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.966818 read(46, "FAUST_YMTQKAAmBcNkQBoAAAAANkRuOh"..., 4096) = 38
+1623512674.966953 read(46, "", 4096)    = 0
+1623512674.967071 write(1, "43: RnjSSxZEsHuvJONtjpYBflAuCiNz"..., 106) = 106
+1623512674.967226 openat(AT_FDCWD, "./data/VBkAmzjDWRiKJqRRzbaQSeovDRjUqEsqicfUIqJeFQWLTucgthXUlzrSZRF", O_RDONLY) = 47
+1623512674.967355 fstat(47, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.967498 read(47, "glrWybftEfRIJRJOHAfvZxdxtyUGqxSV"..., 4096) = 80
+1623512674.967626 read(47, "", 4096)    = 0
+1623512674.967744 write(1, "44: VBkAmzjDWRiKJqRRzbaQSeovDRjU"..., 147) = 147
+1623512674.967903 openat(AT_FDCWD, "./data/dTuQALzjOyifmgDXRNYyHHBSAMuYFXwlbezuFKZuqqLSuRMojvuYQaIELjOL", O_RDONLY) = 48
+1623512674.968038 fstat(48, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.968180 read(48, "FAUST_YMTQ3AAmBcpgweoAAAAAuCDtCL"..., 4096) = 38
+1623512674.968306 read(48, "", 4096)    = 0
+1623512674.968425 write(1, "45: dTuQALzjOyifmgDXRNYyHHBSAMuY"..., 106) = 106
+1623512674.968570 openat(AT_FDCWD, "./data/TXOpBQvGvKqFmjgpULPHmKZtsJtLweIlerUrfSTZWRxOUQycBMjludiuoIP", O_RDONLY) = 49
+1623512674.968695 fstat(49, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.968837 read(49, "TRfrImJdSPXHDYNZwLxnknbYausLPHhk"..., 4096) = 80
+1623512674.968986 read(49, "", 4096)    = 0
+1623512674.969113 write(1, "46: TXOpBQvGvKqFmjgpULPHmKZtsJtL"..., 147) = 147
+1623512674.969256 openat(AT_FDCWD, "./data/EpGaxwqkzkmAtqnsmhEMPgJzCdeLCOorfYLRjYVzlJxXupwtPnPxrXlvADCS", O_RDONLY) = 50
+1623512674.969382 fstat(50, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.969527 read(50, "FAUST_YMTRkAAmBSbCD98AAAAAUutTqh"..., 4096) = 38
+1623512674.969636 read(50, "", 4096)    = 0
+1623512674.969759 write(1, "47: EpGaxwqkzkmAtqnsmhEMPgJzCdeL"..., 106) = 106
+1623512674.969933 openat(AT_FDCWD, "./data/vPOVSQdgDatrAmStiVjAMBhdIXlMmRxGGwqbXZIjBJCrhGGgSnIOkRbWSSK", O_RDONLY) = 51
+1623512674.970061 fstat(51, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512674.970200 read(51, "oDqabMlDxrhIukBKKiYzfEAbSdIKoZiS"..., 4096) = 80
+1623512674.970324 read(51, "", 4096)    = 0
+1623512674.970461 write(1, "48: vPOVSQdgDatrAmStiVjAMBhdIXlM"..., 147) = 147
+1623512674.970609 openat(AT_FDCWD, "./data/mTHDnswiGkqIADJcRQkLQEoTiUZcCueJtYHaUIIqeDVKvzlewPhAgKWhwPnJ", O_RDONLY) = 52
+1623512674.970735 fstat(52, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512674.970874 read(52, "FAUST_YMTSRAAmBchUW8EAAAAAJ2guQi"..., 4096) = 38
+1623512674.970999 read(52, "", 4096)    = 0
+1623512674.971124 write(1, "49: mTHDnswiGkqIADJcRQkLQEoTiUZc"..., 106) = 106
+1623512674.971266 openat(AT_FDCWD, "./data/WQNcxCeCdYUMXbENiUioAEMvIOoSlplBoliekIjGIEYqJGosxVvQwEqkFwP", O_RDONLY) = 53
+1623512675.060611 fstat(53, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512675.060828 read(53, "BzmQCYyIoYNrtKKgTHdLPNXTpHJhKOBE"..., 4096) = 80
+1623512675.061024 read(53, "", 4096)    = 0
+1623512675.061172 write(1, "50: WQNcxCeCdYUMXbENiUioAEMvIOoS"..., 147) = 147
+1623512675.061401 openat(AT_FDCWD, "./data/OTpnbFjFiPTiTJdcImfYYILLftbXfJEDzclaETsdqRqGuEaUEdLgiKdSmCva", O_RDONLY) = 54
+1623512675.061558 fstat(54, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512675.061720 read(54, "FAUST_YMTS+AAmBZ/wquMAAAAAcXD0jN"..., 4096) = 38
+1623512675.061879 read(54, "", 4096)    = 0
+1623512675.062000 write(1, "51: OTpnbFjFiPTiTJdcImfYYILLftbX"..., 106) = 106
+1623512675.062165 openat(AT_FDCWD, "./data/WfFoftvTXLdbEumAxQjhMHaosvppeGXJaLXbtRbZuqLgNRRskijXLDePzjQ", O_RDONLY) = 55
+1623512675.062308 fstat(55, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512675.062504 read(55, "fZITnWYEAeefDkfEOjCerUUdLIteeIHI"..., 4096) = 80
+1623512675.062663 read(55, "", 4096)    = 0
+1623512675.062807 write(1, "52: WfFoftvTXLdbEumAxQjhMHaosvpp"..., 147) = 147
+1623512675.062968 openat(AT_FDCWD, "./data/iAvdaUKgkMEKHpibTwQOYSkstSucnrDozWWQnXmnKkkBCsvnQyutcgBrBvQg", O_RDONLY) = 56
+1623512675.063110 fstat(56, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512675.063256 read(56, "FAUST_YMTTrAAmBeb/G6YAAAAAnPF0Bk"..., 4096) = 38
+1623512675.063412 read(56, "", 4096)    = 0
+1623512675.063531 write(1, "53: iAvdaUKgkMEKHpibTwQOYSkstSuc"..., 106) = 106
+1623512675.063692 openat(AT_FDCWD, "./data/UGRooVhjvirtWjQsGJkdShEZvHFARsCWdzTcDKqdIpSmHiYpHyEcDfKsdcE", O_RDONLY) = 57
+1623512675.063834 fstat(57, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512675.063992 read(57, "RsDycHdqfvUkTITnbmfUHwsNMjoKUoUs"..., 4096) = 80
+1623512675.064150 read(57, "", 4096)    = 0
+1623512675.064292 write(1, "54: UGRooVhjvirtWjQsGJkdShEZvHFA"..., 147) = 147
+1623512675.064518 openat(AT_FDCWD, "./data/NLasdZvWgkssZhXmBURyGOrEaWDxvoXaTjqXCLBsoOMNupeicZKwlyxTrzEq", O_RDONLY) = 58
+1623512675.064702 fstat(58, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512675.064866 read(58, "FAUST_YMTUYAAmBWhElggAAAAAekXyIn"..., 4096) = 38
+1623512675.065015 read(58, "", 4096)    = 0
+1623512675.065108 write(1, "55: NLasdZvWgkssZhXmBURyGOrEaWDx"..., 106) = 106
+1623512675.065265 openat(AT_FDCWD, "./data/lcgyLrEHsiodgsymaIyBalkQApaLfnNLhBoeYfvdqfMYNRmKukTBRYIHgQT", O_RDONLY) = 59
+1623512675.065397 fstat(59, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512675.065532 read(59, "kihvZgmcPEozPEdBQqOIGKPiAVYpYGdO"..., 4096) = 80
+1623512675.065645 read(59, "", 4096)    = 0
+1623512675.065732 write(1, "56: lcgyLrEHsiodgsymaIyBalkQApaL"..., 147) = 147
+1623512675.065863 openat(AT_FDCWD, "./data/xaHOjMRwAhzLXzEdByOkDjYEdgwHzwdrrTeBTnEbIrJyLNGYjRVHlNgqyLEy", O_RDONLY) = 60
+1623512675.065974 fstat(60, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512675.066079 brk(0x55d010e71000)   = 0x55d010e71000
+1623512675.066202 read(60, "FAUST_YMTVFAAmBbF5iHMAAAAAzsBK1R"..., 4096) = 38
+1623512675.066316 read(60, "", 4096)    = 0
+1623512675.066429 write(1, "57: xaHOjMRwAhzLXzEdByOkDjYEdgwH"..., 106) = 106
+1623512675.066597 openat(AT_FDCWD, "./data/djMUFxVbgfRJfEiYRyjoMREoqcyBuhjcItNOljpBYMJrLeTtmqRluoydvFb", O_RDONLY) = 61
+1623512675.066749 fstat(61, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512675.066885 read(61, "yHwtNbIflSyJPESRgJPVhsyYBwqDBiHN"..., 4096) = 80
+1623512675.066999 read(61, "", 4096)    = 0
+1623512675.067087 write(1, "58: djMUFxVbgfRJfEiYRyjoMREoqcyB"..., 147) = 147
+1623512675.067243 openat(AT_FDCWD, "./data/lUMHDLjbSOGKpXGRPpKWLOYMlxGZAwaHkEUGEqNjOkHCgTMEgrxhEfNXCJBj", O_RDONLY) = 62
+1623512675.067371 fstat(62, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512675.067491 read(62, "FAUST_YMTVyAAmBd37jlIAAAAAJ2G7g7"..., 4096) = 38
+1623512675.067601 read(62, "", 4096)    = 0
+1623512675.067688 write(1, "59: lUMHDLjbSOGKpXGRPpKWLOYMlxGZ"..., 106) = 106
+1623512675.067827 openat(AT_FDCWD, "./data/wnMUwdMaWCTetcukGnKcncCmGtIZHHYkCSGaDBkRIIrjonYPlvWWkydlqZA", O_RDONLY) = 63
+1623512675.067976 fstat(63, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512675.068152 read(63, "RXEVPXWtCCBvcqjtxAuDPoFWRLwgLfry"..., 4096) = 80
+1623512675.068267 read(63, "", 4096)    = 0
+1623512675.068354 write(1, "60: wnMUwdMaWCTetcukGnKcncCmGtIZ"..., 147) = 147
+1623512675.068476 openat(AT_FDCWD, "./data/MiYGWqoweRATmbolpJNrjKihydkFwyvOArxTnkYZyrEBgcUGbMgMKjvFqAHl", O_RDONLY) = 64
+1623512675.068626 fstat(64, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512675.068745 read(64, "FAUST_YMTWfAAmBQhLLU8AAAAA77aC5V"..., 4096) = 38
+1623512675.069188 read(64, "", 4096)    = 0
+1623512675.069352 write(1, "61: MiYGWqoweRATmbolpJNrjKihydkF"..., 106) = 106
+1623512675.069516 openat(AT_FDCWD, "./data/DscGnZaqAfLcALljUPvCpEsproOZqrorwRSKWdEPmblKdWDksRWwkjRixHM", O_RDONLY) = 65
+1623512675.069664 fstat(65, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512675.069797 read(65, "rhHNmykEOCIFzoHDulMhjOTvPhbJUHwc"..., 4096) = 80
+1623512675.069908 read(65, "", 4096)    = 0
+1623512675.069994 write(1, "62: DscGnZaqAfLcALljUPvCpEsproOZ"..., 147) = 147
+1623512675.070148 openat(AT_FDCWD, "./data/OmNWSPeDpwAmoCyQiCntzaZzMIvHFAVnEvXkPZeqNegzmEsECzQxerafopAB", O_RDONLY) = 66
+1623512675.070285 fstat(66, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512675.070411 read(66, "FAUST_YMTXMAAmBeTp43oAAAAAqzFrhH"..., 4096) = 38
+1623512675.070553 read(66, "", 4096)    = 0
+1623512675.070641 write(1, "63: OmNWSPeDpwAmoCyQiCntzaZzMIvH"..., 106) = 106
+1623512675.070775 openat(AT_FDCWD, "./data/TqsnxqatBXvUxvHAWhrFXNRCbAKMhBhpIBjMRdTWbaLfhFIGYAdqCSYhMxR", O_RDONLY) = 67
+1623512675.070902 fstat(67, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512675.071031 read(67, "ceduXvGhaPHdEcxtuFUaTpOMMsKuVEHt"..., 4096) = 80
+1623512675.071141 read(67, "", 4096)    = 0
+1623512675.071227 write(1, "64: TqsnxqatBXvUxvHAWhrFXNRCbAKM"..., 147) = 147
+1623512675.071374 openat(AT_FDCWD, "./data/KNNjedVOSroFNnuxWiEsOERjHmDiNpretaKjcbnBdxUPVivJMVHQjwLLQjOL", O_RDONLY) = 68
+1623512675.160701 fstat(68, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512675.161107 read(68, "FAUST_YMTX5AAmBU3fzbQAAAAANcMMGu"..., 4096) = 38
+1623512675.161270 read(68, "", 4096)    = 0
+1623512675.161387 write(1, "65: KNNjedVOSroFNnuxWiEsOERjHmDi"..., 106) = 106
+1623512675.161594 openat(AT_FDCWD, "./data/ZtcGeQvwSEhgqACUafopldlfpmLrpWplpZFHpCyqgbHjjPGJthKdWLABjrc", O_RDONLY) = 69
+1623512675.161751 fstat(69, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512675.161881 read(69, "nxnxGuJDeuLnnslUQNmIWcQYebomkmUF"..., 4096) = 80
+1623512675.161991 read(69, "", 4096)    = 0
+1623512675.162095 write(1, "66: ZtcGeQvwSEhgqACUafopldlfpmLr"..., 147) = 147
+1623512675.162238 openat(AT_FDCWD, "./data/DJFhIOwStcVOOKfAyopzEeRGRkAxBenNoYcBkcFPyODNsYxFSAUwMvxmSAhi", O_RDONLY) = 70
+1623512675.162360 fstat(70, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512675.162527 read(70, "FAUST_YMTYmAAmBe5mRUEAAAAA4FBP6e"..., 4096) = 38
+1623512675.162665 read(70, "", 4096)    = 0
+1623512675.162774 write(1, "67: DJFhIOwStcVOOKfAyopzEeRGRkAx"..., 106) = 106
+1623512675.162917 read(3, "EmEwbXLYnmfIIqYrw\nXSzFmvXvhZFINj"..., 4096) = 139
+1623512675.163049 openat(AT_FDCWD, "./data/YuCooBmHNsInwAxVmGcaItkwAIvCnDuHhkgemYHWnNEmEwbXLYnmfIIqYrw", O_RDONLY) = 71
+1623512675.163166 fstat(71, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512675.163291 read(71, "xxCDWOqDcGLkyxqLlUdcBLEndWFKrIMV"..., 4096) = 80
+1623512675.163401 read(71, "", 4096)    = 0
+1623512675.163505 write(1, "68: YuCooBmHNsInwAxVmGcaItkwAIvC"..., 147) = 147
+1623512675.163645 openat(AT_FDCWD, "./data/XSzFmvXvhZFINjvxizVwmCgbpQYPGHNOeuhHtwDyafMWJxgOEGQTuHYcMcth", O_RDONLY) = 72
+1623512675.163771 fstat(72, {st_mode=S_IFREG|0600, st_size=38, ...}) = 0
+1623512675.163895 read(72, "FAUST_YMTZTAAmBXowQj8AAAAAZFlJF+"..., 4096) = 38
+1623512675.164004 read(72, "", 4096)    = 0
+1623512675.164102 write(1, "69: XSzFmvXvhZFINjvxizVwmCgbpQYP"..., 106) = 106
+1623512675.164240 openat(AT_FDCWD, "./data/hEEPakrWysnBKysIUmLsDrKIOtvzCNqCaczisOeCUkukljUKEkpELaYnjXV", O_RDONLY) = 73
+1623512675.164366 fstat(73, {st_mode=S_IFREG|0600, st_size=80, ...}) = 0
+1623512675.164490 read(73, "kNEFXHtBLaRuiCUBpBkTnmYnMWYGpXFC"..., 4096) = 80
+1623512675.164621 read(73, "", 4096)    = 0
+1623512675.164735 write(1, "70: hEEPakrWysnBKysIUmLsDrKIOtvz"..., 147) = 147
+1623512675.164877 read(3, "", 4096)     = 0
+1623512675.165039 close(3)              = 0
+1623512675.165150 write(1, "That's it!\n", 11) = 11
+1623512675.165291 write(1, "\nChoose an action:\n", 19) = 19
+1623512675.165424 write(1, "-> add treasure location\n", 25) = 25
+1623512675.165574 write(1, "-> view treasure locations\n", 27) = 27
+1623512675.165708 write(1, "-> update treasure location\n", 28) = 28
+1623512675.165842 write(1, "-> print logs\n", 14) = 14
+1623512675.165975 write(1, "-> quit\n", 8) = 8
+1623512675.166108 write(1, "  > ", 4)   = 4
+1623512675.166241 read(0, "", 4096)     = 0
+1623512675.281027 write(1, "Goodbye!:)\n", 11) = 11
+1623512675.281283 exit_group(0)         = ?
+1623512675.281630 +++ exited with 0 +++
