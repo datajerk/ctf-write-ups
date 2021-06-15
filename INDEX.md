@@ -11,6 +11,8 @@ _8086_
 _a/d_
 
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
+* [faustctf2021/treasury](faustctf2021/treasury/README.md)
+* [faustctf2021/veighty-machinery](faustctf2021/veighty-machinery/README.md)
 
 _aarch64_
 
@@ -442,6 +444,7 @@ _pwn_
 * [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
 * [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
+* [faustctf2021/veighty-machinery](faustctf2021/veighty-machinery/README.md)
 * [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
 * [fwordctf2020/ezret2win](fwordctf2020/ezret2win/README.md)
 * [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
@@ -515,6 +518,10 @@ _real-mode_
 
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 
+_reflection_
+
+* [faustctf2021/treasury](faustctf2021/treasury/README.md)
+
 _remote-shell_
 
 * [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
@@ -546,6 +553,7 @@ _remote-shell_
 * [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
 * [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
+* [faustctf2021/veighty-machinery](faustctf2021/veighty-machinery/README.md)
 * [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
 * [fwordctf2020/one\_piece](fwordctf2020/one\_piece/README.md)
 * [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
@@ -621,6 +629,7 @@ _rev_
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 * [dc2020q/ooobash](dc2020q/ooobash/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
+* [faustctf2021/treasury](faustctf2021/treasury/README.md)
 * [fwordctf2020/welcome\_reverser](fwordctf2020/welcome\_reverser/README.md)
 * [pbctf2020/not\_stego](pbctf2020/not\_stego/README.md)
 * [sharkyctf2020/z3robotwaves](sharkyctf2020/z3robotwaves/README.md)
@@ -711,6 +720,11 @@ _scanf_
 
 * [cyberapocalypsectf2021/controller](cyberapocalypsectf2021/controller/README.md)
 * [nahamconctf2021/rps](nahamconctf2021/rps/README.md)
+
+_shameless_
+
+* [faustctf2021/treasury](faustctf2021/treasury/README.md)
+* [faustctf2021/veighty-machinery](faustctf2021/veighty-machinery/README.md)
 
 _shell_
 
@@ -895,6 +909,8 @@ _x86-64_
 * [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
 * [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
+* [faustctf2021/treasury](faustctf2021/treasury/README.md)
+* [faustctf2021/veighty-machinery](faustctf2021/veighty-machinery/README.md)
 * [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
 * [fwordctf2020/ezret2win](fwordctf2020/ezret2win/README.md)
 * [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
