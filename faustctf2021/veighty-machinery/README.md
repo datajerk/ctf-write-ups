@@ -25,7 +25,7 @@ Give me your bytecode!
 I will load the cannon and execute it.
 ```
 
-Bytecode!  _(Groan)_, I have near zero skills in this area.
+Bytecode!  _(groan)_, I have near zero skills in this area.
 
 **Plan B: Wait to be attacked and learn from our attackers.**
 
@@ -143,6 +143,6 @@ If you've done any CTF pwn challenges you'll recognize base and libc addresses, 
 1623530151.230630 read(0, "h\216\377\277z\177\0\0", 8) = 8
 ```
 
-After the initial payload, this address (`0x7f7abfff5be0`) is received, looks like libc to me, what exactly, dunno, don't care, then our attacker sent back `h\216\377\277z\177\0\0` (`0x7f7abfff8e68`), the difference is `12936`.  So for our exploit script, we just need to add that number to whatever address we receive and send it back.  _Why?_  I have no idea.  We're just copying another's exploit and need ours to behave exactly the same.  Repeat for the rest of the `strace` dump.
+After the initial payload, an address (`0x7f7abfff5be0`) is received, looks like libc to me, what exactly, dunno, don't care, then our attacker sent back `h\216\377\277z\177\0\0` (`0x7f7abfff8e68`), the difference is `12936`.  So for our exploit script, we just need to add that number to whatever address we receive and send it back.  _Why?_  I have no idea.  We're just copying another's exploit and need ours to behave exactly the same.  Repeat for the rest of the `strace` dump.
 
 A/D is just the best.
