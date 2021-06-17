@@ -58,7 +58,7 @@ Checking out the longer files reveals the input as describe in the aforementione
 
 ![](strace.png)
 
-With this in hand, getting other's flags was now trivial.
+With this in hand, getting other's flags was trivial.
 
 
 ## Mitigation
