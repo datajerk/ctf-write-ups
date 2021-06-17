@@ -65,7 +65,7 @@ With this in hand, getting other's flags was now trivial.
 
 Without understanding exactly how this hack worked, mitigation was going to be a bit crude.
 
-First we changed the service to listen to port `6790` vs. the original `6789`, then simply ran:
+First we changed the service to listen to port `6790` from the original `6789`, then simply ran:
 
 ```
 socat -ls tcp6-listen:6789,reuseaddr,fork system:/srv/treasury/fuckyou.sh
