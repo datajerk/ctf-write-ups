@@ -124,6 +124,7 @@ _bof_
 * [redpwnctf2020/dead-canary](redpwnctf2020/dead-canary/README.md)
 * [redpwnctf2020/skywriting](redpwnctf2020/skywriting/README.md)
 * [redpwnctf2020/the-library](redpwnctf2020/the-library/README.md)
+* [redpwnctf2021/getsome\_beginner-generic-pwn-number-0\_ret2generic-flag-reader\_ret2the-unknown](redpwnctf2021/getsome\_beginner-generic-pwn-number-0\_ret2generic-flag-reader\_ret2the-unknown/README.md)
 * [sharkyctf2020/captain\_hook](sharkyctf2020/captain\_hook/README.md)
 * [sharkyctf2020/giveaway0](sharkyctf2020/giveaway0/README.md)
 * [sharkyctf2020/giveaway1](sharkyctf2020/giveaway1/README.md)
@@ -225,6 +226,7 @@ _format-string_
 * [ractf2020/fias](ractf2020/fias/README.md)
 * [ractf2020/nra](ractf2020/nra/README.md)
 * [redpwnctf2020/dead-canary](redpwnctf2020/dead-canary/README.md)
+* [redpwnctf2021/please](redpwnctf2021/please/README.md)
 * [sharkyctf2020/captain\_hook](sharkyctf2020/captain\_hook/README.md)
 * [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tenablectf2021/queensgambit](tenablectf2021/queensgambit/README.md)
@@ -284,6 +286,7 @@ _hash-collision_
 _heap_
 
 * [dctf2021/just\_another\_heap](dctf2021/just\_another\_heap/README.md)
+* [redpwnctf2021/simultaneity](redpwnctf2021/simultaneity/README.md)
 * [umdctf2021/jif](umdctf2021/jif/README.md)
 
 _heap-not_
@@ -477,6 +480,9 @@ _pwn_
 * [redpwnctf2020/kevin-higgs](redpwnctf2020/kevin-higgs/README.md)
 * [redpwnctf2020/skywriting](redpwnctf2020/skywriting/README.md)
 * [redpwnctf2020/the-library](redpwnctf2020/the-library/README.md)
+* [redpwnctf2021/getsome\_beginner-generic-pwn-number-0\_ret2generic-flag-reader\_ret2the-unknown](redpwnctf2021/getsome\_beginner-generic-pwn-number-0\_ret2generic-flag-reader\_ret2the-unknown/README.md)
+* [redpwnctf2021/please](redpwnctf2021/please/README.md)
+* [redpwnctf2021/simultaneity](redpwnctf2021/simultaneity/README.md)
 * [sharkyctf2020/captain\_hook](sharkyctf2020/captain\_hook/README.md)
 * [sharkyctf2020/giveaway0](sharkyctf2020/giveaway0/README.md)
 * [sharkyctf2020/giveaway1](sharkyctf2020/giveaway1/README.md)
@@ -595,6 +601,7 @@ _ret2csu_
 
 _ret2dlresolve_
 
+* [redpwnctf2021/getsome\_beginner-generic-pwn-number-0\_ret2generic-flag-reader\_ret2the-unknown](redpwnctf2021/getsome\_beginner-generic-pwn-number-0\_ret2generic-flag-reader\_ret2the-unknown/README.md)
 * [umdctf2021/jie-jne-jnw](umdctf2021/jie-jne-jnw/README.md)
 * [utctf2021/resolve](utctf2021/resolve/README.md)
 
@@ -720,6 +727,7 @@ _scanf_
 
 * [cyberapocalypsectf2021/controller](cyberapocalypsectf2021/controller/README.md)
 * [nahamconctf2021/rps](nahamconctf2021/rps/README.md)
+* [redpwnctf2021/simultaneity](redpwnctf2021/simultaneity/README.md)
 
 _shameless_
 
@@ -935,6 +943,9 @@ _x86-64_
 * [redpwnctf2020/dead-canary](redpwnctf2020/dead-canary/README.md)
 * [redpwnctf2020/skywriting](redpwnctf2020/skywriting/README.md)
 * [redpwnctf2020/the-library](redpwnctf2020/the-library/README.md)
+* [redpwnctf2021/getsome\_beginner-generic-pwn-number-0\_ret2generic-flag-reader\_ret2the-unknown](redpwnctf2021/getsome\_beginner-generic-pwn-number-0\_ret2generic-flag-reader\_ret2the-unknown/README.md)
+* [redpwnctf2021/please](redpwnctf2021/please/README.md)
+* [redpwnctf2021/simultaneity](redpwnctf2021/simultaneity/README.md)
 * [sharkyctf2020/captain\_hook](sharkyctf2020/captain\_hook/README.md)
 * [sharkyctf2020/giveaway0](sharkyctf2020/giveaway0/README.md)
 * [sharkyctf2020/giveaway2](sharkyctf2020/giveaway2/README.md)
