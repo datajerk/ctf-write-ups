@@ -53,7 +53,7 @@ I'm not going to cover all the internals or details of ret2dlresolve (in this wr
     PIE:      No PIE (0x400000)
 ```
 
-All three had at least the above--all that is needed for easy ret2dlresolve with `gets`.  That and dynamically linked.
+All three had at least the above--all that is needed for easy ret2dlresolve with `gets`.  That, and dynamically linked.
 
 > Perhaps it's time to retire `gets`.
 
