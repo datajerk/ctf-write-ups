@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+#readme: https://github.com/datajerk/ctf-write-ups/tree/master/redpwnctf2021/getsome_beginner-generic-pwn-number-0_ret2generic-flag-reader_ret2the-unknown
+
 from pwn import *
 
 binary = context.binary = ELF(args.BIN)
