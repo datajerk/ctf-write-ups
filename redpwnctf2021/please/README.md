@@ -16,7 +16,7 @@ Tags: _pwn_ _x86-64_ _format-string_
 
 ## Summary
 
-Classic leak the flag from the stack.
+Classic _leak the flag from the stack_.
 
 
 ## Analysis
