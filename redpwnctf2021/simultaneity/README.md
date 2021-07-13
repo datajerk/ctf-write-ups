@@ -16,6 +16,8 @@ Tags: _pwn_ _x86-64_ _heap_ _scanf_
 
 ## Summary
 
+Fun challenge where `scanf` does double duty writing out our exploit, but also triggering it.
+
 
 ## Analysis
 
@@ -58,7 +60,7 @@ void main(void)
 }
 ```
 
-That `_exit(0)` at the end basically takes care of any potential stack-based buffer overflow.
+That `_exit(0)` at the end basically takes care of any potential stack-based buffer overflow (the compiler new this, so no need for the canary).
 
 The `malloc` return isn't being checked for NULL, so using a NULL pointer + the `how far?`; you have an 8-byte _write-what-where_, but where to write?  Need a leak.
 
