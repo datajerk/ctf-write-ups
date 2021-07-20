@@ -182,13 +182,15 @@ p.sendlineafter('?\n','3')
 
 There's a lot to unpack here in round one.
 
-The `read` buffer `local_98` is `98 - 10` from `local_10`.  Canaries have their LSB always set to `00`.  That null will make the aforementioned `strcpy` based editor impossible to use, plus it will also terminate string when displaying, so we'll have to add one to our write to replace the `00` with an `A`.  Then we can simply display the string to get the canary.
+The `read` buffer `local_98` is `98 - 10` from `local_10` (the canary).  Canaries have their LSB always set to `00`.  That null will make the aforementioned `strcpy` based editor impossible to use, plus it will also terminate the string when displaying, so we'll have to add one to our write to replace the `00` with an `A`.  Then we can simply display the string to get the canary.
 
 After that we need to reset `initialized` using the editor and going _backwards_.
 
-Next, write out a new return address and set it to `_start`, to start all over.  This is a bit tricky with this editor, you kinda have to do it from the end and work back, esp. if there are nulls in the address (can happen with ASLR).
+Next, write out a new return address and set it to `_start`, to start all over.  This is a bit tricky with this editor, you kinda have to do it from the end and work back.
 
-Lastly we can patch the canary and restore the `00` at the end, this has to be done last or we would have been unable to do the rest because of the `strcpy` editor.
+> Some clarity here.  The original return address was 48-bits, and the `_start` address is 24-bits, the working from backwards was to null out the address.
+
+Lastly we can patch the canary and restore the `00` at the end, this has to be done last or we would have been unable to do the rest because of the `strcpy`-based editor.
 
 ```python
 ## round 2: leak libc

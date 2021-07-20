@@ -83,7 +83,7 @@ void game(void)
 
 `local_108` is `0x108` from the return address, all that is necessary to get the flag is to overflow the buffer with `0x108` bytes followed by the address of `win`.  Easy.
 
-`sprintf` write to buffer `local_108` the contents of `local_48` and `local_88` twice with `local_48` being last, so that's where we need to put our exploit.
+`sprintf` writes to buffer `local_108` the contents of `local_48` and `local_88` each twice with `local_48` being last, so that's where we need to put our exploit.
 
 It's important we do not use nulls in our exploit, they will just terminate the strings and `sprintf` will not write out more complex attacks like ROP chains.
 
@@ -93,7 +93,7 @@ The math is pretty simple:  `0x108 + 3` (buffer size + payload) `- 2 * (60+3)` (
 
 `0x108 + 3 - 2 * 64 - 47 = 94; 94/2 = 47`
 
-> Yeah `47` again, it is just a coincident, you could use `59+3` and `48` if you like 
+> Yeah, `47` again; it is just a coincidence, you could use `59+3` and `48` if you like, or `58+3` and `46`, ... 
 
 
 
