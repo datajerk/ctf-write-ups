@@ -109,6 +109,9 @@ _bof_
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
 * [ijctf2020/admin](ijctf2020/admin/README.md)
 * [ijctf2020/input](ijctf2020/input/README.md)
+* [litctf2021/editor\_pwn](litctf2021/editor\_pwn/README.md)
+* [litctf2021/gets\_pwn](litctf2021/gets\_pwn/README.md)
+* [litctf2021/madlibs\_pwn](litctf2021/madlibs\_pwn/README.md)
 * [nahamconctf2020/dangerous](nahamconctf2020/dangerous/README.md)
 * [nahamconctf2020/ripe\_reader](nahamconctf2020/ripe\_reader/README.md)
 * [nahamconctf2020/shifts\_ahoy](nahamconctf2020/shifts\_ahoy/README.md)
@@ -190,6 +193,7 @@ _docker_
 
 _dtors_
 
+* [litctf2021/lazy\_pwn](litctf2021/lazy\_pwn/README.md)
 * [tjctf2020/naughty](tjctf2020/naughty/README.md)
 
 _ecc_
@@ -199,6 +203,10 @@ _ecc_
 _ffmpeg_
 
 * [ractf2020/br.mov](ractf2020/br.mov/README.md)
+
+_fini-array_
+
+* [litctf2021/lazy\_pwn](litctf2021/lazy\_pwn/README.md)
 
 _forensics_
 
@@ -220,6 +228,8 @@ _format-string_
 * [downunderctf2020/my\_first\_echo\_server](downunderctf2020/my\_first\_echo\_server/README.md)
 * [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
+* [litctf2021/lazy\_pwn](litctf2021/lazy\_pwn/README.md)
+* [litctf2021/printf\_pwn](litctf2021/printf\_pwn/README.md)
 * [nahamconctf2020/leet\_haxor](nahamconctf2020/leet\_haxor/README.md)
 * [nahamconctf2021/rps](nahamconctf2021/rps/README.md)
 * [ractf2020/fiap](ractf2020/fiap/README.md)
@@ -273,6 +283,7 @@ _got-overwrite_
 * [dctf2021/just\_another\_heap](dctf2021/just\_another\_heap/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
+* [litctf2021/lazy\_pwn](litctf2021/lazy\_pwn/README.md)
 * [nahamconctf2021/smol](nahamconctf2021/smol/README.md)
 * [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tenablectf2021/queensgambit](tenablectf2021/queensgambit/README.md)
@@ -368,6 +379,7 @@ _null-pointer_
 _one-gadget_
 
 * [cyberapocalypsectf2021/harvester](cyberapocalypsectf2021/harvester/README.md)
+* [litctf2021/lazy\_pwn](litctf2021/lazy\_pwn/README.md)
 
 _pow_
 
@@ -460,6 +472,11 @@ _pwn_
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
 * [ijctf2020/admin](ijctf2020/admin/README.md)
 * [ijctf2020/input](ijctf2020/input/README.md)
+* [litctf2021/editor\_pwn](litctf2021/editor\_pwn/README.md)
+* [litctf2021/gets\_pwn](litctf2021/gets\_pwn/README.md)
+* [litctf2021/lazy\_pwn](litctf2021/lazy\_pwn/README.md)
+* [litctf2021/madlibs\_pwn](litctf2021/madlibs\_pwn/README.md)
+* [litctf2021/printf\_pwn](litctf2021/printf\_pwn/README.md)
 * [nahamconctf2020/dangerous](nahamconctf2020/dangerous/README.md)
 * [nahamconctf2020/leet\_haxor](nahamconctf2020/leet\_haxor/README.md)
 * [nahamconctf2020/ripe\_reader](nahamconctf2020/ripe\_reader/README.md)
@@ -618,6 +635,7 @@ _ret2win_
 * [dctf2021/pwn\_sanity\_check](dctf2021/pwn\_sanity\_check/README.md)
 * [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
 * [fwordctf2020/ezret2win](fwordctf2020/ezret2win/README.md)
+* [litctf2021/madlibs\_pwn](litctf2021/madlibs\_pwn/README.md)
 * [nahamconctf2021/ret2basic](nahamconctf2021/ret2basic/README.md)
 * [nahamconctf2021/the\_list](nahamconctf2021/the\_list/README.md)
 
@@ -688,6 +706,7 @@ _rop_
 * [fwordctf2020/welcome\_pwner](fwordctf2020/welcome\_pwner/README.md)
 * [hsctf7/boredom](hsctf7/boredom/README.md)
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
+* [litctf2021/editor\_pwn](litctf2021/editor\_pwn/README.md)
 * [nahamconctf2020/dangerous](nahamconctf2020/dangerous/README.md)
 * [nahamconctf2020/ripe\_reader](nahamconctf2020/ripe\_reader/README.md)
 * [nahamconctf2020/shifts\_ahoy](nahamconctf2020/shifts\_ahoy/README.md)
@@ -823,6 +842,10 @@ _variable-overwrite_
 * [dctf2021/pinch\_me](dctf2021/pinch\_me/README.md)
 * [xmasctf2020/doiknowyou](xmasctf2020/doiknowyou/README.md)
 
+_variable-ovewrite_
+
+* [litctf2021/gets\_pwn](litctf2021/gets\_pwn/README.md)
+
 _video_
 
 * [ractf2020/br.mov](ractf2020/br.mov/README.md)
@@ -842,6 +865,7 @@ _write-what-where_
 * [dctf2021/magic\_trick](dctf2021/magic\_trick/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
+* [litctf2021/editor\_pwn](litctf2021/editor\_pwn/README.md)
 * [nahamconctf2021/sort\_it](nahamconctf2021/sort\_it/README.md)
 * [redpwnctf2020/kevin-higgs](redpwnctf2020/kevin-higgs/README.md)
 * [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
@@ -928,6 +952,11 @@ _x86-64_
 * [hsctf7/boredom](hsctf7/boredom/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
+* [litctf2021/editor\_pwn](litctf2021/editor\_pwn/README.md)
+* [litctf2021/gets\_pwn](litctf2021/gets\_pwn/README.md)
+* [litctf2021/lazy\_pwn](litctf2021/lazy\_pwn/README.md)
+* [litctf2021/madlibs\_pwn](litctf2021/madlibs\_pwn/README.md)
+* [litctf2021/printf\_pwn](litctf2021/printf\_pwn/README.md)
 * [nahamconctf2020/dangerous](nahamconctf2020/dangerous/README.md)
 * [nahamconctf2020/leet\_haxor](nahamconctf2020/leet\_haxor/README.md)
 * [nahamconctf2020/ripe\_reader](nahamconctf2020/ripe\_reader/README.md)
