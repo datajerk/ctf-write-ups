@@ -9,14 +9,14 @@
 >  
 > Difficulty: <s>Medium</s> Easy (read until the end to understand why I think this is easy)
 >
-> Venus is a medium box requiring more knowledge than the previous box, "Mercury", in this series. There are two flags on the box: a user and root flag which include an md5 hash. This has been tested on VirtualBox so may not work correctly on VMware. Any questions/issues or feedback please email me at: SirFlash at protonmail.com
+> Venus is a medium box requiring more knowledge than the previous box, "Mercury", in this series. There are two flags on the box: a user and root flag which include an md5 hash.
 
 
 Tags: _pwn_ _x86-64_ _bof_ _ret2csu_ _rop_ _rcx_
 
 ## Summary
 
-AB2 discorded me two files [venus_messaging](venus_messaging) and [libc.so.6](libc.so.6) and asked if I could help with this vulnbox.  I took a quick look at the binary in Ghidra and told AB2 it'd take me about an hour.
+AB2 discorded me two files [venus_messaging](venus_messaging) and [libc.so.6](libc.so.6), and asked if I could help with this vulnbox.  I took a quick look at the binary in Ghidra and told AB2 it'd take me about an hour.
 
 > I'd never heard of these Vulnhub vulnboxes before--AB2 send me the link above in the description.
 > 
@@ -78,7 +78,7 @@ bool recv_message(int param_1)
 }
 ```
 
-`recv(param_1,&local_418,0x800,0);` will receive `0x800` bytes into a buffer that is `0x418` (`local_418`) bytes from the return address on the stack.  That coupled with with no PIE and no canary makes for some easy pwning.
+`recv(param_1,&local_418,0x800,0);` will receive `0x800` bytes into a buffer that is `0x418` (`local_418`) bytes from the return address on the stack.  That, coupled with with no PIE and no canary, makes for some easy pwning.
 
 But...
 
