@@ -223,7 +223,7 @@ At this point we'll have a libc leak and could proceed with the 2nd pass and get
 
 Following the second `printf` `rcx` hack is another _ret2csu_ block, but this calls `recv` to write our `system` command to the BSS--it's common to use the BSS segment as a small scratch pad.
 
-Finally we pop the FD (0x4) into `rdi` so we can call `recv_message` for a second pass.
+Finally we `pop` the FD (0x4) into `rdi` so we can call `recv_message` for a second pass.
 
 At this point all we've done is login and create a ROP chain, nothing has been executed.
 
@@ -429,4 +429,4 @@ This single pass ROP chain is pretty straight forward:
 3. `pop` in the location of the BSS into `rdi`
 4. call `system`
 
-The `sleep` is required so that `recv` will stop reading and not consume our `command` as part of the initial `recv` (the one called from `recv_message`, not our ROP chain `recv`).  The other option would have been to pad out the attack to the full `0x800` bytes (this is usually the better option, but I was lazy).
+The `sleep` is required so that `recv` will stop reading and not consume our `command` as part of the initial `recv` (the one called from `recv_message`, not our ROP chain `recv`).  The other option would have been to pad out the payload to the full `0x800` bytes (this is usually the better option, but I was lazy).
