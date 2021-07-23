@@ -420,7 +420,7 @@ p.stream()
 
 The header is basically the same, but I added the hardcoded libc address locations.
 
-To set the four registers we get from libc all the gadgets we need--something you can do if you have both the version of libc (included), and the address (apparently included, but nobody told me :-).
+From libc all the gadgets we need to set the four registers--something you can do if you have both the version of libc (included), and the location (apparently included, but nobody told me :-).
 
 This single pass ROP chain is pretty straight forward:
 
