@@ -1,6 +1,6 @@
 # Vulnhub
 
-## The Planets: Venus
+## The Planets: Venus (root flag)
 
 > Date release: 3 Jun 2021  
 > Author: SirFlash  
