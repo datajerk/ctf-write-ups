@@ -334,7 +334,7 @@ Did you see it?  Did you notice the vulnbox libc address?
 0x7ffff7dee000
 ```
 
-Yeah, that does NOT look like ASLR is enabled on this OS.  You can check this a couple of ways _only from the vulnbox VM_:
+Yeah, that does NOT look like ASLR is enabled in this OS.  You can check this a couple of ways _only from the vulnbox VM_:
 
 ```
 bash-5.1# ldd /usr/bin/venus_messaging
