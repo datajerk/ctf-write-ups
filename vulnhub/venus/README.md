@@ -82,7 +82,9 @@ bool recv_message(int param_1)
 
 But...
 
-This isn't your simple _leak libc with puts_ since stdin/stdout/stderr is not available, instead we have to use `send` and `recv`, functions that take four arguments.  One and two function arguments with x86\_64 is pretty easy, you can find `pop rdi` and `pop rsi` gadgets in just about any x86\_64 binary, and with _No PIE_, well then, we can just use without a base process leak.  For the 3rd argument we'll need to use _ret2csu_ to set `rdx`.  But what about the 4th parameter (`rcx`)?
+This isn't your simple _leak libc with puts_ since stdin/stdout/stderr is not available, instead we have to use `send` and `recv`, functions that take four arguments.  One and two function arguments with x86\_64 is pretty easy, you can find `pop rdi` and `pop rsi` gadgets in just about any x86\_64 binary, and with _No PIE_, well then, we can just use without a base process leak.  For the 3rd argument we'll need to use _ret2csu_ to set `rdx`.
+
+_But what about the 4th parameter (`rcx`)?_
 
 This is where I burned most of my time.  `ropper` and poring over the disassembly reviled no easy `rcx` gadgets.  My first thought was to get it for free since `send` before the `return` at the end sets `rcx` to zero, however after `send` returns, `rcx` is no longer zero.
 
