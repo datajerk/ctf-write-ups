@@ -144,6 +144,7 @@ _bof_
 * [umdctf2021/jif](umdctf2021/jif/README.md)
 * [utctf2021/resolve](utctf2021/resolve/README.md)
 * [utctf2021/smol](utctf2021/smol/README.md)
+* [vulnhub/venus](vulnhub/venus/README.md)
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
 * [wpictf2021/smash](wpictf2021/smash/README.md)
 * [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
@@ -522,6 +523,7 @@ _pwn_
 * [utctf2020/zurk](utctf2020/zurk/README.md)
 * [utctf2021/resolve](utctf2021/resolve/README.md)
 * [utctf2021/smol](utctf2021/smol/README.md)
+* [vulnhub/venus](vulnhub/venus/README.md)
 * [wpictf2020/dont@me](wpictf2020/dont@me/README.md)
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
 * [wpictf2020/dorsia3](wpictf2020/dorsia3/README.md)
@@ -536,6 +538,10 @@ _pwn_
 _rand_
 
 * [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
+
+_rcx_
+
+* [vulnhub/venus](vulnhub/venus/README.md)
 
 _real-mode_
 
@@ -615,6 +621,7 @@ _ret2csu_
 * [cyberapocalypsectf2021/system\_drop](cyberapocalypsectf2021/system\_drop/README.md)
 * [dicectf2021/babyrop](dicectf2021/babyrop/README.md)
 * [nahamconctf2021/smol](nahamconctf2021/smol/README.md)
+* [vulnhub/venus](vulnhub/venus/README.md)
 
 _ret2dlresolve_
 
@@ -729,6 +736,7 @@ _rop_
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
 * [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
+* [vulnhub/venus](vulnhub/venus/README.md)
 * [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 * [xmasctf2020/lil\_wishes\_db](xmasctf2020/lil\_wishes\_db/README.md)
 * [xmasctf2020/naughty](xmasctf2020/naughty/README.md)
@@ -992,6 +1000,7 @@ _x86-64_
 * [unionctf2021/nutty](unionctf2021/nutty/README.md)
 * [utctf2021/resolve](utctf2021/resolve/README.md)
 * [utctf2021/smol](utctf2021/smol/README.md)
+* [vulnhub/venus](vulnhub/venus/README.md)
 * [xmasctf2020/doiknowyou](xmasctf2020/doiknowyou/README.md)
 * [xmasctf2020/lil\_wishes\_db](xmasctf2020/lil\_wishes\_db/README.md)
 * [xmasctf2020/naughty](xmasctf2020/naughty/README.md)
