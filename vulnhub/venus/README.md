@@ -266,7 +266,7 @@ At this point we're at the start of `recv_message` again, however this time we k
 
 ### Run it
 
-First `ssh -L 9080:localhost:9080 magellan@your_vuln_vm`, then from a second terminal:
+First, `ssh -L 9080:localhost:9080 magellan@your_vuln_vm`, then from a second terminal:
 
 ```bash
 # ./exploit.py REMOTE=1
