@@ -261,7 +261,7 @@ p.sendline(payload)
 p.stream()
 ```
 
-At this point we're at the start of `recv_message` again, however this time we know where libc is and we've uploaded our command into the BSS segment.  All that is left to do is `pop` that address into `rdi` and call `system` to execute our command.
+At this point we're at the start of `recv_message` again, however this time we know where libc is and we've uploaded our command into the BSS segment.  All that is left to do is `pop` that location into `rdi` and call `system` to execute our command.
 
 
 ### Run it
