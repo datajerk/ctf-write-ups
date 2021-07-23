@@ -130,11 +130,11 @@ The `command` is the remote command we want to run as root.  Above is what I use
 > Looks like `3` was for the socket:
 > 
 > ```
-lrwx------ 1 root root 64 Jul 23 21:33 0 -> /dev/pts/1
-lrwx------ 1 root root 64 Jul 23 21:33 1 -> /dev/pts/1
-lrwx------ 1 root root 64 Jul 23 21:33 2 -> /dev/pts/1
-lrwx------ 1 root root 64 Jul 23 21:33 3 -> 'socket:[2990878]'
-```
+> lrwx------ 1 root root 64 Jul 23 21:33 0 -> /dev/pts/1
+> lrwx------ 1 root root 64 Jul 23 21:33 1 -> /dev/pts/1
+> lrwx------ 1 root root 64 Jul 23 21:33 2 -> /dev/pts/1
+> lrwx------ 1 root root 64 Jul 23 21:33 3 -> 'socket:[2990878]'
+> ```
 
 Lastly in this block, we answer the password prompt--the password is in `main`.
 
