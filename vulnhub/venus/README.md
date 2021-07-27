@@ -272,14 +272,14 @@ First, `ssh -L 9080:localhost:9080 magellan@your_vuln_vm`, then from a second te
 
 ```bash
 # ./exploit.py REMOTE=1
-[*] '/mnt/hgfs/defcon.wd/datajerk/misc/venus_messaging/venus_messaging'
+[*] '/pwd/datajerk/misc/venus_messaging/venus_messaging'
     Arch:     amd64-64-little
     RELRO:    Partial RELRO
     Stack:    No canary found
     NX:       NX enabled
     PIE:      No PIE (0x400000)
 [+] Opening connection to localhost on port 9080: Done
-[*] '/mnt/hgfs/defcon.wd/datajerk/misc/venus_messaging/libc.so.6'
+[*] '/pwd/datajerk/misc/venus_messaging/libc.so.6'
     Arch:     amd64-64-little
     RELRO:    Full RELRO
     Stack:    Canary found
