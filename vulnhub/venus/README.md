@@ -10,6 +10,8 @@
 > Difficulty: <s>Medium</s> Easy (read until the end to understand why I think this is easy)
 >
 > Venus is a medium box requiring more knowledge than the previous box, "Mercury", in this series. There are two flags on the box: a user and root flag which include an md5 hash.
+>
+> [AB2 writeup for user flag.](https://github.com/ab2pentest/ctfwriteups/blob/main/VulnHub/Venus.md)
 
 
 Tags: _pwn_ _x86-64_ _bof_ _ret2csu_ _rop_ _rcx_
