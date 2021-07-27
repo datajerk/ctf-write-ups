@@ -24,7 +24,7 @@ AB2 discorded me two files [venus_messaging](venus_messaging) and [libc.so.6](li
 
 `venus_messaging` is a basic buffer overflow challenge, however a bit tricker since you're not dealing with stdin/stdout, but send/recv.  However, the principles are the same, leak libc, score a second pass, call `system`.
 
-AB2 pointed out `venus_messaging` was running as root and also provided me with his writeup for the user flag.  Since AB2 already had a remote shell, my part would be easier since I just needed to run a single `chmod u+s /bin/bash` command to enable any with a remote shell to get root access.
+AB2 pointed out `venus_messaging` was running as root and also provided me with his [writeup for the user flag](https://github.com/ab2pentest/ctfwriteups/blob/main/VulnHub/Venus.md).  Since AB2 already had a remote shell, my part would be easier since I just needed to run a single `chmod u+s /bin/bash` command to enable any with a remote shell to get root access.
 
 
 ## Analysis
