@@ -28,5 +28,5 @@ Contact:
 IRC:      datajerk@{freenode|efnet|hackint}
 Twitter:  @datajerk
 Telegram: @datajerk
-Discord:  datajerk#3489
+Discord:  datajerk#1337
 ```
