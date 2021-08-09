@@ -34,8 +34,13 @@ _angr_
 _arm_
 
 * [dc2021q/mra](dc2021q/mra/README.md)
+* [redteamvillage2021/tps\_report](redteamvillage2021/tps\_report/README.md)
 * [umdctf2021/furor](umdctf2021/furor/README.md)
 * [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
+
+_arm32_
+
+* [redteamvillage2021/tps\_report](redteamvillage2021/tps\_report/README.md)
 
 _arm64_
 
@@ -238,6 +243,7 @@ _format-string_
 * [ractf2020/nra](ractf2020/nra/README.md)
 * [redpwnctf2020/dead-canary](redpwnctf2020/dead-canary/README.md)
 * [redpwnctf2021/please](redpwnctf2021/please/README.md)
+* [redteamvillage2021/tps\_report](redteamvillage2021/tps\_report/README.md)
 * [sharkyctf2020/captain\_hook](sharkyctf2020/captain\_hook/README.md)
 * [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tenablectf2021/queensgambit](tenablectf2021/queensgambit/README.md)
@@ -286,6 +292,7 @@ _got-overwrite_
 * [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
 * [litctf2021/lazy\_pwn](litctf2021/lazy\_pwn/README.md)
 * [nahamconctf2021/smol](nahamconctf2021/smol/README.md)
+* [redteamvillage2021/tps\_report](redteamvillage2021/tps\_report/README.md)
 * [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tenablectf2021/queensgambit](tenablectf2021/queensgambit/README.md)
 * [umdctf2021/jif](umdctf2021/jif/README.md)
@@ -501,6 +508,7 @@ _pwn_
 * [redpwnctf2021/getsome\_beginner-generic-pwn-number-0\_ret2generic-flag-reader\_ret2the-unknown](redpwnctf2021/getsome\_beginner-generic-pwn-number-0\_ret2generic-flag-reader\_ret2the-unknown/README.md)
 * [redpwnctf2021/please](redpwnctf2021/please/README.md)
 * [redpwnctf2021/simultaneity](redpwnctf2021/simultaneity/README.md)
+* [redteamvillage2021/tps\_report](redteamvillage2021/tps\_report/README.md)
 * [sharkyctf2020/captain\_hook](sharkyctf2020/captain\_hook/README.md)
 * [sharkyctf2020/giveaway0](sharkyctf2020/giveaway0/README.md)
 * [sharkyctf2020/giveaway1](sharkyctf2020/giveaway1/README.md)
@@ -599,6 +607,7 @@ _remote-shell_
 * [redpwnctf2020/kevin-higgs](redpwnctf2020/kevin-higgs/README.md)
 * [redpwnctf2020/skywriting](redpwnctf2020/skywriting/README.md)
 * [redpwnctf2020/the-library](redpwnctf2020/the-library/README.md)
+* [redteamvillage2021/tps\_report](redteamvillage2021/tps\_report/README.md)
 * [sharkyctf2020/captain\_hook](sharkyctf2020/captain\_hook/README.md)
 * [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
