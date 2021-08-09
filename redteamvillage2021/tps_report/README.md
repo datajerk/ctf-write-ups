@@ -32,9 +32,9 @@ Tags: _pwn_ _arm_ _arm32_ _format-string_ _got-overwrite_ _remote-shell_
 
 ## Summary
 
-A bit tricker than your basic format-string GOT overwrite pwn since you cannot simply dump locations in the stack.
+A bit tricker than your basic format-string GOT overwrite pwn since you cannot simply write locations to the stack.
 
-> No _ARM_ specifics outside of setting up debugging required.  No ARM assembly required.
+> No ARM specifics outside of setting up debugging required.  No ARM assembly required.
 >
 > We'll get both flags with one exploit.
 
@@ -91,7 +91,7 @@ That global is set by `create_job`:
   stripped_read(&DAT_00023088 + local_c * 0x101c);
 ```
 
-The `Path` `stripped_read` will accept our exploit(s), however length is limited by the `fgets` in `stripped_read` to `0x14 - 1` bytes (`fgets` will read one less so that the input can be terminated with a null).  This limitation creates a minor challenge, however `view_jobs` loops through all jobs _only_ calling `printf` enabling us to create multiple short attacks.
+The `Path` `stripped_read` will accept our exploit(s), however the length is limited by the `fgets` in `stripped_read` to `0x14 - 1` bytes (`fgets` will read one less so that the input can be terminated with a null).  This limitation creates a minor challenge, however `view_jobs` loops through all jobs _only_ calling `printf` enabling us to create multiple short attacks.
 
 With this knowledge in hand, we just need to identify the GOT entry to overwrite:
 
