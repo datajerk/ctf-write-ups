@@ -372,7 +372,7 @@ $ cat /proc/flag
 TS{TheObstacleIstheWay_WhereIsTheParty}
 $ cat /hemidyne/tps_report.rtf
 
-                                  ,σ▒▒φ╓
+                                    ,σ▒▒φ╓
                                 ,╓φ▒╠╬╬╬╬╬╬╬╬▒╦,
                               ▓▓╬╬╬╬╬╬╩╙▓▄▒╬╬╬╬╬╠▒
                               █████╩└'''█████╬╙''.
