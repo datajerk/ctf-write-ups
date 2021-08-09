@@ -143,7 +143,7 @@ GNU C Library (Ubuntu GLIBC 2.31-0ubuntu9.2) stable release version 2.31.
 Fortunately, I'm using an Ubuntu 20.04 container, all that is required is a few additional packages:
 
 ```bash
-apt-get -qy install qemu-user libc6-arm64-cross gdb-multiarch libc6-armel-armhf-cross libc6-armhf-cross
+apt-get -qy install qemu-user gdb-multiarch libc6-armel-armhf-cross
 ```
 
 > `md5sum /usr/arm-linux-gnueabi/lib/libc-2.31.so ./arm_libc.so.6` should be a match.
