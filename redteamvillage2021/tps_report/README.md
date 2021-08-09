@@ -338,6 +338,8 @@ The second job then writes out the most significant bytes of `system` to the `at
 
 The 3rd/4th jobs are the same, however for the least significant bytes.
 
+> At this point, nothing has been exploited.  All we've done is create the jobs, to trigger the attack we have to view the jobs.
+
 ```python
 # trigger
 p.sendlineafter(b'> ',b'1')
