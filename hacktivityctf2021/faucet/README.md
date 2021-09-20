@@ -74,7 +74,7 @@ void buy_item(void)
 }
 ```
 
-The `printf(local_38);` vuln is in `buy_item` function, however our attack is limited to `0x20` (32) bytes since that is all `fgets` reads in (31 actually since `fgets` will null terminal the final byte).  But, we can buy as many items as we like.
+The `printf(local_38);` vuln is in function `buy_item`, however our attack is limited to `0x20` (32) bytes since that is all `fgets` reads in (31 actually since `fgets` will null terminal the final byte).  But, we can buy as many items as we like.
 
 This challenge would have been more fun if that was it, however in `main`:
 

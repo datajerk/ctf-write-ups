@@ -107,7 +107,7 @@ pwntools provided the shellcode, so no need to track that down, then for each by
 
 > The `& 0xff` is required since Python integer math is not signed 8-bit like the C source above (see the `(char)` casts above).
 
-> The `shellcoded = [...` is python list comprehension, if the syntax is foreign to you.
+> The `shellcoded = [...` is Python list comprehension, if that syntax is foreign to you, you know what to Google.
 > 
 
 Output:

@@ -64,7 +64,7 @@ void vuln(void)
 0x00007fffffffe368│+0x01a8: 0x00007ffff7de70b3  →  <__libc_start_main+243> mov edi, eax
 ```
 
-From GDB/GEF (above) you can see the return address back to main just below the preserved base pointer.  But then down stack two more lines you can see the return address for the `main` function.
+From GDB/GEF (above) you can see the return address back to `main` just below the preserved base pointer.  Then down stack two more lines you can see the return address for the `main` function.
 
 So, just send `0x198` (see `local_198` above) of garbage followed by `0x401465` (the expected return back to main address) a `0x0`, then the address of the `win` function (not shown, just decompile yourself).
 

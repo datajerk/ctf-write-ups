@@ -68,7 +68,7 @@ The vuln is `strcpy`.  `strcpy` is copying a `0xf00` (3840) length buffer (`loca
 
 > BTW, it is that NULL check that makes ROP [almost] impossible.  Any argument to a function that has NULLs will terminate the `strcpy` and our attack will fall short, e.g. to call `send` we need a file descriptor of `4`, well on the stack that will look like `0x00000004`, three NULLs.  This also creates challenges for 64-bit (x86-64), since x86-64 systems (today) only use 48-bit addresses, there will be two NULLs in every address on the stack.
 
-To overflow the buffer and get to the stack we'll need to write out `0x414` (see `local_414`) bytes and since `local_10` is `0xf00` in length, thats a total payload of `2796` (`0xf00 - 0x414`) bytes.
+To overflow the buffer and get to the stack we'll need to write out `0x414` (see `local_414`) bytes and since `local_10` is `0xf00` in length, that's a total payload of `2796` (`0xf00 - 0x414`) bytes.
 
 > That's a _huge_ number of bytes, you could write an entire video game.  (Yes you can, Google for _boot sector games_.)
 
@@ -152,7 +152,7 @@ Up to the `shellcode` line it's standard pwntools header, however pwntools does 
 [pid 29960] recv(4, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"..., 3839, 0) = 1088
 ```
 
-See the `4` being passed to `send` and `recv`.  And it will always be `4` (at least for this challenge).
+See the `4` being passed to `send` and `recv`?  It will always be `4` (at least for this challenge).
 
 > The short of it is, file descriptors `0`, `1`, `2` are conventionally used for `stdin`, `stdout`, `stderr`.  For a challenge like this FD `3` is the socket listening to port `9999` (see `main`).  When you connect to port `9999` (FD `3`) the process is forked and that forked process has a copy of the FDs, so the next FD returned from the `accept` call will be `4`.  And in most CTF challenges like this, it is `4`.  That `4` is passed to the `vuln` function for `send` and `recv` use.
 
@@ -166,7 +166,7 @@ The payload is pretty simple, overflow the buffer to get to the return address (
 
 Next is a check for NULLs, if there is a NULL in the payload, it'll bomb out with a disassembly so you can inspect your code.
 
-Lastly we send the payload and get a shell
+Lastly we send the payload and get a shell.
 
 Output:
 
@@ -189,7 +189,7 @@ flag{2f20f16416a066ca5d4247a438403f21}
 
 ### Solution 2
 
-This was my second solution, and it is functionally identical to the one above, however I didn't know about `shellcraft.dupsh(4)`.  This will help understand what is really going on and unlike `dupsh(4)`, the FD does not need to be known, the code can figure it out.
+This was my second solution, and it is functionally identical to the one above, however I didn't know about `shellcraft.dupsh(4)`.  This will help understand what is really going on and unlike `dupsh(4)`, the FD does not need to be known; the code can figure it out.
 
 ```python
 from binascii import hexlify
@@ -242,7 +242,7 @@ int 0x80
 
 I'll just focus on the shellcode.
 
-The shellcode has three section (ripped off from [shellcode-881.php](http://shell-storm.org/shellcode/files/shellcode-881.php)):
+The shellcode has three sections (ripped off from [shellcode-881.php](http://shell-storm.org/shellcode/files/shellcode-881.php)):
 
 1. This section will use `dup(2)` to get the next FD, then decrement it to figure out that FD of `4`.  I like this approach if you have the space.  No need to hardcode. (If you've read many of my write ups I try very hard to not hard code anything, but I too can get lazy).
 2. This section does that FD duplication described above in Solution 3.
