@@ -21,7 +21,7 @@ Aarch64/Linux-based, statically-linked, stripped, _syscall read /bin/sh into BSS
 
 Statically-linked Linux binaries are chock-full of gadgets including `syscall`, and this challenge binary is no different, except that `syscall` is `svc #0`, and the constants are different, and the registers have different names, but that's about it.
 
-This binary is also stripped (no ret2libc), so reversing took a bit longer (ok, a lot longer :-).
+This binary is also stripped, so reversing took a bit longer (ok, a lot longer :-).
 
 
 ## Tooling
