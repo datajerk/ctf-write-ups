@@ -146,8 +146,8 @@ Setup a few variables:
 
 * `whitespace` is used for the second pass to detect any whitespaces in the payload.  `scanf` will stop reading on any whitespace.  Thanks to ASLR there is a small probability of whitespace.  You could just rerun and get a shell, or check for failure upfront.
 * `offset` is the `printf` parameter at the start of our buffer.  In CTF's it is usually `6` for x86\_64.  I'm not going to get into the details here how to discover this; just Google for _format-string exploit howto_--there's a number of good references.  In short, you can enter `%xx$p` where `xx` is `06`-`99` and when the output matches your input you have the offset, or just look at the stack in GDB just before the `printf` statement.
-* `pop_rdi` is a ROP gadget in the _No PIE_ `coffee` binary.  With PIE we'd need a base process address leak first.
-* `pop_sled` is also a ROP gadget in the `coffee` binary.
+* `pop_rdi` is a ROP gadget within the _No PIE_ `coffee` binary.  With PIE we'd need a base process address leak first.
+* `pop_sled` is also a ROP gadget within the `coffee` binary.
 
 > _How many pops do we need?_  That depends on the length of the format-string.  Below my format-string is 32 bytes, so 4 pops to move past that, however the `call` pushes a return address, so we'll need a 5th.
 > 
