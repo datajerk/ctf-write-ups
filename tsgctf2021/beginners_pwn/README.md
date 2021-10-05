@@ -77,7 +77,15 @@ s      Matches a  sequence  of  non-white-space  characters;  the  next
 
 This: _that is long enough to hold the input sequence **and the terminating null byte ('\0')**_, is the key.
 
-`scanf("%64s", your_try);` will accept `64` characters and terminate with a null byte at the 65th character overwriting the first byte of `flag` (IFF you input 64 characters).  IOW, _off-by-one_.  So, if `flag` is null, then to match with `strncmp`, `your_try` must also be null (actually just start with null since `strncmp` compares strings and strings end with _null_).
+`scanf("%64s", your_try);` will accept `64` characters and terminate with a null byte at the 65th character overwriting the first byte of `flag` (IFF you input 64 characters).  IOW, _off-by-one_.  So, if `flag` is null, then to match with `strncmp`, `your_try` must also be null; actually just start with null since `strncmp` compares strings and strings end with _null_:
+
+From `man strncmp`:
+
+```
+The strncmp() function compares not more than n characters.  Because
+strncmp() is designed for comparing strings rather than binary data,
+characters that appear after a '\0' character are not compared.
+```     
 
 To get a match and `win()`, just send a null followed by 63 bytes of anything.  `scanf` will append the final `null` overwriting the first byte of `flag`.
 
