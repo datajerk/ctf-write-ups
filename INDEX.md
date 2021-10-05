@@ -252,6 +252,7 @@ _format-string_
 * [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tenablectf2021/queensgambit](tenablectf2021/queensgambit/README.md)
 * [tjctf2020/naughty](tjctf2020/naughty/README.md)
+* [tsgctf2021/coffee](tsgctf2021/coffee/README.md)
 * [twctf2019/nothing\_more\_to\_say](twctf2019/nothing\_more\_to\_say/README.md)
 * [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
 * [umdctf2021/jif](umdctf2021/jif/README.md)
@@ -299,6 +300,7 @@ _got-overwrite_
 * [redteamvillage2021/tps\_report](redteamvillage2021/tps\_report/README.md)
 * [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tenablectf2021/queensgambit](tenablectf2021/queensgambit/README.md)
+* [tsgctf2021/coffee](tsgctf2021/coffee/README.md)
 * [umdctf2021/jif](umdctf2021/jif/README.md)
 * [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 
@@ -387,6 +389,10 @@ _null-pointer_
 
 * [dctf2021/just\_another\_heap](dctf2021/just\_another\_heap/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
+
+_off-by-one_
+
+* [tsgctf2021/beginners\_pwn](tsgctf2021/beginners\_pwn/README.md)
 
 _one-gadget_
 
@@ -531,6 +537,8 @@ _pwn_
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
 * [tjctf2020/tinder](tjctf2020/tinder/README.md)
+* [tsgctf2021/beginners\_pwn](tsgctf2021/beginners\_pwn/README.md)
+* [tsgctf2021/coffee](tsgctf2021/coffee/README.md)
 * [twctf2019/nothing\_more\_to\_say](twctf2019/nothing\_more\_to\_say/README.md)
 * [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
 * [umdctf2021/furor](umdctf2021/furor/README.md)
@@ -628,6 +636,8 @@ _remote-shell_
 * [tjctf2020/primo](tjctf2020/primo/README.md)
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
+* [tsgctf2021/beginners\_pwn](tsgctf2021/beginners\_pwn/README.md)
+* [tsgctf2021/coffee](tsgctf2021/coffee/README.md)
 * [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
 * [utctf2020/zurk](utctf2020/zurk/README.md)
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
@@ -759,6 +769,7 @@ _rop_
 * [tjctf2020/cookie\_library](tjctf2020/cookie\_library/README.md)
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
+* [tsgctf2021/coffee](tsgctf2021/coffee/README.md)
 * [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
 * [vulnhub/venus](vulnhub/venus/README.md)
 * [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
@@ -841,6 +852,7 @@ _stack-pivot_
 
 * [cyberapocalypsectf2021/harvester](cyberapocalypsectf2021/harvester/README.md)
 * [redpwnctf2020/dead-canary](redpwnctf2020/dead-canary/README.md)
+* [tsgctf2021/coffee](tsgctf2021/coffee/README.md)
 * [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 
 _strcmp_
@@ -1025,6 +1037,8 @@ _x86-64_
 * [tjctf2020/naughty](tjctf2020/naughty/README.md)
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
 * [tjctf2020/stop](tjctf2020/stop/README.md)
+* [tsgctf2021/beginners\_pwn](tsgctf2021/beginners\_pwn/README.md)
+* [tsgctf2021/coffee](tsgctf2021/coffee/README.md)
 * [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
 * [umdctf2021/jie-jne-jnw](umdctf2021/jie-jne-jnw/README.md)
 * [umdctf2021/jif](umdctf2021/jif/README.md)
