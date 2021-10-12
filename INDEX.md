@@ -104,6 +104,9 @@ _bof_
 * [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
 * [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
 * [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
+* [downunderctf2021/babygame](downunderctf2021/babygame/README.md)
+* [downunderctf2021/deadcode](downunderctf2021/deadcode/README.md)
+* [downunderctf2021/outbackdoor](downunderctf2021/outbackdoor/README.md)
 * [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
 * [fwordctf2020/ezret2win](fwordctf2020/ezret2win/README.md)
 * [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
@@ -235,6 +238,8 @@ _format-string_
 * [dctf2021/formats\_last\_theorem](dctf2021/formats\_last\_theorem/README.md)
 * [dctf2021/readme](dctf2021/readme/README.md)
 * [downunderctf2020/my\_first\_echo\_server](downunderctf2020/my\_first\_echo\_server/README.md)
+* [downunderctf2021/hellothere](downunderctf2021/hellothere/README.md)
+* [downunderctf2021/oversight](downunderctf2021/oversight/README.md)
 * [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
 * [hacktivityctf2021/faucet](hacktivityctf2021/faucet/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
@@ -273,6 +278,10 @@ _gets_
 * [tjctf2020/primo](tjctf2020/primo/README.md)
 * [tjctf2020/seashells](tjctf2020/seashells/README.md)
 
+_global-variable-overwrite_
+
+* [downunderctf2021/babygame](downunderctf2021/babygame/README.md)
+
 _gobuster_
 
 * [darkctf2020/time\_eater](darkctf2020/time\_eater/README.md)
@@ -293,6 +302,7 @@ _got-overwrite_
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [csictf2020/smash](csictf2020/smash/README.md)
 * [dctf2021/just\_another\_heap](dctf2021/just\_another\_heap/README.md)
+* [downunderctf2021/write-what-where](downunderctf2021/write-what-where/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
 * [litctf2021/lazy\_pwn](litctf2021/lazy\_pwn/README.md)
@@ -392,6 +402,7 @@ _null-pointer_
 
 _off-by-one_
 
+* [downunderctf2021/oversight](downunderctf2021/oversight/README.md)
 * [tsgctf2021/beginners\_pwn](tsgctf2021/beginners\_pwn/README.md)
 
 _one-gadget_
@@ -476,6 +487,13 @@ _pwn_
 * [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
 * [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
 * [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
+* [downunderctf2021/babygame](downunderctf2021/babygame/README.md)
+* [downunderctf2021/deadcode](downunderctf2021/deadcode/README.md)
+* [downunderctf2021/hellothere](downunderctf2021/hellothere/README.md)
+* [downunderctf2021/outbackdoor](downunderctf2021/outbackdoor/README.md)
+* [downunderctf2021/oversight](downunderctf2021/oversight/README.md)
+* [downunderctf2021/rbp](downunderctf2021/rbp/README.md)
+* [downunderctf2021/write-what-where](downunderctf2021/write-what-where/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [faustctf2021/veighty-machinery](faustctf2021/veighty-machinery/README.md)
 * [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
@@ -606,6 +624,12 @@ _remote-shell_
 * [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
 * [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
 * [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
+* [downunderctf2021/babygame](downunderctf2021/babygame/README.md)
+* [downunderctf2021/deadcode](downunderctf2021/deadcode/README.md)
+* [downunderctf2021/outbackdoor](downunderctf2021/outbackdoor/README.md)
+* [downunderctf2021/oversight](downunderctf2021/oversight/README.md)
+* [downunderctf2021/rbp](downunderctf2021/rbp/README.md)
+* [downunderctf2021/write-what-where](downunderctf2021/write-what-where/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [faustctf2021/veighty-machinery](faustctf2021/veighty-machinery/README.md)
 * [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
@@ -672,6 +696,7 @@ _ret2win_
 * [csictf2020/small\_pwns](csictf2020/small\_pwns/README.md)
 * [dctf2021/pwn\_sanity\_check](dctf2021/pwn\_sanity\_check/README.md)
 * [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
+* [downunderctf2021/outbackdoor](downunderctf2021/outbackdoor/README.md)
 * [fwordctf2020/ezret2win](fwordctf2020/ezret2win/README.md)
 * [hacktivityctf2021/retcheck](hacktivityctf2021/retcheck/README.md)
 * [litctf2021/madlibs\_pwn](litctf2021/madlibs\_pwn/README.md)
@@ -681,6 +706,7 @@ _ret2win_
 _retsled_
 
 * [dc2019q/speedrun-004](dc2019q/speedrun-004/README.md)
+* [downunderctf2021/oversight](downunderctf2021/oversight/README.md)
 
 _rev_
 
@@ -739,6 +765,8 @@ _rop_
 * [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
 * [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
 * [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
+* [downunderctf2021/oversight](downunderctf2021/oversight/README.md)
+* [downunderctf2021/rbp](downunderctf2021/rbp/README.md)
 * [fwordctf2020/blacklist](fwordctf2020/blacklist/README.md)
 * [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
 * [fwordctf2020/one\_piece](fwordctf2020/one\_piece/README.md)
@@ -851,6 +879,8 @@ _stack-canary_
 _stack-pivot_
 
 * [cyberapocalypsectf2021/harvester](cyberapocalypsectf2021/harvester/README.md)
+* [downunderctf2021/oversight](downunderctf2021/oversight/README.md)
+* [downunderctf2021/rbp](downunderctf2021/rbp/README.md)
 * [redpwnctf2020/dead-canary](redpwnctf2020/dead-canary/README.md)
 * [tsgctf2021/coffee](tsgctf2021/coffee/README.md)
 * [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
@@ -886,6 +916,7 @@ _variable-overwite_
 _variable-overwrite_
 
 * [dctf2021/pinch\_me](dctf2021/pinch\_me/README.md)
+* [downunderctf2021/deadcode](downunderctf2021/deadcode/README.md)
 * [xmasctf2020/doiknowyou](xmasctf2020/doiknowyou/README.md)
 
 _variable-ovewrite_
@@ -909,6 +940,7 @@ _write-what-where_
 * [dctf2021/formats\_last\_theorem](dctf2021/formats\_last\_theorem/README.md)
 * [dctf2021/just\_another\_heap](dctf2021/just\_another\_heap/README.md)
 * [dctf2021/magic\_trick](dctf2021/magic\_trick/README.md)
+* [downunderctf2021/write-what-where](downunderctf2021/write-what-where/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
 * [litctf2021/editor\_pwn](litctf2021/editor\_pwn/README.md)
@@ -987,6 +1019,13 @@ _x86-64_
 * [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
 * [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
 * [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
+* [downunderctf2021/babygame](downunderctf2021/babygame/README.md)
+* [downunderctf2021/deadcode](downunderctf2021/deadcode/README.md)
+* [downunderctf2021/hellothere](downunderctf2021/hellothere/README.md)
+* [downunderctf2021/outbackdoor](downunderctf2021/outbackdoor/README.md)
+* [downunderctf2021/oversight](downunderctf2021/oversight/README.md)
+* [downunderctf2021/rbp](downunderctf2021/rbp/README.md)
+* [downunderctf2021/write-what-where](downunderctf2021/write-what-where/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [faustctf2021/treasury](faustctf2021/treasury/README.md)
 * [faustctf2021/veighty-machinery](faustctf2021/veighty-machinery/README.md)
