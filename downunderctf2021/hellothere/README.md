@@ -67,7 +67,7 @@ void main(void)
 
 `printf(local_58);` is your vuln--no format string.
 
-`*__stream` is a pointer to the flag and is also on the stack, and probably at parameter `6`.  If this does not make sense, then Google for _format string exploits_.  In short, x86_64 Linux ABI has parameters 0-5 in registers and the rest on the stack (in general).
+`*__stream` is a pointer to the flag and is also on the stack, and probably at parameter `6`.  If this does not make sense, then Google for _format string exploits_.  In short, the x86_64 Linux ABI has parameters 0-5 in registers and the rest on the stack (in general).
 
 Since we know the pointer is on the stack, you can simply just send `%x$s` where `x` is any number >= `6` until you get the flag, i.e. start at `6` (or `1` if you like) and increment.
 
