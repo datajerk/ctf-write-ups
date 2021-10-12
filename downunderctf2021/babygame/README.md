@@ -14,12 +14,12 @@
 >
 > [`babygame`](babygame)
 
-Tags: _pwn_ _x86-64_ _bof_ _remote-shell_ _global-variable-overwrite_
+Tags: _pwn_ _x86-64_ _bof_ _remote-shell_ _global-variable-overwrite_ _variable-overwrite_
 
 
 ## Summary
 
-Leak a global address with an unterminated string, then overwrite said global with an address to a path to a predictable "urandom" to then "guess" the number and get a shell.
+Leak a global variable address with an unterminated string, then overwrite said global with an address to a path to a predictable "urandom" to then "guess" the number and get a shell.
 
 > Some bitched this was _guessy_.  This was not _guessy_ at all, they were just lazy.  The _Admin note_ above was caving into the demands of the lazy.
 
@@ -129,7 +129,7 @@ void set_username(void)
 }
 ```
 
-The bug here is that instead of limiting the input to `0x20` bytes like the initial `read` from `main`, it is limited by the length of the current `NAME`, which will be `0x20` + `6` (remember x86_64 address are usually 48-bits with `\0\0` as the most significant bytes) bytes if we started with a `0x20` (`32`) byte name and did not terminate with a null.
+The bug here is that instead of limiting the input to `0x20` bytes like the initial `read` from `main`, it is limited by the length of the current `NAME`, which will be `0x20` + `6` (remember x86_64 address are usually 48-bits with `\0\0` as the most significant bytes) bytes IFF we started with a `0x20` (`32`) byte name and did not terminate with a null.
 
 We have all the bits we need to exploit this challenge.
 
