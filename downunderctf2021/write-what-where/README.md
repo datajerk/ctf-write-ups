@@ -129,7 +129,7 @@ On our second pass we'll replace the last 4 nibbles of `atoi` with `system` star
 
 > We only need to overwrite 2 bytes (4 nibbles) so the actually write is 2 less than the address of the `atoi` GOT entry.
 
-On the last pass, the `what` no longer matters, just the `where`; if the `atoi` conversion to `system` worked our input of `/bin/sh` for `where` will give us a shell.
+On the last pass, the `what` no longer matters, just the `where`; if the `atoi` conversion to `system` was successful, our input of `/bin/sh` for `where` will give us a shell.
 
 Crash?  We'll leverage ASLR and try again.
 
