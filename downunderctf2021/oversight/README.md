@@ -219,7 +219,7 @@ while True:
         continue
 ```
 
-ASLR will pivot the stack in most cases into a random place in our buffer (however it will be stack aligned (ending in `00`), so we'll want a loop to check for crashes, timeouts, or a shell.
+ASLR will pivot the stack in most cases into a random place in our buffer (however it will be stack aligned (ending in `00`)), so we'll want a loop to check for crashes, timeouts, or a shell.
 
 Within the `try:` block we'll first leak libc after being prompted for a `number:`.  This is a freebee.
 
