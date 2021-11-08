@@ -18,7 +18,10 @@ Tags: _pwn_ _x86-64_ _bof_ _rop_ _remote-shell_
 Please read [pwn/magic-marker](../magic-marker) first.  This is the same challenge however without ret2win, but with PIE enabled, and NX disabled (shellcode friendly).
 
 > This solution uses a ROP chain (no shellcode), so a version of this challenge with all base mitigations in place would still fall to this exploit.
-
+> 
+> I'm not suggesting this is the best way to solve this challenge, just _a_ way without using shellcode.
+>
+> There's less than a 1 in 64 chance this will work per trial (retries are built into the code).
 
 ## Analysis
 
