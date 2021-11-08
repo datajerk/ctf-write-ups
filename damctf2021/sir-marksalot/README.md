@@ -89,7 +89,7 @@ while True:
         binary.address = libc.address = 0
 ```
 
-Standard pwntools header, however in a loop (`while True:`).  There are numerous conditions that need to be checked, if the condition is not met we start over.  We will required more moves that a shellcode solution.  There's only a 1 in 64 chance this will work on any attempt.
+Standard pwntools header, however in a loop (`while True:`).  There are numerous conditions that need to be checked, if the condition is not met we start over.  We will require more moves than a shellcode solution.  There's only a 1 in 64 chance this will work on any attempt.
 
 > libc is required for the 2nd ROP chain, and is not included (not needed for shellcode).  To find libc I had to leak libc first and then use an online libc database.  Fortunately there was only one match for the libc leak: [`https://libc.blukat.me/d/libc6_2.27-3ubuntu1.4_amd64.so`]()
 
