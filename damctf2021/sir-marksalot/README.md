@@ -49,7 +49,7 @@ To use these (or any ROP gadgets) we'll first have to leak the base address.
 
 > As stated in the Summary above, I'm not going to use shellcode, but all ROP.
 > 
-> I'm sure the other write ups will use shellcode, in short, the path to shellcode is a leak above the maze.
+> I'm sure the other write-ups will use shellcode, in short, the path to shellcode is a leak above the maze.
 
 
 ### Decompile with Ghidra
@@ -419,7 +419,7 @@ With libc location known, we can quickly check if the 2nd pass ROP chain will be
 
 The 2nd pass starts out not much different from the 1st pass, it was a cut/paste job.  A new rand seed is generated, etc...
 
-> I could have just jumped back to `play_maze`, and keep the old seed, but timewise it really will not matter much.  I guess less of a chance with a 2nd rand mismatch.  It was already tested code, so I didn't bother.
+> I could have just jumped back to `play_maze`, and kept the old seed, but timewise it really will not matter much.  I guess less of a chance with a 2nd rand mismatch.  It was already tested code, so I didn't bother.
 
 At the start of the 2nd pass we know that our new ROP chain will not have any East/West movement problems or NLs.  At this point there's a 1 in 4 chance it will succeed, i.e. the canary block.  If this passes, then we will get a shell, IFF we do not run out of time.  If the Grue and/or the player (us) is in the upper left corner area, then we could run out of time:
 
