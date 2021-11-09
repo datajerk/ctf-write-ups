@@ -644,7 +644,7 @@ and
     payload2 += 8 * b'\xff'
 ```
 
-In both cases the first block is just a burner block, the first row cannot be used since the return address is on the second row.  Popping twice will put us at the next block.  We can have as many blocks as we like and have no problem moving around as long as the last row is `0xff` (more precisely one nibble, but that just makes for randomization challenges again).  Stack alignment matters
+In both cases the first block is just a burner block, the first row cannot be used since the return address is on the second row.  Popping twice will put us at the next block.  We can have as many blocks as we like and have no problem moving around as long as the last row is `0xff` (more precisely one nibble).  NOTE: Stack alignment matters.
 
 Of 20 runs the follow conditions forced a retry:
 
@@ -655,7 +655,7 @@ Of 20 runs the follow conditions forced a retry:
 
 The `9` for `rand mismatch` is not a surprise, this would imply a ~0.5s startup remotely.
 
-All 20 with approximately a single retry every other attempt all completed with the flag.
+All 20 with approximately a single retry every other attempt all completed and _captured the flag_.
       
 
 
