@@ -655,7 +655,7 @@ Of 20 runs the follow conditions forced a retry:
 
 The `9` for `rand mismatch` is not a surprise, this would imply a ~0.5s startup remotely.
 
-All 20 with approximately a single retry every other attempt completed and _captured the flag_.
+All 20, with approximately a single retry every other attempt, completed and _captured the flag_.
       
 
 
