@@ -604,7 +604,7 @@ Above is the path taken by both exploits.  The `*` is in the lower right corner 
 
 The maze is stored as an array of rows.  East will move down stack 32 bytes at a time, however South will move down stack 1280 bytes.  This probably puts us around the environment area of the stack--safe to vandalize with our magic marker.
 
-By avoiding the Canary block randomization, this increases our odds of getting the flag to 1 in 4.  There's still the first part of the ROP chain to deal with, by changing the pass 1 ROP chain to use three blocks with the last 8 bytes all `0xff` and some `pop`s to move RSP down, we can be certain our forward and backwards movement will be unimpeded.
+By avoiding the Canary block randomization, this increases our odds of getting the flag to 1 in 4.  There's still the first part of the ROP chain to deal with, by changing the pass 1 ROP chain to use three blocks with the last 8 bytes all `0xff` and some `pop`s to move RSP down, we can be certain our forward and backwards movement will be unimpeded.  This almost guarantees our success.
 
 New ROP chains:
 
