@@ -644,7 +644,7 @@ and
     payload2 += 8 * b'\xff'
 ```
 
-In both cases the first block is just a burner block, the first row cannot be used since the return address is on the second row.  Popping twice will put us just before the next block.  We can have as many blocks as we like and have no problem moving around as long as the last row is `0xff` (more precisely one nibble, but that just makes for randomization challenges again).
+In both cases the first block is just a burner block, the first row cannot be used since the return address is on the second row.  Popping twice will put us at the next block.  We can have as many blocks as we like and have no problem moving around as long as the last row is `0xff` (more precisely one nibble, but that just makes for randomization challenges again).  Stack alignment matters
 
 Of 20 runs the follow conditions forced a retry:
 
