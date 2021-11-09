@@ -594,13 +594,13 @@ User **TheBadGod[flagbot]** from DamCTF Discord #pwn pointed out that moving Sou
 +---+---+   /   /   /   /                         +---+---+   /   /   /   /   .- ROP payload3 
         |  /   /   /   /                                  |  /   /   /   /   /
 +   +---+---+---+---+---+                         +   +---+---+---+---+---+---+
-      * | 1 | 2 | 3 | 4 |                               * |   | 4 | 5 | 6 | 7 |
+      * | 1 | 2 | 3 | 4 |                               * | ☠ | 4 | 5 | 6 | 7 |
 +---+---+---+---+---+---+                         +---+---+---+---+---+---+---+
                                                       | 1 | 2 | 3 |
                                                       +---+---+---+
 ```
 
-Above is the path taken by both exploits.  The `*` is the lower right corner of the maze.  The tiles to the South and East are 32-byte blocks, the numbers in the tiles, the path taken.
+Above is the path taken by both exploits.  The `*` is in the lower right corner of the maze.  The tiles to the South and East are 32-byte blocks, the numbers in the tiles, the path taken.
 
 The maze is stored as an array of rows.  East will move down stack 32 bytes at a time, however South will move down stack 1280 bytes.  This probably puts us around the environment area of the stack--safe to vandalize with our magic marker.
 
