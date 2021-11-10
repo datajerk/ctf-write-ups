@@ -17,6 +17,8 @@ Tags: _pwn_ _x86-64_ _bof_ _remote-shell_ _stack-canary_ _format-string_ _rop_
 
 Leak stack canary with format string to enable buffer overflow and ROP FTW.
 
+**UPDATE: Added detail on how to compute the location of the canary.**
+
 
 ## Analysis
 
@@ -99,7 +101,31 @@ p.interactive()
 
 To leak the canary use the format string `%15$p`.
 
-> I used GDB/GEF to find the canary (just type `canary` or look at the stack).
+_Why `%15$p`?_
+
+This can be easily computed once you know the offset.  Just add `(0x30 - 0x10) / 4` to the offset.
+
+From the decompile output above `local_30` (buffer) is `0x30` bytes from the base of the stack frame, and `local_10` (canary) is `0x10` bytes from the base of the stack frame (these are Ghidra conventions).  `(0x30 - 0x10)` is the distance from the start of the buffer to the canary.  `/4` computes the number of stack lines for x86 (32-bit).
+
+To get the [buffer] offset, send `%xx%p` where `xx` is `01`, `02`, ... until you get a match, once there's a match, then you have the offset, e.g.:
+
+```
+# ./cookie-monster
+Enter your name: %6$p
+Hello 0xff938f78
+```
+
+Not a match.
+
+```
+# ./cookie-monster
+Enter your name: %7$p
+Hello 0x70243725
+```
+
+`0x70243725` is little endian ASCII hex for `%7$p`, a match, therefore the offset is 7.
+
+`7 + (0x30 - 0x10) / 4 = 15`
 
 With canary in hand, constructing the 32-bit ROP chain is just:
 
