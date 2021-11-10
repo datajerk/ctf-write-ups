@@ -109,7 +109,7 @@ From the decompile output above `local_30` (buffer) is `0x30` bytes from the bas
 
 To get the [buffer] offset, send `%xx%p` where `xx` is `01`, `02`, ... until you get a match, once there's a match, then you have the offset, e.g.:
 
-```
+```bash
 # ./cookie-monster
 Enter your name: %6$p
 Hello 0xff938f78
@@ -117,7 +117,7 @@ Hello 0xff938f78
 
 Not a match.
 
-```
+```bash
 # ./cookie-monster
 Enter your name: %7$p
 Hello 0x70243725
