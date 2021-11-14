@@ -56,9 +56,9 @@ p.sendline(b'%65536c')
 p.interactive()
 ```
 
-Basically leak libc with format string, then use second format string as write-what-where to write out a malloc hook with a one\_gadget, then use a third format string to create a buffer, thus trigging a malloc.
+Basically leak libc with format string, then use second format string as write-what-where to write out a malloc hook with a one\_gadget, then use a third format string to malloc a buffer, thus trigging a malloc.
 
-The `assert` statements catch if the length is greater than the buffer and if the attack has a newline since `fgets` will terminate early.
+The `assert` statements catch if the length is greater than the `fgets` buffer and if the attack has a newline since `fgets` will terminate early.
 
 Output:
 
