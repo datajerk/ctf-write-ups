@@ -123,6 +123,7 @@ _bof_
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
 * [ijctf2020/admin](ijctf2020/admin/README.md)
 * [ijctf2020/input](ijctf2020/input/README.md)
+* [k3rn3lctf2021/silent-rop](k3rn3lctf2021/silent-rop/README.md)
 * [litctf2021/editor\_pwn](litctf2021/editor\_pwn/README.md)
 * [litctf2021/gets\_pwn](litctf2021/gets\_pwn/README.md)
 * [litctf2021/madlibs\_pwn](litctf2021/madlibs\_pwn/README.md)
@@ -247,6 +248,7 @@ _format-string_
 * [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
 * [hacktivityctf2021/faucet](hacktivityctf2021/faucet/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
+* [k3rn3lctf2021/on\_the\_hook](k3rn3lctf2021/on\_the\_hook/README.md)
 * [litctf2021/lazy\_pwn](litctf2021/lazy\_pwn/README.md)
 * [litctf2021/printf\_pwn](litctf2021/printf\_pwn/README.md)
 * [nahamconctf2020/leet\_haxor](nahamconctf2020/leet\_haxor/README.md)
@@ -372,10 +374,12 @@ _malloc_
 
 * [dctf2021/formats\_last\_theorem](dctf2021/formats\_last\_theorem/README.md)
 * [dctf2021/just\_another\_heap](dctf2021/just\_another\_heap/README.md)
+* [k3rn3lctf2021/on\_the\_hook](k3rn3lctf2021/on\_the\_hook/README.md)
 
 _malloc-hook_
 
 * [dctf2021/formats\_last\_theorem](dctf2021/formats\_last\_theorem/README.md)
+* [k3rn3lctf2021/on\_the\_hook](k3rn3lctf2021/on\_the\_hook/README.md)
 
 _mips_
 
@@ -520,6 +524,8 @@ _pwn_
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
 * [ijctf2020/admin](ijctf2020/admin/README.md)
 * [ijctf2020/input](ijctf2020/input/README.md)
+* [k3rn3lctf2021/on\_the\_hook](k3rn3lctf2021/on\_the\_hook/README.md)
+* [k3rn3lctf2021/silent-rop](k3rn3lctf2021/silent-rop/README.md)
 * [litctf2021/editor\_pwn](litctf2021/editor\_pwn/README.md)
 * [litctf2021/gets\_pwn](litctf2021/gets\_pwn/README.md)
 * [litctf2021/lazy\_pwn](litctf2021/lazy\_pwn/README.md)
@@ -652,6 +658,7 @@ _remote-shell_
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
 * [ijctf2020/admin](ijctf2020/admin/README.md)
 * [ijctf2020/input](ijctf2020/input/README.md)
+* [k3rn3lctf2021/silent-rop](k3rn3lctf2021/silent-rop/README.md)
 * [nahamconctf2020/leet\_haxor](nahamconctf2020/leet\_haxor/README.md)
 * [nahamconctf2020/shifts\_ahoy](nahamconctf2020/shifts\_ahoy/README.md)
 * [nahamconctf2020/syrup](nahamconctf2020/syrup/README.md)
@@ -689,6 +696,7 @@ _ret2csu_
 
 _ret2dlresolve_
 
+* [k3rn3lctf2021/silent-rop](k3rn3lctf2021/silent-rop/README.md)
 * [redpwnctf2021/getsome\_beginner-generic-pwn-number-0\_ret2generic-flag-reader\_ret2the-unknown](redpwnctf2021/getsome\_beginner-generic-pwn-number-0\_ret2generic-flag-reader\_ret2the-unknown/README.md)
 * [umdctf2021/jie-jne-jnw](umdctf2021/jie-jne-jnw/README.md)
 * [utctf2021/resolve](utctf2021/resolve/README.md)
@@ -787,6 +795,7 @@ _rop_
 * [hacktivityctf2021/the\_library](hacktivityctf2021/the\_library/README.md)
 * [hsctf7/boredom](hsctf7/boredom/README.md)
 * [hsctf7/pwnagotchi](hsctf7/pwnagotchi/README.md)
+* [k3rn3lctf2021/silent-rop](k3rn3lctf2021/silent-rop/README.md)
 * [litctf2021/editor\_pwn](litctf2021/editor\_pwn/README.md)
 * [nahamconctf2020/dangerous](nahamconctf2020/dangerous/README.md)
 * [nahamconctf2020/ripe\_reader](nahamconctf2020/ripe\_reader/README.md)
@@ -957,6 +966,7 @@ _write-what-where_
 * [downunderctf2021/write-what-where](downunderctf2021/write-what-where/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
+* [k3rn3lctf2021/on\_the\_hook](k3rn3lctf2021/on\_the\_hook/README.md)
 * [litctf2021/editor\_pwn](litctf2021/editor\_pwn/README.md)
 * [nahamconctf2021/sort\_it](nahamconctf2021/sort\_it/README.md)
 * [redpwnctf2020/kevin-higgs](redpwnctf2020/kevin-higgs/README.md)
@@ -975,6 +985,8 @@ _x86_
 * [fwordctf2020/one\_piece\_remake](fwordctf2020/one\_piece\_remake/README.md)
 * [fwordctf2020/welcome\_pwner](fwordctf2020/welcome\_pwner/README.md)
 * [hacktivityctf2021/yabo](hacktivityctf2021/yabo/README.md)
+* [k3rn3lctf2021/on\_the\_hook](k3rn3lctf2021/on\_the\_hook/README.md)
+* [k3rn3lctf2021/silent-rop](k3rn3lctf2021/silent-rop/README.md)
 * [pbctf2020/amazing\_rop](pbctf2020/amazing\_rop/README.md)
 * [ractf2020/fiap](ractf2020/fiap/README.md)
 * [ractf2020/fias](ractf2020/fias/README.md)
