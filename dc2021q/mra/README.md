@@ -127,7 +127,7 @@ The second block searches for ` HTTP/` and replaces the ` ` with a `\0`.
 
 The third block looks for `?` (`0x3f`), replaces with `\0` terminating the string after `isodd/`; if `token=` follows that `?`, then assign `pcVar11` to the string after `=`, that will be terminated by the `memset` at `main` start or the ` HTTP/` match above.
 
-Lastly, starting after `isodd/` (`&stack0x00000037 - &stack0x00000028 = 0xf`, the length of `GET /api/isodd/`), replace the first `/` with a `\0` to fuck with your ability to put `/bin/sh` there, then assign `pcVar4` the string after `isodd/` ending before `?` (remember it is `\0` now).
+Lastly, starting after `isodd/` (`&stack0x00000037 - &stack0x00000028 = 0xf`, the length of `GET /api/isodd/`), replace the first `/` with a `\0` to mess with your ability to put `/bin/sh` there, then assign `pcVar4` the string after `isodd/` ending before `?` (remember it is `\0` now).
 
 So far our input is looking like: `GET /api/isodd/pcVar4?token=pcVar11 HTTP/`
 
