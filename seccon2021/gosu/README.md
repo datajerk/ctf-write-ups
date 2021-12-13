@@ -25,7 +25,7 @@ Everything else is the same.  We're still blind, all we have to work with is `ge
 
 I worked on two solutions; brute force with `one_gadget`, but I got bored waiting, so I started on a second solution that did not require brute force.  That is the solution outlined here.
 
-> If you haven't already read [kasu](../kasu) first.
+> If you haven't already, read [kasu](../kasu) first.
 
 
 ## Analysis
@@ -77,7 +77,7 @@ and
 
 > BTW, the second gadget was only emitted by `ROPgadget`!  `ropper` failed to find that gadget.  Lesson learned, use all your toys.
 
-The `pop rsp` gadget will permit an easy stack pivot to the BSS, which is known thanks to _No PIE_.  This will allow the direct addressing of anything in the stack.  We will not need to leak the stack, since we own the entire stack.
+The `pop rsp` gadget will permit an easy stack pivot to the BSS, which is known thanks to _No PIE_.  This will allow the direct addressing of anything on the stack.  We will not need to leak the stack, since we own the entire stack.
 
 The second gadget with the help from the tail end of `__libc_csu_init` enables us to _update_ the last 32-bits of any value we have the location of, and since we own the stack, we have all the locations we need.
 
@@ -98,7 +98,7 @@ else:
     p = process(binary.path)
 ```
 
-Stand pwntools header.
+Standard pwntools header.
 
 ```python
 new_stack = (binary.bss() & 0xfff000) + 0xf00
@@ -133,7 +133,7 @@ p.sendline(payload)
 if args.REMOTE: time.sleep(0.1) # give some time to start up :-)
 ```
 
-At this point in the execution (first) `gets` is waiting for input.  The above will populate our new stack so that the three `pop`s from the `pop rsp` gadget have something to `pop` and then return to `_start`, to well, _start_ over; however this time, we know the location of the stack, since we defined it.
+At this point in the execution [first] `gets` is waiting for input.  The above will populate our new stack so that the three `pop`s from the `pop rsp` gadget have something to `pop` before the return to `_start`, to well, _start_ over; however this time, we know the location of the stack, since we defined it.
 
 > The last line is something I had to add when running remotely, basically, a bit of restart time.
 
