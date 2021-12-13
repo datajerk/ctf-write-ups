@@ -158,7 +158,7 @@ gef➤  b *main+34
 Breakpoint 1 at 0x401158
 ```
 
-Now dump top the stack at the break:
+Stack dump at break:
 
 ```
 0x404d50:	0x00007fda4f1e5980	0x00007fda4f1e6790
@@ -261,7 +261,7 @@ p.interactive()
 
 From the top down:
 
-Using the _pop sled_ at the end of `__libc_csu_init` we _pop_ulate `rbx` and `rbp` for use with the `add dword ptr [rbp - 0x3d], ebx; nop; ret` gadget.  Since we have to reduce `_IO_2_1_stdin_` (`p64` does not do this for us for free) we'll have to compute the two's complement so that the `add` will be adding a negative number.  The location (`rbp - 0x3d`) is `0x404d50 + 0x3d` (see above for the `0x404d50`), however I used the offset relative to `net_stack` (this was helpful since `system` needed a lot more stack space than I originally started with).
+Using the _pop sled_ at the end of `__libc_csu_init` we populate `rbx` and `rbp` for use with the `add dword ptr [rbp - 0x3d], ebx; nop; ret` gadget.  Since we have to reduce `_IO_2_1_stdin_` (`p64` does not do this for us for free) we'll have to compute the two's complement so that the `add` will be adding a negative number.  The location (`rbp - 0x3d`) is `0x404d50 + 0x3d` (see above for the `0x404d50`), however I used the offset relative to `net_stack` (this was helpful since `system` needed a lot more stack space than I originally started with).
 
 With `0x404d50` now set to the location of `system`, then rest is just `ret2csu` with `/bin/sh` tailed on to the end.
 
