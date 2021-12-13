@@ -208,13 +208,13 @@ The array `rop` should look familiar if you've ever done a basic two pass ROP ch
 
 The payload is a bit tricker.  We have to preserve `local_28` (`n`) and `local_10` (`i`).
 
-Start with filling memory (the array) from the begging of the array `local_a8` to the start of `local_28`, i.e. `((0xa8 - 0x28) // 8) * [0xAAAA]`.
+Start with filling memory (the array) from the begining of the array `local_a8` to the start of `local_28`, i.e. `((0xa8 - 0x28) // 8) * [0xAAAA]`.
 
-Next set `local_28` (`n`) _back_ to the total length of the payload (remember this payload will be sent after we answer the prompt `n: `, we need to keep that set correctly).  The total length of the payload is the distance to the return address + the length of our ROP chain.
+Next set `local_28` (`n`) _back_ to the total length of the payload (remember this payload will be sent after we answer the prompt `n: `; we need to keep that set correctly).  The total length of the payload is the distance to the return address + the length of our ROP chain.
 
 `local_20` and `local_18` get set each time in the loop, so no worries if you overwrite these.
 
-Next up is `local_10` (`i`), well at this point in the payload the length of the payload is `i`, so just set it.
+Next up is `local_10` (`i`), at this point in the payload the length of the payload is `i`, so just set it.
 
 Lastly, filler, until the end of the stack frame (probably only the preserved base pointer).
 
@@ -272,7 +272,7 @@ The second pass is like the first, but with a different ROP chain, so I'll just 
 
 libc, `system`, etc... are larger than `123456789`, so if we naively try to just write out _pop rdi location of /bin/sh call system_, we'll be rejected with `too large`.
 
-So, we'll just call `scanf` from the GOT to read in the location of `system` into the `puts` GOT entry, so that future calls to `puts` will be `system`, then do that a second time to put the string `/bin/sh\0` into the BSS (scratch space), then just called it with `puts`.
+So, we'll just call `scanf` from the GOT to read in the location of `system` into the `puts` GOT entry, so that future calls to `puts` will be `system`, then do that a second time to put the string `/bin/sh\0` into the BSS (scratch space), then just call it with `puts`.
 
 There are numerous ways to solve this, this is just _a_ way.
 
