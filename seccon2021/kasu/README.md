@@ -39,7 +39,7 @@ LOL, this is the first time I read the challenge description, but yes, this an e
     PIE:      No PIE (0x8048000)
 ```
 
-At least three conditions must be met for _ret2dlresolve_, No PIE (or a base process leak), No canary (or a canary leak, or some other way to get write down stack), and Partial RELRO.  We're all clear here.
+At least three conditions must be met for _ret2dlresolve_, No PIE (or a base process leak), No canary (or a canary leak, or some other way to write down stack), and Partial RELRO.  We're all clear here.
 
 
 ### Decompile with Ghidra
@@ -95,7 +95,7 @@ p.interactive()
 
 Almost straight from: [https://docs.pwntools.com/en/stable/rop/ret2dlresolve.html](https://docs.pwntools.com/en/stable/rop/ret2dlresolve.html).
 
-All we need to figure out is the `0x88` (end of the stack frame where the return address is), and we get this for free from Ghidra (.e.g `local_88`).
+All we needed to figure out is the `0x88` (end of the stack frame where the return address is), and we get this for free from Ghidra (.e.g `local_88`).
 
 
 ```bash

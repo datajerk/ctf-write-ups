@@ -40,7 +40,7 @@ I worked on two solutions; brute force with `one_gadget`, but I got bored waitin
     PIE:      No PIE (0x400000)
 ```
 
-At least three conditions must be met for _ret2dlresolve_, No PIE (or a base process leak), No canary (or a canary leak, or some other way to get write down stack), and Partial RELRO.
+At least three conditions must be met for _ret2dlresolve_, No PIE (or a base process leak), No canary (or a canary leak, or some other way to write down stack), and Partial RELRO.
 
 Well, we have Full RELRO.  So no easy shell with _ret2dlresolve_.
 
