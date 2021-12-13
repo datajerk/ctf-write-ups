@@ -111,10 +111,6 @@ All we needed to figure out is the `0x88` (end of the stack frame where the retu
 [*] Switching to interactive mode
 $ id
 uid=999(pwn) gid=999(pwn) groups=999(pwn)
-$ ls -l
-total 20
--r-xr-x--- 1 root pwn 15336 Dec  8 14:09 chall
--r--r----- 1 root pwn    36 Dec  8 14:09 flag-4f8e964cf95b989f6def1afdfd0e91b7.txt
 $ cat flag*
 SECCON{jUst_4_s1mpL3_b0f_ch4ll3ng3}
 ```

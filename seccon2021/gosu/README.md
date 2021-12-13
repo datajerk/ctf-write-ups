@@ -283,10 +283,6 @@ With `0x404d50` now set to the location of `system`, then rest is just `ret2csu`
 [*] Switching to interactive mode
 $ id
 uid=999(pwn) gid=999(pwn) groups=999(pwn)
-$ ls -l
-total 24
--r-xr-x--- 1 root pwn 16496 Dec  8 14:13 chall
--r--r----- 1 root pwn    44 Dec  8 14:13 flag-875b4ce8378c3f4e5b227fb2a9642933.txt
 $ cat flag*
 SECCON{Return-Oriented-Professional_:clap:}
 ```

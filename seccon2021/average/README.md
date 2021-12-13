@@ -285,6 +285,6 @@ There are numerous ways to solve this, this is just _a_ way.
 [*] Switching to interactive mode
 $ id
 uid=1000(average) gid=1000(average) groups=1000(average)
-$ cat flag.txt
+$ cat flag*
 SECCON{M4k3_My_4bi1i7i3s_4v3r4g3_in_7h3_N3x7_Lif3_cpwWz9jpoCmKYBvf}
 ```
