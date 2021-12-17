@@ -12,7 +12,7 @@
 > 
 > [`gosu_bof.tar.gz`](gosu_bof.tar.gz)
 
-Tags: _pwn_ _x86-64_ _bof_ _remote-shell_ _rop_ _ret2csu_
+Tags: _pwn_ _x86-64_ _bof_ _remote-shell_ _rop_ _ret2csu_ _stack-pivot_
 
 
 ## Summary

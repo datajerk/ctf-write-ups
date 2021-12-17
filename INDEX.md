@@ -918,6 +918,7 @@ _stack-pivot_
 * [downunderctf2021/oversight](downunderctf2021/oversight/README.md)
 * [downunderctf2021/rbp](downunderctf2021/rbp/README.md)
 * [redpwnctf2020/dead-canary](redpwnctf2020/dead-canary/README.md)
+* [seccon2021/gosu](seccon2021/gosu/README.md)
 * [tsgctf2021/coffee](tsgctf2021/coffee/README.md)
 * [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 
