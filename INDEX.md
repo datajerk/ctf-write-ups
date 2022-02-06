@@ -104,6 +104,7 @@ _bof_
 * [dctf2021/pinch\_me](dctf2021/pinch\_me/README.md)
 * [dctf2021/pwn\_sanity\_check](dctf2021/pwn\_sanity\_check/README.md)
 * [dicectf2021/babyrop](dicectf2021/babyrop/README.md)
+* [dicectf2022/interview\_opportunity](dicectf2022/interview\_opportunity/README.md)
 * [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
 * [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
 * [downunderctf2020/shellthis](downunderctf2020/shellthis/README.md)
@@ -331,6 +332,7 @@ _hash-collision_
 _heap_
 
 * [dctf2021/just\_another\_heap](dctf2021/just\_another\_heap/README.md)
+* [dicectf2022/babyrop](dicectf2022/babyrop/README.md)
 * [redpwnctf2021/simultaneity](redpwnctf2021/simultaneity/README.md)
 * [umdctf2021/jif](umdctf2021/jif/README.md)
 
@@ -498,6 +500,8 @@ _pwn_
 * [dctf2021/readme](dctf2021/readme/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
 * [dicectf2021/babyrop](dicectf2021/babyrop/README.md)
+* [dicectf2022/babyrop](dicectf2022/babyrop/README.md)
+* [dicectf2022/interview\_opportunity](dicectf2022/interview\_opportunity/README.md)
 * [downunderctf2020/my\_first\_echo\_server](downunderctf2020/my\_first\_echo\_server/README.md)
 * [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
 * [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
@@ -642,6 +646,7 @@ _remote-shell_
 * [darkctf2020/newpax](darkctf2020/newpax/README.md)
 * [darkctf2020/roprop](darkctf2020/roprop/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
+* [dicectf2022/interview\_opportunity](dicectf2022/interview\_opportunity/README.md)
 * [downunderctf2020/my\_first\_echo\_server](downunderctf2020/my\_first\_echo\_server/README.md)
 * [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
 * [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
@@ -793,6 +798,8 @@ _rop_
 * [dctf2021/hotel\_rop](dctf2021/hotel\_rop/README.md)
 * [dctf2021/pwn\_sanity\_check](dctf2021/pwn\_sanity\_check/README.md)
 * [dicectf2021/babyrop](dicectf2021/babyrop/README.md)
+* [dicectf2022/babyrop](dicectf2022/babyrop/README.md)
+* [dicectf2022/interview\_opportunity](dicectf2022/interview\_opportunity/README.md)
 * [downunderctf2020/my\_first\_echo\_server](downunderctf2020/my\_first\_echo\_server/README.md)
 * [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
 * [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
@@ -853,6 +860,10 @@ _scanf_
 * [cyberapocalypsectf2021/controller](cyberapocalypsectf2021/controller/README.md)
 * [nahamconctf2021/rps](nahamconctf2021/rps/README.md)
 * [redpwnctf2021/simultaneity](redpwnctf2021/simultaneity/README.md)
+
+_seccomp_
+
+* [dicectf2022/babyrop](dicectf2022/babyrop/README.md)
 
 _shameless_
 
@@ -942,6 +953,10 @@ _time_
 
 * [dawgctf2020/cookie-monster](dawgctf2020/cookie-monster/README.md)
 
+_uaf_
+
+* [dicectf2022/babyrop](dicectf2022/babyrop/README.md)
+
 _unsanitized-input_
 
 * [b01lersbootcampctf2020/white\_rabbit](b01lersbootcampctf2020/white\_rabbit/README.md)
@@ -978,6 +993,7 @@ _write-what-where_
 * [dctf2021/formats\_last\_theorem](dctf2021/formats\_last\_theorem/README.md)
 * [dctf2021/just\_another\_heap](dctf2021/just\_another\_heap/README.md)
 * [dctf2021/magic\_trick](dctf2021/magic\_trick/README.md)
+* [dicectf2022/babyrop](dicectf2022/babyrop/README.md)
 * [downunderctf2021/write-what-where](downunderctf2021/write-what-where/README.md)
 * [faustctf2020/cartography](faustctf2020/cartography/README.md)
 * [hsctf7/got\_it](hsctf7/got\_it/README.md)
@@ -1060,6 +1076,8 @@ _x86-64_
 * [dctf2021/pwn\_sanity\_check](dctf2021/pwn\_sanity\_check/README.md)
 * [dctf2021/readme](dctf2021/readme/README.md)
 * [dicectf2021/babyrop](dicectf2021/babyrop/README.md)
+* [dicectf2022/babyrop](dicectf2022/babyrop/README.md)
+* [dicectf2022/interview\_opportunity](dicectf2022/interview\_opportunity/README.md)
 * [downunderctf2020/my\_first\_echo\_server](downunderctf2020/my\_first\_echo\_server/README.md)
 * [downunderctf2020/return\_to\_what](downunderctf2020/return\_to\_what/README.md)
 * [downunderctf2020/return\_to\_whats\_revenge](downunderctf2020/return\_to\_whats\_revenge/README.md)
