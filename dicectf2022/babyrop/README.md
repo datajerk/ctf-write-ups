@@ -126,7 +126,7 @@ gef➤  x/2gx 0x5555557f7ae0
 0x5555557f7ae0:	0x0000000000000100	0x00005555557f7b90
 ```
 
-This looks correct for index 0.  The first 8 bytes is the size we requested in the `create(0, 0x100, cyclic(0x100))` statement.  The second 8 bytes is the pointer to the cyclic generated string:
+This looks correct for index 0.  The first 8 bytes is the size we requested from the `create(0, 0x100, cyclic(0x100))` statement.  The second 8 bytes is the pointer to the cyclic generated string:
 
 > The astute may notice that the index 0 `string` pointer is pointing to the index 7 `safe_string` structure.
 
@@ -307,7 +307,7 @@ If you're wondering why `pop rdx; pop r12` vs. just `pop rdx`, well that code ab
 
 The `xchg eax, edi` gadget is used to set `rdi` with the FD (`eax`) returned by `open`.
 
-> _Why not use `mov`?_ Well, there's wasn't a simple gadget for that.
+> _Why not use `mov`?_ Well, there wasn't a simple gadget for that.
 
 The ROP chain above has 3 sections, `open` [the flag], `read` [the flag and store down stack], `write` [the flag to stdout].
 
