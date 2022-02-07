@@ -83,7 +83,7 @@ Use-After-Free (UAF).  The bug here is NOT resetting the pointers to NULL.  Give
 
 If you read the code you'll notice we are limited to `10` strings.  Each string is represented by a malloc'd struct:
 
-```
+```c
 typedef struct {
     size_t length;
     char *string;
