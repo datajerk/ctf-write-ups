@@ -8,6 +8,8 @@ Profile: [datajerk](https://ctftime.org/user/63000)
 
 Teams: 
 
+2022: [burner_herz0g](https://ctftime.org/team/63292)
+
 2021: [burner_herz0g](https://ctftime.org/team/63292)
 
 2020: [burner_herz0g](https://ctftime.org/team/63292)
