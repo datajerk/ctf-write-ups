@@ -65,7 +65,7 @@ void FUN_0040053d(void)
 
 `FUN_0040053d` (above) is our vulnerable function and is called by `entry`:
 
-```
+```c
 void entry(void)
 {
   FUN_004004f9();
@@ -76,7 +76,7 @@ void entry(void)
 
 From the `entry` disassembly you can see that after the call to `FUN_0040053d` we'll return to `0x4004f2`:
 
-```
+```assembly
 undefined entry()
 
 004004e0 48 83 ec 08     SUB        RSP,0x8
@@ -132,7 +132,7 @@ With the leak and a second pass, we can just write out a simple ROP chain to get
 
 From the included `Dockerfile`:
 
-```
+```dockerfile
 FROM ubuntu:18.04
 ```
 
