@@ -21,7 +21,7 @@ Tags: _pwn_ _x86-64_ _rop_ _bof_
 
 ## Summary
 
-Warmup and cooldown are exactly the same problem only differing by size of input buffer.  I used the exact same code on both, so will only cover cooldown.
+Warmup and cooldown are exactly the same problem only differing by size of input buffer.  I used the exact same code on both, so I'll only cover cooldown.
 
 In short, use `write` to leak libc, then on second pass get a shell.
 
@@ -91,7 +91,7 @@ undefined entry()
          ff ff
 ```
 
-If set set a break point after `read(0,auStack56,0x60);`, you'll see that same return address on the stack and below that an address we're going to leak to get the location of libc:
+If you set a break point after `read(0,auStack56,0x60);`, you'll see that same return address on the stack and below that an address we're going to leak to get the location of libc:
 
 ```
 0x00007fffffffe408│+0x0000: 0x0000000a68616c62 ("blah\n"?)	 ← $rbx, $rsp, $rsi
@@ -136,7 +136,7 @@ From the included `Dockerfile`:
 FROM ubuntu:18.04
 ```
 
-So I just used an Ubuntu 18.04 Docker image for exploit development.
+I just used an Ubuntu 18.04 Docker image for exploit development.
 
 
 ## Exploit
