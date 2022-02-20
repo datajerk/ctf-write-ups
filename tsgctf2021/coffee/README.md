@@ -54,7 +54,7 @@ int main(void) {
 
 `printf(buf);`, there's your vulnerability (BTW, go search for that in Github and see how many hits you get, you'd be surprised--and they're all not CTF challenges).
 
-Normally I'd just change the GOT to have `puts` be `main` and get all the format-string exploits I want, however the `c0ffee` check prevents that naive exploit.
+Normally I'd just change the GOT to have `puts` be `main` and get all the format-string exploits I want, however the `c0ffee` check prevents that naive exploit (`x = 0` resets `x`).
 
 But all is not lost, we just need a pop sled.
 
