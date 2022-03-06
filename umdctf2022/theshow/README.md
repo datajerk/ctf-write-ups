@@ -113,7 +113,7 @@ The length of `showDescription` is dynamic, but `fgets` will read up to `500` by
 
 There are four `malloc_set` calls before the `malloc_set` for `showDescription`.  The fourth is for the `mainAct` struct; `0x60` offset into that struct is a pointer to a function:
 
-```
+```c
 *(code **)(mainAct + 0x60) = tellAJoke;
 ```
 
@@ -121,7 +121,7 @@ We just need to change that to `win`, that's it.
 
 Just before we're prompted for show length, the following `free`s are called:
 
-```
+```c
   free(message1);
   free(message3);
 ```
@@ -130,7 +130,7 @@ If we set our show length to the same as `message3` (`0x80`, see the decompile),
 
 The request size needs to be `0x80` - `8` (`120`), since the code will add `8` to our value:
 
-```
+```c
 showDescription = (char *)malloc_set((long)(local_44 + 8));
 ```
 
@@ -181,7 +181,7 @@ What would you like to do?
 Action: ^C
 ```
 
-Enter something else (e.g. `BLAHBLAH`), and then ctrl-c and search for it:
+Enter something else (e.g. `BLAHBLAH`), and then ctrl-C and search for it:
 
 ```
 gef➤  grep BLAHBLAH
