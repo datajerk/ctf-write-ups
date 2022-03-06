@@ -210,7 +210,7 @@ As expected `rsi` is pointing to the `readstory.txt` text.
 
 > Above is what remote would look like, locally you've have created your own `readstory.txt` with some other content.
 
-All that is required in the patch is to `nop` then `mov rdi, rsi` just before the `puts`:
+All that is required to patch is to `nop` then `mov rdi, rsi` just before the `puts`:
 
 ```assembly
   4017fd:   e8 de f9 ff ff          call   4011e0 <read@plt>
@@ -420,7 +420,7 @@ addr_exit = 0x401827
 
 The above just has the dissembled section as documentation for the hardcoded variables, followed by our 32-byte patch that is then broken up into (4) 64-bit words; `ptrace` patching writes words.
 
-The `PTRACE_...` values are taking directly from `sys/ptrace.h` 
+The `PTRACE_...` values are taken directly from `sys/ptrace.h` 
 
 ```python
 payload = asm(
