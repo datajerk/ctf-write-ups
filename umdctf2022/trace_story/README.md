@@ -23,7 +23,7 @@ You can proof-of-concept this in GDB then use that to craft a `ptrace` payload.
 
 This challenge is a great way to learn about `ptrace`.  If new to `ptrace` consider reading [https://www.linuxjournal.com/article/6210](https://www.linuxjournal.com/article/6210)--it's 20 years old, but it's still spot on and very useful.
 
-> There are multiple ways to solve this.  Below is just _one_ way.  Below that is a second way.
+> There are multiple ways to solve this.  Below is just _one_ way (and below that is a second way).
 
 ## Analysis
 
