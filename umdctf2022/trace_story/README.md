@@ -255,7 +255,7 @@ If the child PID is not even, then nothing happens.  This can be patched out, ho
 
 Above I stated you could proof-of-concept this in GDB and then write the exploit.  However, there was one more step for me, and that was to write a C version ([hotpatch.c](hotpatch.h)) to test my ideas before investing time in a shellcode version:
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/ptrace.h>
