@@ -117,7 +117,7 @@ Above is how the variables are stacked up in the stack.  The format string is at
   printf((char *)((long)&uStack233 + 1),local_78);
 ```
 
-The `gets(local_158);` can be used to overwrite the format string, just send `0x158 - 233 + 1` of garbage then your format string.  It's that easy.  Why `0x158` and `233`?  Look at the variables above.  `local_158` is `0x158` bytes from the end of the stack frame.  `uStack233` is `233` (decimal) bytes from the end of the stack frame (Ghidra uses an underscore for hex).
+`gets(local_158);` can be used to overwrite the format string; just send `0x158 - 233 + 1` of garbage follwed by your format string.  It's that easy.  Why `0x158` and `233`?  Look at the variables above.  `local_158` is `0x158` bytes from the end of the stack frame.  `uStack233` is `233` (decimal) bytes from the end of the stack frame (Ghidra uses an underscore for hex).
 
 The format string just needs to replace `putchar` with `get_flag` so that on `putchar(10);` invocation we get a shell.
 
