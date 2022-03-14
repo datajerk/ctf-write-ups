@@ -237,7 +237,7 @@ p.sendline(payload)
 p.interactive()
 ```
 
-Baby walk ROP.  Google _ret2csu_ or read some of my other write ups for details.
+Baby talk ROP.  Google _ret2csu_ or read some of my other write ups for details.
 
 But, what if there is no `execve` in the GOT?
 
@@ -274,7 +274,7 @@ p.sendline(payload)
 p.interactive()
 ```
 
-Baby talk.  Google _ret2dlresolve_ or read some of my other write ups for details.
+Baby walk.  Google _ret2dlresolve_ or read some of my other write ups for details.
 
 
 Any of the above will get you a shell:
