@@ -280,11 +280,11 @@ Baby walk.  Google _ret2dlresolve_ or read some of my other write ups for detail
 Any of the above will get you a shell:
 
 ```bash
-# ./exploit.py REMOTE=1
-[+] Opening connection to pwn.utctf.live on port 5004: Done
+# ./exploit.py
+[+] Opening connection to pwn.utctf.live on port 5000: Done
 [*] Switching to interactive mode
 $ cat flag.txt
-utflag{just_a_little_salami15983350}
+utflag{you_expected_the_flag_to_be_screaming_but_it_was_me_dio98054042}
 ```
 
 ### But, what if ...
