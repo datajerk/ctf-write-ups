@@ -206,7 +206,7 @@ p.sendlineafter(b'> ', payload)
 p.interactive()
 ```
 
-This is as oldskool as it _gets_, no ASLR, a pretty good guess at the stack/buf location, a nopsled followed by some script kiddie shellcode we got off the Internet.
+This is as oldskool as it _gets_, no ASLR, a pretty good guess at the stack/buf location, and a nopsled followed by some script kiddie shellcode we got off the Internet.
 
 Now you know RISC-V.
 
