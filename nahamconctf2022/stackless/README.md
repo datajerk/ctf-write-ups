@@ -94,7 +94,7 @@ We're limited to `read`, `write`, `open`, `close`, `exit`, and `exit_group` sysc
 
 The second constraint is actually more of a dick move--the _common_ registers are reset (zeroed).  Including `r15` since a 3-byte instruction is prepended to your submitted shellcode to reset `r15` before your code starts to run.
 
-With `rsp` zeroed and PIE enabled, we have no idea where in memory we can use as a scratchpad to read in and emit the flag from.
+With `rsp` zeroed and PIE enabled, we have no idea where in memory what we can use as a scratchpad to read in and emit the flag from.
 
 However, our lulzy challenge author was not thorough and left a number of _uncommon_ registered set.  From `gdb` use `i all-r`.
 
