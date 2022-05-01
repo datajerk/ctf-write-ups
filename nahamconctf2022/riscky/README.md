@@ -211,6 +211,8 @@ This is as oldskool as it _gets_, no ASLR, a pretty good guess at the stack/buf 
 Now you know RISC-V.
 
 > pwntools RISC-V support is, well, not 100%, e.g. `binary = context.binary = ELF('./riscky')` didn't work, so I had to manually set in code `context.arch` and `context.bits` for `asm`.  The other option was to use `p32(0x13)` for `nop`.
+>
+> NOTE: `python3 -m pip install pwntools==4.9.0b0`
 
 Output:
 
