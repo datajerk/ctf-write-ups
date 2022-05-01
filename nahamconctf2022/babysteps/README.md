@@ -40,7 +40,9 @@ instead.
     RWX:      Has RWX segments
 ```
 
-No mitigations, basically choose your own adventure.  I went with _ret2dlresolve_ because I'm lazy and the code is identical for most `gets` challenges.
+No mitigations, basically choose your own adventure.  
+
+> I went with _ret2dlresolve_ because I'm lazy and the code is identical for most `gets` challenges.
 
 
 ### Ghidra Decompile
