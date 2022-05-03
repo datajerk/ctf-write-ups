@@ -38,7 +38,6 @@ No mitigations in place, choose your own adventure.
 
 ```c
 undefined8 main(void)
-
 {
   char acStack520 [500];
   undefined4 local_14;
