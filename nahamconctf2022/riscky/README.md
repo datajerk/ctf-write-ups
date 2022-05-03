@@ -13,7 +13,7 @@ Tags: _pwn_ _riscv_ _riscv64_ _shellcode_ _bof_
 
 ## Summary
 
-Unconstrained `riscv` binary with `gets`.
+Unconstrained `riscv` binary featuring `gets`.
 
 Newskool _gets_ oldskooled.
 
