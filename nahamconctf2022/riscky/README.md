@@ -8,7 +8,7 @@
 >
 > [`riscky.zip`](riscky.zip)
 
-Tags: _pwn_ _riscv_ _riscv64_ _shellcode_ 
+Tags: _pwn_ _riscv_ _riscv64_ _shellcode_ _bof_
 
 
 ## Summary
