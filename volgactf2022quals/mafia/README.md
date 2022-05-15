@@ -149,7 +149,7 @@ is effectively `alloca`:
         0010163a 48 29 c4        SUB        RSP,RAX
 ```
 
-Do not concern yourself with the details, just notice the last statement, the stack has been grown by the inline C function `alloca`, and RSP is currently pointing to the new allocation; that same pointer is stored down stack in an array that can be overwritten.
+Do not concern yourself with the details, just notice the last statement, the stack has been grown by the inline C function `alloca`, and `RSP` is currently pointing to the new allocation; that same pointer is stored down stack in an array that can be overwritten.
 
 This `alloca`'d space has not been initialized, left over on the stack are leaked stack, libc, and base process locations that can be easily exfiltrated with the `2. Edit string` and `3. Print string` functions.
 
