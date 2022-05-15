@@ -140,6 +140,7 @@ _bof_
 * [nahamconctf2021/the\_list](nahamconctf2021/the\_list/README.md)
 * [nahamconctf2022/babiersteps](nahamconctf2022/babiersteps/README.md)
 * [nahamconctf2022/babysteps](nahamconctf2022/babysteps/README.md)
+* [nahamconctf2022/riscky](nahamconctf2022/riscky/README.md)
 * [pbctf2020/amazing\_rop](pbctf2020/amazing\_rop/README.md)
 * [ractf2020/fiap](ractf2020/fiap/README.md)
 * [ractf2020/fias](ractf2020/fias/README.md)
@@ -358,6 +359,7 @@ _integer-overflow_
 * [cyberapocalypsectf2021/controller](cyberapocalypsectf2021/controller/README.md)
 * [cyberapocalypsectf2021/harvester](cyberapocalypsectf2021/harvester/README.md)
 * [fwordctf2020/numbers](fwordctf2020/numbers/README.md)
+* [volgactf2022quals/mafia](volgactf2022quals/mafia/README.md)
 * [xmasctf2020/lil\_wishes\_db](xmasctf2020/lil\_wishes\_db/README.md)
 
 _kernel_
@@ -621,6 +623,7 @@ _pwn_
 * [utctf2022/AAAAAAAAAAAAAAAA](utctf2022/AAAAAAAAAAAAAAAA/README.md)
 * [utctf2022/automated\_exploit\_generation\_2](utctf2022/automated\_exploit\_generation\_2/README.md)
 * [utctf2022/smol\_overflow](utctf2022/smol\_overflow/README.md)
+* [volgactf2022quals/mafia](volgactf2022quals/mafia/README.md)
 * [vulnhub/venus](vulnhub/venus/README.md)
 * [wpictf2020/dont@me](wpictf2020/dont@me/README.md)
 * [wpictf2020/dorsia1](wpictf2020/dorsia1/README.md)
@@ -890,6 +893,7 @@ _rop_
 * [tjctf2020/stop](tjctf2020/stop/README.md)
 * [tsgctf2021/coffee](tsgctf2021/coffee/README.md)
 * [twctf2020/nothing\_more\_to\_say\_2020](twctf2020/nothing\_more\_to\_say\_2020/README.md)
+* [volgactf2022quals/mafia](volgactf2022quals/mafia/README.md)
 * [vulnhub/venus](vulnhub/venus/README.md)
 * [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 * [xmasctf2020/lil\_wishes\_db](xmasctf2020/lil\_wishes\_db/README.md)
@@ -915,6 +919,7 @@ _seccomp_
 * [dicectf2022/babyrop](dicectf2022/babyrop/README.md)
 * [nahamconctf2022/stackless](nahamconctf2022/stackless/README.md)
 * [umdctf2022/trace\_story](umdctf2022/trace\_story/README.md)
+* [volgactf2022quals/mafia](volgactf2022quals/mafia/README.md)
 
 _shameless_
 
@@ -1058,6 +1063,7 @@ _write-what-where_
 * [redpwnctf2020/kevin-higgs](redpwnctf2020/kevin-higgs/README.md)
 * [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tjctf2020/naughty](tjctf2020/naughty/README.md)
+* [volgactf2022quals/mafia](volgactf2022quals/mafia/README.md)
 * [wpictf2020/dorsia4](wpictf2020/dorsia4/README.md)
 * [xmasctf2020/lil\_wishes\_db](xmasctf2020/lil\_wishes\_db/README.md)
 
@@ -1216,6 +1222,7 @@ _x86-64_
 * [utctf2022/AAAAAAAAAAAAAAAA](utctf2022/AAAAAAAAAAAAAAAA/README.md)
 * [utctf2022/automated\_exploit\_generation\_2](utctf2022/automated\_exploit\_generation\_2/README.md)
 * [utctf2022/smol\_overflow](utctf2022/smol\_overflow/README.md)
+* [volgactf2022quals/mafia](volgactf2022quals/mafia/README.md)
 * [vulnhub/venus](vulnhub/venus/README.md)
 * [xmasctf2020/doiknowyou](xmasctf2020/doiknowyou/README.md)
 * [xmasctf2020/lil\_wishes\_db](xmasctf2020/lil\_wishes\_db/README.md)
