@@ -156,7 +156,7 @@ This `alloca`'d space has not been initialized, left over on the stack are leake
 The plan is fairly simple:
 
 1. Leak the location of libc.
-2. Leak the location of the stack, and compute the location of the return address on the stack.
+2. Leak the location of the stack, then compute the location of the return address on the stack.
 3. Use the zero-length string vuln (see above) to overwrite a pointer to a string and have it point to the return address on the stack.
 4. Write out a ROP chain.
 5. Profit.
