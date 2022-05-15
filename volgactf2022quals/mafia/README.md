@@ -83,7 +83,7 @@ we have the following seccomp filters:
 
 We are limited to `read`, `write`, `open`, `close`, `mmap`, `brk`, and `exit_group` syscalls.
 
-`open`/`read`/`write` is all we should need to get the flag, however starting at line `0012` the `read` syscall file descriptor (`fd`) is limited `0` and only `0`.  `0` is usually reserved for `stdin` (FYI, FD's `0`, `1`, and `2` are all tied to `/dev/tty` and can all be used for tty input and output).  If we were to `open` `flag.txt`, we'd most likely end up with an `fd` of `3` since `0`, `1`, and `2` are in use.  This is where `close` comes in handy, we'll have to close `0` first so that on `open` the next `fd` is `0`.
+`open`/`read`/`write` is all we should need to get the flag, however starting at line `0012` the `read` syscall file descriptor (`fd`) is limited to `0` and only `0`.  `0` is usually reserved for `stdin` (FYI, FDs `0`, `1`, and `2` are all tied to `/dev/tty` and can all be used for tty input and output).  If we were to `open` `flag.txt`, we'd most likely end up with an `fd` of `3` since `0`, `1`, and `2` are in use.  This is where `close` comes in handy, we'll have to close `0` first so that on `open` the next `fd` is `0`.
 
 > Pssst..., if a CTF challenge blocks you with `close(1); close(2);`, you can get output with `write(0,...)`.
 
@@ -117,7 +117,7 @@ We are limited to `read`, `write`, `open`, `close`, `mmap`, `brk`, and `exit_gro
 
 The vuln is in the `if (uVar2 == 1) {` (`1. Add string`) block.  If you follow the code from top down, `local_e4` is the size of the string to be allocated (on the stack--more on this later).  If `local_e4` (`uint`) is `0`, then `local_dc` will be `4`.
 
-The statement `*(uint *)((long)local_d8 + (ulong)local_e0 * 4) = local_e4 - local_dc;` is really just `local_d8[local_e0] = local_e4 - local_dc;`.  `local_d8` is an array of 32-bit ints (`uint`) that stores the length of the string indexed by `local_e0` (follow the code).  If `local_e4` is `0` and `local_dc` is 4, then we have an integer overflow and `local_e4` will be `-4`, but since `uint`, it's `0xfffffffc`.  This will allow writes out of bounds on edit, however we do not need to wait, this same error is repeated with `uVar2 = local_e4 - local_dc;` and used as the length for the `read(0,pcVar1,(ulong)uVar2)` call, effectively allowing us to write down stack, and since the pointers to the strings are down stack, we can overwrite them with any address rendering a _write-what-where_.
+The statement `*(uint *)((long)local_d8 + (ulong)local_e0 * 4) = local_e4 - local_dc;` is really just `local_d8[local_e0] = local_e4 - local_dc;`.  `local_d8` is an array of 32-bit ints (`uint`) that stores the length of the string indexed by `local_e0` (follow the code).  If `local_e4` is `0` and `local_dc` is 4, then we have an integer overflow and `local_e4` will be `-4`, but since `uint`, it's `+0xfffffffc`.  This will allow writes out of bounds on edit, however we do not need to wait, this same error is repeated with `uVar2 = local_e4 - local_dc;` and used as the length for the `read(0,pcVar1,(ulong)uVar2)` call, effectively allowing us to write down stack, and since the pointers to the strings are down stack, we can overwrite them with any address rendering a _write-what-where_.
 
 But first we need some leaks.
 
