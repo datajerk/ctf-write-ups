@@ -15,7 +15,7 @@ Tags: _pwn_ _x86-64_ _seccomp_ _rop_ _write-what-where_ _integer-overflow_
 
 ## Summary
 
-A filthy stack and integer overflow leads to a _write-what-where_ used to craft a seccomp filtered ROP chain.
+A filthy stack and integer overflow leads to a _write-what-where_ used to deploy a seccomp filtered ROP chain.
 
 
 ## Analysis
