@@ -153,7 +153,7 @@ Do not concern yourself with the details, just notice the last statement, the st
 
 This `alloca`'d space has not been initialized, left over on the stack are leaked stack, libc, and base process locations that can be easily exfiltrated with the `2. Edit string` and `3. Print string` functions.
 
-The plan is fairly simple:
+The plan is simple:
 
 1. Leak the location of libc.
 2. Leak the location of the stack, then compute the location of the return address on the stack.
