@@ -51,7 +51,7 @@ From `setup`:
   seccomp_release(uVar1);
 ```
 
-we have the following seccomp filters:
+we have the following seccomp rules:
 
 ```bash
 # seccomp-tools dump ./mafia
@@ -85,7 +85,7 @@ We are limited to `read`, `write`, `open`, `close`, `mmap`, `brk`, and `exit_gro
 
 `open`/`read`/`write` is all we should need to get the flag, however starting at line `0012` the `read` syscall file descriptor (`fd`) is limited to `0` and only `0`.  `0` is usually reserved for `stdin` (FYI, FDs `0`, `1`, and `2` are all tied to `/dev/tty` and can all be used for tty input and output).  If we were to `open` `flag.txt`, we'd most likely end up with an `fd` of `3` since `0`, `1`, and `2` are in use.  This is where `close` comes in handy, we'll have to close `0` first so that on `open` the next `fd` is `0`.
 
-> Pssst..., if a CTF challenge blocks you with `close(1); close(2);`, you can get output with `write(0,...)`.
+> _Pssst..., if a CTF challenge blocks you with `close(1); close(2);`, you can get output with `write(0,...)`._
 
 ```c
     if (uVar2 == 1) {
