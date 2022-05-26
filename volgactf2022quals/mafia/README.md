@@ -359,7 +359,7 @@ print(flag)
 
 Just write out the ROP chain as the index 0 string, and exit to exploit.
 
-> You may need to run a few times to get the flag.
+> You may need to run a few times to get the flag.  See `exploit1a.py` below.
 
 Output:
 
@@ -372,3 +372,35 @@ Output:
 [*] Closed connection to mafia.q.2022.volgactf.ru port 1337
 VolgaCTF{d0n7_y0u_try_70_ch347}
 ```
+
+## exploit1a
+
+`exploit1a.py` adds some checks and will exit early if the stack leaks are garbage or if the stack is too high up in user space.
+
+e.g.:
+
+```
+[+] Starting local process '/pwd/datajerk/volgactf2022quals/mafia/mafiap': pid 43731
+[*] libc.address: 0x7f836ae82000
+[*] stack_leak: 0x6441202e310a
+[*] return_address: 0x6441202e3112
+[*] Stopped process '/pwd/datajerk/volgactf2022quals/mafia/mafiap' (pid 43731)
+[CRITICAL] this is not the stack leak you're looking for, try again
+```
+
+```
+[+] Starting local process '/pwd/datajerk/volgactf2022quals/mafia/mafiap': pid 37709
+[*] libc.address: 0x7fef7b972000
+[*] stack_leak: 0x7fff631cdae0
+[*] return_address: 0x7fff631cdae8
+[*] Stopped process '/pwd/datajerk/volgactf2022quals/mafia/mafiap' (pid 37709)
+[CRITICAL] read beyond user-space: 0x8000631cdae4
+[CRITICAL] read syscall will fail, try again
+```
+
+There's a ~1/3 chance of encountering one of these errors.
+
+
+## exploit2
+
+`exploit2.py` explores the other route, `mmap`.  See the comments in the code.
