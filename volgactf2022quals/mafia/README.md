@@ -400,6 +400,7 @@ e.g.:
 
 There's a ~1/3 chance of encountering one of these errors.
 
+> If you were using GDB or had disable ASLR you would have failed 100% of the time because the stack is at the top of user space.
 
 ## exploit2
 
