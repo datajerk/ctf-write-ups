@@ -13,7 +13,7 @@ GBA, _groan..._
 
 > I spend more time tooling up for these type of challenges than actually solving them.
 
-With the help of teammate [dobs](https://github.com/dobsonj) I didn't have to do too much researching on tooling; [dobs](https://github.com/dobsonj) set me up with a Ghidra plugin [GhidraGBA](https://github.com/SiD3W4y/GhidraGBA) and found the functions of interest.  However, we still lost time finding GBA emulators and getting debuggers working with them.  I guess we could have just _Read the code, should be easy_, but I prefer to noodle my way through with a debugger to check my assumptions.  I ended up using [mGBA](https://mgba.io/) with its internal debugger (GDB had numerous problems with a stable and useful remote connection).
+With the help of teammate [dobs](https://github.com/dobsonj), I didn't have to do too much researching on tooling; [dobs](https://github.com/dobsonj) set me up with the Ghidra plugin [GhidraGBA](https://github.com/SiD3W4y/GhidraGBA) and found the functions of interest.  However, we still lost time finding GBA emulators and getting debuggers working with them.  I guess we could have just _Read the code, should be easy_, but I prefer to noodle my way through with a debugger to check my assumptions.  I ended up using [mGBA](https://mgba.io/) with its internal debugger (GDB had numerous problems with a stable and useful remote connection).
 
 
 ## Analysis
@@ -24,14 +24,14 @@ With the help of teammate [dobs](https://github.com/dobsonj) I didn't have to do
 
 From here you up/down/left/right to input a string of lowercase letters and underscores then enter with _start_ (or _return_ if not using a controller).
 
-Then a check function, checks it out:
+Then a check function, _checks it out_:
 
 ![](pic2.png)
 
 
 ### Decompile with Ghidra
 
-```
+```c
 longlong main(void)
 {
   int iVar1;
@@ -55,9 +55,9 @@ longlong main(void)
 }
 ```
 
-`main` does very little, just gets your input and passes to `checkit`, if `checkit` return `0x12e1`, then you've solve it.
+`main` does very little, just gets your input and passes to `checkit`, if `checkit` returns `0x12e1`, then you've solve it.
 
-```
+```c
 undefined8 checkit(int param_1)
 {
   int iVar1;
@@ -99,7 +99,7 @@ b 0x80002FA
 b 0x800030C
 ```
 
-Then looked at the values on stack:
+Then looked at the values on stack on each loop iteration:
 
 ```
 r/2 0x03007DDE
@@ -108,7 +108,7 @@ r/2 0x03007DDC
 
 It was easy to see a pattern:
 
-```
+```c
 local_12 += (uint)*(byte *)(param_1 + local_18) // input byte
 local_14 += local_12
 ```
