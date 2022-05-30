@@ -6,7 +6,7 @@
 > 
 > This challenge will raise 33 euros for a good cause.
 >
-> [`pwn_controller.zip`](`pwn_controller.zip`)
+> [`pwn_controller.zip`](pwn_controller.zip)
 
 Tags: _pwn_ _x86-64_ _integer-overflow_ _rop_ _bof_ _scanf_
 

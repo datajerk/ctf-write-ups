@@ -6,7 +6,7 @@
 > 
 > This challenge will raise 43 euros for a good cause.
 >
-> [`pwn_save_the_environment.zip`](`pwn_save_the_environment.zip`)
+> [`pwn_save_the_environment.zip`](pwn_save_the_environment.zip)
 
 Tags: _pwn_ _x86-64_ _write-what-where_ _rop_
 

@@ -6,7 +6,7 @@
 > 
 > This challenge will raise 33 euros for a good cause.
 >
-> [`pwn_mindfield.zip`](`pwn_mindfield.zip`)
+> [`pwn_mindfield.zip`](pwn_mindfield.zip)
 
 Tags: _pwn_ _x86-64_ _write-what-where_
 

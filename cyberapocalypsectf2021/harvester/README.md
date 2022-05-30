@@ -6,7 +6,7 @@
 > 
 > This challenge will raise 43 euros for a good cause.
 >
-> [`pwn_harvester.zip`](`pwn_harvester.zip`)
+> [`pwn_harvester.zip`](pwn_harvester.zip)
 
 Tags: _pwn_ _x86-64_ _format-string_ _rop_ _stack-pivot_ _one-gadget_ _bof_ _integer-overflow_
 

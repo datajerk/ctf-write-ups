@@ -12,7 +12,7 @@
 >
 > Author: Iv
 >
-> [`challenge.c`](`challenge.c`)
+> [`challenge.c`](challenge.c)
 
 Tags: _pwn_ _bof_ _variable-overwite_
 

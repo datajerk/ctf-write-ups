@@ -6,7 +6,7 @@
 > 
 > This challenge will raise 33 euros for a good cause.
 >
-> [`pwn_system_drop.zip`](`pwn_system_drop.zip`)
+> [`pwn_system_drop.zip`](pwn_system_drop.zip)
 
 Tags: _pwn_ _x86-64_ _bof_ _ret2csu_
 

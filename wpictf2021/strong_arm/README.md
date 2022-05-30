@@ -8,7 +8,7 @@
 >
 > Connect `nc 172.104.14.64 54732`
 >
-> [`arm.c`](`arm.c`) [`libc-2.23.so`](`libc-2.23.so`) [`arm`](`arm`)
+> [`arm.c`](arm.c) [`libc-2.23.so`](libc-2.23.so) [`arm`](arm)
 
 Tags: _pwn_ _bof_ _rop_ _ret2libc_ _got-overwrite_ _arm_ _arm64_ _aarch64_ _stack-pivot_
 
