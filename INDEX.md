@@ -34,12 +34,14 @@ _angr_
 _arm_
 
 * [dc2021q/mra](dc2021q/mra/README.md)
+* [dc2022q/not-so-advanced](dc2022q/not-so-advanced/README.md)
 * [redteamvillage2021/tps\_report](redteamvillage2021/tps\_report/README.md)
 * [umdctf2021/furor](umdctf2021/furor/README.md)
 * [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 
 _arm32_
 
+* [dc2022q/not-so-advanced](dc2022q/not-so-advanced/README.md)
 * [redteamvillage2021/tps\_report](redteamvillage2021/tps\_report/README.md)
 
 _arm64_
@@ -290,6 +292,10 @@ _fortify_
 
 * [asisquals2020/full\_protection](asisquals2020/full\_protection/README.md)
 
+_gba_
+
+* [dc2022q/not-so-advanced](dc2022q/not-so-advanced/README.md)
+
 _gets_
 
 * [auctf2020/house-of-madness](auctf2020/house-of-madness/README.md)
@@ -338,8 +344,14 @@ _got-overwrite_
 * [utctf2022/smol\_overflow](utctf2022/smol\_overflow/README.md)
 * [wpictf2021/strong\_arm](wpictf2021/strong\_arm/README.md)
 
+_hash_
+
+* [dc2022q/hash\_it](dc2022q/hash\_it/README.md)
+* [dc2022q/same\_old](dc2022q/same\_old/README.md)
+
 _hash-collision_
 
+* [dc2022q/same\_old](dc2022q/same\_old/README.md)
 * [twctf2020/easy\_hash](twctf2020/easy\_hash/README.md)
 
 _heap_
@@ -510,6 +522,7 @@ _pwn_
 * [dc2019q/speedrun-004](dc2019q/speedrun-004/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 * [dc2021q/mra](dc2021q/mra/README.md)
+* [dc2022q/hash\_it](dc2022q/hash\_it/README.md)
 * [dctf2021/baby\_bof](dctf2021/baby\_bof/README.md)
 * [dctf2021/formats\_last\_theorem](dctf2021/formats\_last\_theorem/README.md)
 * [dctf2021/hotel\_rop](dctf2021/hotel\_rop/README.md)
@@ -796,6 +809,7 @@ _rev_
 * [dawgctf2020/animal-crossing](dawgctf2020/animal-crossing/README.md)
 * [dc2020q/mooodem](dc2020q/mooodem/README.md)
 * [dc2020q/ooobash](dc2020q/ooobash/README.md)
+* [dc2022q/not-so-advanced](dc2022q/not-so-advanced/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
 * [faustctf2021/treasury](faustctf2021/treasury/README.md)
 * [fwordctf2020/welcome\_reverser](fwordctf2020/welcome\_reverser/README.md)
@@ -816,6 +830,10 @@ _riscv_
 _riscv64_
 
 * [nahamconctf2022/riscky](nahamconctf2022/riscky/README.md)
+
+_rom_
+
+* [dc2022q/not-so-advanced](dc2022q/not-so-advanced/README.md)
 
 _rop_
 
@@ -938,6 +956,7 @@ _shellcode_
 * [castorsctf20/babybof1\_pt2](castorsctf20/babybof1\_pt2/README.md)
 * [cybersecurityrumblectf2020/babypwn](cybersecurityrumblectf2020/babypwn/README.md)
 * [dawgctf2020/roppin-boys](dawgctf2020/roppin-boys/README.md)
+* [dc2022q/hash\_it](dc2022q/hash\_it/README.md)
 * [de1ctf2020/code\_runner](de1ctf2020/code\_runner/README.md)
 * [hacktivityctf2021/shellcoded](hacktivityctf2021/shellcoded/README.md)
 * [hacktivityctf2021/yabo](hacktivityctf2021/yabo/README.md)
@@ -1129,6 +1148,7 @@ _x86-64_
 * [darkctf2020/roprop](darkctf2020/roprop/README.md)
 * [dc2019q/speedrun-004](dc2019q/speedrun-004/README.md)
 * [dc2020q/ooobash](dc2020q/ooobash/README.md)
+* [dc2022q/hash\_it](dc2022q/hash\_it/README.md)
 * [dctf2021/baby\_bof](dctf2021/baby\_bof/README.md)
 * [dctf2021/formats\_last\_theorem](dctf2021/formats\_last\_theorem/README.md)
 * [dctf2021/hotel\_rop](dctf2021/hotel\_rop/README.md)
