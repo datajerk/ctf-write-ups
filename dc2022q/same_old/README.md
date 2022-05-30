@@ -58,7 +58,7 @@ int main()
 
 Just build and run a handful in parallel and you'll get a solution in about a minute, e.g.:
 
-```
+```bash
 # time ./solve
 3c456de6
 burner_herz0g

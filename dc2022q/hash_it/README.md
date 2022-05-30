@@ -86,7 +86,7 @@ The main `do`/`while` loop hashes pairs of chars by calling `FUN_00101320`, and 
 
 The first byte of the digest is stored in `local_3d` and that is then used to overwrite our original input:
 
-```
+```c
 *(undefined *)((long)__src + (ulong)uVar4) = local_3d;
 ```
 
