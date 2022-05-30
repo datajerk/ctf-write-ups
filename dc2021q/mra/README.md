@@ -8,7 +8,7 @@
 >
 > `nc mra.challenges.ooo 8000`
 >
-> [`mra`](`mra`) [`live here`](https://archive.ooo/c/mra/406/)
+> [`mra`](mra) [`live here`](https://archive.ooo/c/mra/406/)
 
 Tags: _pwn_ _bof_ _rop_ _arm_ _arm64_ _aarch64_
 
