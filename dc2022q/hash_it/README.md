@@ -67,21 +67,21 @@ undefined4 main(void)
 The main `do`/`while` loop hashes pairs of chars by calling `FUN_00101320`, and specifying with this table, which hash to use:
 
 ```
-                             PTR_EVP_md5_001040a0                            XREF[2]:     main:00101181(*), 
-                                                                                          main:001011b0(R)  
-        001040a0 20 50 10        addr       <EXTERNAL>::EVP_md5                              = ??
-                 00 00 00 
-                 00 00
-                             PTR_EVP_sha1_001040a8                           XREF[1]:     main:001011b0(R)  
-        001040a8 60 50 10        addr       <EXTERNAL>::EVP_sha1                             = ??
-                 00 00 00 
-                 00 00
-        001040b0 88 50 10        addr       <EXTERNAL>::EVP_sha256                           = ??
-                 00 00 00 
-                 00 00
-        001040b8 80 50 10        addr       <EXTERNAL>::EVP_sha512                           = ??
-                 00 00 00 
-                 00 00
+                     PTR_EVP_md5_001040a0                            XREF[2]:     main:00101181(*), 
+                                                                                  main:001011b0(R)  
+001040a0 20 50 10        addr       <EXTERNAL>::EVP_md5                              = ??
+         00 00 00 
+         00 00
+                     PTR_EVP_sha1_001040a8                           XREF[1]:     main:001011b0(R)  
+001040a8 60 50 10        addr       <EXTERNAL>::EVP_sha1                             = ??
+         00 00 00 
+         00 00
+001040b0 88 50 10        addr       <EXTERNAL>::EVP_sha256                           = ??
+         00 00 00 
+         00 00
+001040b8 80 50 10        addr       <EXTERNAL>::EVP_sha512                           = ??
+         00 00 00 
+         00 00
 ```
 
 The first byte of the digest is stored in `local_3d` and that is then used to overwrite our original input:
