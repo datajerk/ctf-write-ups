@@ -120,7 +120,7 @@ One of the last 16 locations will contain the flag, so there is no need to conce
 
 `rand()` is used with no seed (defaults to 1), making each location deterministic.
 
-To exploit this we'll use `write` to _write_ out each location.  Any attempt to read memory with pure shellcode will just segfault with the odds of 15/16, since the permissions for 15 of the 16 are `---`.  However, `write`, will just return `EFAULT` (`-14`) into `rax`, and then continue on.
+To exploit this we'll use `write` to _write_ out each location.  Any attempt to read memory with pure shellcode will just segfault with 15/16 odds since the permissions for 15 of the 16 are `---`.  However, `write`, will just return `EFAULT` (`-14`) into `rax`, and then continue on.
 
 
 ## Exploit
