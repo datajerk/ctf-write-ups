@@ -102,7 +102,7 @@ LAB_00101525:
         } while (uVar7 != 0);
 ```
 
-In `main` there are two loops.  The outer loop of 10 assigns [per iteration] `local_f8` a 4-bit (range 0-15) value from `urandom`.  The inner loop of 16 creates [per iteration] a pseudo random address and `mmap`s a page of memory to that location; if the loop index matches the 4-bit value from `urandom`, then that allocation will be set with `rw-` permissions.
+In `main` there are two [nested] loops.  The outer loop of 10 assigns [per iteration] `local_f8` a 4-bit (range 0-15) value from `urandom`.  The inner loop of 16 creates [per iteration] a pseudo random address and `mmap`s a page of memory to that location; if the loop index matches the 4-bit value from `urandom`, then that allocation will be set with `rw-` permissions.
 
 After both loops end the last `rw-` allocation is used to store the flag:
 
