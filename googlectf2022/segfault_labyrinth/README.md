@@ -70,6 +70,12 @@ Not dissimilar to many basic shellcode challenges where, `open`, `read`, `write`
 ### Decompile in Ghidra
 
 ```c
+      pFVar2 = fopen("/dev/urandom","r");
+      if (pFVar2 == (FILE *)0x0) {
+        fwrite("Error: failed to open urandom. Exiting\n",1,0x27,stderr);
+        local_114 = -1;
+      }
+      else {
         uVar7 = 10;
         pvVar3 = mmap((void *)0x0,0x1000,3,0x22,-1,0);
         __ptr = pvVar3;
@@ -86,8 +92,7 @@ LAB_00101525:
           uVar8 = 0;
           do {
             iVar1 = rand();
-            pvVar5 = mmap((void *)((long)iVar1 * 0x1000 + 0x10000),0x1000,(uint)(uVar9 == uVar8) * 3
-                          ,0x22,-1,0);
+            pvVar5 = mmap((void *)((long)iVar1 * 0x1000 + 0x10000),0x1000,(uint)(uVar9 == uVar8) * 3,0x22,-1,0);
             *(void **)((long)__ptr + uVar8 * 8) = pvVar5;
             if (pvVar5 == (void *)0x0) {
               fwrite("Error: failed to allocate memory.\n",1,0x22,stderr);
@@ -106,7 +111,7 @@ In `main` there are two [nested] loops.  The outer loop of 10 assigns [per itera
 
 After both loops end the last `rw-` allocation is used to store the flag:
 
-```
+```c
         pFVar2 = fopen("flag.txt","r");
         if (pFVar2 == (FILE *)0x0) {
           fwrite("Error: failed to open flag. Exiting.\n",1,0x25,stderr);
