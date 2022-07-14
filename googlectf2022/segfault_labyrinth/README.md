@@ -391,4 +391,4 @@ p.close()
 print(_)
 ```
 
-If `write` were the only option, or if the memory was `r--` (`stat` would fail to write), then this or my original solve is your best option.
+If `write` were the only option, or if the memory was `r--` (`stat` would fail to write), then this or my original solve is your best bet.
