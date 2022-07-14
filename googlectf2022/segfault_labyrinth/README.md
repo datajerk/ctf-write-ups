@@ -445,7 +445,7 @@ Get a stack leak from `fs:0x300`, then use the offset to the flag pointer (use G
 29 bytes:
 
 ```bash
-# ./exploit4.1.py D=1 REMOTE=1
+# ./exploit4.py D=1 REMOTE=1
 [+] Opening connection to segfault-labyrinth.2022.ctfcompetition.com on port 1337: Done
    0:   64 48 8b 34 25 00 03    mov    rsi, QWORD PTR fs:0x300
    7:   00 00
