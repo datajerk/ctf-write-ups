@@ -411,7 +411,7 @@ gef➤  grep CTF{
 gef➤  vmmap stack
 Start              End                Offset             Perm Path
 0x00007ffef173a000 0x00007ffef175b000 0x0000000000000000 rwx [stack]
-gef➤  find 0x00007ffef173a000, 0x00007ffef175afff, 0x613efdd5000
+gef➤  find 0x00007ffef173a000, 0x00007ffef175b000-1, 0x613efdd5000
 0x7ffef1759040
 0x7ffef1759048
 0x7ffef17591c8
