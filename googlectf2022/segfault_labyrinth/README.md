@@ -393,7 +393,7 @@ p.close()
 print(_)
 ```
 
-If `write` were the only option, or if the memory was `r--` (`stat` would fail to write), then this or my original solve is your best bet, however ...
+If `write` were the only option, or if the memory were `r--` (`stat` would fail to write), then this or my original solve is your best bet, however ...
 
 ### Leak Stack Alternative (portable and consistent) `exploit4.py`
 
