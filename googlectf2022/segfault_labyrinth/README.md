@@ -123,11 +123,11 @@ After both loops end the last `rw-` allocation is used to store the flag:
           sVar4 = fread(__ptr,1,0x1000,pFVar2);
 ```
 
-One of the last 16 locations will contain the flag, so there is no need to concern ourselves with the previous 9*16 addresses; this reduces any searching to just 16 locations.
+One of the last 16 locations will contain the flag, so there is no need to concern ourselves with the previous 9*16 addresses; this reduces any searching to only 16 locations.
 
 `rand()` is used with no seed (defaults to 1), making each location deterministic.
 
-To exploit this we'll use `write` to _write_ out each location.  Any attempt to read memory with pure shellcode will just segfault with 15/16 odds since the permissions for 15 of the 16 are `---`.  However, `write`, will just return `EFAULT` (`-14`) into `rax`, and then continue on.
+To exploit this we'll use `write` to _write_ out each location.  Any attempt to read memory with pure shellcode will segfault with 15/16 odds since the permissions for 15 of the 16 are `---`.  However, `write`, will return `EFAULT` (`-14`) into `rax`, and then continue on.
 
 
 ## Exploit
@@ -263,7 +263,7 @@ print(_)
 
 The intended solution, as stated by the challenge author on Discord, is to leverage the only register (`rdi`) that is not reset [before shellcode execution] to navigate the labyrinth with `stat`.
 
-> I just assumed all registers were reset when I created my initial solve; checking the last 16 allocations seemed easy enough.
+> I assumed all registers were reset when I created my initial solve; checking the last 16 allocations seemed easy enough.
 
 The nested loops in the challenge binary creates 10 arrays, each with 16 elements, one of which is a pointer (randomly selected) to the next array.  `rdi` points the first array; the last array has a pointer to the in-memory flag:
 
@@ -344,7 +344,7 @@ print(_)
 
 ### Intended Solution Alternative (no `stat`) `exploit3.1.py`
 
-Same as above, but just using `write` and dealing with all the garbage:
+Same as above, but only using `write` and dealing with all the garbage:
 
 ```python
 #!/usr/bin/env python3
