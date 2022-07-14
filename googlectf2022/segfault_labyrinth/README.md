@@ -430,7 +430,7 @@ p.close()
 print(_)
 ```
 
-Get a stack leak from `fs:0 + 0x300`, then the offset to the flag pointer (use GDB to figure it out).
+Get a stack leak from `fs:0 + 0x300`, then use the offset to the flag pointer (use GDB to figure it out).
 
 > I did not need to match libc versions.
 > 
