@@ -207,7 +207,7 @@ CTF{c0ngratulat1ons_oN_m4k1nG_1t_thr0uGh_th3_l4Byr1nth}
 
 ### Alternative `exploit2.py`
 
-Same as described above, however with locations table append to payload vs. hardcoded and unrolled.  Payload is about 1/3 the size of the payload above.
+Same as described above, however with locations table appended to payload vs. hardcoded and unrolled.  Payload is about 1/3 the size of the payload above.
 
 ```python
 #!/usr/bin/env python3
@@ -263,7 +263,7 @@ The intended solution, as stated by the challenge author on Discord, is to lever
 
 > I just assumed all registers were reset when I created my initial solve; checking the last 16 allocations seemed easy enough.
 
-The nested loops in the challenge binary create 10 arrays, each with 16 elements, one of which is a pointer (randomly selected) to the next array.  `rdi` points the first array; the last array has a pointer to the in-memory flag:
+The nested loops in the challenge binary creates 10 arrays, each with 16 elements, one of which is a pointer (randomly selected) to the next array.  `rdi` points the first array; the last array has a pointer to the in-memory flag:
 
 ```
 array: 0         1         2         3     .........     a
@@ -391,4 +391,4 @@ p.close()
 print(_)
 ```
 
-
+If `write` was the only option, or if the memory was `r--` (`stat` would fail to write), then this or my original solve is your best option.
