@@ -457,8 +457,6 @@ p.close()
 print(_)
 ```
 
-> No need to match libc versions.
-> 
 > `rax` and `rdx` were reset before shellcode run; use `dl` and `al` to reduce payload.
 
 29 bytes:
