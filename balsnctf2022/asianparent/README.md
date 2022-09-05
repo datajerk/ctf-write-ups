@@ -20,9 +20,9 @@ Tags: _pwn_ _bof_ _rop_ _x86-64_ _seccomp_ _ptrace_ _cve-2022-30594_
 
 The provided hint ([https://bugs.chromium.org/p/project-zero/issues/detail?id=2276](https://bugs.chromium.org/p/project-zero/issues/detail?id=2276)) reduces this problem to understanding the vuln ([CVE-2022-30594](https://www.cve.org/CVERecord?id=CVE-2022-30594)) and exploiting with ROP chains.
 
-The vuln permits disabling seccomp using `ptrace`.  The example in the hint is not dissimilar to the challenge, except we'll have to use leaks and ROP chains vs C code.  IOW, get some leaks, craft ROP chains for the parent and child processes, have the child sleep for a bit so the parent can `syscall` `ptrace`, then ORW (open, read, write) the flag from the child.
+The vuln permits disabling seccomp using `ptrace`.  The example in the hint is not dissimilar to the challenge, except we'll have to use leaks and ROP chains vs. C code.  IOW, get some leaks, craft ROP chains for the parent and child processes, have the child sleep for a bit so the parent can `syscall` `ptrace`, then ORW (open, read, write) the flag from the child.
 
-Liberal BOFs provide the environment for leaks and our attack.
+Liberal BOFs provide an environment for leaks and our attack.
 
 > This was a fun challenge.  Thanks Paul Huang.
 
@@ -203,13 +203,13 @@ gef➤  telescope --length 26
 
 > I set the breakpoint just before `memset`--it really does not matter.
 
-The buffer (`local_98`) starts at `+0x0010`; using the stack leak at `+0x00c8` we can compute the address of the beginning of the buffer (we'll be using this as scratch space). libc (for gadgets) is at `+0x00a8`, base process (for the child pid) is at `+0x00b8`, and the canary (for BOF) is at `+0x0098`.
+The buffer (`local_98`) starts at `+0x0010`; using the stack leak at `+0x00c8` we can compute the address of the buffer (we'll be using this as scratch space). libc (for gadgets) is at `+0x00a8`, base process (for the child pid) is at `+0x00b8`, and the canary (for BOF) is at `+0x0098`.
 
 ### Attack Plan
 
 1. Leak addresses from the child and/or parent.  We'll take all of them (libc, base, stack, canary).
 2. Write out a ROP chain to the child that starts with `sleep(1)`, then ORW the flag.
-3. Write out a ROP chain to the parent that calls `ptrace` on the child to disable seccomp to allow the child to `open` the flag, then `wait4` for it ...
+3. Write out a ROP chain to the parent that calls `ptrace` on the child pid disabling seccomp to allow the child to `open` the flag, then `wait4` for it ...
 4. _Give your failure EMOTIONAL DAMAGE_ (`3`) and retrieve the flag.
 
 
@@ -417,7 +417,7 @@ p.sendafter(b'> ',payload)
 
 Next the parent ROP chain:
 
-1. Depending on the kernel version either `PTRACE_O_TRACESECCOMP` or `PTRACE_O_SUSPEND_SECCOMP` will need to be used and this needs to be stored in `r10`.  There was no `pop r10` gadget, so I ended up using `xor r10d, r10d` followed by `add r10, qword ptr [rdi + 0x20]`.  To use these gadgets I had `rdi` set to the buffer and the `r10` argument offset `0x20` in.  The rest is padding to the canary and padding to the end of the stack frame.
+1. Depending on the kernel version either `PTRACE_O_TRACESECCOMP` or `PTRACE_O_SUSPEND_SECCOMP` will need to be used and this needs to be stored in `r10`.  There was no `pop r10` gadget, so I ended up using `xor r10d, r10d` followed by `add r10, qword ptr [rdi + 0x20]`.  To use these gadgets I had `rdi` set to the buffer and the `r10` argument offset `0x20` in.  The rest is padding to the canary, the canary, and then padding to the end of the stack frame.
 2. Call `ptrace`, however, we have to dereference `child`.  Using `mov rax, qword ptr [rax]` and then the same trick of self-moding the ROP chain (see child ROP chain) puts the PID of the child into `rsi`.  `r10` is describe in step 1.  All that is left is `rdx` and `rdi` (easy).  `libc.sym.ptrace` did not work for me; using a `syscall` gadget was necessary.
 3. `wait` for it ... (the child and the flag).
 4. `exit`.
