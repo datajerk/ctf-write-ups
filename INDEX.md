@@ -76,6 +76,7 @@ _bof_
 * [b01lersbootcampctf2020/there\_is\_no\_spoon](b01lersbootcampctf2020/there\_is\_no\_spoon/README.md)
 * [b01lersctf2020/black-hole](b01lersctf2020/black-hole/README.md)
 * [b01lersctf2020/blind-piloting](b01lersctf2020/blind-piloting/README.md)
+* [balsnctf2022/asianparent](balsnctf2022/asianparent/README.md)
 * [boot2root2020/bobby\_boi](boot2root2020/bobby\_boi/README.md)
 * [boot2root2020/canned](boot2root2020/canned/README.md)
 * [boot2root2020/roppy\_ropper](boot2root2020/roppy\_ropper/README.md)
@@ -207,6 +208,10 @@ _crypto_
 * [sunshinectf2020/speedrun](sunshinectf2020/speedrun/README.md)
 * [tjctf2020/difficult\_decryption](tjctf2020/difficult\_decryption/README.md)
 * [twctf2019/real\_baby\_rsa](twctf2019/real\_baby\_rsa/README.md)
+
+_cve-2022-30594_
+
+* [balsnctf2022/asianparent](balsnctf2022/asianparent/README.md)
 
 _devops_
 
@@ -469,6 +474,7 @@ _programming_
 
 _ptrace_
 
+* [balsnctf2022/asianparent](balsnctf2022/asianparent/README.md)
 * [umdctf2022/trace\_story](umdctf2022/trace\_story/README.md)
 
 _pwn_
@@ -490,6 +496,7 @@ _pwn_
 * [b01lersctf2020/black-hole](b01lersctf2020/black-hole/README.md)
 * [b01lersctf2020/blind-piloting](b01lersctf2020/blind-piloting/README.md)
 * [b01lersctf2020/kobayashi-maru](b01lersctf2020/kobayashi-maru/README.md)
+* [balsnctf2022/asianparent](balsnctf2022/asianparent/README.md)
 * [boot2root2020/bobby\_boi](boot2root2020/bobby\_boi/README.md)
 * [boot2root2020/canned](boot2root2020/canned/README.md)
 * [boot2root2020/roppy\_ropper](boot2root2020/roppy\_ropper/README.md)
@@ -845,6 +852,7 @@ _rop_
 * [b01lersbootcampctf2020/see\_for\_yourself](b01lersbootcampctf2020/see\_for\_yourself/README.md)
 * [b01lersbootcampctf2020/the\_oracle](b01lersbootcampctf2020/the\_oracle/README.md)
 * [b01lersctf2020/black-hole](b01lersctf2020/black-hole/README.md)
+* [balsnctf2022/asianparent](balsnctf2022/asianparent/README.md)
 * [boot2root2020/bobby\_boi](boot2root2020/bobby\_boi/README.md)
 * [boot2root2020/canned](boot2root2020/canned/README.md)
 * [boot2root2020/roppy\_ropper](boot2root2020/roppy\_ropper/README.md)
@@ -936,6 +944,7 @@ _scanf_
 
 _seccomp_
 
+* [balsnctf2022/asianparent](balsnctf2022/asianparent/README.md)
 * [dicectf2022/babyrop](dicectf2022/babyrop/README.md)
 * [googlectf2022/segfault\_labyrinth](googlectf2022/segfault\_labyrinth/README.md)
 * [nahamconctf2022/stackless](nahamconctf2022/stackless/README.md)
@@ -1129,6 +1138,7 @@ _x86-64_
 * [b01lersbootcampctf2020/the\_oracle](b01lersbootcampctf2020/the\_oracle/README.md)
 * [b01lersbootcampctf2020/there\_is\_no\_spoon](b01lersbootcampctf2020/there\_is\_no\_spoon/README.md)
 * [b01lersbootcampctf2020/white\_rabbit](b01lersbootcampctf2020/white\_rabbit/README.md)
+* [balsnctf2022/asianparent](balsnctf2022/asianparent/README.md)
 * [boot2root2020/bobby\_boi](boot2root2020/bobby\_boi/README.md)
 * [boot2root2020/canned](boot2root2020/canned/README.md)
 * [boot2root2020/shellcode](boot2root2020/shellcode/README.md)
