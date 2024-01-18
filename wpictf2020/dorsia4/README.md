@@ -112,7 +112,7 @@ _Why `printf`?_  It's really our only option.  We cannot overwrite `scanf` becau
 
 The challenge is that loop only writes one byte at a time, then calls `printf`.  If any single byte change to the address of `printf` in the GOT results in bullshit code, we get a SIGSEGV--game over.
 
-The challenge is finding a list of addresses that are safe to call, i.e. `ret`, `printf`, and the post-CTF revealed `dprintf` (_goddamnit_) _in order_.
+The challenge is finding a list of addresses that are safe to call, i.e. `ret`, `printf`, and the post-CTF revealed `dprintf` _in order_.
 
 Once the last byte is put in place, we get a shell.
 
@@ -207,8 +207,6 @@ print(" seconds")
 > This is where I failed.  Getting this far (identifying the vuln, targeting `printf`, and testing the gadget) took minutes and I thought I was minutes away from a solve.  Well, nope.
 >
 > For starters I only looked for `ret` (`0xc3`) and single byte `nop` sleds before `ret`.  Minutes before closing it had occurred to me to also search for multibyte `nop`, however, IIRC, there were none before any `ret`.  
-> 
-> `dprint` (_goddamnit_).
 
 This code reads in all the bytes from the provided `libc.so.6`, and then searches for any `ret` statements or known good addresses.  The assumption is that any `ret` is a safe place to call.
 
